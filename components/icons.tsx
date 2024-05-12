@@ -121,6 +121,68 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {}
     )
   }
 
+  function GoogleScholarIcon(props: IconProps) {
+    return (
+      <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 530 512"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path
+          fill="currentColor"
+          d="M256 411.12L0 202.667 256 0z"
+        />
+        <path
+          fill="currentColor"
+          d="M256 411.12l256-208.453L256 0z"
+        />
+        <circle
+          fill="currentColor"
+          cx="256"
+          cy="362.667"
+          r="149.333"
+        />
+        <path
+          fill="currentColor"
+          d="M121.037 298.667c23.968-50.453 75.392-85.334 134.963-85.334s110.995 34.881 134.963 85.334H121.037z"
+        />
+      </svg>
+    )
+  }
+
+  function ORCIDIcon(props: IconProps) {
+    return (
+      <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 1100 1024"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle
+          cx="512"
+          cy="512"
+          r="512"
+          fill="currentColor"
+        />
+        <path
+          d="M373.7 709.3h-50.4V358.5h50.4v350.8zm74-350.8h136.2c129.7 0 186.7 92.7 186.7 175.5 0 90.1-70.4 175.5-186 175.5H447.7v-351zm50.4 305.6h80.2c114.3 0 140.5-86.8 140.5-130 0-70.4-44.9-130-143.1-130h-77.6v260zM381.6 285.5c0 18-14.7 33.1-33.1 33.1-18.3 0-33.1-15.1-33.1-33.1 0-18.3 14.7-33.1 33.1-33.1 18.3 0 33.1 15.1 33.1 33.1z"
+          fill="black"
+        />
+      </svg>
+    )
+  }
+
   function GraduationCapIcon(props: IconProps) {
     return (
       <svg
@@ -373,4 +435,4 @@ function CubeIcon(props: IconProps) {
     )
 }
 
-export { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon, GraduationCapIcon, TrophyIcon, DownloadIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon };
+export { GithubIcon, InstagramIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, GraduationCapIcon, TrophyIcon, DownloadIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon };

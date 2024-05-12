@@ -4,7 +4,7 @@ import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
 import ProjectGrid from "@/components/projectGrid"
 import Footer from "@/components/footer"
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon } from "@/components/icons"
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
 
 const Lab = () => {
     const headerImage = {
@@ -135,10 +135,6 @@ const Lab = () => {
         icon: <MailIcon className="h-6 w-6" />,
       },
       {
-        href: 'https://github.com/JadeHouseDisco',
-        icon: <GithubIcon className="h-6 w-6" />,
-      },
-      {
         href: 'https://linkedin.com/in/hyunwoolee0329',
         icon: <LinkedinIcon className="h-6 w-6" />,
       },
@@ -146,9 +142,17 @@ const Lab = () => {
         href: 'https://www.youtube.com/@JadeHouseCinema',
         icon: <YoutubeIcon className="h-6 w-6" />,
       },
-      { 
-        href: 'https://twitter.com/JadeHouseDisco',
-        icon: <TwitterIcon className="h-6 w-6" />,
+      {
+        href: 'https://github.com/JadeHouseDisco',
+        icon: <GithubIcon className="h-6 w-6" />,
+      },
+      {
+        href: '#',
+        icon: <GoogleScholarIcon className="h-6 w-6" />,
+      },
+      {
+        href: '#',
+        icon: <ORCIDIcon className="h-6 w-6" />,
       },
     ];
 
