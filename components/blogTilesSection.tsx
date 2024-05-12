@@ -128,6 +128,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                     <a 
                         className="bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer"
                         href={blogPost.href}
+                        key={index}
                     >
                         <img
                             alt="Blog Post Image"

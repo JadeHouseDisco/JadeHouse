@@ -129,6 +129,7 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                             className="inline-flex font-bold text-lg items-center justify-center h-10 px-6 rounded-md bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                             onMouseEnter={button.buttonText === "Purpose" ? handleMouseEnterPurpose : button.buttonText === "Vision" ? handleMouseEnterVision : handleMouseEnterGoals}
                             onMouseLeave={handleMouseLeave}
+                            key={index}
                         >
                             {button.buttonText}
                         </div>
