@@ -77,15 +77,15 @@ const JadeHouse = () => {
 
   const miniAboutSocialLinks = [
     {
-      href: '#',
+      href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
       icon: <MailIcon className="h-6 w-6" />,
     },
     {
-      href: '#',
+      href: 'https://twitter.com/JadeHouseDisco',
       icon: <TwitterIcon className="h-6 w-6" />,
     },
     {
-      href: '#',
+      href: 'https://linkedin.com/in/hyunwoolee0329',
       icon: <LinkedinIcon className="h-6 w-6" />,
     },
   ];
@@ -97,25 +97,23 @@ const JadeHouse = () => {
       width: 64,
       height: 64,
     },
-    title:"Your Website Title",
+    title:"JadeHouse",
     description:"A short description of your website",
     navLinks: [
-      { text: 'Home', href: '/' },
-      { text: 'About', href: '/about' },
-      { text: 'Services', href: '/services' },
-      { text: 'Contact', href: '/contact' },
+      { text: 'Lab', href: '/lab' },
+      { text: 'Disco', href: '/disco' },
     ],
     socialLinks: [
       {
-        href: "#",
+        href: "mailto:HYUNWOO001@e.ntu.edu.sg",
         icon: <MailIcon className="h-6 w-6" />,
       },
       {
-        href: "#",
+        href: "https://twitter.com/JadeHouseDisco",
         icon: <TwitterIcon className="h-6 w-6" />,
       },
       {
-        href: "#",
+        href: "https://linkedin.com/in/hyunwoolee0329",
         icon: <LinkedinIcon className="h-6 w-6" />,
       }
     ],

@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ imageProps, titles, dropdownOptions }) 
             href={option.href}
             options={
               option.subOptions
-                ? option.subOptions.map((subOption) => subOption.text)
+                ? option.subOptions
                 : []
             }
             buttonText={option.text}

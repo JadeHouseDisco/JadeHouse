@@ -1,6 +1,8 @@
 import Header from "@/components/header";
 import BlogTilesSection from "@/components/blogTilesSection";
 import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon } from "@/components/icons"
+import Footer from "@/components/footer"
 
 export default async function Experiences() {
   const headerImage = {
@@ -16,18 +18,18 @@ export default async function Experiences() {
 
   const headerNavBar = [
       { text: 'Home', href: '/lab', subOptions: [] },
-      { text: 'About', href: '#', subOptions: [] },
+      { text: 'About', href: '/lab/aboutme', subOptions: [] },
       {
-        href:"#",
+        href:"/lab/experiences",
         text: 'Experiences',
         subOptions: [
-          { text: 'Research', href: '#' },
-          { text: 'Work', href: '#' },
-          { text: 'Project', href: '#' },
+          { text: 'Research', href: '/lab/experiences/research' },
+          { text: 'Work', href: '/lab/experiences/work' },
+          { text: 'Project', href: '/lab/experiences/project' },
         ],
       },
-      { text: 'Ideas', href: '#', subOptions: [] },
-      { text: 'Literature Reviews', href: '#', subOptions: [] },
+      { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
+      { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
   ];
 
 async function getAllBlogPosts(): Promise<BlogPost[]> {
@@ -41,6 +43,46 @@ async function getAllBlogPosts(): Promise<BlogPost[]> {
 
 const blogPosts = await getAllBlogPosts();
 
+const footerProps = {
+  logo: {
+    src: '/jadehouse_lab.png',
+    alt: 'Website Logo',
+    width: 64,
+    height: 64,
+  },
+  title:"JadeHouse Lab",
+  description:"A short description of your website",
+  navLinks: [
+    { text: 'Home', href: '/lab' },
+    { text: 'About', href: '/lab/aboutme' },
+    { text: 'Experiences', href: '/lab/experiences' },
+    { text: 'Ideas', href: '/lab/ideas' },
+    { text: 'Literature Reviews', href: '/lab/litrev' },
+  ],
+  socialLinks: [
+    {
+      href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
+      icon: <MailIcon className="h-6 w-6" />,
+    },
+    {
+      href: 'https://github.com/JadeHouseDisco',
+      icon: <GithubIcon className="h-6 w-6" />,
+    },
+    {
+      href: 'https://linkedin.com/in/hyunwoolee0329',
+      icon: <LinkedinIcon className="h-6 w-6" />,
+    },
+    {
+      href: 'https://www.youtube.com/@JadeHouseCinema',
+      icon: <YoutubeIcon className="h-6 w-6" />,
+    },
+    { 
+      href: 'https://twitter.com/JadeHouseDisco',
+      icon: <TwitterIcon className="h-6 w-6" />,
+    },
+  ],
+}
+
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header
@@ -49,6 +91,7 @@ const blogPosts = await getAllBlogPosts();
           dropdownOptions={headerNavBar}
       />
       <BlogTilesSection blogPosts={blogPosts}/>
+      <Footer footerProps={footerProps}/>
     </div>
   )
 }

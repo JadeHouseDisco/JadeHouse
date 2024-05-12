@@ -5,7 +5,8 @@ import AboutMeIntro from "@/components/aboutMeIntro"
 import CourseTable from "@/components/courseTable"
 import PurposeVisionGoals from "@/components/purposeVisionGoals"
 import SkillsShowcase from "@/components/skillsShowcase"
-import { DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
+import Footer from "@/components/footer"
 
 const LabAboutMe = () => {
   const headerImage = {
@@ -28,11 +29,11 @@ const LabAboutMe = () => {
       subOptions: [
         { text: 'Research', href: '/lab/experiences/research' },
         { text: 'Work', href: '/lab/experiences/work' },
-        { text: 'Project', href: '/lab/experiences/work' },
+        { text: 'Project', href: '/lab/experiences/project' },
       ],
     },
-    { text: 'Ideas', href: '#', subOptions: [] },
-    { text: 'Literature Reviews', href: '#', subOptions: [] },
+    { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
+    { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
 ];
   
   const aboutMeIntroProps = {
@@ -157,6 +158,7 @@ const LabAboutMe = () => {
     };
 
     const downloadSectionTitle = "CV/Transcript"
+
     const downloadSectionDownloads = [
       {
         buttonText: "Download CV",
@@ -242,6 +244,46 @@ const LabAboutMe = () => {
       ]
     }
 
+    const footerProps = {
+      logo: {
+        src: '/jadehouse_lab.png',
+        alt: 'Website Logo',
+        width: 64,
+        height: 64,
+      },
+      title:"JadeHouse Lab",
+      description:"A short description of your website",
+      navLinks: [
+        { text: 'Home', href: '/lab' },
+        { text: 'About', href: '/lab/aboutme' },
+        { text: 'Experiences', href: '/lab/experiences' },
+        { text: 'Ideas', href: '/lab/ideas' },
+        { text: 'Literature Reviews', href: '/lab/litrev' },
+      ],
+      socialLinks: [
+        {
+          href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
+          icon: <MailIcon className="h-6 w-6" />,
+        },
+        {
+          href: 'https://github.com/JadeHouseDisco',
+          icon: <GithubIcon className="h-6 w-6" />,
+        },
+        {
+          href: 'https://linkedin.com/in/hyunwoolee0329',
+          icon: <LinkedinIcon className="h-6 w-6" />,
+        },
+        {
+          href: 'https://www.youtube.com/@JadeHouseCinema',
+          icon: <YoutubeIcon className="h-6 w-6" />,
+        },
+        { 
+          href: 'https://twitter.com/JadeHouseDisco',
+          icon: <TwitterIcon className="h-6 w-6" />,
+        },
+      ],
+    }
+
     return (
       <div key="1" className="flex flex-col min-h-[100dvh]">
         <Header
@@ -258,6 +300,7 @@ const LabAboutMe = () => {
           downloads={downloadSectionDownloads}
         />
         <CourseTable courseTableProps={courseTableProps}/>
+        <Footer footerProps={footerProps}/>
       </div>
     )
 }

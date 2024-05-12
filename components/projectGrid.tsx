@@ -67,9 +67,9 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, viewAllLink }) => {
                   />
                 </CardHeader>
                 <CardFooter>
-                  <div>
+                  <div className="h-22 overflow-hidden">
                     <CardTitle>{project.title}</CardTitle>
-                    <p className="text-gray-400">
+                    <p className="text-gray-400 line-clamp-2">
                       {project.description}
                     </p>
                   </div>

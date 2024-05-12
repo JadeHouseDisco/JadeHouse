@@ -1,5 +1,3 @@
-"use client"
-
 import React from 'react';
 import Header from "@/components/header";
 import HeroSection from "@/components/heroSection";
@@ -29,11 +27,11 @@ const Lab = () => {
           subOptions: [
             { text: 'Research', href: '/lab/experiences/research' },
             { text: 'Work', href: '/lab/experiences/work' },
-            { text: 'Project', href: '/lab/experiences/work' },
+            { text: 'Project', href: '/lab/experiences/project' },
           ],
         },
-        { text: 'Ideas', href: '#', subOptions: [] },
-        { text: 'Literature Reviews', href: '#', subOptions: [] },
+        { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
+        { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
     ];
   
     const heroSectionBackgroundImage = {
@@ -68,7 +66,7 @@ const Lab = () => {
           height: 300,
         },
         title: 'Project 2',
-        description: 'A mobile app that allows users to track their fitness goals and progress.',
+        description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
         viewLink: '/lab',
       },
       {
@@ -133,23 +131,23 @@ const Lab = () => {
   
     const miniAboutSocialLinks = [
       {
-        href: '#',
+        href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
         icon: <MailIcon className="h-6 w-6" />,
       },
       {
-        href: '#',
+        href: 'https://github.com/JadeHouseDisco',
         icon: <GithubIcon className="h-6 w-6" />,
       },
       {
-        href: '#',
+        href: 'https://linkedin.com/in/hyunwoolee0329',
         icon: <LinkedinIcon className="h-6 w-6" />,
       },
       {
-        href: '#',
+        href: 'https://www.youtube.com/@JadeHouseCinema',
         icon: <YoutubeIcon className="h-6 w-6" />,
       },
-      {
-        href: '#',
+      { 
+        href: 'https://twitter.com/JadeHouseDisco',
         icon: <TwitterIcon className="h-6 w-6" />,
       },
     ];
@@ -177,23 +175,23 @@ const Lab = () => {
       ],
       socialLinks: [
         {
-          href: '#',
+          href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
           icon: <MailIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://github.com/JadeHouseDisco',
           icon: <GithubIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://linkedin.com/in/hyunwoolee0329',
           icon: <LinkedinIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://www.youtube.com/@JadeHouseCinema',
           icon: <YoutubeIcon className="h-6 w-6" />,
         },
-        {
-          href: '#',
+        { 
+          href: 'https://twitter.com/JadeHouseDisco',
           icon: <TwitterIcon className="h-6 w-6" />,
         },
       ],
@@ -212,11 +210,11 @@ const Lab = () => {
         />
         <ProjectGrid 
           projects={projects} 
-          viewAllLink="/lab" 
+          viewAllLink="/lab/experiences" 
         />
         <ProjectGrid 
           projects={literatureReview} 
-          viewAllLink="/lab" 
+          viewAllLink="/lab/litrev" 
         />
         <MiniAbout
           profileImage={miniAboutProfileImage}

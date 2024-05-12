@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -85,6 +87,7 @@ const Footer: React.FC<FooterProps> = ({footerProps}) => {
                   key={index}
                   className="text-gray-400 hover:text-white"
                   href={link.href}
+                  target="_blank"
                 >
                   {link.icon}
                 </a>

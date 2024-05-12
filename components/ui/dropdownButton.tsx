@@ -5,7 +5,10 @@ import Link from "next/link"
 
 interface DropdownButtonProps {
   href: string;
-  options: string[];
+  options: {
+    text: string;
+    href: string;
+  }[];
   buttonText: string;
 }
 
@@ -47,11 +50,11 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ href, options, buttonTe
             {options.map((option, index) => (
               <Link
                 key={index}
-                href="#"
+                href={option.href}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                 role="menuitem"
               >
-                {option}
+                {option.text}
               </Link>
             ))}
           </div>

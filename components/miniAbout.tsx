@@ -47,13 +47,15 @@ const MiniAbout: React.FC<MiniAboutProps> = ({
             <p className="text-gray-400">{bio}</p>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
-                <Link
+                <a
                   key={index}
                   className="text-gray-400 hover:text-gray-50"
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {link.icon}
-                </Link>
+                </a>
               ))}
             </div>
             {button.text !== "" ? 
