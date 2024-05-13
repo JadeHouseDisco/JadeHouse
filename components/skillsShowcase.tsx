@@ -25,7 +25,7 @@ const SkillsShowcase: React.FC<skillsShowcaseProps> = ({ skillsShowcaseProps }) 
             {skillsShowcaseProps.icons.map((icon, index) => (
             <div className="flex flex-col items-center gap-2">
                 {icon.icon}
-                <span className="text-sm font-medium">{icon.text}</span>
+                <span className="text-sm font-medium text-center">{icon.text}</span>
               </div>
             ))}
           </div>

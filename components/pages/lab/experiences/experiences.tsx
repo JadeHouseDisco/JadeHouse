@@ -5,18 +5,17 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORC
 import Footer from "@/components/footer"
 
 export default async function Experiences() {
-  const headerImage = {
-    src: '/jadehouse_lab.png',
-    width: 418,
-    height: 538,
-  };
-
-  const headerText = [
-    { text: 'JadeHouse', href: '/' },
-    { text: 'Lab', href: '/lab' }
-  ];
-
-  const headerNavBar = [
+  const headerProps ={
+    imageProps: {
+      src: '/jadehouse_lab.png',
+      width: 418,
+      height: 538,
+    },
+    titles: [
+      { text: 'JadeHouse', href: '/' },
+      { text: 'Lab', href: '/lab' }
+    ],
+    dropdownOptions: [
       { text: 'Home', href: '/lab', subOptions: [] },
       { text: 'About', href: '/lab/aboutme', subOptions: [] },
       {
@@ -30,7 +29,8 @@ export default async function Experiences() {
       },
       { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
       { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
-  ];
+    ],
+  }
 
 async function getAllBlogPosts(): Promise<BlogPost[]> {
   const researchPosts = await getBlogPosts('app/lab/experiences/research');
@@ -89,11 +89,7 @@ const footerProps = {
 
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
-      <Header
-          imageProps={headerImage}
-          titles={headerText}
-          dropdownOptions={headerNavBar}
-      />
+      <Header headerProps={headerProps}/>
       <BlogTilesSection blogPosts={blogPosts}/>
       <Footer footerProps={footerProps}/>
     </div>

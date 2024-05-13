@@ -3,50 +3,46 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface MiniAboutProps {
-  profileImage: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
-  name: string;
-  bio: string;
-  socialLinks: {
-    href: string;
-    icon: React.ReactNode;
-  }[];
-  button: {
-    text: string;
-    href: string;
+  miniAboutProps: {  
+    profileImage: {
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+    name: string;
+    bio: string;
+    socialLinks: {
+      href: string;
+      icon: React.ReactNode;
+    }[];
+    button: {
+      text: string;
+      href: string;
+    }
   }
 }
 
-const MiniAbout: React.FC<MiniAboutProps> = ({
-  profileImage,
-  name,
-  bio,
-  socialLinks,
-  button = {text: "", href: ""}
-}) => {
+const MiniAbout: React.FC<MiniAboutProps> = ({ miniAboutProps }) => {
   return (
     <React.Fragment>
       <section className="py-16">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex items-center justify-center">
             <Image
-              alt={profileImage.alt}
+              alt={miniAboutProps.profileImage.alt}
               className="rounded-full w-64 h-64 object-cover"
-              height={profileImage.height}
-              src={profileImage.src}
+              height={miniAboutProps.profileImage.height}
+              src={miniAboutProps.profileImage.src}
               style={{ aspectRatio: '256/256', objectFit: 'cover' }}
-              width={profileImage.width}
+              width={miniAboutProps.profileImage.width}
             />
           </div>
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold">{name}</h2>
-            <p className="text-gray-400">{bio}</p>
+            <h2 className="text-3xl font-bold">{miniAboutProps.name}</h2>
+            <p className="text-gray-400">{miniAboutProps.bio}</p>
             <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
+              {miniAboutProps.socialLinks.map((link, index) => (
                 <a
                   key={index}
                   className="text-gray-400 hover:text-gray-50"
@@ -58,12 +54,12 @@ const MiniAbout: React.FC<MiniAboutProps> = ({
                 </a>
               ))}
             </div>
-            {button.text !== "" ? 
+            {miniAboutProps.button.text !== "" ? 
             <Link
                 className="inline-flex items-center justify-center h-10 px-6 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                href={button.href}
+                href={miniAboutProps.button.href}
             >
-              {button.text}
+              {miniAboutProps.button.text}
             </Link> : null }
           </div>
         </div>

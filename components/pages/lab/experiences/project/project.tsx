@@ -5,32 +5,32 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORC
 import Footer from "@/components/footer"
 
 export default async function Project() {
-  const headerImage = {
-    src: '/jadehouse_lab.png',
-    width: 418,
-    height: 538,
-  };
-
-  const headerText = [
-    { text: 'JadeHouse', href: '/' },
-    { text: 'Lab', href: '/lab' }
-  ];
-
-  const headerNavBar = [
-    { text: 'Home', href: '/lab', subOptions: [] },
-    { text: 'About', href: '/lab/aboutme', subOptions: [] },
-    {
-      href:"/lab/experiences",
-      text: 'Experiences',
-      subOptions: [
-        { text: 'Research', href: '/lab/experiences/research' },
-        { text: 'Work', href: '/lab/experiences/work' },
-        { text: 'Project', href: '/lab/experiences/project' },
-      ],
+  const headerProps ={
+    imageProps: {
+      src: '/jadehouse_lab.png',
+      width: 418,
+      height: 538,
     },
-    { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
-    { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
-];
+    titles: [
+      { text: 'JadeHouse', href: '/' },
+      { text: 'Lab', href: '/lab' }
+    ],
+    dropdownOptions: [
+      { text: 'Home', href: '/lab', subOptions: [] },
+      { text: 'About', href: '/lab/aboutme', subOptions: [] },
+      {
+        href:"/lab/experiences",
+        text: 'Experiences',
+        subOptions: [
+          { text: 'Research', href: '/lab/experiences/research' },
+          { text: 'Work', href: '/lab/experiences/work' },
+          { text: 'Project', href: '/lab/experiences/project' },
+        ],
+      },
+      { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
+      { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
+    ],
+  }
 
 const footerProps = {
   logo: {
@@ -80,11 +80,7 @@ const blogPosts = await getBlogPosts('app/lab/experiences/project');
 
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
-      <Header
-          imageProps={headerImage}
-          titles={headerText}
-          dropdownOptions={headerNavBar}
-      />
+      <Header headerProps={headerProps}/>
       <BlogTilesSection blogPosts={blogPosts}/>
       <Footer footerProps={footerProps}/>
     </div>

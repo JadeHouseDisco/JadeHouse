@@ -7,18 +7,17 @@ import Footer from "@/components/footer"
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
 
 const Lab = () => {
-    const headerImage = {
-      src: '/jadehouse_lab.png',
-      width: 418,
-      height: 538,
-    };
-  
-    const headerText = [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Lab', href: '/lab' }
-    ];
-  
-    const headerNavBar = [
+    const headerProps ={ 
+      imageProps: {
+        src: '/jadehouse_lab.png',
+        width: 418,
+        height: 538,
+      },
+      titles: [
+        { text: 'JadeHouse', href: '/' },
+        { text: 'Lab', href: '/lab' }
+      ],
+      dropdownOptions: [
         { text: 'Home', href: '/lab', subOptions: [] },
         { text: 'About', href: '/lab/aboutme', subOptions: [] },
         {
@@ -32,133 +31,143 @@ const Lab = () => {
         },
         { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
         { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
-    ];
-  
-    const heroSectionBackgroundImage = {
-      src: '/lab_main_background.jpg',
-      alt: 'Hero Image',
-      width: 1920,
-      height: 1080,
+      ],
     }
   
-    const heroSectionContent = {
-      title: 'Welcome to JadeHouse Lab',
-      description: 'Portfolio of my professional life',
-    };
+    const heroSectionProps = {
+      backgroundImage: {
+        src: '/lab_main_background.jpg',
+        alt: 'Hero Image',
+        width: 1920,
+        height: 1080,
+      },
+      content: {
+        title: 'Welcome to JadeHouse Lab',
+        description: 'Portfolio of my professional life',
+      },
+    }
   
-    const projects = [
-      {
-        image: {
-          src: '/test.png',
-          alt: 'Project 1',
-          width: 400,
-          height: 300,
+    const experiences = {
+      projectTitle: "Recent Experiences",
+      projects: [
+        {
+          image: {
+            src: '/test.png',
+            alt: 'Project 1',
+            width: 400,
+            height: 300,
+          },
+          title: 'Project 1',
+          description: 'A web application that helps users manage their tasks and projects.',
+          viewLink: '/lab',
         },
-        title: 'Project 1',
-        description: 'A web application that helps users manage their tasks and projects.',
-        viewLink: '/lab',
-      },
-      {
-        image: {
-          src: '/test.png',
-          alt: 'Project 2',
-          width: 400,
-          height: 300,
+        {
+          image: {
+            src: '/test.png',
+            alt: 'Project 2',
+            width: 400,
+            height: 300,
+          },
+          title: 'Project 2',
+          description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
+          viewLink: '/lab',
         },
-        title: 'Project 2',
-        description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
-        viewLink: '/lab',
-      },
-      {
-        image: {
-          src: '/test.png',
-          alt: 'Project 3',
-          width: 400,
-          height: 300,
+        {
+          image: {
+            src: '/test.png',
+            alt: 'Project 3',
+            width: 400,
+            height: 300,
+          },
+          title: 'Project 3',
+          description: 'A design system that helps teams create consistent and high-quality user interfaces.',
+          viewLink: '/lab',
         },
-        title: 'Project 3',
-        description: 'A design system that helps teams create consistent and high-quality user interfaces.',
-        viewLink: '/lab',
-      },
-    ];
+      ],
+      viewAllLink: "/lab/experiences",
+      buttonText:"View all Experiences"
+    }
 
-    const literatureReview = [
-      {
-        image: {
-          src: '/test.png',
-          alt: 'Literature Review 1',
-          width: 400,
-          height: 300,
+    const literatureReview = {
+      projectTitle: "Recent Literature Reviews",
+      projects: [
+        {
+          image: {
+            src: '/test.png',
+            alt: 'Project 1',
+            width: 400,
+            height: 300,
+          },
+          title: 'Project 1',
+          description: 'A web application that helps users manage their tasks and projects.',
+          viewLink: '/lab',
         },
-        title: 'Project 1',
-        description: 'A web application that helps users manage their tasks and projects.',
-        viewLink: '/lab',
-      },
-      {
-        image: {
-          src: '/test.png',
-          alt: 'Literature Review 2',
-          width: 400,
-          height: 300,
+        {
+          image: {
+            src: '/test.png',
+            alt: 'Project 2',
+            width: 400,
+            height: 300,
+          },
+          title: 'Project 2',
+          description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
+          viewLink: '/lab',
         },
-        title: 'Project 2',
-        description: 'A mobile app that allows users to track their fitness goals and progress.',
-        viewLink: '/lab',
-      },
-      {
-        image: {
-          src: '/test.png',
-          alt: 'Literature Review 3',
-          width: 400,
-          height: 300,
+        {
+          image: {
+            src: '/test.png',
+            alt: 'Project 3',
+            width: 400,
+            height: 300,
+          },
+          title: 'Project 3',
+          description: 'A design system that helps teams create consistent and high-quality user interfaces.',
+          viewLink: '/lab',
         },
-        title: 'Project 3',
-        description: 'A design system that helps teams create consistent and high-quality user interfaces.',
-        viewLink: '/lab',
-      },
-    ];
+      ],
+      viewAllLink: "/lab/litrev",
+      buttonText:"View all Literature Reviews"
+    }
 
-    const miniAboutProfileImage = {
-      src: '/profile_photo_main.jpg',
-      alt: 'Profile Photo',
-      width: 256,
-      height: 256,
-    };
-  
-    const miniAboutName = 'Lee Hyunwoo';
-    const miniAboutBio =
-      "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.";
-  
-    const miniAboutSocialLinks = [
-      {
-        href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-        icon: <MailIcon className="h-6 w-6" />,
+    const miniAboutProps = {
+      profileImage: {
+        src: '/profile_photo_main.jpg',
+        alt: 'Profile Photo',
+        width: 256,
+        height: 256,
       },
-      {
-        href: 'https://linkedin.com/in/hyunwoolee0329',
-        icon: <LinkedinIcon className="h-6 w-6" />,
+      name: 'Lee Hyunwoo',
+      bio: "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.",
+      socialLinks: [
+        {
+          href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
+          icon: <MailIcon className="h-6 w-6" />,
+        },
+        {
+          href: 'https://linkedin.com/in/hyunwoolee0329',
+          icon: <LinkedinIcon className="h-6 w-6" />,
+        },
+        {
+          href: 'https://www.youtube.com/@JadeHouseCinema',
+          icon: <YoutubeIcon className="h-6 w-6" />,
+        },
+        {
+          href: 'https://github.com/JadeHouseDisco',
+          icon: <GithubIcon className="h-6 w-6" />,
+        },
+        {
+          href: '#',
+          icon: <GoogleScholarIcon className="h-6 w-6" />,
+        },
+        {
+          href: '#',
+          icon: <ORCIDIcon className="h-6 w-6" />,
+        },
+      ],
+      button: {
+        text: "More About Me",
+        href: "/lab/aboutme"
       },
-      {
-        href: 'https://www.youtube.com/@JadeHouseCinema',
-        icon: <YoutubeIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://github.com/JadeHouseDisco',
-        icon: <GithubIcon className="h-6 w-6" />,
-      },
-      {
-        href: '#',
-        icon: <GoogleScholarIcon className="h-6 w-6" />,
-      },
-      {
-        href: '#',
-        icon: <ORCIDIcon className="h-6 w-6" />,
-      },
-    ];
-
-    const miniAboutMeButton = {
-      text: "More About Me",
-      href: "/lab/aboutme"
     }
 
     const footerProps = {
@@ -207,30 +216,11 @@ const Lab = () => {
   
     return (
       <div key="1" className="flex flex-col min-h-[100dvh]">
-        <Header
-          imageProps={headerImage}
-          titles={headerText}
-          dropdownOptions={headerNavBar}
-        />
-        <HeroSection
-          backgroundImage={heroSectionBackgroundImage}
-          content={heroSectionContent}
-        />
-        <ProjectGrid 
-          projects={projects} 
-          viewAllLink="/lab/experiences" 
-        />
-        <ProjectGrid 
-          projects={literatureReview} 
-          viewAllLink="/lab/litrev" 
-        />
-        <MiniAbout
-          profileImage={miniAboutProfileImage}
-          name={miniAboutName}
-          bio={miniAboutBio}
-          socialLinks={miniAboutSocialLinks}
-          button={miniAboutMeButton}
-        />
+        <Header headerProps={headerProps}/>
+        <HeroSection heroSectionProps={heroSectionProps}/>
+        <ProjectGrid projectGridProps={experiences}/>
+        <ProjectGrid projectGridProps={literatureReview}/>
+        <MiniAbout miniAboutProps={miniAboutProps}/>
         <Footer footerProps={footerProps}/>
       </div>
     );

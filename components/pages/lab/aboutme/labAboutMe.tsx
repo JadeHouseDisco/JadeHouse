@@ -9,32 +9,32 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCI
 import Footer from "@/components/footer"
 
 const LabAboutMe = () => {
-  const headerImage = {
-    src: '/jadehouse_lab.png',
-    width: 418,
-    height: 538,
-  };
-
-  const headerText = [
-    { text: 'JadeHouse', href: '/' },
-    { text: 'Lab', href: '/lab' }
-  ];
-
-  const headerNavBar = [
-    { text: 'Home', href: '/lab', subOptions: [] },
-    { text: 'About', href: '/lab/aboutme', subOptions: [] },
-    {
-      href:"/lab/experiences",
-      text: 'Experiences',
-      subOptions: [
-        { text: 'Research', href: '/lab/experiences/research' },
-        { text: 'Work', href: '/lab/experiences/work' },
-        { text: 'Project', href: '/lab/experiences/project' },
-      ],
+  const headerProps ={
+    imageProps: {
+      src: '/jadehouse_lab.png',
+      width: 418,
+      height: 538,
     },
-    { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
-    { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
-];
+    titles: [
+      { text: 'JadeHouse', href: '/' },
+      { text: 'Lab', href: '/lab' }
+    ],
+    dropdownOptions: [
+      { text: 'Home', href: '/lab', subOptions: [] },
+      { text: 'About', href: '/lab/aboutme', subOptions: [] },
+      {
+        href:"/lab/experiences",
+        text: 'Experiences',
+        subOptions: [
+          { text: 'Research', href: '/lab/experiences/research' },
+          { text: 'Work', href: '/lab/experiences/work' },
+          { text: 'Project', href: '/lab/experiences/project' },
+        ],
+      },
+      { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
+      { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
+    ],
+  }
   
   const aboutMeIntroProps = {
     headerText: "Hi, I'm Hyunwoo",
@@ -121,7 +121,7 @@ const LabAboutMe = () => {
     ]
   }
 
-  const academicData = {
+  const academicInfoSectionProps = {
         title: 'Academic Background and Information',
         sections: [
           {
@@ -157,18 +157,19 @@ const LabAboutMe = () => {
         ],
     };
 
-    const downloadSectionTitle = "CV/Transcript"
-
-    const downloadSectionDownloads = [
-      {
-        buttonText: "Download CV",
-        href: "/Hyunwoo_Lee_CV.docx"
-      },
-      {
-        buttonText: "Download Transcript",
-        href: "/Hyunwoo_Lee_Transcript.pdf"
-      }
-    ]
+    const downloadSectionProps = {
+      title: "CV/Transcript",
+      downloads: [
+        {
+          buttonText: "Download CV",
+          href: "/Hyunwoo_Lee_CV.docx"
+        },
+        {
+          buttonText: "Download Transcript",
+          href: "/Hyunwoo_Lee_Transcript.pdf"
+        }
+      ]
+    }
 
     const courseTableProps = {
       headerText: "Courses Taken",
@@ -290,19 +291,12 @@ const LabAboutMe = () => {
 
     return (
       <div key="1" className="flex flex-col min-h-[100dvh]">
-        <Header
-            imageProps={headerImage}
-            titles={headerText}
-            dropdownOptions={headerNavBar}
-        />
+        <Header headerProps={headerProps}/>
         <AboutMeIntro aboutMeIntroProps={aboutMeIntroProps}/>
         <PurposeVisionGoals purposeVisionGoalsProps={purposeVisionGoalsProps}/>
         <SkillsShowcase skillsShowcaseProps={skillsShowcaseProps}/>
-        <AcademicInfoSection data={academicData}/>
-        <DownloadSection 
-          title={downloadSectionTitle} 
-          downloads={downloadSectionDownloads}
-        />
+        <AcademicInfoSection academicInfoSectionProps={academicInfoSectionProps}/>
+        <DownloadSection downloadSectionProps={downloadSectionProps}/>
         <CourseTable courseTableProps={courseTableProps}/>
         <Footer footerProps={footerProps}/>
       </div>

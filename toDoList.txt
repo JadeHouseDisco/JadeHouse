@@ -1,5 +1,4 @@
-2. Finish the contact me (send message) functionality
-8. Add pages for ideas and literature reviews
-9. Design the structure of idea and literature review pages
-10. Design the disco page
-11. Start writting things inside the blog
+- Design the structure of idea and literature review pages
+- Clean up component arguments
+- Design the disco page
+- Start writing things inside the blog

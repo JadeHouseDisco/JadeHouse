@@ -14,8 +14,12 @@ interface ProjectCardProps {
 }
 
 interface ProjectGridProps {
-  projects: ProjectCardProps[];
-  viewAllLink: string;
+  projectGridProps: {
+    projectTitle: string;
+    projects: ProjectCardProps[];
+    viewAllLink: string;
+    buttonText: string;
+  }
 }
 
 const Card: React.FC<React.PropsWithChildren> = ({ children }) => (
@@ -39,18 +43,18 @@ const CardTitle: React.FC<React.PropsWithChildren> = ({ children }) => (
 );
 
 const CardFooter: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <div className="p-4 bg-gray-700">{children}</div>
+  <div className="p-4 bg-gray-800">{children}</div>
 );
 
-const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, viewAllLink }) => {
+const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 ml-6 text-gray-200">
-          Recent Experiences
+        <h2 className="text-3xl font-bold mb-8 ml-6 text-gray-200 text-center">
+          {projectGridProps.projectTitle}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projectGridProps.projects.map((project, index) => (
             <a 
               className="transition duration-300 hover:scale-105 hover:cursor-pointer"
               href={project.viewLink}
@@ -81,9 +85,9 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projects, viewAllLink }) => {
         <div className="mt-8 flex justify-center">
           <Link
             className="inline-flex items-center justify-center h-10 px-6 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-            href={viewAllLink}
+            href={projectGridProps.viewAllLink}
           >
-            View All Projects
+            {projectGridProps.buttonText}
           </Link>
         </div>
       </div>

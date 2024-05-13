@@ -9,32 +9,34 @@ interface heroSectionBackgroundImageArray {
   height: number,
 }
 
-interface CardProps {
-  cards: {
-    image: {
-        src: string;
-        alt: string;
-        width: number;
-        height: number;
-    };
-    title: string;
-    description: string;
-    buttonText: string;
-    buttonHref: string; 
-  }[];
-  heroSectionBackgroundImage: heroSectionBackgroundImageArray;
-  setHeroSectionBackgroundImage: Function;
+interface CardGridProps {
+  cardGridProps: {
+    cards: {
+      image: {
+          src: string;
+          alt: string;
+          width: number;
+          height: number;
+      };
+      title: string;
+      description: string;
+      buttonText: string;
+      buttonHref: string; 
+    }[];
+    heroSectionBackgroundImage: heroSectionBackgroundImageArray;
+    setHeroSectionBackgroundImage: Function;
+  }
 }
 
-const CardGrid: React.FC<CardProps> = ({ cards, heroSectionBackgroundImage, setHeroSectionBackgroundImage }) => {
+const CardGrid: React.FC<CardGridProps> = ({ cardGridProps }) => {
   const [delayActive, setDelayActive] = useState(false);
 
   const handleMouseEnterDisco = () => {
     if (!delayActive) {
       setDelayActive(true);
       setTimeout(() => {
-        if (heroSectionBackgroundImage.src !== '/test.jpg') {
-          setHeroSectionBackgroundImage({
+        if (cardGridProps.heroSectionBackgroundImage.src !== '/test.jpg') {
+          cardGridProps.setHeroSectionBackgroundImage({
             src: '/disco_main_background_v1.jpg',
             alt: 'Hero Image',
             width: 1920,
@@ -50,8 +52,8 @@ const CardGrid: React.FC<CardProps> = ({ cards, heroSectionBackgroundImage, setH
     if (!delayActive) {
       setDelayActive(true);
       setTimeout(() => {
-        if (heroSectionBackgroundImage.src !== '/test.jpg') {
-          setHeroSectionBackgroundImage({
+        if (cardGridProps.heroSectionBackgroundImage.src !== '/test.jpg') {
+          cardGridProps.setHeroSectionBackgroundImage({
             src: '/lab_main_background.jpg',
             alt: 'Hero Image',
             width: 1920,
@@ -67,8 +69,8 @@ const CardGrid: React.FC<CardProps> = ({ cards, heroSectionBackgroundImage, setH
     if (!delayActive) {
       setDelayActive(true);
       setTimeout(() => {
-        if (heroSectionBackgroundImage.src !== '/main_background.jpeg') {
-          setHeroSectionBackgroundImage({
+        if (cardGridProps.heroSectionBackgroundImage.src !== '/main_background.jpeg') {
+          cardGridProps.setHeroSectionBackgroundImage({
             src: '/main_background.jpeg',
             alt: 'Hero Image',
             width: 1920,
@@ -83,7 +85,7 @@ const CardGrid: React.FC<CardProps> = ({ cards, heroSectionBackgroundImage, setH
   return (
     <section className="py-16 bg-gray-800">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-        {cards.map((card, index) => (
+        {cardGridProps.cards.map((card, index) => (
           <div
             key={index}
             className="bg-gray-900 rounded-lg shadow-md p-6 flex items-center"

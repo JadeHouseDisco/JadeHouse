@@ -10,20 +10,20 @@ import { useState } from 'react';
 import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 
 const JadeHouse = () => {
-  const headerImage = {
-    src: '/jadehouse.png',
-    width: 406,
-    height: 526,
-  };
-
-  const headerText = [
-    { text: 'JadeHouse', href: '/' }
-  ];
-
-  const headerNavBar = [
-    { text: 'Lab', href: '/lab', subOptions: [] },
-    { text: 'Disco', href: '/disco', subOptions: [] },
-  ];
+  const headerProps ={
+    imageProps: {
+      src: '/jadehouse.png',
+      width: 406,
+      height: 526,
+    },
+    titles: [
+      { text: 'JadeHouse', href: '/' }
+    ],
+    dropdownOptions: [
+      { text: 'Lab', href: '/lab', subOptions: [] },
+      { text: 'Disco', href: '/disco', subOptions: [] },
+    ],
+  }
 
   const [heroSectionBackgroundImage, setHeroSectionBackgroundImage] = useState({
     src: '/main_background.jpeg',
@@ -32,63 +32,70 @@ const JadeHouse = () => {
     height: 1080,
   })
 
-  const heroSectionContent = {
-    title: 'Welcome to JadeHouse',
-    description: 'House of memory for my professional and personal life',
-  };
+  const heroSectionProps = {
+    backgroundImage: heroSectionBackgroundImage,
+    content: {
+      title: 'Welcome to JadeHouse',
+      description: 'House of memory for my professional and personal life',
+    },
+  }
 
-  const cards = [
-    {
-      image: {
-        src: '/jadehouse_lab.png',
-        alt: 'JadeHouse Lab logo',
-        width: 120,
-        height: 120,
+  const cardGridProps = {
+    cards: [
+      {
+        image: {
+          src: '/jadehouse_lab.png',
+          alt: 'JadeHouse Lab logo',
+          width: 120,
+          height: 120,
+        },
+        title: 'JadeHouse Lab',
+        description: 'Explore my professional life, including research, work, and project experiences',
+        buttonText: 'Enter the Lab',
+        buttonHref: '/lab',
       },
-      title: 'JadeHouse Lab',
-      description: 'Explore my professional life, including research, work, and project experiences',
-      buttonText: 'Enter the Lab',
-      buttonHref: '/lab',
-    },
-    {
-      image: {
-        src: '/jadehouse_disco.png',
-        alt: 'JadeHouse Disco logo',
-        width: 120,
-        height: 120,
+      {
+        image: {
+          src: '/jadehouse_disco.png',
+          alt: 'JadeHouse Disco logo',
+          width: 120,
+          height: 120,
+        },
+        title: 'JadeHouse Disco',
+        description: 'Explore my personal life, including memories, thoughts, and music',
+        buttonText: 'Enter the Disco',
+        buttonHref: '/disco',
       },
-      title: 'JadeHouse Disco',
-      description: 'Explore my personal life, including music, memories, and thoughts',
-      buttonText: 'Enter the Disco',
-      buttonHref: '/disco',
-    },
-  ];
+    ],
+    heroSectionBackgroundImage:heroSectionBackgroundImage,
+    setHeroSectionBackgroundImage:setHeroSectionBackgroundImage,
+  }
 
-  const miniAboutProfileImage = {
-    src: '/profile_photo_main.jpg',
-    alt: 'Profile Photo',
-    width: 256,
-    height: 256,
-  };
-
-  const miniAboutName = 'Lee Hyunwoo';
-  const miniAboutBio =
-    "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.";
-
-  const miniAboutSocialLinks = [
-    {
-      href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-      icon: <MailIcon className="h-6 w-6" />,
+  const miniAboutProps = {
+    profileImage: {
+      src: '/profile_photo_main.jpg',
+      alt: 'Profile Photo',
+      width: 256,
+      height: 256,
     },
-    {
-      href: 'https://twitter.com/JadeHouseDisco',
-      icon: <TwitterIcon className="h-6 w-6" />,
-    },
-    {
-      href: 'https://linkedin.com/in/hyunwoolee0329',
-      icon: <LinkedinIcon className="h-6 w-6" />,
-    },
-  ];
+    name: 'Lee Hyunwoo',
+    bio:  "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.",
+    socialLinks: [
+      {
+        href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
+        icon: <MailIcon className="h-6 w-6" />,
+      },
+      {
+        href: 'https://twitter.com/JadeHouseDisco',
+        icon: <TwitterIcon className="h-6 w-6" />,
+      },
+      {
+        href: 'https://linkedin.com/in/hyunwoolee0329',
+        icon: <LinkedinIcon className="h-6 w-6" />,
+      },
+    ],
+    button: {text:"", href:""}
+  }
 
   const footerProps = {
     logo: {
@@ -121,27 +128,12 @@ const JadeHouse = () => {
 
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
-      <Header
-        imageProps={headerImage}
-        titles={headerText}
-        dropdownOptions={headerNavBar}
-      />
-      <HeroSection
-        backgroundImage={heroSectionBackgroundImage}
-        content={heroSectionContent}
-      />
+      <Header headerProps={headerProps}/>
+      <HeroSection heroSectionProps={heroSectionProps}/>
       <CardGrid 
-        cards={cards} 
-        heroSectionBackgroundImage={heroSectionBackgroundImage}
-        setHeroSectionBackgroundImage={setHeroSectionBackgroundImage}
+        cardGridProps={cardGridProps}
       />
-      <MiniAbout
-        profileImage={miniAboutProfileImage}
-        name={miniAboutName}
-        bio={miniAboutBio}
-        socialLinks={miniAboutSocialLinks}
-        button={{text:"", href:""}}
-      />
+      <MiniAbout miniAboutProps={miniAboutProps}/>
       <Footer footerProps={footerProps}/>
     </div>
   );

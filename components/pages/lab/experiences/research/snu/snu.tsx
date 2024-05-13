@@ -4,32 +4,32 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORC
 import Footer from "@/components/footer"
 
 const Snu = () => {
-    const headerImage = {
+  const headerProps ={
+    imageProps: {
       src: '/jadehouse_lab.png',
       width: 418,
       height: 538,
-    };
-  
-    const headerText = [
+    },
+    titles: [
       { text: 'JadeHouse', href: '/' },
       { text: 'Lab', href: '/lab' }
-    ];
-  
-    const headerNavBar = [
-        { text: 'Home', href: '/lab', subOptions: [] },
-        { text: 'About', href: '/lab/aboutme', subOptions: [] },
-        {
-          href:"/lab/experiences",
-          text: 'Experiences',
-          subOptions: [
-            { text: 'Research', href: '/lab/experiences/research' },
-            { text: 'Work', href: '/lab/experiences/work' },
-            { text: 'Project', href: '/lab/experiences/project' },
-          ],
-        },
-        { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
-        { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
-    ];
+    ],
+    dropdownOptions: [
+      { text: 'Home', href: '/lab', subOptions: [] },
+      { text: 'About', href: '/lab/aboutme', subOptions: [] },
+      {
+        href:"/lab/experiences",
+        text: 'Experiences',
+        subOptions: [
+          { text: 'Research', href: '/lab/experiences/research' },
+          { text: 'Work', href: '/lab/experiences/work' },
+          { text: 'Project', href: '/lab/experiences/project' },
+        ],
+      },
+      { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
+      { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
+    ],
+  }
 
     const footerProps = {
         logo: {
@@ -77,11 +77,7 @@ const Snu = () => {
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header
-                imageProps={headerImage}
-                titles={headerText}
-                dropdownOptions={headerNavBar}
-            />
+            <Header headerProps={headerProps}/>
             <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
                 <Image
                     alt="Background Image"
