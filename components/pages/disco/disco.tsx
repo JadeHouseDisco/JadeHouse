@@ -33,7 +33,7 @@ const Disco = () => {
         text: 'Thoughts',
         subOptions: [
           { text: 'Perspective', href: '/disco/thoughts/perspective' },
-          { text: 'Journey', href: '/disco/thoughts/journey' },
+          { text: 'Inspiration', href: '/disco/thoughts/journey' },
           { text: 'Quotes', href: '/disco/thoughts/quotes' },
         ],
       },

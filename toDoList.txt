@@ -1,4 +1,3 @@
 - Design the structure of idea and literature review pages
-- Clean up component arguments
 - Design the disco page
 - Start writing things inside the blog
