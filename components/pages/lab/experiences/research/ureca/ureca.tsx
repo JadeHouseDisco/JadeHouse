@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import Image from 'next/image';
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon } from "@/components/icons"
+import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
 const Ureca = () => {
@@ -64,9 +64,13 @@ const Ureca = () => {
             href: 'https://www.youtube.com/@JadeHouseCinema',
             icon: <YoutubeIcon className="h-6 w-6" />,
           },
-          { 
-            href: 'https://twitter.com/JadeHouseDisco',
-            icon: <TwitterIcon className="h-6 w-6" />,
+          {
+            href: '#',
+            icon: <GoogleScholarIcon className="h-6 w-6" />,
+          },
+          {
+            href: '#',
+            icon: <ORCIDIcon className="h-6 w-6" />,
           },
         ],
       }

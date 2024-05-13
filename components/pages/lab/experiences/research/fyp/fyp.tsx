@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
-const Snu = () => {
+const Fyp = () => {
     const headerImage = {
       src: '/jadehouse_lab.png',
       width: 418,
@@ -148,4 +148,4 @@ const Snu = () => {
       )
   }
   
-export default Snu;
+export default Fyp;

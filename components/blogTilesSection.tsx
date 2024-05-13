@@ -22,7 +22,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
         const sortedBlogPosts = [...blogPosts].sort((a, b) => {
         switch (method) {
             case 'featured':
-            return b.featured === 'y' ? -1 : 1;
+            return b.featured === 'y' ? 1 : -1;
             case 'newest':
             return new Date(b.date).getTime() - new Date(a.date).getTime();
             case 'oldest':
@@ -65,7 +65,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
     };
 
     return (
-        <div className="container mx-8 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 py-8">
+        <div className="mx-8 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 py-8">
             <div className="bg-gray-800 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-4">Sort By</h3>
                 <div className="space-y-4">
@@ -123,7 +123,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredBlogPosts.map((blogPost, index) => (
                     <a 
                         className="bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer"

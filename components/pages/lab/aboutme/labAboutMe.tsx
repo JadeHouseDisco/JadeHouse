@@ -5,7 +5,7 @@ import AboutMeIntro from "@/components/aboutMeIntro"
 import CourseTable from "@/components/courseTable"
 import PurposeVisionGoals from "@/components/purposeVisionGoals"
 import SkillsShowcase from "@/components/skillsShowcase"
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
+import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCIDIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
 const LabAboutMe = () => {
@@ -277,9 +277,13 @@ const LabAboutMe = () => {
           href: 'https://www.youtube.com/@JadeHouseCinema',
           icon: <YoutubeIcon className="h-6 w-6" />,
         },
-        { 
-          href: 'https://twitter.com/JadeHouseDisco',
-          icon: <TwitterIcon className="h-6 w-6" />,
+        {
+          href: '#',
+          icon: <GoogleScholarIcon className="h-6 w-6" />,
+        },
+        {
+          href: '#',
+          icon: <ORCIDIcon className="h-6 w-6" />,
         },
       ],
     }

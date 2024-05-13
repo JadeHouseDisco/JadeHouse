@@ -4,7 +4,7 @@ import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
 import ProjectGrid from "@/components/projectGrid"
 import Footer from "@/components/footer"
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
+import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
 
 const Lab = () => {
     const headerImage = {
@@ -194,9 +194,13 @@ const Lab = () => {
           href: 'https://www.youtube.com/@JadeHouseCinema',
           icon: <YoutubeIcon className="h-6 w-6" />,
         },
-        { 
-          href: 'https://twitter.com/JadeHouseDisco',
-          icon: <TwitterIcon className="h-6 w-6" />,
+        {
+          href: '#',
+          icon: <GoogleScholarIcon className="h-6 w-6" />,
+        },
+        {
+          href: '#',
+          icon: <ORCIDIcon className="h-6 w-6" />,
         },
       ],
     }
