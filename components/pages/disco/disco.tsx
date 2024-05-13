@@ -141,7 +141,7 @@ const Disco = () => {
       ],
       button: {
         text: "More About Me",
-        href: "/lab/aboutme"
+        href: "/disco/aboutme"
       }
     }
 
