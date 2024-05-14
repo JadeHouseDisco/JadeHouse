@@ -9,13 +9,6 @@ export const metadata: Metadata = {
   description: "Professional/Personal record of Hyunwoo Lee",
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 0.8,
-  maximumScale: 0.8,
-  userScalable: false,
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
