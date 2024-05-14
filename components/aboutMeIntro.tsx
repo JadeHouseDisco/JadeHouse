@@ -9,13 +9,13 @@ interface AboutMeIntroProps {
 const AboutMeIntro: React.FC<AboutMeIntroProps> = ({ aboutMeIntroProps }) => {
   return (
     <section key="1" className="relative w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent from-30% to-black to-55%" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent from-35% to-black to-55%" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-60% to-black to-90%" />
-        <div className="absolute z-10 ml-auto w-full max-w-xl space-y-4 text-left md:space-y-6 right-16 flex flex-col justify-center h-full">
-            <h1 className="text-3xl font-bold tracking-tighter  sm:text-4xl md:text-5xl lg:text-6xl">
+        <div className="absolute ml-auto w-[50vw] space-y-6 text-left right-[1vw] flex flex-col justify-center h-[110vh]">
+            <h1 className="text-[5vw] font-bold tracking-tighter">
             {aboutMeIntroProps.headerText}
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl">
+            <p className="text-[2vw] tracking-tight leading-[5vh]">
             {aboutMeIntroProps.pText}
             </p>
         </div>

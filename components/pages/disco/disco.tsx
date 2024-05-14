@@ -33,7 +33,7 @@ const Disco = () => {
         text: 'Thoughts',
         subOptions: [
           { text: 'Perspective', href: '/disco/thoughts/perspective' },
-          { text: 'Inspiration', href: '/disco/thoughts/journey' },
+          { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
           { text: 'Quotes', href: '/disco/thoughts/quotes' },
         ],
       },
@@ -155,11 +155,11 @@ const Disco = () => {
       title:"JadeHouse Lab",
       description:"A short description of your website",
       navLinks: [
-        { text: 'Home', href: '/lab' },
-        { text: 'About', href: '/lab/aboutme' },
-        { text: 'Experiences', href: '/lab/experiences' },
-        { text: 'Ideas', href: '/lab/ideas' },
-        { text: 'Literature Reviews', href: '/lab/litrev' },
+        { text: 'Home', href: '/disco' },
+        { text: 'About', href: '/disco/aboutme' },
+        { text: 'Memories', href: '/disco/memories' },
+        { text: 'Thoughts', href: '/disco/thoughts' },
+        { text: 'Music', href: '/disco/music' },
       ],
       socialLinks: [
         {
