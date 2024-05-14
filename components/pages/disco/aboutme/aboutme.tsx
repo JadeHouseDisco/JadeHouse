@@ -144,13 +144,6 @@ const Aboutme = () => {
       ],
     }
 
-    const photos = [
-      { src: "/test.png", width: 1920, height: 1080 },
-      { src: "/test2.png", width: 1920, height: 1080 },
-      { src: "/profile_photo_main.jpg", width: 2179, height: 2179 },
-      { src: "/main_background.jpeg", width: 1536, height: 1536 },
-    ];
-
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
             <Header headerProps={headerProps}/>

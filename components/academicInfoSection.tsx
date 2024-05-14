@@ -2,17 +2,17 @@ import {GraduationCapIcon, TrophyIcon} from "@/components/icons"
 
 interface AcademicInfoSectionProps {
   academicInfoSectionProps: {
-        title: String;
-        sections: {
-            sectionTitle: String;
-            items: {
-                title: String;
-                subtitle: String[];
-                icon: String;
-            }[]
+    title: String;
+    sections: {
+        sectionTitle: String;
+        items: {
+            title: String;
+            subtitle: String[];
+            icon: String;
         }[]
-    }
+    }[]
   }
+}
 
 const AcademicInfoSection: React.FC<AcademicInfoSectionProps> = ({ academicInfoSectionProps }) => {
   return (

@@ -52,8 +52,6 @@ const FamilyIntro: React.FC = () => {
               e.preventDefault();
               handlePersonClick(person);
             }}
-            alt={`${person.id}`}
-            className="cursor-pointer transition-colors duration-300 hover:fill-black/20"
           />
         ))}
       </map>
