@@ -35,7 +35,7 @@ const Lab = () => {
     }
   
     const heroSectionProps = {
-      backgroundImage: {
+      originalBackgroundImage: {
         src: '/lab_main_background.jpg',
         alt: 'Hero Image',
         width: 1920,

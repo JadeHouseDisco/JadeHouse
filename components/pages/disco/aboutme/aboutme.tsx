@@ -46,6 +46,10 @@ const Aboutme = () => {
         imgSrc: "/disco_profile_image.jpg"
       }
 
+    const familyIntroProps = {
+      test: ""
+    }
+
     const backgroundTimelineProps = {
         titleText: "My Journey",
         timeStamps: [
@@ -148,7 +152,7 @@ const Aboutme = () => {
         <div key="1" className="flex flex-col min-h-[100dvh]">
             <Header headerProps={headerProps}/>
             <AboutMeIntro aboutMeIntroProps={aboutMeIntroProps}/>
-            <FamilyIntro />
+            <FamilyIntro familyIntroProps={familyIntroProps}/>
             <BackgroundTimeline backgroundTimelineProps={backgroundTimelineProps}/>
             <Footer footerProps={footerProps}/>
         </div>

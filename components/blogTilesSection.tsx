@@ -65,7 +65,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
     };
 
     return (
-        <div className="mx-8 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 py-8">
+        <div className="mx-8 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 py-8">
             <div className="bg-gray-800 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-4">Sort By</h3>
                 <div className="space-y-4">
@@ -113,7 +113,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                     <h3 className="text-lg font-semibold mb-4">Search</h3>
                     <div className="flex items-center gap-2">
                         <input
-                        className="h-6 w-32 text-black rounded px-1"
+                        className="h-6 w-full text-black rounded px-1"
                         id="search"
                         name="search"
                         type="text"

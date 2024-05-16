@@ -42,7 +42,7 @@ const Disco = () => {
   }
   
   const heroSectionProps = {
-    backgroundImage: {
+    originalBackgroundImage: {
       src: '/disco_main_background.jpg',
       alt: 'Hero Image',
       width: 1920,

@@ -1,12 +1,8 @@
-"use client"
-
 import React from 'react';
 import Header from "@/components/header";
 import HeroSection from "@/components/heroSection";
-import CardGrid from "@/components/cardGrid";
 import MiniAbout from "@/components/miniAbout";
 import Footer from "@/components/footer"
-import { useState } from 'react';
 import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 
 const JadeHouse = () => {
@@ -25,50 +21,55 @@ const JadeHouse = () => {
     ],
   }
 
-  const [heroSectionBackgroundImage, setHeroSectionBackgroundImage] = useState({
-    src: '/main_background.jpeg',
-    alt: 'Hero Image',
-    width: 1920,
-    height: 1080,
-  })
-
   const heroSectionProps = {
-    backgroundImage: heroSectionBackgroundImage,
+    originalBackgroundImage: {
+      src: "/main_background.jpeg",
+      alt: "main background image",
+      width: 1536,
+      height: 1536,
+    },
     content: {
       title: 'Welcome to JadeHouse',
       description: 'House of memory for my professional and personal life',
+      cards: [
+        {
+          image: {
+            src: "/jadehouse_lab.png",
+            alt: "jadehouse lab logo",
+            width: 120,
+            height: 120,
+          },
+          title: "JadeHouse Lab",
+          description: "Explore my professional life, including experiences, ideas, and reviews",
+          buttonText: "Enter the Lab",
+          buttonHref: "/lab",
+          newBackgroundImage: {
+            src: "/lab_main_background.jpg",
+            alt: "lab background image",
+            width: 1536,
+            height: 1536,
+          }
+        },
+        {
+          image: {
+            src: "/jadehouse_disco.png",
+            alt: "jadehouse disco logo",
+            width: 120,
+            height: 120,
+          },
+          title: "JadeHouse Disco",
+          description: "Explore my personal life, including memories, thoughts, and music collections",
+          buttonText: "Enter the Disco",
+          buttonHref: "/disco",
+          newBackgroundImage: {
+            src: "/disco_main_background.jpg",
+            alt: "disco background image",
+            width: 1536,
+            height: 1536,
+          }
+        }
+      ]
     },
-  }
-
-  const cardGridProps = {
-    cards: [
-      {
-        image: {
-          src: '/jadehouse_lab.png',
-          alt: 'JadeHouse Lab logo',
-          width: 120,
-          height: 120,
-        },
-        title: 'JadeHouse Lab',
-        description: 'Explore my professional life, including research, work, and project experiences',
-        buttonText: 'Enter the Lab',
-        buttonHref: '/lab',
-      },
-      {
-        image: {
-          src: '/jadehouse_disco.png',
-          alt: 'JadeHouse Disco logo',
-          width: 120,
-          height: 120,
-        },
-        title: 'JadeHouse Disco',
-        description: 'Explore my personal life, including memories, thoughts, and music',
-        buttonText: 'Enter the Disco',
-        buttonHref: '/disco',
-      },
-    ],
-    heroSectionBackgroundImage:heroSectionBackgroundImage,
-    setHeroSectionBackgroundImage:setHeroSectionBackgroundImage,
   }
 
   const miniAboutProps = {
@@ -130,9 +131,6 @@ const JadeHouse = () => {
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
       <HeroSection heroSectionProps={heroSectionProps}/>
-      <CardGrid 
-        cardGridProps={cardGridProps}
-      />
       <MiniAbout miniAboutProps={miniAboutProps}/>
       <Footer footerProps={footerProps}/>
     </div>

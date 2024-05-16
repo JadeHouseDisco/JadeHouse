@@ -28,3 +28,36 @@ body {
   --tw-gradient-to: rgb(240, 242, 242);
 }
 
+#img-mapper { 
+  position: relative !important; 
+  max-width: none;
+  width: auto !important; 
+  height: auto !important;
+  .img-mapper-img {
+    position: relative !important; 
+    max-width: none;
+    width: auto !important; 
+    height: auto !important; 
+  }
+  .img-mapper-canvas {
+    position: absolute !important; 
+    max-width: none;
+    width: 100% !important; 
+    height: 100% !important; 
+  }
+  .img-mapper-map {
+    position: absolute !important; 
+    max-width: none;
+    width: 100% !important; 
+    height: 100% !important; 
+    display: inline-block;
+    area {
+      position: absolute !important; 
+      max-width: none;
+      width: 100% !important; 
+      height: 100% !important; 
+      display: inline-block;
+    }
+  }
+}
+
