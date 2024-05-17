@@ -1,8 +1,5 @@
-import AcademicInfoSection from "@/components/academicInfoSection"
 import Header from "@/components/header";
-import DownloadSection from "@/components/downloadSection"
 import AboutMeIntro from "@/components/aboutMeIntro"
-import CourseTable from "@/components/courseTable"
 import PurposeVisionGoals from "@/components/purposeVisionGoals"
 import SkillsShowcase from "@/components/skillsShowcase"
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCIDIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
@@ -21,7 +18,12 @@ const LabAboutMe = () => {
     ],
     dropdownOptions: [
       { text: 'Home', href: '/lab', subOptions: [] },
-      { text: 'About', href: '/lab/aboutme', subOptions: [] },
+      { text: 'About', 
+        href: '/lab/aboutme', 
+        subOptions: [
+          { text: 'Academic', href: '/lab/aboutme/academic' },
+        ], 
+      },
       {
         href:"/lab/experiences",
         text: 'Experiences',
@@ -121,130 +123,6 @@ const LabAboutMe = () => {
     ]
   }
 
-  const academicInfoSectionProps = {
-        title: 'Academic Background and Information',
-        sections: [
-          {
-            sectionTitle: 'Education History',
-            items: [
-              {
-                title: 'Bachelor of Science in Mechanical Engineering',
-                subtitle: ['Nanyang Technological University', '2020 - 2025'],
-                icon: 'graduation',
-              },
-              {
-                title: 'International Baccalaureate (IB) Diploma',
-                subtitle: ['Northbridge International School Cambodia', '2012 - 2020'],
-                icon: 'graduation',
-              },
-            ],
-          },
-          {
-            sectionTitle: 'Achievements and Awards',
-            items: [
-              {
-                title: 'Bachelor of Science in Computer Science',
-                subtitle: ['University of California, Berkeley', 'GPA: 3.8'],
-                icon: 'trophy',
-              },
-              {
-                title: 'Certified Scrum Master',
-                subtitle: ['Scrum Alliance', 'Issued: May 2021'],
-                icon: 'trophy',
-              },
-            ],
-          },
-        ],
-    };
-
-    const downloadSectionProps = {
-      title: "CV/Transcript",
-      downloads: [
-        {
-          buttonText: "Download CV",
-          href: "/Hyunwoo_Lee_CV.docx"
-        },
-        {
-          buttonText: "Download Transcript",
-          href: "/Hyunwoo_Lee_Transcript.pdf"
-        }
-      ]
-    }
-
-    const courseTableProps = {
-      headerText: "Courses Taken",
-      tables: [
-        {
-          tableTitle: "Year 2 Semester 2",
-          thead: {
-            col1: "Courses",
-            col2: "Grade",
-          },
-          tbody: [
-            {
-              col1: "Engineering Graphics",
-              col2: "A",
-            },
-            {
-              col1: "Mathematics",
-              col2: "A+",
-            },
-          ]
-        },
-        {
-          tableTitle: "Year 2 Semester 1",
-          thead: {
-            col1: "Courses",
-            col2: "Grade",
-          },
-          tbody: [
-            {
-              col1: "Engineering Graphics",
-              col2: "A",
-            },
-            {
-              col1: "Mathematics",
-              col2: "A+",
-            },
-          ]
-        },
-        {
-          tableTitle: "Year 1 Semester 2",
-          thead: {
-            col1: "Courses",
-            col2: "Grade",
-          },
-          tbody: [
-            {
-              col1: "Engineering Graphics",
-              col2: "A",
-            },
-            {
-              col1: "Mathematics",
-              col2: "A+",
-            },
-          ]
-        },
-        {
-          tableTitle: "Year 1 Semester 1",
-          thead: {
-            col1: "Courses",
-            col2: "Grade",
-          },
-          tbody: [
-            {
-              col1: "Engineering Graphics",
-              col2: "A",
-            },
-            {
-              col1: "Mathematics",
-              col2: "A+",
-            },
-          ]
-        },
-      ]
-    }
-
     const footerProps = {
       logo: {
         src: '/jadehouse_lab.png',
@@ -295,9 +173,6 @@ const LabAboutMe = () => {
         <AboutMeIntro aboutMeIntroProps={aboutMeIntroProps}/>
         <PurposeVisionGoals purposeVisionGoalsProps={purposeVisionGoalsProps}/>
         <SkillsShowcase skillsShowcaseProps={skillsShowcaseProps}/>
-        <AcademicInfoSection academicInfoSectionProps={academicInfoSectionProps}/>
-        <DownloadSection downloadSectionProps={downloadSectionProps}/>
-        <CourseTable courseTableProps={courseTableProps}/>
         <Footer footerProps={footerProps}/>
       </div>
     )

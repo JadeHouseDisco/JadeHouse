@@ -28,36 +28,21 @@ body {
   --tw-gradient-to: rgb(240, 242, 242);
 }
 
-#img-mapper { 
-  position: relative !important; 
-  max-width: none;
-  width: auto !important; 
-  height: auto !important;
+#img-mapper {
+  position: relative !important;
+  width: 100% !important;
   .img-mapper-img {
-    position: relative !important; 
-    max-width: none;
-    width: auto !important; 
-    height: auto !important; 
-  }
-  .img-mapper-canvas {
-    position: absolute !important; 
-    max-width: none;
-    width: 100% !important; 
-    height: 100% !important; 
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
   }
   .img-mapper-map {
-    position: absolute !important; 
-    max-width: none;
-    width: 100% !important; 
-    height: 100% !important; 
-    display: inline-block;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
     area {
-      position: absolute !important; 
-      max-width: none;
-      width: 100% !important; 
-      height: 100% !important; 
-      display: inline-block;
+      outline: none !important;
+      cursor: pointer !important;
     }
   }
 }
-

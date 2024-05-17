@@ -16,7 +16,12 @@ const Fyp = () => {
     ],
     dropdownOptions: [
       { text: 'Home', href: '/lab', subOptions: [] },
-      { text: 'About', href: '/lab/aboutme', subOptions: [] },
+      { text: 'About', 
+        href: '/lab/aboutme', 
+        subOptions: [
+          { text: 'Academic', href: '/lab/aboutme/academic' },
+        ], 
+      },
       {
         href:"/lab/experiences",
         text: 'Experiences',
