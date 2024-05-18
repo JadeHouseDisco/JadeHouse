@@ -7,6 +7,7 @@ import PhotoAlbumGrid from './ui/photoAlbumGrid';
 interface FamilyIntroProps {
   familyIntroProps: {
     titleText: string;
+    descriptionText: string;
     images: {
       src: string;
       map: {
@@ -147,8 +148,15 @@ const FamilyIntro: React.FC<FamilyIntroProps> = ({ familyIntroProps }) => {
 
   return (
     <>
-      <h2 className="text-5xl font-bold text-gray-200 text-center mb-8">{familyIntroProps.titleText}</h2>
-      {images.map((image, index) => (
+      <div className="space-y-4 text-center mb-8">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          {familyIntroProps.titleText}
+        </h2>
+        <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-gray-400">
+          {familyIntroProps.descriptionText}
+        </p>
+      </div>
+    {images.map((image, index) => (
         <div key={index} className="relative w-full mb-4">
           <ImageMapper src={image.src} map={image.map} onClick={handleClick}/>
           <div className="z-10 absolute inset-0 bg-gradient-to-t from-transparent from-80% to-black to-100% pointer-events-none" />

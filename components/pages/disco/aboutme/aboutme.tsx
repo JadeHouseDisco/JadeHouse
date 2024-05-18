@@ -22,8 +22,7 @@ const Aboutme = () => {
           { text: 'About', 
             href: '/disco/aboutme', 
             subOptions: [
-              { text: 'Family', href: '/disco/aboutme/family' },
-              { text: 'Bucket List', href: '/disco/aboutme/bucketlist' },
+              { text: 'Interest', href: '/disco/aboutme/interest' },
             ] 
           },
           { text: 'Memories', href: '/disco/memories', subOptions: [] },
@@ -48,6 +47,7 @@ const Aboutme = () => {
 
     const familyIntroProps = {
       titleText: "My Family",
+      descriptionText: "Say hello to my loved ones",
       images: [
         {
           src: "/family_photo.jpg",
@@ -232,6 +232,7 @@ const Aboutme = () => {
 
     const backgroundTimelineProps = {
         titleText: "My Journey",
+        descriptionText: "Trace the footprint of my life",
         timeStamps: [
             {
                 location: 'Seoul, South Korea',

@@ -23,8 +23,7 @@ const Disco = () => {
       { text: 'About', 
         href: '/disco/aboutme', 
         subOptions: [
-          { text: 'Family', href: '/disco/aboutme/family' },
-          { text: 'Bucket List', href: '/disco/aboutme/bucketlist' },
+          { text: 'Interest', href: '/disco/aboutme/interest' },
         ] 
       },
       { text: 'Memories', href: '/disco/memories', subOptions: [] },

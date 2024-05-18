@@ -13,6 +13,7 @@ interface Timestamp {
 interface BackgroundTimelineProps {
   backgroundTimelineProps: {
     titleText: string;
+    descriptionText: string;
     timeStamps: Timestamp[];
   }
 }
@@ -38,8 +39,13 @@ const BackgroundTimeline: React.FC<BackgroundTimelineProps> = ({ backgroundTimel
 
   return (
     <>
-      <div className="mt-4">
-        <h2 className="text-5xl font-bold text-gray-200 text-center">{backgroundTimelineProps.titleText}</h2>
+      <div className="space-y-4 text-center mt-8 mb-8">
+        <h2 className="text-5xl font-bold text-gray-200">
+          {backgroundTimelineProps.titleText}
+        </h2>
+        <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-gray-400">
+          {backgroundTimelineProps.descriptionText}
+        </p>
       </div>
       <div className="flex justify-center items-start min-h-screen p-6 sm:p-10">
         <div className="relative w-full max-w-2xl after:absolute after:inset-y-0 after:left-1/2 after:w-px after:bg-gray-400/30 grid gap-10">
