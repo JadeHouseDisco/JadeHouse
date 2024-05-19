@@ -4,6 +4,8 @@ import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
 import ProjectGrid from "@/components/projectGrid"
 import SongGrid from "@/components/songGrid"
+import PlaylistIntro from '@/components/playlistIntro';
+import DropdownButton from '@/components/ui/dropdownButton';
 import Footer from "@/components/footer"
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 
@@ -101,6 +103,7 @@ const Disco = () => {
         artist: 'Frank Ocean',
         album: 'Blonde',
         description: 'Anywhere you go and anything you do feels special with this song.',
+        link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=vh4bUS2Tk1u1aWri"
       },
       {
         image: '/album2.jpg',
@@ -108,8 +111,42 @@ const Disco = () => {
         artist: 'Artist Name 2',
         album: 'Album Name 2',
         description: 'Memory description for Song 2',
+        link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=vh4bUS2Tk1u1aWri"
       },
     ];
+
+    const playlistIntroProps = {
+      titleText: "My Favorite Playlists",
+      playlists: [
+        {
+          name: "Indie Chill",
+          songs: [
+            { title: "Sunflower", artist: "Post Malone, Swae Lee" },
+            { title: "Falling", artist: "Harry Styles" },
+            { title: "Circles", artist: "Post Malone" },
+            { title: "Watermelon Sugar", artist: "Harry Styles" },
+          ],
+        },
+        {
+          name: "Pop Hits",
+          songs: [
+            { title: "Bad Guy", artist: "Billie Eilish" },
+            { title: "Blinding Lights", artist: "The Weeknd" },
+            { title: "Levitating", artist: "Dua Lipa" },
+            { title: "Savage (Remix)", artist: "Megan Thee Stallion, Beyoncé" },
+          ],
+        },
+        {
+          name: "Rap Bangers",
+          songs: [
+            { title: "Rockstar", artist: "DaBaby, Roddy Ricch" },
+            { title: "Sicko Mode", artist: "Travis Scott" },
+            { title: "Highest in the Room", artist: "Travis Scott" },
+            { title: "The Scotts", artist: "The Scotts" },
+          ],
+        },
+      ],
+    }
 
     const miniAboutProps = {
       profileImage: {  
@@ -185,7 +222,13 @@ const Disco = () => {
         <Header headerProps={headerProps}/>
         <HeroSection heroSectionProps={heroSectionProps}/>
         <ProjectGrid projectGridProps={projectGridProps}/>
-        <SongGrid songGridProps={songGridProps}/>
+        <div className="grid grid-cols-2 items-start mx-20">
+          <SongGrid songGridProps={songGridProps}/>
+          <PlaylistIntro PlaylistIntroProps={playlistIntroProps}/>
+        </div>
+        <div className="mx-auto my-4">
+          <DropdownButton href={"/disco/music"} options={[]} buttonText={"Explore all Music"} />
+        </div>
         <MiniAbout miniAboutProps={miniAboutProps}/>
         <Footer footerProps={footerProps}/>
       </div>

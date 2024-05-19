@@ -58,7 +58,7 @@ const JadeHouse = () => {
             height: 120,
           },
           title: "JadeHouse Disco",
-          description: "Explore my personal life, including memories, thoughts, and music collections",
+          description: "Explore my personal life, including memories, thoughts, and music",
           buttonText: "Enter the Disco",
           buttonHref: "/disco",
           newBackgroundImage: {
