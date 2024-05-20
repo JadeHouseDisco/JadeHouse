@@ -6,37 +6,37 @@ import Footer from "@/components/footer"
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 
 const Interest = () => {
-    const headerProps ={
-        imageProps: {
-          src: '/jadehouse_disco.png',
-          width: 418,
-          height: 538,
-        },
-        titles: [
-          { text: 'JadeHouse', href: '/' },
-          { text: 'Disco', href: '/disco' }
+  const headerProps ={
+    imageProps: {
+      src: '/jadehouse_disco.png',
+      width: 418,
+      height: 538,
+    },
+    titles: [
+      { text: 'JadeHouse', href: '/' },
+      { text: 'Disco', href: '/disco' }
+    ],
+    dropdownOptions: [
+      { text: 'Home', href: '/disco' },
+      { text: 'About', 
+        href: '/disco/aboutme', 
+        subOptions: [
+          { text: 'Interest', href: '/disco/aboutme/interest' },
+          { text: 'Quotes', href: '/disco/aboutme/quotes' },
+        ] 
+      },
+      { text: 'Memories', href: '/disco/memories' },
+      {
+        href:"/disco/thoughts",
+        text: 'Thoughts',
+        subOptions: [
+          { text: 'Perspective', href: '/disco/thoughts/perspective' },
+          { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
         ],
-        dropdownOptions: [
-          { text: 'Home', href: '/disco', subOptions: [] },
-          { text: 'About', 
-            href: '/disco/aboutme', 
-            subOptions: [
-              { text: 'Interest', href: '/disco/aboutme/interest' },
-            ] 
-          },
-          { text: 'Memories', href: '/disco/memories', subOptions: [] },
-          {
-            href:"/disco/thoughts",
-            text: 'Thoughts',
-            subOptions: [
-              { text: 'Perspective', href: '/disco/thoughts/perspective' },
-              { text: 'Inspiration', href: '/disco/thoughts/journey' },
-              { text: 'Quotes', href: '/disco/thoughts/quotes' },
-            ],
-          },
-          { text: 'Music', href: '/disco/music', subOptions: [] },
-        ],
-    }
+      },
+      { text: 'Music', href: '/disco/music' },
+    ],
+  }
 
     const hobbyIntroProps = {
       titleText: "My Hobbies",

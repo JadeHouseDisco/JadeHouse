@@ -16,8 +16,8 @@ const JadeHouse = () => {
       { text: 'JadeHouse', href: '/' }
     ],
     dropdownOptions: [
-      { text: 'Lab', href: '/lab', subOptions: [] },
-      { text: 'Disco', href: '/disco', subOptions: [] },
+      { text: 'Lab', href: '/lab' },
+      { text: 'Disco', href: '/disco' },
     ],
   }
 

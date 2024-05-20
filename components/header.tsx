@@ -50,11 +50,7 @@ const Header: React.FC<HeaderProps> = ({ headerProps }) => {
           <DropdownButton
             key={index}
             href={option.href}
-            options={
-              option.subOptions
-                ? option.subOptions
-                : []
-            }
+            options={option.subOptions ? option.subOptions : undefined}
             buttonText={option.text}
           />
         ))}

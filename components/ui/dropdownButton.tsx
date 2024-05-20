@@ -4,12 +4,12 @@ import React, { useState, useRef } from 'react';
 import Link from "next/link"
 
 interface DropdownButtonProps {
+  buttonText: string;
   href: string;
-  options: {
+  options?: {
     text: string;
     href: string;
   }[];
-  buttonText: string;
 }
 
 const DropdownButton: React.FC<DropdownButtonProps> = ({ href, options, buttonText }) => {
@@ -40,7 +40,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ href, options, buttonTe
           {buttonText}
         </button>
       </Link>
-      {(isOpen && options.length !== 0)&& (
+      {(isOpen && options)&& (
         <div
           className="absolute grid right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           onMouseEnter={handleMouseEnter}

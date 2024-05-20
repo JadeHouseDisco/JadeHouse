@@ -21,24 +21,24 @@ const Disco = () => {
       { text: 'Disco', href: '/disco' }
     ],
     dropdownOptions: [
-      { text: 'Home', href: '/disco', subOptions: [] },
+      { text: 'Home', href: '/disco' },
       { text: 'About', 
         href: '/disco/aboutme', 
         subOptions: [
           { text: 'Interest', href: '/disco/aboutme/interest' },
+          { text: 'Quotes', href: '/disco/aboutme/quotes' },
         ] 
       },
-      { text: 'Memories', href: '/disco/memories', subOptions: [] },
+      { text: 'Memories', href: '/disco/memories' },
       {
         href:"/disco/thoughts",
         text: 'Thoughts',
         subOptions: [
           { text: 'Perspective', href: '/disco/thoughts/perspective' },
           { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
-          { text: 'Quotes', href: '/disco/thoughts/quotes' },
         ],
       },
-      { text: 'Music', href: '/disco/music', subOptions: [] },
+      { text: 'Music', href: '/disco/music' },
     ],
   }
   

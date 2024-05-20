@@ -17,7 +17,7 @@ export default function Academic() {
       { text: 'Lab', href: '/lab' }
     ],
     dropdownOptions: [
-      { text: 'Home', href: '/lab', subOptions: [] },
+      { text: 'Home', href: '/lab' },
       { text: 'About', 
         href: '/lab/aboutme', 
         subOptions: [
@@ -33,8 +33,8 @@ export default function Academic() {
           { text: 'Project', href: '/lab/experiences/project' },
         ],
       },
-      { text: 'Ideas', href: '/lab/ideas', subOptions: [] },
-      { text: 'Literature Reviews', href: '/lab/litrev', subOptions: [] },
+      { text: 'Ideas', href: '/lab/ideas' },
+      { text: 'Literature Reviews', href: '/lab/litrev' },
     ],
   }
 

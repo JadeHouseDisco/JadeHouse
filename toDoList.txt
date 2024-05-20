@@ -1,3 +1,0 @@
-- Design the structure of idea and literature review pages
-- Design the disco page
-- Start writing things inside the blog
