@@ -20,15 +20,19 @@ const config: Config = {
           300: '#a1d6a3',
           400: '#7ac67d',
           500: '#54b567',
-          600: '#3d9b52', // <-- This is the shade used for the hover background
-          700: '#2d8437', // <-- This is the shade used for the initial text color
+          600: '#3d9b52',
+          700: '#2d8437',
           800: '#207227',
           900: '#0d5e13',
         },
         'custom-white': 'rgb(240, 242, 242)'
       },
+      animation: {
+        spinRecord: 'spin 20s linear infinite',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
+  
 };
 export default config;
