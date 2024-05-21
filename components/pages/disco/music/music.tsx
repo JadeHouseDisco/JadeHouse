@@ -36,46 +36,69 @@ export default function Music() {
     ],
   }
 
-const footerProps = {
-  logo: {
-    src: '/jadehouse_lab.png',
-    alt: 'Website Logo',
-    width: 64,
-    height: 64,
-  },
-  title:"JadeHouse Lab",
-  description:"A short description of your website",
-  navLinks: [
-    { text: 'Home', href: '/disco' },
-    { text: 'About', href: '/disco/aboutme' },
-    { text: 'Memories', href: '/disco/memories' },
-    { text: 'Thoughts', href: '/disco/thoughts' },
-    { text: 'Music', href: '/disco/music' },
-  ],
-  socialLinks: [
-    {
-      href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-      icon: <MailIcon className="h-6 w-6" />,
+  const recordPlayerProps = {
+    titleText: "All Time Favorites",
+    descriptionText: "Best songs in my collection",
+    songs: [
+      {
+        title: "Pink + White",
+        artist: "Frank Ocean",
+        album: "Blonde",
+        link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=Hdqkv4Xt3zXE8mB1",
+        description: "Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description",
+        src: "/music/blonde.jpg"
+      },
+      {
+        title: "Summertime",
+        artist: "The Pianos of Cha'n",
+        album: "Inspirations",
+        link: "https://music.youtube.com/watch?v=S-AAQvQrPaw&si=reYEAFXIMnq9HPaR",
+        description: "Summertime Description",
+        src: "/music/inspirations.jpg"
+      },
+    ]
+  }
+
+  const footerProps = {
+    logo: {
+      src: '/jadehouse_lab.png',
+      alt: 'Website Logo',
+      width: 64,
+      height: 64,
     },
-    {
-      href: 'https://twitter.com/JadeHouseDisco',
-      icon: <TwitterIcon className="h-6 w-6" />,
-    },
-    {
-      href: 'https://www.instagram.com/jadehousedisco/',
-      icon: <InstagramIcon className="h-6 w-6" />,
-    },
-    {
-      href: 'https://www.youtube.com/@JadeHouseCinema',
-      icon: <YoutubeIcon className="h-6 w-6" />,
-    },
-  ],
-}
+    title:"JadeHouse Lab",
+    description:"A short description of your website",
+    navLinks: [
+      { text: 'Home', href: '/disco' },
+      { text: 'About', href: '/disco/aboutme' },
+      { text: 'Memories', href: '/disco/memories' },
+      { text: 'Thoughts', href: '/disco/thoughts' },
+      { text: 'Music', href: '/disco/music' },
+    ],
+    socialLinks: [
+      {
+        href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
+        icon: <MailIcon className="h-6 w-6" />,
+      },
+      {
+        href: 'https://twitter.com/JadeHouseDisco',
+        icon: <TwitterIcon className="h-6 w-6" />,
+      },
+      {
+        href: 'https://www.instagram.com/jadehousedisco/',
+        icon: <InstagramIcon className="h-6 w-6" />,
+      },
+      {
+        href: 'https://www.youtube.com/@JadeHouseCinema',
+        icon: <YoutubeIcon className="h-6 w-6" />,
+      },
+    ],
+  }
 
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <RecordPlayer />
+      <RecordPlayer recordPlayerProps={recordPlayerProps}/>
       <Footer footerProps={footerProps}/>
     </div>
   )
