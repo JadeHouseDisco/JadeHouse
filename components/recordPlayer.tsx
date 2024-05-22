@@ -176,26 +176,32 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
             {(isPlaying && recordPlaying) &&
               <>
                 <div className="absolute inset-0 bg-black/90"></div>
-                <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20">
-                  <div className="text-white mx-auto max-w-lg">
-                    <Image 
+                <div className="absolute inset-0 flex flex-col items-center justify-center h-full px-4 py-8 md:px-8 md:py-12 lg:px-12 lg:py-16 overflow-auto">
+                  <div className="text-white max-w-lg md:max-w-xl lg:max-w-2xl pt-2 md:pt-6 lg:pt-10">
+                    <Image
                       src={recordPlaying.src}
                       alt={recordPlaying.title}
-                      width="544" 
-                      height="544" 
-                      className="object-cover rounded-lg pointer-events-none mb-8" 
+                      width="544"
+                      height="544"
+                      className="object-cover rounded-lg pointer-events-none mb-4 md:mb-6 lg:mb-8 mx-auto"
                     />
-                    <div className="flex items-center justify-between mb-4">
-                      <h1 className="text-4xl font-bold">{recordPlaying.title}</h1>
-                      <a className="" href={recordPlaying.link} target="_blank">
-                        <YoutubeMusicIcon className="h-8 w-8" />
+                    <div className="flex flex-col md:flex-row items-center justify-between mb-2 md:mb-4">
+                      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-0">
+                        {recordPlaying.title}
+                      </h1>
+                      <a
+                        className="ml-auto"
+                        href={recordPlaying.link}
+                        target="\\\_blank"
+                      >
+                        <YoutubeMusicIcon className="h-6 md:h-8 w-6 md:w-8" />
                       </a>
                     </div>
-                    <p className="text-xl font-bold">{recordPlaying.artist}</p>
-                    <p className="text-lg mb-4">{recordPlaying.album}</p>
-                    <p className="text-lg mb-4">{recordPlaying.description}</p>
+                    <p className="text-lg md:text-xl font-bold mb-2">{recordPlaying.artist}</p>
+                    <p className="text-base md:text-lg mb-2 md:mb-4">{recordPlaying.album}</p>
+                    <p style={{ lineHeight: '1.4' }} className="text-base md:text-lg mb-4 md:mb-6 tracking-tight">{recordPlaying.description}</p>
                     <button
-                      className="inline-flex items-center justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
+                      className="inline-flex items-center justify-center h-8 md:h-10 px-3 md:px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out mx-auto"
                       onClick={() => setIsPlaying(false)}
                     >
                       Remove Record

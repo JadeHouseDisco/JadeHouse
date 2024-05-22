@@ -45,7 +45,7 @@ export default function Music() {
         artist: "Frank Ocean",
         album: "Blonde",
         link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=Hdqkv4Xt3zXE8mB1",
-        description: "Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description",
+        description: "Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White",
         src: "/music/blonde.jpg"
       },
       {

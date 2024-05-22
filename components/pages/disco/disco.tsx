@@ -98,7 +98,7 @@ const Disco = () => {
 
     const songGridProps = [
       {
-        image: '/music/blonde.jpeg',
+        image: '/music/blonde.jpg',
         title: 'Pink + White',
         artist: 'Frank Ocean',
         album: 'Blonde',

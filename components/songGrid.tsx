@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface SongGridProps {
   songGridProps: {
@@ -34,7 +35,13 @@ const SongGrid: React.FC<SongGridProps> = ({ songGridProps }) => {
       <h2 className="text-center text-4xl font-bold mb-8">Favorite Songs</h2>
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
         <div className="flex items-start">
-          <img src={songGridProps[currentSong].image} alt={songGridProps[currentSong].title} className="w-64 h-64 object-cover mr-8" />
+          <Image 
+            src={songGridProps[currentSong].image} 
+            alt={songGridProps[currentSong].title} 
+            className="w-64 h-64 object-cover mr-8"
+            width= "544"
+            height= "544" 
+          />
           <div>
             <h2 className="text-2xl font-bold mb-2">{songGridProps[currentSong].title}</h2>
             <p className="text-gray-400 mb-2">{songGridProps[currentSong].artist}</p>
