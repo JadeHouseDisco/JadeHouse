@@ -97,7 +97,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
                         {card.description}
                       </p>
                       <Link
-                        className="inline-flex items-center justify-center h-10 px-6 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
+                        className="inline-flex items-center justify-center h-10 px-6 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors duration-300 ease-in-out"
                         href={card.buttonHref}
                         onMouseEnter={() => {setBackgroundImage(card.newBackgroundImage)}}
                         onMouseLeave={() => {setBackgroundImage(heroSectionProps.originalBackgroundImage)}}

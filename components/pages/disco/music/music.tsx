@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import RecordPlayer from "@/components/recordPlayer";
+import PlaylistShowcase from "@/components/playlistShowcase";
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
@@ -59,6 +60,92 @@ export default function Music() {
     ]
   }
 
+  const playlistShowcaseProps = {
+    titleText: "My playlists",
+    descriptionText: "My favorite playlists",
+    playlists: [
+      {
+        label: 'Playlist 1', 
+        value: 'playlist1',
+        src: "/test.png",
+        songs: [
+          {
+            src: "/music/blonde.jpg",
+            title: "Pink + White",
+            artist: "Frank Ocean",
+          },
+          {
+            src: "/music/inspirations.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+          {
+            src: "/music/3_songs.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+          {
+            src: "/music/blonde.jpg",
+            title: "Pink + White",
+            artist: "Frank Ocean",
+          },
+          {
+            src: "/music/inspirations.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+          {
+            src: "/music/blonde.jpg",
+            title: "Pink + White",
+            artist: "Frank Ocean",
+          },
+          {
+            src: "/music/inspirations.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+        ],
+      },
+      {
+        label: 'Playlist 2', 
+        value: 'playlist2',
+        src: "/test2.png",
+        songs: [
+          {
+            src: "/music/inspirations.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+          {
+            src: "/music/blonde.jpg",
+            title: "Pink + White",
+            artist: "Frank Ocean",
+          },
+          {
+            src: "/music/inspirations.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+          {
+            src: "/music/blonde.jpg",
+            title: "Pink + White",
+            artist: "Frank Ocean",
+          },
+          {
+            src: "/music/inspirations.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+          {
+            src: "/music/3_songs.jpg",
+            title: "Summertime",
+            artist: "The Pianos of Cha'n",
+          },
+        ],
+      }
+    ],
+  }
+
   const footerProps = {
     logo: {
       src: '/jadehouse_lab.png',
@@ -99,6 +186,8 @@ export default function Music() {
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
       <RecordPlayer recordPlayerProps={recordPlayerProps}/>
+      <PlaylistShowcase playlistShowcaseProps={playlistShowcaseProps} />
+      
       <Footer footerProps={footerProps}/>
     </div>
   )
