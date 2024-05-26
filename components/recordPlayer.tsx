@@ -1,8 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { YoutubeIcon, YoutubeMusicIcon } from "@/components/icons"
-import { StringToBoolean } from 'class-variance-authority/dist/types';
+import { YoutubeMusicIcon } from "@/components/icons"
 
 interface Song {
   title: string;

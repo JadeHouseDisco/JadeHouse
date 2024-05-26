@@ -63,7 +63,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs }) => {
       {songs.map((song, index) => (
         <SwiperSlide key={index} onClick={() => handleSlideClick(index)}>
           <img src={song.src} alt={song.title} />
-          <p className="text-lg md:text-xl font-bold">{song.title}</p>
+          <p className="text-lg md:text-xl font-bold mt-1">{song.title}</p>
           <p className="text-xs md:text-base">{song.artist}</p>
         </SwiperSlide>
       ))}

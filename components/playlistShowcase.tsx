@@ -92,11 +92,11 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
             aria-labelledby="menu-button"
             tabIndex={-1}
           >
-            <div className="py-1" role="none">
-              {playlistShowcaseProps.playlists.map((item) => (
+            <div className="" role="none">
+              {playlistShowcaseProps.playlists.map((item, index) => (
                 <a
                   href="#"
-                  className="block px-4 py-2 text-center text-sm focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors duration-300 ease-in-out"
+                  className={`block px-4 py-3 text-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out ${index === 0 ? playlistShowcaseProps.playlists.length === 1 ? "rounded-md y-1": "rounded-t-md t-1" : index === playlistShowcaseProps.playlists.length - 1 ? "rounded-b-md b-1" : ""}`}
                   role="menuitem"
                   tabIndex={-1}
                   key={item.value}

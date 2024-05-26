@@ -156,7 +156,7 @@ const FamilyIntro: React.FC<FamilyIntroProps> = ({ familyIntroProps }) => {
           {familyIntroProps.descriptionText}
         </p>
       </div>
-    {images.map((image, index) => (
+      {images.map((image, index) => (
         <div key={index} className="relative w-full mb-4">
           <ImageMapper src={image.src} map={image.map} onClick={handleClick}/>
           <div className="z-10 absolute inset-0 bg-gradient-to-t from-transparent from-80% to-black to-100% pointer-events-none" />

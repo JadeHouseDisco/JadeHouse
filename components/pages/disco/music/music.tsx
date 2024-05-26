@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import RecordPlayer from "@/components/recordPlayer";
 import PlaylistShowcase from "@/components/playlistShowcase";
+import AudibleMemories from "@/components/audibleMemories";
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
@@ -146,6 +147,42 @@ export default function Music() {
     ],
   }
 
+  const audibleMemoriesProps = {
+    titleText: "Audible Memories",
+    descriptionText: "Precious memories stored in the best music",
+    songs:  [
+      {
+        songSrc: "/music/blonde.jpg",
+        songLink:"",
+        songTitle: "Pink + White",
+        songArtist: "Frank Ocean",
+        description: "Memory 1 description",
+        memoryName: "Memory 1",
+        photos: [
+          { src: "/test.png", width: 1920, height: 1080 },
+          { src: "/test2.png", width: 1920, height: 1080 },
+          { src: "/profile_photo_main.jpg", width: 2179, height: 2179 },
+          { src: "/main_background.jpeg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "/music/blonde.jpg",
+        songLink:"",
+        songTitle: "Pink + White",
+        songArtist: "Frank Ocean",
+        description: "Memory 1 description",
+        memoryName: "Memory 2",
+        photos: [
+          { src: "/test.png", width: 1920, height: 1080 },
+          { src: "/test2.png", width: 1920, height: 1080 },
+          { src: "/profile_photo_main.jpg", width: 2179, height: 2179 },
+          { src: "/main_background.jpeg", width: 1536, height: 1536 },
+        ]
+      },
+    ],
+  }
+  
+
   const footerProps = {
     logo: {
       src: '/jadehouse_lab.png',
@@ -187,7 +224,7 @@ export default function Music() {
       <Header headerProps={headerProps}/>
       <RecordPlayer recordPlayerProps={recordPlayerProps}/>
       <PlaylistShowcase playlistShowcaseProps={playlistShowcaseProps} />
-      
+      <AudibleMemories audibleMemoriesProps={audibleMemoriesProps} />
       <Footer footerProps={footerProps}/>
     </div>
   )
