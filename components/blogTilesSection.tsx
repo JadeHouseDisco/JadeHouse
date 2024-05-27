@@ -142,9 +142,12 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                             width={400}
                         />
                         <div className="p-4 bg-gray-700">
-                            <h3 className="text-lg font-semibold mb-2">
+                            <h3 className="text-lg font-semibold">
                                 {blogPost.title}
                             </h3>
+                            <p className="text-gray-400 text-xs mb-2">
+                                {blogPost.date}
+                            </p>
                             <p className="text-gray-400 line-clamp-3">
                                 {blogPost.content}
                             </p>

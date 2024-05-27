@@ -9,7 +9,7 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORC
 const Lab = () => {
     const headerProps ={ 
       imageProps: {
-        src: '/jadehouse_lab.png',
+        src: '/logo/jadehouse_lab.png',
         width: 418,
         height: 538,
       },
@@ -41,7 +41,7 @@ const Lab = () => {
   
     const heroSectionProps = {
       originalBackgroundImage: {
-        src: '/lab_main_background.jpg',
+        src: '/heroSection/lab_main_background.jpg',
         alt: 'Hero Image',
         width: 1920,
         height: 1080,
@@ -53,7 +53,7 @@ const Lab = () => {
     }
   
     const experiences = {
-      projectTitle: "Recent Experiences",
+      projectTitle: "Experiences",
       projects: [
         {
           image: {
@@ -94,7 +94,7 @@ const Lab = () => {
     }
 
     const literatureReview = {
-      projectTitle: "Recent Literature Reviews",
+      projectTitle: "Literature Reviews",
       projects: [
         {
           image: {
@@ -136,13 +136,13 @@ const Lab = () => {
 
     const miniAboutProps = {
       profileImage: {
-        src: '/profile_photo_main.jpg',
+        src: '/miniAbout/profile_photo_main.jpg',
         alt: 'Profile Photo',
         width: 256,
         height: 256,
       },
       name: 'Lee Hyunwoo',
-      bio: "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.",
+      bio: "I am a passionate engineer with a deep focus on biomechatronics and research. Driven by an eagerness to pursue a path in scientific inquiry, I aim to make significant contributions to mankind by leveraging my skills and capabilities.",
       socialLinks: [
         {
           href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
@@ -177,13 +177,13 @@ const Lab = () => {
 
     const footerProps = {
       logo: {
-        src: '/jadehouse_lab.png',
+        src: '/logo/jadehouse_lab.png',
         alt: 'Website Logo',
         width: 64,
         height: 64,
       },
       title:"JadeHouse Lab",
-      description:"A short description of your website",
+      description:"Portfolio of my professional life",
       navLinks: [
         { text: 'Home', href: '/lab' },
         { text: 'About', href: '/lab/aboutme' },

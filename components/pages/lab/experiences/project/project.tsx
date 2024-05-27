@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 export default async function Project() {
   const headerProps ={
     imageProps: {
-      src: '/jadehouse_lab.png',
+      src: '/logo/jadehouse_lab.png',
       width: 418,
       height: 538,
     },
@@ -39,13 +39,13 @@ export default async function Project() {
 
 const footerProps = {
   logo: {
-    src: '/jadehouse_lab.png',
+    src: '/logo/jadehouse_lab.png',
     alt: 'Website Logo',
     width: 64,
     height: 64,
   },
   title:"JadeHouse Lab",
-  description:"A short description of your website",
+  description:"Portfolio of my professional life",
   navLinks: [
     { text: 'Home', href: '/lab' },
     { text: 'About', href: '/lab/aboutme' },

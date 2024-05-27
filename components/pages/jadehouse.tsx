@@ -8,7 +8,7 @@ import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 const JadeHouse = () => {
   const headerProps ={
     imageProps: {
-      src: '/jadehouse.png',
+      src: '/logo/jadehouse.png',
       width: 406,
       height: 526,
     },
@@ -23,7 +23,7 @@ const JadeHouse = () => {
 
   const heroSectionProps = {
     originalBackgroundImage: {
-      src: "/main_background.jpeg",
+      src: "/heroSection/main_background.jpeg",
       alt: "main background image",
       width: 1536,
       height: 1536,
@@ -34,7 +34,7 @@ const JadeHouse = () => {
       cards: [
         {
           image: {
-            src: "/jadehouse_lab.png",
+            src: "/logo/jadehouse_lab.png",
             alt: "jadehouse lab logo",
             width: 120,
             height: 120,
@@ -44,7 +44,7 @@ const JadeHouse = () => {
           buttonText: "Enter the Lab",
           buttonHref: "/lab",
           newBackgroundImage: {
-            src: "/lab_main_background.jpg",
+            src: "/heroSection/lab_main_background.jpg",
             alt: "lab background image",
             width: 1536,
             height: 1536,
@@ -52,7 +52,7 @@ const JadeHouse = () => {
         },
         {
           image: {
-            src: "/jadehouse_disco.png",
+            src: "/logo/jadehouse_disco.png",
             alt: "jadehouse disco logo",
             width: 120,
             height: 120,
@@ -62,7 +62,7 @@ const JadeHouse = () => {
           buttonText: "Enter the Disco",
           buttonHref: "/disco",
           newBackgroundImage: {
-            src: "/disco_main_background.jpg",
+            src: "/heroSection/disco_main_background.jpg",
             alt: "disco background image",
             width: 1536,
             height: 1536,
@@ -74,13 +74,13 @@ const JadeHouse = () => {
 
   const miniAboutProps = {
     profileImage: {
-      src: '/profile_photo_main.jpg',
+      src: '/miniAbout/profile_photo_main.jpg',
       alt: 'Profile Photo',
       width: 256,
       height: 256,
     },
     name: 'Lee Hyunwoo',
-    bio:  "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.",
+    bio:  "Hi, I'm Hyunwoo Lee, a passionate engineer and a curious soul with a love for music. Eager to learn new skills and chase my ambitions, I thrive on making new memories and trying new things. Join me as I blend creativity and technical expertise to shape a dynamic future.",
     socialLinks: [
       {
         href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
@@ -100,13 +100,13 @@ const JadeHouse = () => {
 
   const footerProps = {
     logo: {
-      src: '/jadehouse.png',
+      src: '/logo/jadehouse.png',
       alt: 'Website Logo',
       width: 64,
       height: 64,
     },
     title:"JadeHouse",
-    description:"A short description of your website",
+    description:"House of memory for my professional and personal life",
     navLinks: [
       { text: 'Lab', href: '/lab' },
       { text: 'Disco', href: '/disco' },

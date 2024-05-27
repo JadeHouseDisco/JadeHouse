@@ -34,11 +34,11 @@ const CourseTable: React.FC<courseTableProps> = ({ courseTableProps }) => {
                         </tr>
                         </thead>
                     </table>
-                    <table className="w-full table-auto">
+                    <table className="w-full table-fixed">
                         <thead>
                         <tr className="bg-gray-800">
-                            <th className="px-4 py-2 text-left">{table.thead.col1}</th>
-                            <th className="px-4 py-2 text-left">{table.thead.col2}</th>
+                            <th className="px-4 py-2 text-left w-[90%]">{table.thead.col1}</th>
+                            <th className="px-4 py-2 text-left w-[10%]">{table.thead.col2}</th>
                         </tr>
                         </thead>
                         <tbody>

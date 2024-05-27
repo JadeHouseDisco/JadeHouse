@@ -8,7 +8,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 const Interest = () => {
   const headerProps ={
     imageProps: {
-      src: '/jadehouse_disco.png',
+      src: '/logo/jadehouse_disco.png',
       width: 418,
       height: 538,
     },
@@ -114,7 +114,7 @@ const Interest = () => {
     
     const footerProps = {
       logo: {
-        src: '/jadehouse_lab.png',
+        src: '/logo/jadehouse_disco.png',
         alt: 'Website Logo',
         width: 64,
         height: 64,

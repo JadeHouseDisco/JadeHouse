@@ -12,7 +12,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 const Disco = () => {
   const headerProps ={
     imageProps: {
-      src: '/jadehouse_disco.png',
+      src: '/logo/jadehouse_disco.png',
       width: 418,
       height: 538,
     },
@@ -44,7 +44,7 @@ const Disco = () => {
   
   const heroSectionProps = {
     originalBackgroundImage: {
-      src: '/disco_main_background.jpg',
+      src: '/heroSection/disco_main_background.jpg',
       alt: 'Hero Image',
       width: 1920,
       height: 1080,
@@ -150,7 +150,7 @@ const Disco = () => {
 
     const miniAboutProps = {
       profileImage: {  
-        src: '/profile_photo_main.jpg',
+        src: '/miniAbout/profile_photo_main.jpg',
         alt: 'Profile Photo',
         width: 256,
         height: 256,
@@ -183,7 +183,7 @@ const Disco = () => {
 
     const footerProps = {
       logo: {
-        src: '/jadehouse_lab.png',
+        src: '/logo/jadehouse_disco.png',
         alt: 'Website Logo',
         width: 64,
         height: 64,

@@ -8,7 +8,7 @@ import Footer from "@/components/footer"
 const LabAboutMe = () => {
   const headerProps ={
     imageProps: {
-      src: '/jadehouse_lab.png',
+      src: '/logo/jadehouse_lab.png',
       width: 418,
       height: 538,
     },
@@ -40,41 +40,41 @@ const LabAboutMe = () => {
   
   const aboutMeIntroProps = {
     headerText: "Hi, I'm Hyunwoo",
-    pText: "Focused and determined mechanical engineering student graduating in 2025 with a strong interest in biorobotics and biomedical engineering. Eager to tackle practical problems to make a difference and enhance lives of anyone anywhere.",
-    imgSrc: "/lab_profile_image.png"
+    pText: "Focused and determined mechanical engineering student with a passion for biomechatronics and biomedical engineering. Committed to leveraging my technical expertise to develop technologies that enhance lives of anyone anywhere and ultiamtely lead the robotic evolution of mankind.",
+    imgSrc: "/aboutMeIntro/lab_profile_image.png"
   }
 
   const purposeVisionGoalsProps = {
     default: {
-        imageHref: "/test.png",
-        headText: "Default head text",
-        bodyText: "Default body text",
+        imageHref: "/purposeVisionGoals/default.jpg",
+        headText: "Fuel for my Ambitions",
+        bodyText: "Discover the driving forces behind my pursuit to make significant contributions and change the world. My purpose, vision, and goals reflect my commitment to enhance lives of anyone anywhere and lead the robotic evolution of mankind. Dive in to learn more about my aspirations and the impact I strive to make.",
     },
     buttons: [
       {
         buttonText: "Purpose",
         imageHref: "/test2.png",
-        headText: "Purpose head text",
-        bodyText: "Purpose body text"
+        headText: "Redefining Evolution",
+        bodyText: "I want technology to ensure everyone's right to life is respected, regardless of socioeconomic status. I envision transforming the perception of old age and disability from a handicap into an opportunity for an upgrade. Ultimately, I aim to push beyond the biological limits of humans and achieve a new era of robotic evolution."
       },
       {
         buttonText: "Vision",
         imageHref: "/test2.png",
-        headText: "Vision head text",
-        bodyText: "Vision body text"
+        headText: "Empowering Lives",
+        bodyText: "I wish to develop accessible and affordable technology that assist anyone anywhere. I strive for technology that outperforms its biological counterparts while seamlessely integrating with humans. I'm driven to normalize the replacement of biological parts with advanced prostheses, enhancing human capabilities and quality of life."
       },
       {
         buttonText: "Goals",
         imageHref: "/test2.png",
-        headText: "Goals head text",
-        bodyText: "Goals body text"
+        headText: "Revolutionizing Technology",
+        bodyText: "I aim to pioneer advancements in neurotechnology and prosthetics to revolutionize human-machine interaction. I strive to develop bi-directional brain-machine interfaces, both invasive and non-invasive, and engineer precise prostheses that outperform biological counterparts. Furthermore, I aspire to expand expertise into exoskeletons and implantable devices, augmenting human potential and fostering human-machine symbiosis."
       },
   ]
   }
 
   const skillsShowcaseProps = {
     headingText: "Skills",
-    bodyText: "As a skilled full-stack developer, I have a diverse set of expertise that allows me to tackle a wide rangeof web development projects. From crafting responsive user interfaces to building robust backend systems, I'm well-versed in the latest technologies and best practices.",
+    bodyText: "As a passionate engineer, I bring a versatile skill set to tackle diverse technical challenges and excel in various engineering projects. Committed to staying updated with the latest advancements and expanding my capabiliites, I am prepared to deliver innovative solutions and contribute effectively to any team or endeavor.",
     icons: [
       {
         icon: <CubeIcon className="h-12 w-12 text-primary" />,
@@ -125,13 +125,13 @@ const LabAboutMe = () => {
 
     const footerProps = {
       logo: {
-        src: '/jadehouse_lab.png',
+        src: '/logo/jadehouse_lab.png',
         alt: 'Website Logo',
         width: 64,
         height: 64,
       },
       title:"JadeHouse Lab",
-      description:"A short description of your website",
+      description:"Portfolio of my professional life",
       navLinks: [
         { text: 'Home', href: '/lab' },
         { text: 'About', href: '/lab/aboutme' },

@@ -9,7 +9,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 const Aboutme = () => {
     const headerProps ={
       imageProps: {
-        src: '/jadehouse_disco.png',
+        src: '/logo/jadehouse_disco.png',
         width: 418,
         height: 538,
       },
@@ -42,7 +42,7 @@ const Aboutme = () => {
     const aboutMeIntroProps = {
         headerText: "Nice to Meet you!",
         pText: "I am Hyunwoo, a curious and energetic soul always looking for new adventures. I love making new memories and selecting the perfect music to accompany them.",
-        imgSrc: "/disco_profile_image.jpg"
+        imgSrc: "/aboutMeIntro/disco_profile_image.jpg"
       }
 
     const familyIntroProps = {
@@ -50,7 +50,7 @@ const Aboutme = () => {
       descriptionText: "Say hello to my loved ones",
       images: [
         {
-          src: "/family_photo.jpg",
+          src: "/familyIntro/family_photo.jpg",
           map: {
             name: "family_photo_map",
             areas: [
@@ -139,7 +139,7 @@ const Aboutme = () => {
           areaTranslateY: -5,
         },
         {
-          src: "/pet_photo.jpg",
+          src: "/familyIntro/pet_photo.jpg",
           map: {
             name: "pet_photo_map",
             areas: [
@@ -295,7 +295,7 @@ const Aboutme = () => {
     
     const footerProps = {
       logo: {
-        src: '/jadehouse_lab.png',
+        src: '/logo/jadehouse_disco.png',
         alt: 'Website Logo',
         width: 64,
         height: 64,

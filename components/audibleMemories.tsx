@@ -70,7 +70,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
             >
                 <div> 
                     <Image 
-                        src="/front.jpg" 
+                        src="/audibleMemories/front.jpg" 
                         alt="front" 
                         fill 
                         className="object-cover border-white" 
@@ -80,7 +80,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                     [
                     <div key={`${index}-left`} className="relative">
                         <Image 
-                            src="/left.jpg"
+                            src="/audibleMemories/left.jpg"
                             alt="front" 
                             fill 
                             className="object-cover" 
@@ -114,7 +114,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                     </div>,
                     <div key={`${index}-right`} className="relative">
                         <Image 
-                            src="/right.jpg"
+                            src="/audibleMemories/right.jpg"
                             alt="front" 
                             fill 
                             className="object-cover" 
@@ -143,7 +143,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                 ))}
                 <div> 
                     <Image 
-                        src="/back.jpg" 
+                        src="/audibleMemories/back.jpg" 
                         alt="back" 
                         fill 
                         className="object-cover" 

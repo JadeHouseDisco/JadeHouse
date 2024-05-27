@@ -110,14 +110,14 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
           {/* Left side content */}
           <div className="aspect-square">
             <Image 
-              src="/record_player.jpeg" 
+              src="/recordPlayer/record_player.jpeg" 
               alt="record_player" 
               fill 
               className="object-cover" 
             />
             {!isPlaying && 
               <Image 
-                src="/tonearm_off.png" 
+                src="/recordPlayer/tonearm_off.png" 
                 alt="tonearm_off" 
                 fill 
                 className="object-cover" 
@@ -138,7 +138,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                 </div>
               </div>
             }
-            {isPlaying && <Image src="/tonearm_on.png" alt="tonearm_on" fill className="object-cover" />}
+            {isPlaying && <Image src="/recordPlayer/tonearm_on.png" alt="tonearm_on" fill className="object-cover" />}
           </div>
           {(isHovering && (!isDraggingAndHovering && !isPlaying)) && 
             <>
