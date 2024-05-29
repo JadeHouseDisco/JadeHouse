@@ -18,16 +18,11 @@ export async function getBlogPosts(dirPath: string): Promise<BlogPost[]> {
 
   for (const item of items) {
     const itemPath = path.join(researchDir, item);
-    const fullPath = '/home/delta/project/JadeHouse/app/lab/experiences/research/ureca';
-    const desiredPathRegex = /\/lab\/experiences\/(.*?)$/;
-    const match = fullPath.match(desiredPathRegex);
-    let href = '';
-    if (match) {
-      href = '/lab/experiences/' + match[1];
-    }
 
     const stats = await fs.stat(itemPath);
     if (stats.isDirectory()) {
+      const pathSegments = itemPath.split('app');
+      const href = pathSegments.length > 1 ? `${pathSegments.slice(1).join('app')}` : '';
       const dataFilePath = path.join(itemPath, 'data.json');
       const data = await fs.readFile(dataFilePath, 'utf8');
       const { title, date, content, imageHref, featured } = JSON.parse(data);

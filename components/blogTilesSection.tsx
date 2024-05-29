@@ -17,18 +17,24 @@ interface BlogTilesSectionProps {
 const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
     const [sortMethod, setSortMethod] = useState('featured');
     const [searchQuery, setSearchQuery] = useState('');
+    const [hoveringTile, setHoveringTile] = useState<number | null>(null);
 
     const sortBlogPosts = (method: string) => {
         const sortedBlogPosts = [...blogPosts].sort((a, b) => {
         switch (method) {
             case 'featured':
-            return b.featured === 'y' ? 1 : -1;
+                // First, sort by featured status
+                const featuredSort = b.featured === 'y' ? 1 : a.featured === 'y' ? -1 : 0;
+                if (featuredSort !== 0) return featuredSort;
+
+                // If featured status is the same, sort by date (newest to oldest)
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
             case 'newest':
-            return new Date(b.date).getTime() - new Date(a.date).getTime();
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
             case 'oldest':
-            return new Date(a.date).getTime() - new Date(b.date).getTime();
+                return new Date(a.date).getTime() - new Date(b.date).getTime();
             default:
-            return 0;
+                return 0;
         }
         });
         return sortedBlogPosts;
@@ -63,6 +69,14 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
     const handleSearchChange: HandleSearchChangeFunction = (event) => {
         setSearchQuery(event.target.value);
     };
+
+    const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+        setHoveringTile(index);
+    }
+
+    const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        setHoveringTile(null);
+    }
 
     return (
         <div className="mx-8 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 py-8">
@@ -126,9 +140,11 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredBlogPosts.map((blogPost, index) => (
                     <a 
-                        className="bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer"
+                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""}`}
                         href={blogPost.href}
                         key={index}
+                        onMouseEnter={(e) => handleMouseEnter(e, index)}
+                        onMouseLeave={handleMouseLeave}
                     >
                         <img
                             alt="Blog Post Image"
@@ -142,10 +158,19 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                             width={400}
                         />
                         <div className="p-4 bg-gray-700">
-                            <h3 className="text-lg font-semibold">
+                            <div className="whitespace-nowrap flex">
+                                <h3
+                                className={`text-lg font-semibold ${hoveringTile === index && blogPost.title.length > 25 ? "animate-marquee inline-block" : "truncate"}`}
+                                >
                                 {blogPost.title}
-                            </h3>
-                            <p className="text-gray-400 text-xs mb-2">
+                                </h3>
+                                {hoveringTile === index && blogPost.title.length > 25 && (
+                                <h3 className="absolute text-lg font-semibold animate-marquee2 inline-block">
+                                    {blogPost.title}
+                                </h3>
+                                )}
+                            </div>
+                            <p className=" text-xs mb-2">
                                 {blogPost.date}
                             </p>
                             <p className="text-gray-400 line-clamp-3">

@@ -28,7 +28,19 @@ const config: Config = {
         'custom-white': 'rgb(240, 242, 242)'
       },
       animation: {
-        spinRecord: 'spin 20s linear infinite',
+        spinRecord: 'spin 20s linear infinite forwards',
+        marquee: 'marquee 8s linear infinite',
+        marquee2: 'marquee2 8s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-105%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(105%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
     },
   },

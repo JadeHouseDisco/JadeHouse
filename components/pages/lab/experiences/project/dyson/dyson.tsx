@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, DownloadIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
-const Ureca = () => {
+const Dyson = () => {
   const headerProps ={
     imageProps: {
       src: '/logo/jadehouse_lab.png',
@@ -109,7 +109,7 @@ const Ureca = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                    src="/blogPosts/Heal_Heels/heels.jpg"
                     height="858"
                     width="858"
                 />
@@ -118,10 +118,10 @@ const Ureca = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
                 <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-                      Investigation of Novel Lattice Designs for 3D Printing
+                      Heal Heels
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
-                      Undergraduate Research Experience on CAmpus (URECA)
+                      Product Development Challenge
                     </p>
                 </div>
             </section>
@@ -364,4 +364,4 @@ const Ureca = () => {
       )
   }
   
-export default Ureca;
+export default Dyson;

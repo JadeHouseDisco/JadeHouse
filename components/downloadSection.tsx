@@ -16,7 +16,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ downloadSectionProps 
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{downloadSectionProps.title}</h2>
       <div className="mt-6">
         {downloadSectionProps.downloads.map((download, index) => (
-            <a
+          <a
             key={index}
             className="inline-flex items-center justify-center mx-2 h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
             href={download.href}
