@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, DownloadIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
-const Ureca = () => {
+const Delta = () => {
   const headerProps ={
     imageProps: {
       src: '/logo/jadehouse_lab.png',
@@ -109,7 +109,7 @@ const Ureca = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                    src="/blogPosts/Mobile_Robotics_Intern/map.png"
                     height="858"
                     width="858"
                 />
@@ -118,10 +118,10 @@ const Ureca = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
                 <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-                      Investigation of Novel Lattice Designs for 3D Printing
+                      Mobile Robotics Intern
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
-                      Undergraduate Research Experience on CAmpus (URECA)
+                    Delta-NTU Corporate Laboratory for Advanced Robotics
                     </p>
                 </div>
             </section>
@@ -147,14 +147,14 @@ const Ureca = () => {
 
               <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
-                      31 June 2022
+                      31 May 2024
                   </p>
 
                   <h1 id="summary" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
                       Summary
                   </h1>
                   <p className="my-4 max-w-3xl text-base md:text-lg">
-                    During my research at NTU's Undergraduate Research Experience on Campus (URECA) program, I explored innovative lattice designs for 3D printing under Dr. Lai Chang Quan. This project aimed to eliminate internal voids in lattice structures and optimize their mechanical properties, using tools like SolidWorks and COMSOL Multiphysics. Our findings revealed superior designs, which contributed to a co-authored paper currently under review. This hands-on experience was challenging yet rewarding, enhancing my technical skills and confirming my passion for research. It solidified my decision to pursue postgraduate studies and motivates me to engage in future research opportunities.
+                    During my 20-week internship as a Mobile Robotics Intern at Delta-NTU Corporate Laboratory for Advanced Robotics, I gained hands-on experience in developing an Autonomous Mobile Robot (AMR) to deliver medical supplies to elderly residents. Under the guidance of John Chua and Associate Professor Mir Feroskhan, I tackled responsibilities such as researching safety features, designing a mapping backpack, generating and post-processing pointcloud maps, and documenting procedures. Despite initial challenges in hardware and software development, I bridged my knowledge gaps through online resources, colleague advice, and hands-on experimentation. This experience not only enhanced my technical and soft skills but also taught me the importance of effective communication and user-centric design. Working with vulnerable populations and welfare organizations like Lion Befrienders provided valuable insights for my future projects. I am eager to apply these skills in new opportunities and highly recommend internships for their invaluable professional growth and networking opportunities.
                   </p>  
 
                   <hr className="my-12"></hr>
@@ -163,71 +163,74 @@ const Ureca = () => {
                       Introduction
                   </h1>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    During my research through NTU's Undergraduate Research Experience on Campus (URECA) program, I investigated 
-                    novel lattice designs for 3D printing under the guidance of Dr. Lai Chang Quan. This research opportunity 
-                    significantly contributed to my understanding of research methodologies and solidified my interest in 
-                    postgraduate studies.
+                    During my recent internship as a Mobile Robotics Intern at Delta-NTU Corporate Laboratory for Advanced Robotics, I had the opportunity to immerse myself in cutting-edge technology and innovative projects. This internship, a crucial component of my NTU Mechanical Engineering curriculum, spanned 20 weeks, from January 15th, 2024, to May 31st, 2024. Under the expert guidance of John Chua, a Senior Robotics Research Engineer at Delta Electronics, and Associate Professor Mir Feroskhan, I gained invaluable hands-on experience in the field of mobile robotics.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    Our research focused on developing a novel lattice design composed of two different types of unit cells to 
-                    eliminate internal voids and optimize mechanical properties. Many lattice designs have internal voids, 
-                    making them challenging to 3D print due to difficulties in removing support structures. Our goal was to design 
-                    a symmetrical lattice that avoids these voids while enhancing mechanical properties.
+                    Throughout my attachment, I actively contributed to the development of an Autonomous Mobile Robot (AMR) designed to deliver medical supplies and necessities to elderly residents in apartments. This project provided me with a comprehensive understanding of both software and hardware development, as well as practical fieldwork involving data collection, testing, and deployment. I also had the privilege directly engage with the elders to understand their difficulties and incorporate with their needs into development. The skills, lessons, and experiences I acquired during this period have significantly enhanced my capabilities and prepared me for future endeavors in the robotics.
                   </p>
 
-                  <h1 id="methodology" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
-                      Methodology
+                  <h1 id="journey" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
+                      Responsibilities
                   </h1>
                   <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
                     <div className="relative">
                       <Image
-                        alt="cad"
+                        alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/cad.jpg"
+                        src="/blogPosts/Mobile_Robotics_Intern/mapping.jpg"
                         height="800"
                         width="1600"
                       />
                     </div>
                     <div className="relative">
                       <Image
-                        alt="mesh"
+                        alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/mesh.jpg"
+                        src="/blogPosts/Mobile_Robotics_Intern/map_edit.png"
                         height="800"
                         width="1600"
                       />
                     </div>
                     <div className="relative">
                       <Image
-                        alt="optimization"
+                        alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                        src="/blogPosts/Mobile_Robotics_Intern/edited_map.png"
                         height="800"
                         width="1600"
                       />
                     </div>
                     <div className="text-center text-gray-400 text-sm">
-                      Symmetrical 3x3x3 lattice composed of plate and truss unit cells constructed with SolidWorks
+                      Using mapping backpack to collect pointcloud data
                     </div>
                     <div className="text-center text-gray-400 text-sm">
-                      Lattice divided into meshes for stress and strain analysis in COMSOL
+                      Editing pointcloud map
                     </div>
                     <div className="text-center text-gray-400 text-sm">
-                      Stress distribution in lattice from fixed compression simulated in COMSOL
+                      Comparison of raw and processed pointcloud map
                     </div>
                   </div>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    The research methodology involved three major steps:
+                    Key responsibilities of my position included:
                   </p>
                   <ul className="list-decimal my-1 pl-8">
                       <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Design</strong>: Using SolidWorks, I designed symmetrical lattices comprising two types of unit cells: plate and truss. Sixteen unique 3x3x3 symmetrical lattices were created.
+                        <strong>Safety Features of AMR</strong>: I conducted in-depth research into safety standards for AMRs and evaluated available safety components on the market. I designed basic safety feature implementations for the lab's AMR project, including a proof of concept for safety ultrasonic sensor implementation using safety relays.
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Analysis</strong>: Using COMSOL Multiphysics, I conducted stress and strain analyses on each lattice design. The fixed strain and corresponding stress data were used to calculate the elastic modulus, identifying designs with superior mechanical properties.
+                        <strong>Mapping Backpack</strong>: I researched existing mapping backpacks and designed two versions of a mapping backpack. This involved creating the components of the backpack, including plates and mounts, and analyzing IMU data and mapping quality to assess the stability of the backpack.
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Optimization</strong>: I optimized the thickness of the unit cells to maximize the elastic modulus at a given relative density, ensuring the lattice had no internal voids while maintaining optimal mechanical properties.
+                        <strong>Pointcloud Map Generation</strong>: I utilized the mapping backpack to collect pointcloud data for generating maps used in AMR navigation. I ensured the authenticity of map generation by preventing errors such as drifting or duplication.
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        <strong>Pointcloud Map Post-Processing</strong>: I installed and learned three post-processing packages to refine the generated pointcloud map. Using these packages, I corrected map errors, including drifting, inaccuracies, duplication, and unwanted dynamic/static obstacles.
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        <strong>Documentation</strong>: I created structured and easy-to-follow documentation detailing the usage of the mapping backpack and pointcloud map post-processing packages. This documentation was designed to be understandable and usable by individuals without prior knowledge of the project.
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        <strong>Sensors / Actuators Testing</strong>: I prepared various setups to test sensors and actuators before their implementation in the project. This involved collecting the necessary data to ensure the components functioned correctly prior to their use in development.
                       </li>
                   </ul>
 
@@ -237,62 +240,58 @@ const Ureca = () => {
                   <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
                     <div className="relative">
                       <Image
-                        alt="result1"
+                        alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result1.png"
+                        src="/blogPosts/Mobile_Robotics_Intern/safety.jpg"
+                         height="800"
+                        width="1600"
+                      />
+                    </div>
+                    <div className="relative">
+                      <Image
+                        alt="right"
+                        className="rounded-3xl inset-0 w-full h-full object-cover"
+                        src="/blogPosts/Mobile_Robotics_Intern/backpack.png"
                         height="800"
                         width="1600"
                       />
                     </div>
                     <div className="relative">
                       <Image
-                        alt="result2"
+                        alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result2.png"
-                        height="800"
-                        width="1600"
-                      />
-                    </div>
-                    <div className="relative">
-                      <Image
-                        alt="result3"
-                        className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result3.png"
+                        src="/blogPosts/Mobile_Robotics_Intern/map.png"
                         height="800"
                         width="1600"
                       />
                     </div>
                     <div className="text-center text-gray-400 text-sm">
-                      Elastic modulus of lattice with different structures at fixed unit cell thickness
+                      Safety ultrasonic sensor system circuit
                     </div>
                     <div className="text-center text-gray-400 text-sm">
-                      Relative modulus of lattice with different relative density
+                      Mapping backpack component breakdown
                     </div>
                     <div className="text-center text-gray-400 text-sm">
-                      Relative modulus of lattice with optimal unit cell thickness at different relative density
+                      Processed map against satellite image
                     </div>
                   </div>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    The key findings from the simulation and optimization process were:
+                    Key achievements from the internship are:
                   </p>
                   <ul className="list-disc my-1 pl-8">
                       <li className="max-w-3xl text-base md:text-lg">
-                        Lattices with 7 and 19 plate simple cubic unit cells demonstrated exceptional mechanical properties.
+                        Foundation for safety feature implementation 
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Lattice with 19 plate simple cubic unit cells showed optimal mechanical properties across almost all relative densities.
+                        Stable and reliable mapping backpack
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Lattice with 20 plate simple cubic unit cells showed optimal properties at 0.5 and 0.6 relative densities.
+                        Clean and accurate pointcloud map for navigation in deployment
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Composite lattices with optimized structure and thickness achieved relative modulus comparable to pure lattices, without internal voids.
+                        Rigorous documentation to replicate my work in the future
                       </li>
                   </ul>
-                  <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    My work contributed to a paper titled "Bioinspired Compound Nested Lattices with Programmable Isotropy and 
-                    Elastic Stiffness Up to Theoretical Limit," in which I am a co-author. The paper is currently under review.
-                  </p>
 
                   <h1 id="skills" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
                       Skills
@@ -302,22 +301,46 @@ const Ureca = () => {
                   </p>
                   <ul className="list-disc my-1 pl-8">
                       <li className="max-w-3xl text-base md:text-lg">
+                        Robot Operating System (ROS)
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        C++
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        Python
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
                         CAD (SolidWorks)
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Multiphysics analysis and finite element analysis (COMSOL)
+                        3D Lidar VSLAM
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Literature review
+                        Sensors and actuators (LIDAR)
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Research planning and execution
+                        Machine learning
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Data collection and processing
+                        Computer vision
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Journal/Paper writing
+                        Safety Sensors and components 
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        International standards
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        Project planning and execution
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        Rapid prototyping for proof of concept
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        Data collection and presentation
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        Structured documentation
                       </li>
                   </ul>
 
@@ -325,65 +348,30 @@ const Ureca = () => {
                     Reflection
                   </h1>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    The transition from classroom learning to hands-on research was challenging. I had to be self-directed, 
-                    formulate my own research questions, and develop methodologies. Conducting literature reviews and bridging 
-                    knowledge gaps were particularly difficult.
+                    During my internship, I faced several challenges that tested my adaptability and resilience. Initially, my lack of background knowledge in hardware and software development, along with limited hands-on experience, posed significant hurdles. Understanding parts, components, assembly, sensors, and software frameworks was daunting, and the transition from academic projects to workplace demands required independent planning and execution. To overcome these challenges, I invested time in bridging my knowledge gaps through online resources, advice from colleagues, and hands-on experimentation. This proactive approach, combined with a willingness to learn from every opportunity, enabled me to build confidence and enhance productivity.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    I am grateful for the guidance of Dr. Lai Chang Quan and Dr. Ian, who provided invaluable support and advice. 
-                    They taught me essential research skills and helped me navigate through challenges. With their support, I 
-                    learned that research is not always straightforward and that it requires patience and perseverance.
+                    I learned that continuous learning and adaptability are crucial for growth, and there are no shortcuts to achieving it. Online resources are valuable, but practice is essential for honing skills. Effective communication is also key to optimal productivity. These lessons underscored the importance of a growth mindset and ongoing development. My internship also provided insights into rapid prototyping, proof of concept, and the complexities of development, including fieldwork, data collection, and deployment. Working with the elderly and welfare organizations like Lion Befrienders highlighted the importance of user-centric design and collaboration to develop impactful solutions.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    This experience confirmed my passion for research and clarified my career path. Prior to this experience, I 
-                    was uncertain about my pursuit of career in research. Now, I understand both the challenges and rewards research 
-                    has to offer. I now feel confident in pursuing postgraduate studies, eager to push beyond the boundaries of 
-                    human knowledge and make significant impacts in my field.
+                    The skills and knowledge I gained are invaluable for future projects. I learned effective project design and management, team participation, and working with vulnerable populations and welfare organizations. These experiences have given me early insights into structuring teams for future projects in my startup, particularly in biomechatronics. I am eager to apply these skills in new opportunities and challenges, confident they will support my continued growth.
+                  </p>
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    For anyone considering an internship or research opportunity, I highly recommend seizing the chance. The practical skills, professional growth, and networking opportunities are invaluable. Embrace these opportunities fully; you won't regret the experience and knowledge gained.
                   </p>
 
                   <h1 id="conclusion" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
                     Conclusion
                   </h1>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    Throughout my research journey with NTU's Undergraduate Research Experience on Campus (URECA) program, I delved into innovative lattice designs for 3D printing under the mentorship of Dr. Lai Chang Quan. This invaluable experience provided a robust understanding of research methodologies and cemented my interest in pursuing postgraduate studies. We successfully developed novel symmetrical lattice designs optimized for 3D printing, demonstrating superior mechanical properties without internal voids.
+                    Reflecting on my internship at the Delta-NTU Corporate Laboratory for Advanced Robotics, I am immensely grateful for the invaluable experiences and lessons gained. Despite facing numerous challenges, I emerged with a wealth of new skills and knowledge, both technical and soft, essential for my professional development.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    This research not only enhanced my technical skills in design and analysis using tools like SolidWorks and COMSOL Multiphysics but also honed my ability to independently formulate research questions and develop effective methodologies. The support and guidance from Dr. Lai Chang Quan and Dr. Ian were crucial in navigating the complexities of the research process and overcoming the challenges I faced.
+                    I owe a great deal of appreciation to my supervisors and my colleagues, whose unwavering support and guidance were instrumental throughout my journey. This opportunity not only enhanced my understanding of mobile robotics and practical development procedures but also taught me the importance of working with vulnerable populations and welfare organizations. I look forward to apply my newfound knowledge and skills to future endeavors with confidence and enthusiasm.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    Reflecting on this experience, I realize how stepping out of my comfort zone and embracing new challenges contributed to my personal and professional growth. The journey, despite its difficulties, was immensely rewarding and confirmed my passion for research. This project stands as a significant milestone in my portfolio, showcasing my ability to contribute meaningfully to advanced research.
+                    Thank you for reading about my journey. I hope my experiences inspire others to pursue their passions and embrace every learning opportunity.
                   </p>
-                  <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    In conclusion, this research experience has been a transformative journey, reinforcing my dedication to exploring new frontiers in my field. I eagerly look forward to engaging in future research opportunities, driven by the desire to push the boundaries of human knowledge and achieve impactful outcomes.
-                  </p>
-
-                  <h1 id="files" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
-                    Files
-                  </h1>
-                  <div className="mt-4">
-                    <a
-                      className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      href="/files/MAE21044_Paper.pdf"
-                    >
-                      <DownloadIcon className="mr-2 h-5 w-5" />
-                      Paper
-                    </a>
-                    <a
-                      className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      href="/files/MAE21044_Poster.pdf"
-                    >
-                      <DownloadIcon className="mr-2 h-5 w-5" />
-                      Poster
-                    </a>
-                    <a
-                      className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      target="_blank"
-                      href="https://drive.google.com/file/d/1kwMP48bzeZ6ObKBA3E_a0L0PHvyj4kXq/view?usp=drive_link"
-                    >
-                      <DownloadIcon className="mr-2 h-5 w-5" />
-                      Results
-                    </a>
-                  </div>
 
               </div>
             </div>
@@ -392,4 +380,4 @@ const Ureca = () => {
       )
   }
   
-export default Ureca;
+export default Delta;

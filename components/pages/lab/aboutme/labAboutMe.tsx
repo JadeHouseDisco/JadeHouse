@@ -74,7 +74,7 @@ const LabAboutMe = () => {
 
   const skillsShowcaseProps = {
     headingText: "Skills",
-    bodyText: "As a passionate engineer, I bring a versatile skill set to tackle diverse technical challenges and excel in various engineering projects. Committed to staying updated with the latest advancements and expanding my capabiliites, I am prepared to deliver innovative solutions and contribute effectively to any team or endeavor.",
+    bodyText: "As a passionate engineer, I bring versatile skills set to tackle diverse technical challenges and excel in various engineering projects. Committed to staying updated with the latest advancements and expanding my capabiliites, I am prepared to deliver innovative solutions and contribute effectively to any team or endeavor.",
     icons: [
       {
         icon: <CubeIcon className="h-12 w-12 text-primary" />,
