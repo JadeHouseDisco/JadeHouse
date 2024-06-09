@@ -89,11 +89,11 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                         <div className="absolute inset-0 flex flex-col items-center justify-center h-full px-4 py-8 md:px-8 md:py-12 lg:px-12 lg:py-16 z-10">
                             <div className="text-black max-w-lg md:max-w-xl lg:max-w-2xl pt-2 md:pt-6 lg:pt-10">
                                 <Image
-                                src="/music/blonde.jpg"
+                                src={song.songSrc}
                                 alt="alt"
                                 width="544"
                                 height="544"
-                                className="object-cover h-96 w-96 mb-2"
+                                className="object-cover h-64 w-64 xl:h-96 xl:w-96 mb-2"
                                 />
                                 <div className="flex flex-col md:flex-row items-center justify-between">
                                     <h1 className="text-lg md:text-xl lg:text-2xl font-bold">
@@ -127,7 +127,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                             </div>
                             <div className="grid grid-cols-2 grid-rows-2 gap-2">
                                 {song.photos.map((photo, index) => (
-                                    <div key={index} className="relative w-64 h-64">
+                                    <div key={index} className="relative w-48 h-48 xl:w-64 xl:h-64">
                                         <Image 
                                             src={photo.src}
                                             alt={`photo-${index}`}

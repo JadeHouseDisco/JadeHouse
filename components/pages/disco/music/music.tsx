@@ -170,7 +170,7 @@ export default function Music() {
         songLink:"",
         songTitle: "Pink + White",
         songArtist: "Frank Ocean",
-        description: "Memory 1 description",
+        description: "Memory 2 description",
         memoryName: "Memory 2",
         photos: [
           { src: "/test.png", width: 1920, height: 1080 },
