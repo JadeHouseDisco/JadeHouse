@@ -9,6 +9,7 @@ export interface BlogPost {
   imageHref: string;
   href: string;
   featured: string;
+  active: string;
 }
 
 export async function getBlogPosts(dirPath: string): Promise<BlogPost[]> {
@@ -25,8 +26,8 @@ export async function getBlogPosts(dirPath: string): Promise<BlogPost[]> {
       const href = pathSegments.length > 1 ? `${pathSegments.slice(1).join('app')}` : '';
       const dataFilePath = path.join(itemPath, 'data.json');
       const data = await fs.readFile(dataFilePath, 'utf8');
-      const { title, date, content, imageHref, featured } = JSON.parse(data);
-      blogPosts.push({ slug: item, title, date, content, imageHref, href, featured });
+      const { title, date, content, imageHref, featured, active } = JSON.parse(data);
+      blogPosts.push({ slug: item, title, date, content, imageHref, href, featured, active });
     }
   }
 

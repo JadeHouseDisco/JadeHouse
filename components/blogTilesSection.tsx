@@ -11,6 +11,7 @@ interface BlogTilesSectionProps {
         imageHref: string,
         href: string,
         featured: string,
+        active: string,
     }[];
   }
 
@@ -28,6 +29,11 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                 if (featuredSort !== 0) return featuredSort;
 
                 // If featured status is the same, sort by date (newest to oldest)
+                return new Date(b.date).getTime() - new Date(a.date).getTime();
+            case 'active':
+                const activeSort = b.active === 'y' ? 1 : a.active === 'y' ? -1 : 0;
+                if (activeSort !== 0) return activeSort;
+
                 return new Date(b.date).getTime() - new Date(a.date).getTime();
             case 'newest':
                 return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -99,6 +105,19 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                     <div className="flex items-center gap-2">
                         <input
                         className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                        id="sort-active"
+                        name="sort"
+                        type="radio"
+                        checked={sortMethod === 'active'}
+                        onChange={() => setSortMethod('active')}
+                        />
+                        <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
+                        Active
+                        </label>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <input
+                        className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
                         id="sort-newest"
                         name="sort"
                         type="radio"
@@ -140,7 +159,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredBlogPosts.map((blogPost, index) => (
                     <a 
-                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""}`}
+                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""}`}
                         href={blogPost.href}
                         key={index}
                         onMouseEnter={(e) => handleMouseEnter(e, index)}
