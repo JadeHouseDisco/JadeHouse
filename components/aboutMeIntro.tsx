@@ -15,7 +15,7 @@ const AboutMeIntro: React.FC<AboutMeIntroProps> = ({ aboutMeIntroProps }) => {
           <h1 className="text-5xl font-bold tracking-tighter">
             {aboutMeIntroProps.headerText}
           </h1>
-          <p className="text-lg tracking-tight leading-[5vh]">
+          <p className="text-lg tracking-tight leading-[3vh]">
             {aboutMeIntroProps.pText}
             </p>
         </div>

@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 interface ProjectCardProps {
@@ -47,6 +49,16 @@ const CardFooter: React.FC<React.PropsWithChildren> = ({ children }) => (
 );
 
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
+  const [hoveringTile, setHoveringTile] = useState<number | null>(null);
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+      setHoveringTile(index);
+  }
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      setHoveringTile(null);
+  }
+  
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
@@ -59,6 +71,8 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
               className="transition duration-300 hover:scale-105 hover:cursor-pointer"
               href={project.viewLink}
               key={index}
+              onMouseEnter={(e) => handleMouseEnter(e, index)}
+              onMouseLeave={handleMouseLeave}
             >  
               <Card>
                 <CardHeader>
@@ -71,8 +85,19 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
                   />
                 </CardHeader>
                 <CardFooter>
-                  <div className="h-22 overflow-hidden">
-                    <CardTitle>{project.title}</CardTitle>
+                  <div className="h-22">
+                    <CardTitle>
+                      <div className="whitespace-nowrap flex relative">
+                        <p className = {`${hoveringTile === index && project.title.length > 25 ? "animate-marquee inline-block" : "truncate"}`}>
+                          {project.title}
+                        </p>
+                        {hoveringTile === index && project.title.length > 25 && (
+                          <p className="absolute animate-marquee2 inline-block">
+                              {project.title}
+                          </p>
+                        )}
+                      </div>
+                    </CardTitle>
                     <p className="text-gray-400 line-clamp-2">
                       {project.description}
                     </p>

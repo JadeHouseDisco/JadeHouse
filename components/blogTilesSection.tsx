@@ -140,7 +140,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredBlogPosts.map((blogPost, index) => (
                     <a 
-                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""}`}
+                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""}`}
                         href={blogPost.href}
                         key={index}
                         onMouseEnter={(e) => handleMouseEnter(e, index)}
@@ -162,7 +162,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                                 <h3
                                 className={`text-lg font-semibold ${hoveringTile === index && blogPost.title.length > 25 ? "animate-marquee inline-block" : "truncate"}`}
                                 >
-                                {blogPost.title}
+                                    {blogPost.title}
                                 </h3>
                                 {hoveringTile === index && blogPost.title.length > 25 && (
                                 <h3 className="absolute text-lg font-semibold animate-marquee2 inline-block">

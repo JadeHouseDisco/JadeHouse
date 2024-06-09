@@ -46,26 +46,26 @@ const LabAboutMe = () => {
 
   const purposeVisionGoalsProps = {
     default: {
-        imageHref: "/purposeVisionGoals/default.jpg",
+        imageHref: "/purposeVisionGoals/default.webp",
         headText: "Fuel for my Ambitions",
         bodyText: "Discover the driving forces behind my pursuit to make significant contributions and change the world. My purpose, vision, and goals reflect my commitment to enhance lives of anyone anywhere and lead the robotic evolution of mankind. Dive in to learn more about my aspirations and the impact I strive to make.",
     },
     buttons: [
       {
         buttonText: "Purpose",
-        imageHref: "/test2.png",
+        imageHref: "/purposeVisionGoals/purpose.webp",
         headText: "Redefining Evolution",
         bodyText: "I want technology to ensure everyone's right to life is respected, regardless of socioeconomic status. I envision transforming the perception of old age and disability from a handicap into an opportunity for an upgrade. Ultimately, I aim to push beyond the biological limits of humans and achieve a new era of robotic evolution."
       },
       {
         buttonText: "Vision",
-        imageHref: "/test2.png",
+        imageHref: "/purposeVisionGoals/vision.webp",
         headText: "Empowering Lives",
         bodyText: "I wish to develop accessible and affordable technology that assist anyone anywhere. I strive for technology that outperforms its biological counterparts while seamlessely integrating with humans. I'm driven to normalize the replacement of biological parts with advanced prostheses, enhancing human capabilities and quality of life."
       },
       {
         buttonText: "Goals",
-        imageHref: "/test2.png",
+        imageHref: "/purposeVisionGoals/goals.webp",
         headText: "Revolutionizing Technology",
         bodyText: "I aim to pioneer advancements in neurotechnology and prosthetics to revolutionize human-machine interaction. I strive to develop bi-directional brain-machine interfaces, both invasive and non-invasive, and engineer precise prostheses that outperform biological counterparts. Furthermore, I aspire to expand expertise into exoskeletons and implantable devices, augmenting human potential and fostering human-machine symbiosis."
       },

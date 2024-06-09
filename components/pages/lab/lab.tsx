@@ -2,11 +2,12 @@ import React from 'react';
 import Header from "@/components/header";
 import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
+import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
 import ProjectGrid from "@/components/projectGrid"
 import Footer from "@/components/footer"
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon } from "@/components/icons"
 
-const Lab = () => {
+export default async function Lab() {
     const headerProps ={ 
       imageProps: {
         src: '/logo/jadehouse_lab.png',
@@ -51,50 +52,41 @@ const Lab = () => {
         description: 'Portfolio of my professional life',
       },
     }
-  
+    
+    async function getAllBlogPosts(): Promise<BlogPost[]> {
+      const researchPosts = await getBlogPosts('app/lab/experiences/research');
+      const workshopPosts = await getBlogPosts('app/lab/experiences/work');
+      const courseworkPosts = await getBlogPosts('app/lab/experiences/project');
+    
+      const allBlogPosts = [...researchPosts, ...workshopPosts, ...courseworkPosts];
+      return allBlogPosts;
+    }
+    
+    const blogPosts = await getAllBlogPosts();
+
+    const featuredPosts = blogPosts
+    .filter(post => post.featured === 'y')
+    .map(post => ({
+      image: {
+        src: post.imageHref,
+        alt: post.title,
+        width: 400,
+        height: 300,
+      },
+      title: post.title,
+      description: post.content,
+      viewLink: post.href,
+    }));
+
     const experiences = {
-      projectTitle: "Experiences",
-      projects: [
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 1',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 1',
-          description: 'A web application that helps users manage their tasks and projects.',
-          viewLink: '/lab',
-        },
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 2',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 2',
-          description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
-          viewLink: '/lab',
-        },
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 3',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 3',
-          description: 'A design system that helps teams create consistent and high-quality user interfaces.',
-          viewLink: '/lab',
-        },
-      ],
+      projectTitle: "Featured Experiences",
+      projects: featuredPosts,
       viewAllLink: "/lab/experiences",
       buttonText:"View all Experiences"
     }
 
     const literatureReview = {
-      projectTitle: "Literature Reviews",
+      projectTitle: "Featured Literature Reviews",
       projects: [
         {
           image: {
@@ -230,5 +222,3 @@ const Lab = () => {
       </div>
     );
   };
-
-  export default Lab;

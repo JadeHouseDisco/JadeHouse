@@ -42,7 +42,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs }) => {
       centeredSlides={true}
       slidesPerView={'auto'}
       coverflowEffect={{
-        rotate: 50,
+        rotate: 30,
         stretch: 0,
         depth: 100,
         modifier: 1,
@@ -51,7 +51,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs }) => {
       rewind={true}
       mousewheel={true}
       autoplay={{
-        delay: 2000,
+        delay: 1500,
         disableOnInteraction: false,
       }}
       modules={[EffectCoverflow, Pagination, Mousewheel, Autoplay]}

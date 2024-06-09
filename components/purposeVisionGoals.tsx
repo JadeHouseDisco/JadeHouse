@@ -95,8 +95,8 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
     }
 
     return (
-        <div key="1" className="flex flex-col min-h-[100dvh]">
-            <section className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <div key="1" className="flex flex-col">
+            <section className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
                 <div className="z-10 absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-20%" />
                 <div className="z-10 absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
                 <div className={`z-10 absolute inset-0 bg-black transition-opacity duration-500 ${loaded ? 'opacity-0' : 'opacity-100'}`}></div>
@@ -113,6 +113,7 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                     width="1600"
                     onLoad={() => setLoaded(true)}
                 />
+                <div className="absolute inset-0 bg-gray-900/40"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
                     {headText}

@@ -41,13 +41,13 @@ const Aboutme = () => {
 
     const aboutMeIntroProps = {
         headerText: "Nice to Meet you!",
-        pText: "I am Hyunwoo, a curious and energetic soul always looking for new adventures. I love making new memories and selecting the perfect music to accompany them.",
+        pText: "I am Hyunwoo, a curious and energetic soul constantly in search of new adventures. Guided by my heart and driven by opportunity, I explore unique experiences that others might never encounter. Music is my constant companion, enriching my journey and helping me memorialize the unforgettable memories I create along the way.",
         imgSrc: "/aboutMeIntro/disco_profile_image.jpg"
       }
 
     const familyIntroProps = {
       titleText: "My Family",
-      descriptionText: "Say hello to my loved ones",
+      descriptionText: "Loved ones that keep me going",
       images: [
         {
           src: "/familyIntro/family_photo.jpg",
@@ -232,7 +232,7 @@ const Aboutme = () => {
 
     const backgroundTimelineProps = {
         titleText: "My Journey",
-        descriptionText: "Trace the footprint of my life",
+        descriptionText: "Footprints of my life",
         timeStamps: [
             {
                 location: 'Seoul, South Korea',
@@ -300,8 +300,8 @@ const Aboutme = () => {
         width: 64,
         height: 64,
       },
-      title:"JadeHouse Lab",
-      description:"A short description of your website",
+      title:"JadeHouse Disco",
+      description:"Archive of my personal life",
       navLinks: [
         { text: 'Home', href: '/disco' },
         { text: 'About', href: '/disco/aboutme' },

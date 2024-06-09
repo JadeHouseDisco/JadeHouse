@@ -51,7 +51,7 @@ const Disco = () => {
     },
     content: {
       title: 'Welcome to JadeHouse Disco',
-      description: 'Record of my personal life',
+      description: 'Archive of my personal life',
     },
   }
 
@@ -156,7 +156,7 @@ const Disco = () => {
         height: 256,
       },
       name: 'Lee Hyunwoo',
-      bio: "Hi, I'm John Doe, a passionate designer and developer. I've been creating beautiful and functional websites for over 5 years. I'm always eager to learn new technologies and techniques to improve my craft.",
+      bio: "Welcome, visitor! I am traveller with earphones, creating unforgettable memories throughout my journey. Driven by passion and curiosity, I seek out new adventures and unique experiences. My goal is to explore extraordinary places and engage in special activities, all to craft my own remarkable story.",
       socialLinks: [
         {
           href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
@@ -188,8 +188,8 @@ const Disco = () => {
         width: 64,
         height: 64,
       },
-      title:"JadeHouse Lab",
-      description:"A short description of your website",
+      title:"JadeHouse Disco",
+      description:"Archive of my personal life",
       navLinks: [
         { text: 'Home', href: '/disco' },
         { text: 'About', href: '/disco/aboutme' },

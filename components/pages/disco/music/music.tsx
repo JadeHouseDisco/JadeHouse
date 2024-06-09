@@ -190,8 +190,8 @@ export default function Music() {
       width: 64,
       height: 64,
     },
-    title:"JadeHouse Lab",
-    description:"A short description of your website",
+    title:"JadeHouse Disco",
+    description:"Archive of my personal life",
     navLinks: [
       { text: 'Home', href: '/disco' },
       { text: 'About', href: '/disco/aboutme' },

@@ -129,7 +129,7 @@ const Delta = () => {
             {/*blogPostContents*/}
             <div className="relative flex">
 
-              <nav className="sticky top-0 flex-none w-32 h-screen p-4 bg-black overflow-y-auto">
+              <nav className="sticky top-0 flex-none w-36 h-screen p-4 bg-black overflow-y-auto">
                 <h2 className="text-xl font-semibold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
