@@ -16,7 +16,7 @@ interface AcademicInfoSectionProps {
 
 const AcademicInfoSection: React.FC<AcademicInfoSectionProps> = ({ academicInfoSectionProps }) => {
   return (
-    <section className="px-8 pt-4 pb-4 mb-12">
+    <section className="px-8 pt-8 pb-4 mb-12">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{academicInfoSectionProps.title}</h2>
       <div className="mt-6 space-y-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
         {academicInfoSectionProps.sections.map((section, index) => (

@@ -116,7 +116,7 @@ const Disco = () => {
     ];
 
     const playlistIntroProps = {
-      titleText: "My Favorite Playlists",
+      titleText: "Favorite Playlists",
       playlists: [
         {
           name: "Indie Chill",
@@ -156,7 +156,7 @@ const Disco = () => {
         height: 256,
       },
       name: 'Lee Hyunwoo',
-      bio: "Welcome, visitor! I am traveller with earphones, creating unforgettable memories throughout my journey. Driven by passion and curiosity, I seek out new adventures and unique experiences. My goal is to explore extraordinary places and engage in special activities, all to craft my own remarkable story.",
+      bio: "I am traveller with earphones, creating unforgettable memories throughout my journey. Driven by passion and curiosity, I seek out new adventures and unique experiences. My goal is to explore extraordinary places and engage in special activities, all to craft my own remarkable story.",
       socialLinks: [
         {
           href: 'mailto:HYUNWOO001@e.ntu.edu.sg',

@@ -39,7 +39,7 @@ const Interest = () => {
   }
 
     const hobbyIntroProps = {
-      titleText: "My Hobbies",
+      titleText: "Hobbies",
       descriptionText: "Explore my hobbies...",
       hobbies: [
         {
@@ -82,7 +82,7 @@ const Interest = () => {
     }
 
     const bucketListProps = {
-      titleText: "My Bucket List",
+      titleText: "Bucket List",
       descriptionText: "Explore the adventures and experiences I hope to accomplish in my lifetime.",
       bucketList: [
         {

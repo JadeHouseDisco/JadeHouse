@@ -20,7 +20,7 @@ const PlaylistIntro: React.FC<PlaylistIntroProps> =({ PlaylistIntroProps }) => {
       <div className="container max-w-2xl px-4 md:px-6">
         <div className="max-w-5xl space-y-6">
           <div className="space-y-2 text-center">
-            <h2 className="text-3xl mb-8 font-bold tracking-tight sm:text-4xl">My Favorite Playlists</h2>
+            <h2 className="text-3xl mb-8 font-bold tracking-tight sm:text-4xl">{PlaylistIntroProps.titleText}</h2>
           </div>
           <Accordion className="space-y-2" collapsible type="single">
             {PlaylistIntroProps.playlists.map((playlist, index) => (

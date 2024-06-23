@@ -46,7 +46,7 @@ const Aboutme = () => {
       }
 
     const familyIntroProps = {
-      titleText: "My Family",
+      titleText: "Family",
       descriptionText: "Loved ones that keep me going",
       images: [
         {
@@ -231,7 +231,7 @@ const Aboutme = () => {
     }
 
     const backgroundTimelineProps = {
-        titleText: "My Journey",
+        titleText: "Journey",
         descriptionText: "Footprints of my life",
         timeStamps: [
             {
