@@ -40,42 +40,126 @@ const Interest = () => {
 
     const hobbyIntroProps = {
       titleText: "Hobbies",
-      descriptionText: "Explore my hobbies...",
+      descriptionText: "Things I love doing in my free time",
       hobbies: [
         {
           backgroundImage: {
-            src: "/test.png",
-            alt: "hobby 1",
+            src: "/interest/swimming.webp",
+            alt: "Swimming",
             width: 1920,
             height: 1080,
           },
           content: {
-            title: "Hobby 1",
-            description: "My hobby 1 is ...",
+            title: "Swimming",
+            description: "Swimming helps me release stress and clear my mind",
           }
         },
         {
           backgroundImage: {
-            src: "/test2.png",
-            alt: "hobby 2",
+            src: "/interest/running.webp",
+            alt: "Running",
             width: 1920,
             height: 1080,
           },
           content: {
-            title: "Hobby 2",
-            description: "My hobby 2 is ...",
+            title: "Running",
+            description: "Running with beautiful scenery and music relieves stress and creates lasting memories",
           }
         },
         {
           backgroundImage: {
-            src: "/main_background.jpeg",
-            alt: "hobby 2",
+            src: "/interest/cycling.webp",
+            alt: "Cycling",
+            width: 1920,
+            height: 1080,
+          },
+          content: {
+            title: "Cycling",
+            description: "Cycling along the riverside with the fresh wind makes any day special",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/mountain_climbing.webp",
+            alt: "Mountain Climbing",
+            width: 1920,
+            height: 1080,
+          },
+          content: {
+            title: "Mountain Climbing",
+            description: "The breathtaking scenery from the mountaintop is everlasting",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/snowboarding.webp",
+            alt: "Snowboarding",
+            width: 1920,
+            height: 1080,
+          },
+          content: {
+            title: "Snowboarding",
+            description: "The thrill of speed makes me forget the cold of winter",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/traveling.webp",
+            alt: "Traveling",
+            width: 1920,
+            height: 1080,
+          },
+          content: {
+            title: "Traveling",
+            description: "Exploring new places is full of surprises and wonders",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/music_digging.webp",
+            alt: "Music Digging",
+            width: 1920,
+            height: 1080,
+          },
+          content: {
+            title: "Music Digging",
+            description: "Adding new music to my collection creates new slots for audible memories",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/stocks.webp",
+            alt: "Stocks",
             width: 1536,
             height: 1536,
           },
           content: {
-            title: "Hobby 2",
-            description: "My hobby 2 is ...",
+            title: "Stocks",
+            description: "Predicting how the world will change is always exciting",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/reading.webp",
+            alt: "Reading",
+            width: 1536,
+            height: 1536,
+          },
+          content: {
+            title: "Reading",
+            description: "The best way to learn new things and explore my imagination",
+          }
+        },
+        {
+          backgroundImage: {
+            src: "/interest/tinker.webp",
+            alt: "Tinkering",
+            width: 1536,
+            height: 1536,
+          },
+          content: {
+            title: "Tinkering",
+            description: "The joy of bringing my imagination to reality",
           }
         }
       ],
