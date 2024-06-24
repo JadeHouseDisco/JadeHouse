@@ -57,13 +57,13 @@ const Interest = () => {
         {
           backgroundImage: {
             src: "/interest/running.webp",
-            alt: "Running",
+            alt: "Jogging",
             width: 1920,
             height: 1080,
           },
           content: {
-            title: "Running",
-            description: "Running with beautiful scenery and music relieves stress and creates lasting memories",
+            title: "Jogging",
+            description: "Jogging with beautiful scenery and music relieves stress and creates lasting memories",
           }
         },
         {
@@ -123,7 +123,7 @@ const Interest = () => {
           },
           content: {
             title: "Music Digging",
-            description: "Adding new music to my collection creates new slots for audible memories",
+            description: "Adding new music to my collection to create new slots for audible memories",
           }
         },
         {
@@ -167,31 +167,99 @@ const Interest = () => {
 
     const bucketListProps = {
       titleText: "Bucket List",
-      descriptionText: "Explore the adventures and experiences I hope to accomplish in my lifetime.",
+      descriptionText: "Explore the dreams of my lifetime",
       bucketList: [
         {
-          title: "bucket list item 1",
-          description: "bucket list item 1 description"
+          src:"/bucketlist/1.webp",
+          title: "Record a vlog of my ordinary day",
         },
         {
-          title: "bucket list item 2",
-          description: "bucket list item 2 description"
+          src:"/bucketlist/2.webp",
+          title: "Make travel vlog with the perfect song choice",
         },
         {
-          title: "bucket list item 2",
-          description: "bucket list item 2 description"
+          src:"/bucketlist/3.webp",
+          title: "Share my favorite playlists on internet",
         },
         {
-          title: "bucket list item 2",
-          description: "bucket list item 2 description"
+          src:"/bucketlist/4.webp",
+          title: "Go backpacking alone",
         },
         {
-          title: "bucket list item 2",
-          description: "bucket list item 2 description"
+          src:"/bucketlist/5.webp",
+          title: "Live in a foreign environment (preferably snowy) for a month",
         },
         {
-          title: "bucket list item 2",
-          description: "bucket list item 2 description"
+          src:"/bucketlist/6.webp",
+          title: "Go snowboarding in a snowy mountain",
+        },
+        {
+          src:"/bucketlist/7.webp",
+          title: "Go for scuba diving",
+        },
+        {
+          src:"/bucketlist/8.webp",
+          title: "Lie down and see shooting star flying across a sky full of stars",
+        },
+        {
+          src:"/bucketlist/9.webp",
+          title: "Watch the aurora",
+        },
+        {
+          src:"/bucketlist/10.webp",
+          title: "Build a igloo and a big snowman",
+        },
+        {
+          src:"/bucketlist/11.webp",
+          title: "Take a family portrait",
+        },
+        {
+          src:"/bucketlist/12.webp",
+          title: "Go to a concert",
+        },
+        {
+          src:"/bucketlist/13.webp",
+          title: "Get on a train and stop at a random location to explore",
+        },
+        {
+          src:"/bucketlist/14.webp",
+          title: "Make a photo album out of photos I took with the people I helped",
+        },
+        {
+          src:"/bucketlist/15.webp",
+          title: "Revisit places of nostalgia after 20 years",
+        },
+        {
+          src:"/bucketlist/16.webp",
+          title: "Label the countries I visit with a song",
+        },
+        {
+          src:"/bucketlist/17.webp",
+          title: "Have a drink with my old friends in our 30s",
+        },
+        {
+          src:"/bucketlist/18.webp",
+          title: "Make a speech at Ted Talks",
+        },
+        {
+          src:"/bucketlist/19.webp",
+          title: "Make a photo album of my favorite sceneries",
+        },
+        {
+          src:"/bucketlist/20.webp",
+          title: "Travel the space and visit other planets",
+        },
+        {
+          src:"/bucketlist/21.webp",
+          title: "Make my personal study and fill it with books I read",
+        },
+        {
+          src:"/bucketlist/22.webp",
+          title: "Have a personal lab to tinker",
+        },
+        {
+          src:"",
+          title: "Build my personal gym to do all the exercise I want",
         },
       ]
     }

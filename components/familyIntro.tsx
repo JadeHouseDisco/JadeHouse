@@ -21,6 +21,7 @@ interface FamilyIntroProps {
           coords: number[];
           popup: {
             titleText: string;
+            nicknameText: string;
             descriptionText: string;
             photos: { 
               src: string; 
@@ -101,17 +102,19 @@ const FamilyIntro: React.FC<FamilyIntroProps> = ({ familyIntroProps }) => {
     strokeColor?: string;
     popup?: {
       titleText: string;
+      nicknameText: string;
       descriptionText: string;
       photos: { 
         src: string; 
         width: number; 
-        height: number; 
+        height: number;
       }[];
     }
   }
 
   interface PopUp {
     titleText: string;
+    nicknameText: string;
     descriptionText: string;
     photos: { 
       src: string; 
@@ -166,12 +169,13 @@ const FamilyIntro: React.FC<FamilyIntroProps> = ({ familyIntroProps }) => {
       {popUp && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-start z-10 overflow-y-auto p-4" onClick={handleClosePopup}>
           <div className="bg-gray-900 text-white rounded-lg max-w-5xl mx-auto flex overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="w-3/4 p-6">
+            <div className="w-3/4 py-6 pl-6 pr-2">
               <PhotoAlbumGrid photoAlbumGridProps={popUp.photos} />
             </div>
-            <div className="w-1/4 p-6 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-4">{popUp.titleText}</h3>
-              <p className="mt-4">{popUp.descriptionText}</p>
+            <div className="w-1/4 p-4 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold ">{popUp.titleText}</h3>
+              <p className="text-sm text-gray-400 mb-4">{popUp.nicknameText}</p>
+              <p className="">{popUp.descriptionText}</p>
             </div>
           </div>
         </div>
