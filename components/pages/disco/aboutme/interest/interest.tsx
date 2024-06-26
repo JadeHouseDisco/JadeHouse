@@ -258,8 +258,24 @@ const Interest = () => {
           title: "Have a personal lab to tinker",
         },
         {
-          src:"",
+          src:"/bucketlist/23.webp",
           title: "Build my personal gym to do all the exercise I want",
+        },
+        {
+          src:"/bucketlist/24.webp",
+          title: "Learn boxing",
+        },
+        {
+          src:"/bucketlist/25.webp",
+          title: "Learn fencing",
+        },
+        {
+          src:"/bucketlist/26.webp",
+          title: "Learn archery",
+        },
+        {
+          src:"/bucketlist/27.webp",
+          title: "Learn shooting",
         },
       ]
     }
