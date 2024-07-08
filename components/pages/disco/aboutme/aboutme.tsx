@@ -256,7 +256,7 @@ const Aboutme = () => {
               detailedDescription: "A straw shows which way the wind blows. From the young age, teachers would tell my parents that I do what I please and move based on my curiosity and interests. Old habits never really fades away."
             },
             {
-              title: `That sounds dumb... lets do it.`,
+              title: `That sounds dumb... Lets do it.`,
               location: 'Seoul, South Korea',
               date: "January, 2009",
               description: "Enrolled in Gaewon elementary school",
@@ -333,8 +333,7 @@ const Aboutme = () => {
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/5/17.jpg?raw=true", width: 960, height: 1280 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/5/18.jpg?raw=true", width: 960, height: 1280 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/5/19.jpg?raw=true", width: 1280, height: 960 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/5/20.jpg?raw=true", width: 720, height: 1280 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/5/21.jpg?raw=true", width: 720, height: 1117 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/5/20.jpg?raw=true", width: 720, height: 1117 },
               ],
               detailedDescription: `During the pandemic, starting at NTU was a whirlwind. I was both excited and nervous as I stepped out from under my parents' wings. Living alone in a foreign country was tough but totally worth it. I was going around telling everyone my crazy dream of turning all the body's parts below the brain into robotic ones. My friends, knowing me well, joked that if anyone could pull that off, it would probably be me!`
             },
@@ -342,7 +341,7 @@ const Aboutme = () => {
               title: `When am I going home?`,
               location: 'Seoul, South Korea',
               date: "June, 2022",
-              description: 'Enlisted in Republic of Korea Army.',
+              description: 'Enlisted in Republic of Korea Army',
               photos: [
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/1.jpg?raw=true", width: 1080, height: 1440 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/2.jpg?raw=true", width: 3000, height: 4000 },
@@ -376,8 +375,7 @@ const Aboutme = () => {
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/30.jpg?raw=true", width: 960, height: 1280 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/31.jpg?raw=true", width: 721, height: 1280 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/32.jpg?raw=true", width: 960, height: 1280 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/33.jpg?raw=true", width: 721, height: 1280 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/34.jpg?raw=true", width: 720, height: 1280 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/6/33.jpg?raw=true", width: 720, height: 1280 },
               ],
               detailedDescription: "My country called, so I answered. After two years at NTU, I headed back to South Korea to fulfill my military service. The military was a rollercoaster with its highs and lows, but I learned things you definitely don't pick up in classrooms (like cutting grass and unblocking sewage pipes—skills I really hope I won't need in the future!). With plenty of downtime, I found myself always dreaming about the future."
             },
@@ -385,7 +383,7 @@ const Aboutme = () => {
               title: `This engine runs on caffeine.`,
               location: 'Singapore',
               date: "January, 2024",
-              description: 'Started professional internship at DELTA-NTU corporate lab.',
+              description: 'Started professional internship at DELTA-NTU corporate lab',
               photos: [
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/1.jpg?raw=true", width: 3024, height: 4032 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/2.jpg?raw=true", width: 3024, height: 4032 },
@@ -397,7 +395,7 @@ const Aboutme = () => {
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/8.jpg?raw=true", width: 1280, height: 853 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/9.jpg?raw=true", width: 2048, height: 1536 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/10.jpg?raw=true", width: 2048, height: 1536 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/11.jpg?raw=true", width: 1080, height: 2316 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/7/11.jpg?raw=true", width: 1080, height: 1411 },
               ],
               detailedDescription: "Life is short, and there's no time to waste. After getting out of the military, I jumped straight back into school for a professional internship. Freedom felt even sweeter after getting it back. Driven by ambition and a caffeine intake that probably reached dangerous levels, I went after everything I wanted. Those dreams I had in the military were turning into reality, and I finally figured out what I wanted to do with my life."
             },

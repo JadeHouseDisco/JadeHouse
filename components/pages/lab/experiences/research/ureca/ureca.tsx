@@ -129,8 +129,8 @@ const Ureca = () => {
             {/*blogPostContents*/}
             <div className="relative flex">
 
-              <nav className="sticky top-0 flex-none w-32 h-screen p-4 bg-black overflow-y-auto">
-                <h2 className="text-xl font-semibold mb-4">Contents</h2>
+              <nav className="sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+                <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
                     <li key={heading.id}>
@@ -291,7 +291,7 @@ const Ureca = () => {
                   </ul>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     My work contributed to a paper titled "Bioinspired Compound Nested Lattices with Programmable Isotropy and 
-                    Elastic Stiffness Up to Theoretical Limit," in which I am a co-author. The paper is currently under review.
+                    Elastic Stiffness Up to Theoretical Limit," in which I am a co-author. The paper was published in journal Composites Part B: Engineering. [<a className = "text-blue-500 text-under underline" target="_blank" href="https://doi.org/10.1016/j.compositesb.2024.111656">doi</a>]
                   </p>
 
                   <h1 id="skills" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
