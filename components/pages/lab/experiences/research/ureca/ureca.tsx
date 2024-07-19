@@ -248,7 +248,7 @@ const Ureca = () => {
                       <Image
                         alt="result2"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Despngigns_for_3D_Printing/result2?raw=true"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result2.png?raw=true"
                         height="800"
                         width="1600"
                       />
