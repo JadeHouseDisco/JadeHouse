@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Delta = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Delta = () => {
 
     const footerProps = {
         logo: {
-          src: '/logo/jadehouse_lab.png',
+          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
           alt: 'Website Logo',
           width: 64,
           height: 64,
@@ -109,7 +109,7 @@ const Delta = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Mobile_Robotics_Intern/map.png"
+                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map.png?raw=true"
                     height="858"
                     width="858"
                 />
@@ -177,7 +177,7 @@ const Delta = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Mobile_Robotics_Intern/mapping.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/mapping.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -186,7 +186,7 @@ const Delta = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Mobile_Robotics_Intern/map_edit.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map_edit.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -195,7 +195,7 @@ const Delta = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Mobile_Robotics_Intern/edited_map.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/edited_map.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -242,7 +242,7 @@ const Delta = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Mobile_Robotics_Intern/safety.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/safety.jpg?raw=true"
                          height="800"
                         width="1600"
                       />
@@ -251,7 +251,7 @@ const Delta = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Mobile_Robotics_Intern/backpack.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/backpack.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -260,7 +260,7 @@ const Delta = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Mobile_Robotics_Intern/map.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map.png?raw=true"
                         height="800"
                         width="1600"
                       />

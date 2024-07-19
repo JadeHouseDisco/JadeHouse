@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Daebudo = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Daebudo = () => {
 
   const footerProps = {
     logo: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       alt: 'Website Logo',
       width: 64,
       height: 64,
@@ -101,7 +101,7 @@ const Daebudo = () => {
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/blogPosts/Daebudo/1.jpg"
+                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/1.jpg?raw=true"
                   height="858"
                   width="858"
               />
@@ -179,7 +179,7 @@ const Daebudo = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Daebudo/3.jpeg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/3.jpeg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -188,7 +188,7 @@ const Daebudo = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Daebudo/2.jpeg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/2.jpeg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -197,7 +197,7 @@ const Daebudo = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Daebudo/7.jpeg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/7.jpeg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -224,7 +224,7 @@ const Daebudo = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Daebudo/4.jpeg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/4.jpeg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -233,7 +233,7 @@ const Daebudo = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Daebudo/5.jpeg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/5.jpeg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -242,7 +242,7 @@ const Daebudo = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Daebudo/6.jpeg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Daebudo/6.jpeg?raw=true"
                       height="800"
                       width="1600"
                     />

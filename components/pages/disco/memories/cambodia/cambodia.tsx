@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Cambodia = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Cambodia = () => {
 
   const footerProps = {
     logo: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       alt: 'Website Logo',
       width: 64,
       height: 64,
@@ -101,7 +101,7 @@ const Cambodia = () => {
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/blogPosts/Cambodia/3.jpg"
+                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/3.jpg?raw=true"
                   height="858"
                   width="858"
               />
@@ -167,7 +167,7 @@ const Cambodia = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Cambodia/2.jpg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/2.jpg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -176,7 +176,7 @@ const Cambodia = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Cambodia/5.jpg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/5.jpg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -185,7 +185,7 @@ const Cambodia = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Cambodia/6.jpg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/6.jpg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -215,7 +215,7 @@ const Cambodia = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Cambodia/1.jpg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/1.jpg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -224,7 +224,7 @@ const Cambodia = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Cambodia/7.jpg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/7.jpg?raw=true"
                       height="800"
                       width="1600"
                     />
@@ -233,7 +233,7 @@ const Cambodia = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="/blogPosts/Cambodia/4.jpg"
+                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/4.jpg?raw=true"
                       height="800"
                       width="1600"
                     />

@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 export default async function Perspective() {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const blogPosts = await getBlogPosts('app/disco/thoughts/perspective');
 
 const footerProps = {
   logo: {
-    src: '/logo/jadehouse_disco.png',
+    src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
     alt: 'Website Logo',
     width: 64,
     height: 64,

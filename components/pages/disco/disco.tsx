@@ -12,9 +12,10 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 const Disco = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       width: 418,
       height: 538,
+      
     },
     titles: [
       { text: 'JadeHouse', href: '/' },
@@ -44,7 +45,7 @@ const Disco = () => {
   
   const heroSectionProps = {
     originalBackgroundImage: {
-      src: '/heroSection/disco_main_background.jpg',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/disco_main_background.jpg?raw=true',
       alt: 'Hero Image',
       width: 1920,
       height: 1080,
@@ -98,7 +99,7 @@ const Disco = () => {
 
     const songGridProps = [
       {
-        image: '/music/blonde.jpg',
+        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/blonde.jpg?raw=true',
         title: 'Pink + White',
         artist: 'Frank Ocean',
         album: 'Blonde',
@@ -106,7 +107,7 @@ const Disco = () => {
         link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=vh4bUS2Tk1u1aWri"
       },
       {
-        image: '/album2.jpg',
+        image: '/test.png',
         title: 'Song Title 2',
         artist: 'Artist Name 2',
         album: 'Album Name 2',
@@ -150,7 +151,7 @@ const Disco = () => {
 
     const miniAboutProps = {
       profileImage: {  
-        src: '/miniAbout/profile_photo_main.jpg',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_main.jpg?raw=true',
         alt: 'Profile Photo',
         width: 256,
         height: 256,
@@ -183,7 +184,7 @@ const Disco = () => {
 
     const footerProps = {
       logo: {
-        src: '/logo/jadehouse_disco.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
         alt: 'Website Logo',
         width: 64,
         height: 64,

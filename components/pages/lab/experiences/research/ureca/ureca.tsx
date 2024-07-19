@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Ureca = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Ureca = () => {
 
     const footerProps = {
         logo: {
-          src: '/logo/jadehouse_lab.png',
+          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
           alt: 'Website Logo',
           width: 64,
           height: 64,
@@ -109,7 +109,7 @@ const Ureca = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg?raw=true"
                     height="858"
                     width="858"
                 />
@@ -183,7 +183,7 @@ const Ureca = () => {
                       <Image
                         alt="cad"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/cad.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/cad.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -192,7 +192,7 @@ const Ureca = () => {
                       <Image
                         alt="mesh"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/mesh.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/mesh.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -201,7 +201,7 @@ const Ureca = () => {
                       <Image
                         alt="optimization"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -239,7 +239,7 @@ const Ureca = () => {
                       <Image
                         alt="result1"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result1.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result1.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -248,7 +248,7 @@ const Ureca = () => {
                       <Image
                         alt="result2"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result2.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Despngigns_for_3D_Printing/result2?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -257,7 +257,7 @@ const Ureca = () => {
                       <Image
                         alt="result3"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result3.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result3.png?raw=true"
                         height="800"
                         width="1600"
                       />

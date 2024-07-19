@@ -8,7 +8,7 @@ import Footer from "@/components/footer"
 const LabAboutMe = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,31 +41,31 @@ const LabAboutMe = () => {
   const aboutMeIntroProps = {
     headerText: "Hi, I'm Hyunwoo",
     pText: "Focused and determined mechanical engineering student with a passion for biomechatronics and biomedical engineering. Committed to leveraging my technical expertise to develop technologies that enhance lives of anyone anywhere and ultiamtely lead the robotic evolution of mankind.",
-    imgSrc: "/aboutMeIntro/lab_profile_image.png"
+    imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/lab_profile_image.png?raw=true"
   }
 
   const purposeVisionGoalsProps = {
     default: {
-        imageHref: "/purposeVisionGoals/default.webp",
+        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/default.webp?raw=true",
         headText: "Fuel for my Ambitions",
         bodyText: "Discover the driving forces behind my pursuit to make significant contributions and change the world. My purpose, vision, and goals reflect my commitment to enhance lives of anyone anywhere and lead the robotic evolution of mankind. Dive in to learn more about my aspirations and the impact I strive to make.",
     },
     buttons: [
       {
         buttonText: "Purpose",
-        imageHref: "/purposeVisionGoals/purpose.webp",
+        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/purpose.webp?raw=true",
         headText: "Redefining Evolution",
         bodyText: "I want technology to ensure everyone's right to life is respected, regardless of socioeconomic status. I envision transforming the perception of old age and disability from a handicap into an opportunity for an upgrade. Ultimately, I aim to push beyond the biological limits of humans and achieve a new era of robotic evolution."
       },
       {
         buttonText: "Vision",
-        imageHref: "/purposeVisionGoals/vision.webp",
+        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/vision.webp?raw=true",
         headText: "Empowering Lives",
         bodyText: "I wish to develop accessible and affordable technology that assist anyone anywhere. I strive for technology that outperforms its biological counterparts while seamlessely integrating with humans. I'm driven to normalize the replacement of biological parts with advanced prostheses, enhancing human capabilities and quality of life."
       },
       {
         buttonText: "Goals",
-        imageHref: "/purposeVisionGoals/goals.webp",
+        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/goals.webp?raw=true",
         headText: "Revolutionizing Technology",
         bodyText: "I aim to pioneer advancements in neurotechnology and prosthetics to revolutionize human-machine interaction. I strive to develop bi-directional brain-machine interfaces, both invasive and non-invasive, and engineer precise prostheses that outperform biological counterparts. Furthermore, I aspire to expand expertise into exoskeletons and implantable devices, augmenting human potential and fostering human-machine symbiosis."
       },
@@ -125,7 +125,7 @@ const LabAboutMe = () => {
 
     const footerProps = {
       logo: {
-        src: '/logo/jadehouse_lab.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
         alt: 'Website Logo',
         width: 64,
         height: 64,

@@ -8,7 +8,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 const Interest = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -44,7 +44,7 @@ const Interest = () => {
       hobbies: [
         {
           backgroundImage: {
-            src: "/interest/swimming.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/swimming.webp?raw=true",
             alt: "Swimming",
             width: 1920,
             height: 1080,
@@ -56,7 +56,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/running.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/running.webp?raw=true",
             alt: "Jogging",
             width: 1920,
             height: 1080,
@@ -68,7 +68,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/cycling.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/cycling.webp?raw=true",
             alt: "Cycling",
             width: 1920,
             height: 1080,
@@ -80,7 +80,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/mountain_climbing.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/mountain_climbing.webp?raw=true",
             alt: "Mountain Climbing",
             width: 1920,
             height: 1080,
@@ -92,7 +92,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/snowboarding.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/snowboarding.webp?raw=true",
             alt: "Snowboarding",
             width: 1920,
             height: 1080,
@@ -104,7 +104,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/traveling.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/traveling.webp?raw=true",
             alt: "Traveling",
             width: 1920,
             height: 1080,
@@ -116,7 +116,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/music_digging.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/music_digging.webp?raw=true",
             alt: "Music Digging",
             width: 1920,
             height: 1080,
@@ -128,7 +128,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/stocks.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/stocks.webp?raw=true",
             alt: "Stocks",
             width: 1536,
             height: 1536,
@@ -140,7 +140,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/reading.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/reading.webp?raw=true",
             alt: "Reading",
             width: 1536,
             height: 1536,
@@ -152,7 +152,7 @@ const Interest = () => {
         },
         {
           backgroundImage: {
-            src: "/interest/tinker.webp",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/interest/tinker.webp?raw=true",
             alt: "Tinkering",
             width: 1536,
             height: 1536,
@@ -170,111 +170,111 @@ const Interest = () => {
       descriptionText: "Explore the dreams of my lifetime",
       bucketList: [
         {
-          src:"/bucketlist/1.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/1.webp?raw=true",
           title: "Record a vlog of my ordinary day",
         },
         {
-          src:"/bucketlist/2.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/2.webp?raw=true",
           title: "Make travel vlog with the perfect song choice",
         },
         {
-          src:"/bucketlist/3.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/3.webp?raw=true",
           title: "Share my favorite playlists on internet",
         },
         {
-          src:"/bucketlist/4.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/4.webp?raw=true",
           title: "Go backpacking alone",
         },
         {
-          src:"/bucketlist/5.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/5.webp?raw=true",
           title: "Live in a foreign environment (preferably snowy) for a month",
         },
         {
-          src:"/bucketlist/6.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/6.webp?raw=true",
           title: "Go snowboarding in a snowy mountain",
         },
         {
-          src:"/bucketlist/7.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/7.webp?raw=true",
           title: "Go for scuba diving",
         },
         {
-          src:"/bucketlist/8.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/8.webp?raw=true",
           title: "Lie down and see shooting star flying across a sky full of stars",
         },
         {
-          src:"/bucketlist/9.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/9.webp?raw=true",
           title: "Watch the aurora",
         },
         {
-          src:"/bucketlist/10.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/10.webp?raw=true",
           title: "Build a igloo and a big snowman",
         },
         {
-          src:"/bucketlist/11.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/11.webp?raw=true",
           title: "Take a family portrait",
         },
         {
-          src:"/bucketlist/12.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/12.webp?raw=true",
           title: "Go to a concert",
         },
         {
-          src:"/bucketlist/13.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/13.webp?raw=true",
           title: "Get on a train and stop at a random location to explore",
         },
         {
-          src:"/bucketlist/14.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/14.webp?raw=true",
           title: "Make a photo album out of photos I took with the people I helped",
         },
         {
-          src:"/bucketlist/15.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/15.webp?raw=true",
           title: "Revisit places of nostalgia after 20 years",
         },
         {
-          src:"/bucketlist/16.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/16.webp?raw=true",
           title: "Label the countries I visit with a song",
         },
         {
-          src:"/bucketlist/17.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/17.webp?raw=true",
           title: "Have a drink with my old friends in our 30s",
         },
         {
-          src:"/bucketlist/18.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/18.webp?raw=true",
           title: "Make a speech at Ted Talks",
         },
         {
-          src:"/bucketlist/19.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/19.webp?raw=true",
           title: "Make a photo album of my favorite sceneries",
         },
         {
-          src:"/bucketlist/20.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/20.webp?raw=true",
           title: "Travel the space and visit other planets",
         },
         {
-          src:"/bucketlist/21.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/21.webp?raw=true",
           title: "Make my personal study and fill it with books I read",
         },
         {
-          src:"/bucketlist/22.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/22.webp?raw=true",
           title: "Have a personal lab to tinker",
         },
         {
-          src:"/bucketlist/23.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/23.webp?raw=true",
           title: "Build my personal gym to do all the exercise I want",
         },
         {
-          src:"/bucketlist/24.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/24.webp?raw=true",
           title: "Learn boxing",
         },
         {
-          src:"/bucketlist/25.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/25.webp?raw=true",
           title: "Learn fencing",
         },
         {
-          src:"/bucketlist/26.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/26.webp?raw=true",
           title: "Learn archery",
         },
         {
-          src:"/bucketlist/27.webp",
+          src:"https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/bucketlist/27.webp?raw=true",
           title: "Learn shooting",
         },
       ]
@@ -282,7 +282,7 @@ const Interest = () => {
     
     const footerProps = {
       logo: {
-        src: '/logo/jadehouse_disco.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
         alt: 'Website Logo',
         width: 64,
         height: 64,

@@ -10,7 +10,7 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORC
 export default async function Lab() {
     const headerProps ={ 
       imageProps: {
-        src: '/logo/jadehouse_lab.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
         width: 418,
         height: 538,
       },
@@ -42,7 +42,7 @@ export default async function Lab() {
   
     const heroSectionProps = {
       originalBackgroundImage: {
-        src: '/heroSection/lab_main_background.jpg',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/lab_main_background.jpg?raw=true',
         alt: 'Hero Image',
         width: 1920,
         height: 1080,
@@ -169,7 +169,7 @@ export default async function Lab() {
 
     const footerProps = {
       logo: {
-        src: '/logo/jadehouse_lab.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
         alt: 'Website Logo',
         width: 64,
         height: 64,

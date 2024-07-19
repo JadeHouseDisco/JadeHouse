@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 export default async function Work() {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -39,7 +39,7 @@ export default async function Work() {
 
 const footerProps = {
   logo: {
-    src: '/logo/jadehouse_lab.png',
+    src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
     alt: 'Website Logo',
     width: 64,
     height: 64,

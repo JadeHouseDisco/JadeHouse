@@ -8,7 +8,7 @@ import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 const JadeHouse = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true',
       width: 406,
       height: 526,
     },
@@ -23,7 +23,7 @@ const JadeHouse = () => {
 
   const heroSectionProps = {
     originalBackgroundImage: {
-      src: "/heroSection/main_background.jpeg",
+      src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/main_background.jpeg?raw=true",
       alt: "main background image",
       width: 1536,
       height: 1536,
@@ -34,7 +34,7 @@ const JadeHouse = () => {
       cards: [
         {
           image: {
-            src: "/logo/jadehouse_lab.png",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true",
             alt: "jadehouse lab logo",
             width: 120,
             height: 120,
@@ -44,7 +44,7 @@ const JadeHouse = () => {
           buttonText: "Enter the Lab",
           buttonHref: "/lab",
           newBackgroundImage: {
-            src: "/heroSection/lab_main_background.jpg",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/lab_main_background.jpg?raw=true",
             alt: "lab background image",
             width: 1536,
             height: 1536,
@@ -52,7 +52,7 @@ const JadeHouse = () => {
         },
         {
           image: {
-            src: "/logo/jadehouse_disco.png",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true",
             alt: "jadehouse disco logo",
             width: 120,
             height: 120,
@@ -62,7 +62,7 @@ const JadeHouse = () => {
           buttonText: "Enter the Disco",
           buttonHref: "/disco",
           newBackgroundImage: {
-            src: "/heroSection/disco_main_background.jpg",
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/disco_main_background.jpg?raw=true",
             alt: "disco background image",
             width: 1536,
             height: 1536,
@@ -74,7 +74,7 @@ const JadeHouse = () => {
 
   const miniAboutProps = {
     profileImage: {
-      src: '/miniAbout/profile_photo_main.jpg',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_main.jpg?raw=true',
       alt: 'Profile Photo',
       width: 256,
       height: 256,
@@ -100,7 +100,7 @@ const JadeHouse = () => {
 
   const footerProps = {
     logo: {
-      src: '/logo/jadehouse.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true',
       alt: 'Website Logo',
       width: 64,
       height: 64,

@@ -9,7 +9,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 const Aboutme = () => {
     const headerProps ={
       imageProps: {
-        src: '/logo/jadehouse_disco.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
         width: 418,
         height: 538,
       },
@@ -42,7 +42,7 @@ const Aboutme = () => {
     const aboutMeIntroProps = {
         headerText: "Nice to Meet you!",
         pText: "I am Hyunwoo, a curious and energetic soul constantly in search of new adventures. Guided by my heart and driven by opportunity, I explore unique experiences that others might never encounter. Music is my constant companion, enriching my journey and helping me memorialize the unforgettable memories I create along the way.",
-        imgSrc: "/aboutMeIntro/disco_profile_image.jpg"
+        imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/disco_profile_image.jpg?raw=true"
       }
 
     const familyIntroProps = {
@@ -50,7 +50,7 @@ const Aboutme = () => {
       descriptionText: "Loved ones that keep me going",
       images: [
         {
-          src: "/familyIntro/family_photo.jpeg",
+          src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/familyIntro/family_photo.jpeg?raw=true",
           map: {
             name: "family_photo_map",
             areas: [
@@ -136,7 +136,7 @@ const Aboutme = () => {
           areaTranslateY: -5,
         },
         {
-          src: "/familyIntro/pet_photo.jpg",
+          src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/familyIntro/pet_photo.jpg?raw=true",
           map: {
             name: "pet_photo_map",
             areas: [
@@ -420,7 +420,7 @@ const Aboutme = () => {
     
     const footerProps = {
       logo: {
-        src: '/logo/jadehouse_disco.png',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
         alt: 'Website Logo',
         width: 64,
         height: 64,
