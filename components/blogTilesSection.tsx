@@ -22,27 +22,28 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
 
     const sortBlogPosts = (method: string) => {
         const sortedBlogPosts = [...blogPosts].sort((a, b) => {
-        switch (method) {
-            case 'featured':
-                // First, sort by featured status
-                const featuredSort = b.featured === 'y' ? 1 : a.featured === 'y' ? -1 : 0;
-                if (featuredSort !== 0) return featuredSort;
-
-                // If featured status is the same, sort by date (newest to oldest)
-                return new Date(b.date).getTime() - new Date(a.date).getTime();
-            case 'active':
-                const activeSort = b.active === 'y' ? 1 : a.active === 'y' ? -1 : 0;
-                if (activeSort !== 0) return activeSort;
-
-                return new Date(b.date).getTime() - new Date(a.date).getTime();
-            case 'newest':
-                return new Date(b.date).getTime() - new Date(a.date).getTime();
-            case 'oldest':
-                return new Date(a.date).getTime() - new Date(b.date).getTime();
-            default:
-                return 0;
-        }
+            const dateSort = new Date(b.date).getTime() - new Date(a.date).getTime();
+    
+            switch (method) {
+                case 'featured':
+                    const featuredSort = (b.featured === 'y' ? 1 : 0) - (a.featured === 'y' ? 1 : 0);
+                    if (featuredSort !== 0) return featuredSort;
+    
+                    return dateSort;
+                case 'active':
+                    const activeSort = (b.active === 'y' ? 1 : 0) - (a.active === 'y' ? 1 : 0);
+                    if (activeSort !== 0) return activeSort;
+    
+                    return dateSort;
+                case 'newest':
+                    return dateSort;
+                case 'oldest':
+                    return -dateSort;
+                default:
+                    return 0;
+            }
         });
+    
         return sortedBlogPosts;
     };
 
