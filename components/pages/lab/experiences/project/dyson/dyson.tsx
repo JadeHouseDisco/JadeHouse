@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Dyson = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Dyson = () => {
 
     const footerProps = {
         logo: {
-          src: '/logo/jadehouse_lab.png',
+          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
           alt: 'Website Logo',
           width: 64,
           height: 64,
@@ -109,7 +109,7 @@ const Dyson = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Heal_Heels/heels.jpg"
+                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heels.jpg?raw=true"
                     height="858"
                     width="858"
                 />
@@ -129,8 +129,8 @@ const Dyson = () => {
             {/*blogPostContents*/}
             <div className="relative flex">
 
-              <nav className="sticky top-0 flex-none w-32 h-screen p-4 bg-black overflow-y-auto">
-                <h2 className="text-xl font-semibold mb-4">Contents</h2>
+              <nav className="sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+                <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
                     <li key={heading.id}>
@@ -177,7 +177,7 @@ const Dyson = () => {
                       <Image
                         alt="sketch"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/sketch.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/sketch.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -186,7 +186,7 @@ const Dyson = () => {
                       <Image
                         alt="make1"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/make1.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/make1.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -195,7 +195,7 @@ const Dyson = () => {
                       <Image
                         alt="disassembled"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/disassembled.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/disassembled.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -242,7 +242,7 @@ const Dyson = () => {
                       <Image
                         alt="heels"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/heels.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heels.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -251,7 +251,7 @@ const Dyson = () => {
                       <Image
                         alt="flat"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/flat.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/flat.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -260,7 +260,7 @@ const Dyson = () => {
                       <Image
                         alt="heel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/heel.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heel.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -322,7 +322,7 @@ const Dyson = () => {
                       <Image
                         alt="air"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/air_heels.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/air_heels.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -331,7 +331,7 @@ const Dyson = () => {
                       <Image
                         alt="screw"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/screw_heels.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/screw_heels.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -340,7 +340,7 @@ const Dyson = () => {
                       <Image
                         alt="step"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Heal_Heels/step_heels.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/step_heels.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -425,7 +425,6 @@ const Dyson = () => {
                       Demo Videos
                     </a>
                   </div>
-
               </div>
             </div>
             <Footer footerProps={footerProps}/>

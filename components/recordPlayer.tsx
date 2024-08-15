@@ -110,14 +110,14 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
           {/* Left side content */}
           <div className="aspect-square">
             <Image 
-              src="/recordPlayer/record_player.jpeg" 
+              src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/record_player.jpeg?raw=true" 
               alt="record_player" 
               fill 
               className="object-cover" 
             />
             {!isPlaying && 
               <Image 
-                src="/recordPlayer/tonearm_off.png" 
+                src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/tonearm_off.png?raw=true" 
                 alt="tonearm_off" 
                 fill 
                 className="object-cover" 
@@ -138,7 +138,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                 </div>
               </div>
             }
-            {isPlaying && <Image src="/recordPlayer/tonearm_on.png" alt="tonearm_on" fill className="object-cover" />}
+            {isPlaying && <Image src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/tonearm_on.png?raw=true" alt="tonearm_on" fill className="object-cover" />}
           </div>
           {(isHovering && (!isDraggingAndHovering && !isPlaying)) && 
             <>

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PhotoAlbumGrid from '@/components/ui/photoAlbumGrid';
 
 interface Timestamp {
+  title: string;
   location: string;
   date: string;
   description: string;
@@ -57,12 +58,13 @@ const BackgroundTimeline: React.FC<BackgroundTimelineProps> = ({ backgroundTimel
             >
               <div className="aspect-square w-3 rounded-full absolute left-1/2 -translate-x-1/2 z-10 top-0 bg-gray-50" />
               <div
-                className={`bg-gray-900 p-4 rounded-md shadow-sm border border-gray-800 grid gap-2 ${
+                className={`bg-gray-900 p-4 rounded-md shadow-sm border border-gray-800 grid  ${
                   index % 2 === 0 ? "justify-self-start" : "justify-self-end"
                 } w-[calc(50%_-_2rem)] cursor-pointer hover:scale-105 transition-transform duration-300`}
               >
-                <div className="text-lg font-medium">{timeStamp.location}</div>
-                <div className="font-medium text-gray-400">{timeStamp.date}</div>
+                <div className="text-lg font-bold mb-2">{timeStamp.title}</div>
+                <div className="text-s font-medium">{timeStamp.date}</div>
+                <div className="text-xs text-gray-400 mb-2">{timeStamp.location}</div>
                 <div className="text-gray-400">{timeStamp.description}</div>
               </div>
             </div>
@@ -79,7 +81,7 @@ const BackgroundTimeline: React.FC<BackgroundTimelineProps> = ({ backgroundTimel
             onClick={(e) => e.stopPropagation()}
           >
             <div className="px-8 py-6">
-              <h3 className="text-2xl font-bold mb-4">{activeTimestamp.location}</h3>
+              <h3 className="text-2xl font-bold mb-4">{activeTimestamp.title}</h3>
               <PhotoAlbumGrid photoAlbumGridProps={activeTimestamp.photos} />
               <p className="mt-4">{activeTimestamp.detailedDescription}</p>
             </div>

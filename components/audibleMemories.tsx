@@ -70,7 +70,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
             >
                 <div> 
                     <Image 
-                        src="/audibleMemories/front.jpg" 
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/front.jpg?raw=true" 
                         alt="front" 
                         fill 
                         className="object-cover border-white" 
@@ -80,7 +80,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                     [
                     <div key={`${index}-left`} className="relative">
                         <Image 
-                            src="/audibleMemories/left.jpg"
+                            src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/left.jpg?raw=true"
                             alt="front" 
                             fill 
                             className="object-cover" 
@@ -114,7 +114,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                     </div>,
                     <div key={`${index}-right`} className="relative">
                         <Image 
-                            src="/audibleMemories/right.jpg"
+                            src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/right.jpg?raw=true"
                             alt="front" 
                             fill 
                             className="object-cover" 
@@ -143,7 +143,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                 ))}
                 <div> 
                     <Image 
-                        src="/audibleMemories/back.jpg" 
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/back.jpg?raw=true" 
                         alt="back" 
                         fill 
                         className="object-cover" 

@@ -8,7 +8,7 @@ import Footer from "@/components/footer"
 export default function Music() {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -48,7 +48,7 @@ export default function Music() {
         album: "Blonde",
         link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=Hdqkv4Xt3zXE8mB1",
         description: "Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White Description Pink + White",
-        src: "/music/blonde.jpg"
+        src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/blonde.jpg?raw=true"
       },
       {
         title: "Summertime",
@@ -56,7 +56,7 @@ export default function Music() {
         album: "Inspirations",
         link: "https://music.youtube.com/watch?v=S-AAQvQrPaw&si=reYEAFXIMnq9HPaR",
         description: "Summertime Description",
-        src: "/music/inspirations.jpg"
+        src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/inspirations.jpg?raw=true"
       },
     ]
   }
@@ -185,7 +185,7 @@ export default function Music() {
 
   const footerProps = {
     logo: {
-      src: '/logo/jadehouse_disco.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
       alt: 'Website Logo',
       width: 64,
       height: 64,

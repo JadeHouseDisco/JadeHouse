@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Martdeliv = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Martdeliv = () => {
 
     const footerProps = {
         logo: {
-          src: '/logo/jadehouse_lab.png',
+          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
           alt: 'Website Logo',
           width: 64,
           height: 64,
@@ -109,7 +109,7 @@ const Martdeliv = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Contactless_Mart_Delivery/left.jpg"
+                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/left.jpg?raw=true"
                     height="858"
                     width="858"
                 />
@@ -129,8 +129,8 @@ const Martdeliv = () => {
             {/*blogPostContents*/}
             <div className="relative flex">
 
-              <nav className="sticky top-0 flex-none w-32 h-screen p-4 bg-black overflow-y-auto">
-                <h2 className="text-xl font-semibold mb-4">Contents</h2>
+              <nav className="sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+                <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
                     <li key={heading.id}>
@@ -177,7 +177,7 @@ const Martdeliv = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Contactless_Mart_Delivery/wheel.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/wheel.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -186,7 +186,7 @@ const Martdeliv = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Contactless_Mart_Delivery/steer.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/steer.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -195,7 +195,7 @@ const Martdeliv = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Contactless_Mart_Delivery/lcd.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/lcd.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -242,7 +242,7 @@ const Martdeliv = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Contactless_Mart_Delivery/left.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/left.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -251,7 +251,7 @@ const Martdeliv = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Contactless_Mart_Delivery/right.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/right.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -260,7 +260,7 @@ const Martdeliv = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Contactless_Mart_Delivery/ui.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/ui.jpg?raw=true"
                         height="800"
                         width="1600"
                       />

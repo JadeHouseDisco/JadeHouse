@@ -90,11 +90,11 @@ const HobbyIntro: React.FC<HobbyIntroProps> = ({ hobbyIntroProps }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-transparent from-85% to-black to-100%"></div>
           {/* Content */}
           <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20 z-4">
-            <div className="text-center text-white max-w-2md">
+            <div className="flex flex-col items-center justify-center text-center text-white max-w-2md">
               <h1 className={`text-6xl font-bold mb-4 transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
                 {hobbyIntroProps.hobbies[currentIndex].content.title}
               </h1>
-              <p className={`text-xl transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+              <p className={`text-xl max-w-2xl transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
                 {hobbyIntroProps.hobbies[currentIndex].content.description}
               </p>
             </div>

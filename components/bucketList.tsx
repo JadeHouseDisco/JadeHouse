@@ -1,12 +1,13 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface BucketListProps {
     bucketListProps: {
         titleText: string;
         descriptionText: string;
         bucketList: {
-            title: string;
-            description: string;
+          src: string;  
+          title: string;
         }[];
     };
 }
@@ -31,13 +32,21 @@ const BucketList: React.FC<BucketListProps> = ({ bucketListProps }) => {
               group-hover:[transform:rotateY(180deg)]"
               >
                 <div className="absolute inset-0 [backface-visibility:hidden]">
-                  <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-800">
-                    <h3 className="text-xl font-bold">{item.title}</h3>
+                  <div className="flex h-full w-full flex-col items-center justify-center text-center rounded-lg bg-gray-800">
+                    <div className="relative w-full h-full">
+                      <Image 
+                        src={item.src} 
+                        alt={item.title} 
+                        className="absolute inset-0 w-full h-full object-cover object-center rounded-lg"
+                        width="544"
+                        height="544" 
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                  <div className="flex h-full w-full flex-col items-center justify-center rounded-lg bg-gray-800">
-                    <p className="text-sm text-gray-400">{item.description}</p>
+                  <div className="flex h-full w-full p-2 flex-col items-center justify-center text-center rounded-lg bg-gray-800">
+                    <h3 className="text-xl font-bold">{item.title}</h3>
                   </div>
                 </div>
               </div>

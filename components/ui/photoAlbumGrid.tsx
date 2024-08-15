@@ -27,7 +27,7 @@ const PhotoAlbumGrid: React.FC<PhotoAlbumGridProps> = ({ photoAlbumGridProps }) 
   
   return (
         <PhotoAlbum 
-            layout="rows"
+            layout="masonry"
             photos={photoAlbumGridProps}
             renderPhoto={renderPhoto}
         />

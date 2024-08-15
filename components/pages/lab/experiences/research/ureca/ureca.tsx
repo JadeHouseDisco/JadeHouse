@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const Ureca = () => {
   const headerProps ={
     imageProps: {
-      src: '/logo/jadehouse_lab.png',
+      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
       width: 418,
       height: 538,
     },
@@ -41,7 +41,7 @@ const Ureca = () => {
 
     const footerProps = {
         logo: {
-          src: '/logo/jadehouse_lab.png',
+          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
           alt: 'Website Logo',
           width: 64,
           height: 64,
@@ -109,7 +109,7 @@ const Ureca = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg?raw=true"
                     height="858"
                     width="858"
                 />
@@ -129,8 +129,8 @@ const Ureca = () => {
             {/*blogPostContents*/}
             <div className="relative flex">
 
-              <nav className="sticky top-0 flex-none w-32 h-screen p-4 bg-black overflow-y-auto">
-                <h2 className="text-xl font-semibold mb-4">Contents</h2>
+              <nav className="sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+                <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
                     <li key={heading.id}>
@@ -183,7 +183,7 @@ const Ureca = () => {
                       <Image
                         alt="cad"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/cad.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/cad.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -192,7 +192,7 @@ const Ureca = () => {
                       <Image
                         alt="mesh"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/mesh.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/mesh.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -201,7 +201,7 @@ const Ureca = () => {
                       <Image
                         alt="optimization"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -239,7 +239,7 @@ const Ureca = () => {
                       <Image
                         alt="result1"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result1.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result1.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -248,7 +248,7 @@ const Ureca = () => {
                       <Image
                         alt="result2"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result2.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result2.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -257,7 +257,7 @@ const Ureca = () => {
                       <Image
                         alt="result3"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result3.png"
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result3.png?raw=true"
                         height="800"
                         width="1600"
                       />
@@ -291,7 +291,7 @@ const Ureca = () => {
                   </ul>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     My work contributed to a paper titled "Bioinspired Compound Nested Lattices with Programmable Isotropy and 
-                    Elastic Stiffness Up to Theoretical Limit," in which I am a co-author. The paper is currently under review.
+                    Elastic Stiffness Up to Theoretical Limit," in which I am a co-author. The paper was published in journal Composites Part B: Engineering. [<a className = "text-blue-500 text-under underline" target="_blank" href="https://doi.org/10.1016/j.compositesb.2024.111656">doi</a>]
                   </p>
 
                   <h1 id="skills" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
