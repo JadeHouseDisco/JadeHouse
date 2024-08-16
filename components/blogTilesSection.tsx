@@ -3,6 +3,7 @@
 import React, { useState, SyntheticEvent } from 'react';
 
 interface BlogTilesSectionProps {
+    categories: string[],
     blogPosts: {
         slug: string,
         title: string,
@@ -12,10 +13,11 @@ interface BlogTilesSectionProps {
         href: string,
         featured: string,
         active: string,
+        category: string,
     }[];
   }
 
-const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
+const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categories }) => {
     const [sortMethod, setSortMethod] = useState('featured');
     const [searchQuery, setSearchQuery] = useState('');
     const [hoveringTile, setHoveringTile] = useState<number | null>(null);
@@ -40,6 +42,12 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                 case 'oldest':
                     return -dateSort;
                 default:
+                    if (categories.includes(method)) {
+                        const categorySort = (b.category === method ? 1 : 0) - (a.category === method ? 1 : 0);
+                        if (categorySort !== 0) return categorySort;
+    
+                        return dateSort;
+                    }
                     return 0;
             }
         });
@@ -143,6 +151,24 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
                         </label>
                     </div>
                 </div>
+                <h3 className="text-lg font-semibold mt-4 mb-4">Categories</h3>
+                <div className="space-y-4">
+                    {categories.map((category, index) => (
+                        <div className="flex items-center gap-2">
+                            <input
+                            className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                            id="sort-category"
+                            name="sort"
+                            type="radio"
+                            checked={sortMethod === category}
+                            onChange={() => setSortMethod(category)}
+                            />
+                            <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
+                            {category}
+                            </label>
+                        </div>
+                    ))}
+                </div>
                 <div className="my-4 space-y-4">
                     <h3 className="text-lg font-semibold mb-4">Search</h3>
                     <div className="flex items-center gap-2">
@@ -160,7 +186,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts }) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {filteredBlogPosts.map((blogPost, index) => (
                     <a 
-                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""}`}
+                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""} ${(categories.includes(sortMethod) && blogPost.category === sortMethod) ? " border-2 border-[#00a896]" : ""}`}
                         href={blogPost.href}
                         key={index}
                         onMouseEnter={(e) => handleMouseEnter(e, index)}

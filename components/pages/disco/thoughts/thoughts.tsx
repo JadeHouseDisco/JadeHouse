@@ -19,33 +19,25 @@ export default async function Thoughts() {
       { text: 'Home', href: '/disco' },
       { text: 'About', 
         href: '/disco/aboutme', 
-        subOptions: [
-          { text: 'Interest', href: '/disco/aboutme/interest' },
-          { text: 'Quotes', href: '/disco/aboutme/quotes' },
-        ] 
       },
       { text: 'Memories', href: '/disco/memories' },
       {
         href:"/disco/thoughts",
         text: 'Thoughts',
-        subOptions: [
-          { text: 'Perspective', href: '/disco/thoughts/perspective' },
-          { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
-        ],
       },
       { text: 'Music', href: '/disco/music' },
     ],
   }
 
 async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const inspirationPosts = await getBlogPosts('app/disco/thoughts/inspiration');
-  const pespectivePosts = await getBlogPosts('app/disco/thoughts/perspective');
+  const thoughtsPosts = await getBlogPosts('app/disco/thoughts');
 
-  const allBlogPosts = [...inspirationPosts, ...pespectivePosts];
+  const allBlogPosts = [...thoughtsPosts];
   return allBlogPosts;
 }
 
 const blogPosts = await getAllBlogPosts();
+const blogPostCategories = ["Inspiration", "Perspective"]
 
 const footerProps = {
   logo: {
@@ -86,7 +78,7 @@ const footerProps = {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <BlogTilesSection blogPosts={blogPosts}/>
+      <BlogTilesSection blogPosts={blogPosts} categories={blogPostCategories}/>
       <Footer footerProps={footerProps}/>
     </div>
   )

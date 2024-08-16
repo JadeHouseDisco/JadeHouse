@@ -2,7 +2,7 @@ import Header from "@/components/header";
 import AboutMeIntro from "@/components/aboutMeIntro"
 import PurposeVisionGoals from "@/components/purposeVisionGoals"
 import SkillsShowcase from "@/components/skillsShowcase"
-import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCIDIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
+import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCIDIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon, MatlabIcon, CNNIcon } from "@/components/icons"
 import Footer from "@/components/footer"
 
 const LabAboutMe = () => {
@@ -21,17 +21,12 @@ const LabAboutMe = () => {
       { text: 'About', 
         href: '/lab/aboutme', 
         subOptions: [
-          { text: 'Academic', href: '/lab/aboutme/academic' },
+          { text: 'Academic Records', href: '/lab/aboutme/academic' },
         ], 
       },
       {
         href:"/lab/experiences",
         text: 'Experiences',
-        subOptions: [
-          { text: 'Research', href: '/lab/experiences/research' },
-          { text: 'Work', href: '/lab/experiences/work' },
-          { text: 'Project', href: '/lab/experiences/project' },
-        ],
       },
       { text: 'Ideas', href: '/lab/ideas' },
       { text: 'Literature Reviews', href: '/lab/litrev' },
@@ -41,7 +36,13 @@ const LabAboutMe = () => {
   const aboutMeIntroProps = {
     headerText: "Hi, I'm Hyunwoo",
     pText: "Focused and determined mechanical engineering student with a passion for biomechatronics and biomedical engineering. Committed to leveraging my technical expertise to develop technologies that enhance lives of anyone anywhere and ultiamtely lead the robotic evolution of mankind.",
-    imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/lab_profile_image.png?raw=true"
+    imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/lab_profile_image.png?raw=true",
+    buttons: [
+      {
+        text: "Academic Records",
+        href: "/lab/aboutme/academic"
+      },
+    ]
   }
 
   const purposeVisionGoalsProps = {
@@ -78,7 +79,7 @@ const LabAboutMe = () => {
     icons: [
       {
         icon: <CubeIcon className="h-12 w-12 text-primary" />,
-        text: "CAD",
+        text: "Computer Assisted Drawing",
       },
       {
         icon: <MeshIcon className="h-12 w-12 text-primary" />,
@@ -111,6 +112,14 @@ const LabAboutMe = () => {
       {
         icon: <ROSIcon className="h-12 w-12 text-primary" />,
         text: "ROS",
+      },
+      {
+        icon: <MatlabIcon className="h-12 w-12 text-primary" />,
+        text: "Matlab",
+      },
+      {
+        icon: <CNNIcon className="h-12 w-12 text-primary" />,
+        text: "Convolutional Neural Network",
       },
       {
         icon: <GitIcon className="h-12 w-12 text-primary" />,

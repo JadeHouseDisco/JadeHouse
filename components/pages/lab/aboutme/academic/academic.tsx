@@ -21,17 +21,12 @@ export default function Academic() {
       { text: 'About', 
         href: '/lab/aboutme', 
         subOptions: [
-          { text: 'Academic', href: '/lab/aboutme/academic' },
+          { text: 'Academic Records', href: '/lab/aboutme/academic' },
         ], 
       },
       {
         href:"/lab/experiences",
         text: 'Experiences',
-        subOptions: [
-          { text: 'Research', href: '/lab/experiences/research' },
-          { text: 'Work', href: '/lab/experiences/work' },
-          { text: 'Project', href: '/lab/experiences/project' },
-        ],
       },
       { text: 'Ideas', href: '/lab/ideas' },
       { text: 'Literature Reviews', href: '/lab/litrev' },

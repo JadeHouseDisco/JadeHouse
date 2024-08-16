@@ -22,18 +22,14 @@ const Aboutme = () => {
         { text: 'About', 
           href: '/disco/aboutme', 
           subOptions: [
-            { text: 'Interest', href: '/disco/aboutme/interest' },
-            { text: 'Quotes', href: '/disco/aboutme/quotes' },
+            { text: 'Interests', href: '/disco/aboutme/interest' },
+            { text: 'Favorite Quotes', href: '/disco/aboutme/quotes' },
           ] 
         },
         { text: 'Memories', href: '/disco/memories' },
         {
           href:"/disco/thoughts",
           text: 'Thoughts',
-          subOptions: [
-            { text: 'Perspective', href: '/disco/thoughts/perspective' },
-            { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
-          ],
         },
         { text: 'Music', href: '/disco/music' },
       ],
@@ -42,7 +38,17 @@ const Aboutme = () => {
     const aboutMeIntroProps = {
         headerText: "Nice to Meet you!",
         pText: "I am Hyunwoo, a curious and energetic soul constantly in search of new adventures. Guided by my heart and driven by opportunity, I explore unique experiences that others might never encounter. Music is my constant companion, enriching my journey and helping me memorialize the unforgettable memories I create along the way.",
-        imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/disco_profile_image.jpg?raw=true"
+        imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/disco_profile_image.jpg?raw=true",
+        buttons: [
+          {
+            text: "Interests",
+            href: "/disco/aboutme/interest"
+          },
+          {
+            text: "Favorite Quotes",
+            href: "/disco/aboutme/quotes"
+          },
+        ]
       }
 
     const familyIntroProps = {
@@ -411,6 +417,11 @@ const Aboutme = () => {
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/4.jpg?raw=true", width: 2252, height: 4000 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/5.jpg?raw=true", width: 2252, height: 4000 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/6.jpg?raw=true", width: 2252, height: 4000 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/7.jpg?raw=true", width: 2252, height: 4000 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/8.jpg?raw=true", width: 2252, height: 4000 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/9.jpg?raw=true", width: 2252, height: 4000 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/10.jpg?raw=true", width: 2252, height: 4000 },
+
 
               ],
               detailedDescription: `Special dreams need special efforts. Right after wrapping up one internship, I jumped into another one at SNU. Research turned out to be entirely different from classroom learning, but it felt like my true calling. I got a taste of biomechatronic research and knew I needed more. And while I can't exactly steal people's hearts, I did manage to "steal" a few swine hearts. (Don't worry, it was all for science!).`

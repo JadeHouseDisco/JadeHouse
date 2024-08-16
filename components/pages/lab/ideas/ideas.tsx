@@ -19,18 +19,10 @@ export default async function Ideas() {
       { text: 'Home', href: '/lab' },
       { text: 'About', 
         href: '/lab/aboutme', 
-        subOptions: [
-          { text: 'Academic', href: '/lab/aboutme/academic' },
-        ], 
       },
       {
         href:"/lab/experiences",
         text: 'Experiences',
-        subOptions: [
-          { text: 'Research', href: '/lab/experiences/research' },
-          { text: 'Work', href: '/lab/experiences/work' },
-          { text: 'Project', href: '/lab/experiences/project' },
-        ],
       },
       { text: 'Ideas', href: '/lab/ideas' },
       { text: 'Literature Reviews', href: '/lab/litrev' },
@@ -38,6 +30,7 @@ export default async function Ideas() {
   }
 
 const blogPosts = await getBlogPosts('app/lab/ideas');
+const blogPostsCategories = ["Research", "Product"]
 
 const footerProps = {
   logo: {
@@ -86,7 +79,7 @@ const footerProps = {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <BlogTilesSection blogPosts={blogPosts}/>
+      <BlogTilesSection blogPosts={blogPosts} categories={blogPostsCategories}/>
       <Footer footerProps={footerProps}/>
     </div>
   )

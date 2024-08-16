@@ -20,8 +20,8 @@ const Quotes = () => {
           { text: 'About', 
             href: '/disco/aboutme', 
             subOptions: [
-              { text: 'Interest', href: '/disco/aboutme/interest' },
-              { text: 'Quotes', href: '/disco/aboutme/quotes' },
+              { text: 'Interests', href: '/disco/aboutme/interest' },
+              { text: 'Favorite Quotes', href: '/disco/aboutme/quotes' },
             ] 
           },
           { text: 'Memories', href: '/disco/memories' },

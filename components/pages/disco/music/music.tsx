@@ -20,19 +20,11 @@ export default function Music() {
       { text: 'Home', href: '/disco' },
       { text: 'About', 
         href: '/disco/aboutme', 
-        subOptions: [
-          { text: 'Interest', href: '/disco/aboutme/interest' },
-          { text: 'Quotes', href: '/disco/aboutme/quotes' },
-        ] 
       },
       { text: 'Memories', href: '/disco/memories' },
       {
         href:"/disco/thoughts",
         text: 'Thoughts',
-        subOptions: [
-          { text: 'Perspective', href: '/disco/thoughts/perspective' },
-          { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
-        ],
       },
       { text: 'Music', href: '/disco/music' },
     ],
