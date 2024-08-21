@@ -8,7 +8,6 @@ import SongGrid from "@/components/songGrid"
 import PlaylistIntro from '@/components/playlistIntro';
 import DropdownButton from '@/components/ui/dropdownButton';
 import Footer from "@/components/footer"
-import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 
 export default async function Disco() {
@@ -134,7 +133,7 @@ export default async function Disco() {
 
     const miniAboutProps = {
       profileImage: {  
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_main.jpg?raw=true',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_disco.jpg?raw=true',
         alt: 'Profile Photo',
         width: 256,
         height: 256,
@@ -205,7 +204,7 @@ export default async function Disco() {
       <div key="1" className="flex flex-col min-h-[100dvh]">
         <Header headerProps={headerProps}/>
         <HeroSection heroSectionProps={heroSectionProps}/>
-        <ProjectGrid projectGridProps={memories}/>
+        <ProjectGrid projectGridProps={projectGridProps}/>
         <div className="grid grid-cols-2 items-start mx-20">
           <SongGrid songGridProps={songGridProps}/>
           <PlaylistIntro PlaylistIntroProps={playlistIntroProps}/>
