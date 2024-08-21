@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "@/components/header";
 import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
+import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
 import ProjectGrid from "@/components/projectGrid"
 import SongGrid from "@/components/songGrid"
 import PlaylistIntro from '@/components/playlistIntro';
@@ -9,7 +10,7 @@ import DropdownButton from '@/components/ui/dropdownButton';
 import Footer from "@/components/footer"
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 
-const Disco = () => {
+export default async function Disco() {
   const headerProps ={
     imageProps: {
       src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
@@ -56,43 +57,32 @@ const Disco = () => {
     },
   }
 
+  async function getAllBlogPosts(): Promise<BlogPost[]> {
+    const memories = await getBlogPosts('app/disco/memories');
+  
+    const allBlogPosts = [...memories];
+    return allBlogPosts;
+  }
+  
+  const memories = await getAllBlogPosts();
+
+  const featuredMemories = memories
+  .filter(post => post.featured === 'y')
+  .map(post => ({
+    image: {
+      src: post.imageHref,
+      alt: post.title,
+      width: 400,
+      height: 300,
+    },
+    title: post.title,
+    description: post.content,
+    viewLink: post.href,
+  }));
+  
     const projectGridProps = {
       projectTitle: "Cherished Memories",
-      projects: [
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 1',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 1',
-          description: 'A web application that helps users manage their tasks and projects.',
-          viewLink: '/lab',
-        },
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 2',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 2',
-          description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
-          viewLink: '/lab',
-        },
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 3',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 3',
-          description: 'A design system that helps teams create consistent and high-quality user interfaces.',
-          viewLink: '/lab',
-        },
-      ],
+      projects: featuredMemories,
       viewAllLink: "/disco/memories",
       buttonText:"View all Memories"
     }
@@ -235,5 +225,3 @@ const Disco = () => {
       </div>
     );
   };
-
-  export default Disco;
