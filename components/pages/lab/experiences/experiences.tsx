@@ -19,18 +19,10 @@ export default async function Experiences() {
       { text: 'Home', href: '/lab' },
       { text: 'About', 
         href: '/lab/aboutme', 
-        subOptions: [
-          { text: 'Academic', href: '/lab/aboutme/academic' },
-        ], 
       },
       {
         href:"/lab/experiences",
         text: 'Experiences',
-        subOptions: [
-          { text: 'Research', href: '/lab/experiences/research' },
-          { text: 'Work', href: '/lab/experiences/work' },
-          { text: 'Project', href: '/lab/experiences/project' },
-        ],
       },
       { text: 'Ideas', href: '/lab/ideas' },
       { text: 'Literature Reviews', href: '/lab/litrev' },
@@ -38,15 +30,14 @@ export default async function Experiences() {
   }
 
 async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const researchPosts = await getBlogPosts('app/lab/experiences/research');
-  const workshopPosts = await getBlogPosts('app/lab/experiences/work');
-  const courseworkPosts = await getBlogPosts('app/lab/experiences/project');
+  const experiences = await getBlogPosts('app/lab/experiences');
 
-  const allBlogPosts = [...researchPosts, ...workshopPosts, ...courseworkPosts];
+  const allBlogPosts = [...experiences];
   return allBlogPosts;
 }
 
 const blogPosts = await getAllBlogPosts();
+const blogPostCategories= ["Project", "Research", "Work"]
 
 const footerProps = {
   logo: {
@@ -95,7 +86,7 @@ const footerProps = {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <BlogTilesSection blogPosts={blogPosts}/>
+      <BlogTilesSection blogPosts={blogPosts} categories={blogPostCategories}/>
       <Footer footerProps={footerProps}/>
     </div>
   )

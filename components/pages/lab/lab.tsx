@@ -22,18 +22,10 @@ export default async function Lab() {
         { text: 'Home', href: '/lab' },
         { text: 'About', 
           href: '/lab/aboutme', 
-          subOptions: [
-            { text: 'Academic', href: '/lab/aboutme/academic' },
-          ], 
         },
         {
           href:"/lab/experiences",
           text: 'Experiences',
-          subOptions: [
-            { text: 'Research', href: '/lab/experiences/research' },
-            { text: 'Work', href: '/lab/experiences/work' },
-            { text: 'Project', href: '/lab/experiences/project' },
-          ],
         },
         { text: 'Ideas', href: '/lab/ideas' },
         { text: 'Literature Reviews', href: '/lab/litrev' },
@@ -50,15 +42,51 @@ export default async function Lab() {
       content: {
         title: 'Welcome to JadeHouse Lab',
         description: 'Portfolio of my professional life',
+        cards: [
+          {
+            image: {
+              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true",
+              alt: "jadehouse logo",
+              width: 120,
+              height: 120,
+            },
+            title: "JadeHouse",
+            description: "House of memory for my professional and personal life",
+            buttonText: "Return to Jadehouse",
+            buttonHref: "/",
+            newBackgroundImage: {
+              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/main_background.jpeg?raw=true",
+              alt: "lab background image",
+              width: 1536,
+              height: 1536,
+            }
+          },
+          {
+            image: {
+              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true",
+              alt: "jadehouse disco logo",
+              width: 120,
+              height: 120,
+            },
+            title: "JadeHouse Disco",
+            description: "Explore my personal life, including memories, thoughts, and music",
+            buttonText: "Enter the Disco",
+            buttonHref: "/disco",
+            newBackgroundImage: {
+              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/disco_main_background.jpg?raw=true",
+              alt: "disco background image",
+              width: 1536,
+              height: 1536,
+            }
+          }
+        ]
       },
     }
     
     async function getAllBlogPosts(): Promise<BlogPost[]> {
-      const researchPosts = await getBlogPosts('app/lab/experiences/research');
-      const workshopPosts = await getBlogPosts('app/lab/experiences/work');
-      const courseworkPosts = await getBlogPosts('app/lab/experiences/project');
+      const experiencesPosts = await getBlogPosts('app/lab/experiences');
     
-      const allBlogPosts = [...researchPosts, ...workshopPosts, ...courseworkPosts];
+      const allBlogPosts = [...experiencesPosts];
       return allBlogPosts;
     }
     

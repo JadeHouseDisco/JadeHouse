@@ -8,6 +8,7 @@ import SongGrid from "@/components/songGrid"
 import PlaylistIntro from '@/components/playlistIntro';
 import DropdownButton from '@/components/ui/dropdownButton';
 import Footer from "@/components/footer"
+import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 
 export default async function Disco() {
@@ -26,19 +27,11 @@ export default async function Disco() {
       { text: 'Home', href: '/disco' },
       { text: 'About', 
         href: '/disco/aboutme', 
-        subOptions: [
-          { text: 'Interest', href: '/disco/aboutme/interest' },
-          { text: 'Quotes', href: '/disco/aboutme/quotes' },
-        ] 
       },
       { text: 'Memories', href: '/disco/memories' },
       {
         href:"/disco/thoughts",
         text: 'Thoughts',
-        subOptions: [
-          { text: 'Perspective', href: '/disco/thoughts/perspective' },
-          { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
-        ],
       },
       { text: 'Music', href: '/disco/music' },
     ],
@@ -212,7 +205,7 @@ export default async function Disco() {
       <div key="1" className="flex flex-col min-h-[100dvh]">
         <Header headerProps={headerProps}/>
         <HeroSection heroSectionProps={heroSectionProps}/>
-        <ProjectGrid projectGridProps={projectGridProps}/>
+        <ProjectGrid projectGridProps={memories}/>
         <div className="grid grid-cols-2 items-start mx-20">
           <SongGrid songGridProps={songGridProps}/>
           <PlaylistIntro PlaylistIntroProps={playlistIntroProps}/>
