@@ -171,7 +171,7 @@ export default async function Disco() {
 
     const miniAboutProps = {
       profileImage: {  
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_main.jpg?raw=true',
+        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_disco.png?raw=true',
         alt: 'Profile Photo',
         width: 256,
         height: 256,

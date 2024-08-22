@@ -417,10 +417,10 @@ const Aboutme = () => {
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/4.jpg?raw=true", width: 2252, height: 4000 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/5.jpg?raw=true", width: 2252, height: 4000 },
                 { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/6.jpg?raw=true", width: 2252, height: 4000 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/7.jpg?raw=true", width: 2252, height: 4000 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/8.jpg?raw=true", width: 2252, height: 4000 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/9.jpg?raw=true", width: 2252, height: 4000 },
-                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/10.jpg?raw=true", width: 2252, height: 4000 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/7.jpg?raw=true", width: 1440, height: 1081 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/8.jpg?raw=true", width: 1440, height: 1081 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/9.jpg?raw=true", width: 1440, height: 1081 },
+                { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/backgroundTimeline/8/10.jpg?raw=true", width: 960, height: 720 },
 
 
               ],
