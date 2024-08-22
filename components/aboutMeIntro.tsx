@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface AboutMeIntroProps {
     aboutMeIntroProps: {
@@ -38,16 +39,17 @@ const AboutMeIntro: React.FC<AboutMeIntroProps> = ({ aboutMeIntroProps }) => {
           
         </div>
         
-        <img
-            alt="Background"
-            className="h-full w-full object-cover object-center"
-            height="800"
-            src={aboutMeIntroProps.imgSrc}
-            style={{
+        <Image
+          alt="Background"
+          src={aboutMeIntroProps.imgSrc}
+          width={1600}
+          height={800}
+          className="h-full w-full object-cover object-center"
+          style={{
             aspectRatio: "1600/800",
             objectFit: "cover",
-            }}
-            width="1600"
+          }}
+          layout="responsive"
         />
         
     </section>

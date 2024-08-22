@@ -35,6 +35,7 @@ const Header: React.FC<HeaderProps> = ({ headerProps }) => {
           height={headerProps.imageProps.height}
           className="h-10 w-9 mr-2"
           alt="logo"
+          priority={true}
         />
         {headerProps.titles.map((title, index) => (
           <React.Fragment key={index}>  

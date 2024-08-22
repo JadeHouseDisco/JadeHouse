@@ -62,6 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
           style={{ aspectRatio: '1/1', objectFit: 'cover' }}
           width={backgroundImage.width}
           onLoad={() => setLoaded(true)}
+          priority={true}
         />
         <div className="absolute inset-0 bg-gray-900/50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-85% to-black to-100%"></div>
@@ -87,6 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
                         width={card.image.width}
                         className="h-full object-cover"
                         alt={card.image.alt}
+                        priority={true}
                       />
                     </div>
                     <div>

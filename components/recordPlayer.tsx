@@ -113,7 +113,8 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
               src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/record_player.jpeg?raw=true" 
               alt="record_player" 
               fill 
-              className="object-cover" 
+              className="object-cover"
+              priority
             />
             {!isPlaying && 
               <Image 
@@ -121,6 +122,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                 alt="tonearm_off" 
                 fill 
                 className="object-cover" 
+                priority
               />
             }
             {((isDraggingAndHovering || isPlaying) && recordPlaying) && 

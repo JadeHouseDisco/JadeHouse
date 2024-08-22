@@ -121,6 +121,7 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
               src={selectedItem.src}
               style={{ aspectRatio: '1600/800', objectFit: 'cover' }}
               width="1600"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gray-900/50"></div>
             <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20 z-4">

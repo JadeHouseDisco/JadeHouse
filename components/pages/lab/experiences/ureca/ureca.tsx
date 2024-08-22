@@ -355,14 +355,14 @@ const Ureca = () => {
                   <div className="mt-4">
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      href="/files/MAE21044_Paper.pdf"
+                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/MAE21044_Paper.pdf"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Paper
                     </a>
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      href="/files/MAE21044_Poster.pdf"
+                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/MAE21044_Poster.pdf"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Poster

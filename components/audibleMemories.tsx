@@ -73,7 +73,8 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                         src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/front.jpg?raw=true" 
                         alt="front" 
                         fill 
-                        className="object-cover border-white" 
+                        className="object-cover border-white"
+                        priority={true}
                     />
                 </div>
                 {audibleMemoriesProps.songs.map((song, index) => (

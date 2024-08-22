@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'
+
 
 interface ProjectCardProps {
   image: {
@@ -76,13 +78,13 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
             >  
               <Card>
                 <CardHeader>
-                  <img
-                    alt={project.image.alt}
-                    className="rounded-t-lg object-cover w-full aspect-[4/3]"
-                    height={project.image.height}
-                    src={project.image.src}
-                    width={project.image.width}
-                  />
+                <Image
+                  alt={project.image.alt}
+                  className="rounded-t-lg object-cover w-full aspect-[4/3]"
+                  height={project.image.height}
+                  src={project.image.src}
+                  width={project.image.width}
+                />
                 </CardHeader>
                 <CardFooter>
                   <div className="h-22">

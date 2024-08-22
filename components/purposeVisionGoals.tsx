@@ -112,6 +112,7 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                     }}
                     width="1600"
                     onLoad={() => setLoaded(true)}
+                    priority
                 />
                 <div className="absolute inset-0 bg-gray-900/40"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">

@@ -60,7 +60,7 @@ export default function Music() {
       {
         label: 'Playlist 1', 
         value: 'playlist1',
-        src: "/test.png",
+        src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/test.png?raw=true",
         songs: [
           {
             src: "/music/blonde.jpg",

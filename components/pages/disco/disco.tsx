@@ -46,6 +46,44 @@ export default async function Disco() {
     content: {
       title: 'Welcome to JadeHouse Disco',
       description: 'Archive of my personal life',
+      cards: [
+        {
+          image: {
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true",
+            alt: "jadehouse logo",
+            width: 120,
+            height: 120,
+          },
+          title: "JadeHouse",
+          description: "House of memory for my professional and personal life",
+          buttonText: "Return to Jadehouse",
+          buttonHref: "/",
+          newBackgroundImage: {
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/main_background.jpeg?raw=true",
+            alt: "lab background image",
+            width: 1536,
+            height: 1536,
+          }
+        },
+        {
+          image: {
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true",
+            alt: "jadehouse disco logo",
+            width: 120,
+            height: 120,
+          },
+          title: "JadeHouse Lab",
+          description: "Explore my professional life, including experiences, ideas, and reviews",
+          buttonText: "Enter the Lab",
+          buttonHref: "/lab",
+          newBackgroundImage: {
+            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/lab_main_background.jpg?raw=true",
+            alt: "lab background image",
+            width: 1536,
+            height: 1536,
+          }
+        }
+      ]
     },
   }
 

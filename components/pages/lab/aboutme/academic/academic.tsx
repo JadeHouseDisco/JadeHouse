@@ -74,11 +74,11 @@ export default function Academic() {
     downloads: [
       {
         buttonText: "Download CV",
-        href: "/files/Hyunwoo_Lee_CV.docx"
+        href: "https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/Hyunwoo_Lee_CV.docx"
       },
       {
         buttonText: "Download Transcript",
-        href: "/files/Hyunwoo_Lee_Transcript.pdf"
+        href: "https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/Hyunwoo_Lee_Transcript.pdf"
       }
     ]
   }
@@ -86,6 +86,35 @@ export default function Academic() {
   const courseTableProps = {
     headerText: "Courses Taken",
     tables: [
+      {
+        tableTitle: "Year 4 Semester 1",
+        thead: {
+          col1: "Courses",
+          col2: "Grade",
+        },
+        tbody: [
+          {
+            col1: "ENGINEERING COMMUNICATION",
+            col2: "ONGOING",
+          },
+          {
+            col1: "MATHEMATICAL METHODS IN ENGINEERING",
+            col2: "ONGOING",
+          },
+          {
+            col1: "THERMODYNAMICS & HEAT TRANSFER",
+            col2: "ONGOING",
+          },
+          {
+            col1: "MEASUREMENT & SENSING SYSTEMS",
+            col2: "ONGOING",
+          },
+          {
+            col1: "ROBOTICS",
+            col2: "ONGOING", 
+          },
+        ]
+      },
       {
         tableTitle: "Year 3 Semester 1",
         thead: {

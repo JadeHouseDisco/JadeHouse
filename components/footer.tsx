@@ -66,6 +66,7 @@ const Footer: React.FC<FooterProps> = ({footerProps}) => {
               width={footerProps.logo.width}
               height={footerProps.logo.height}
               className="mb-4"
+              priority={true}
             />
             <h2 className="text-2xl font-bold mb-2">{footerProps.title}</h2>
             <p className="text-gray-400">{footerProps.description}</p>
