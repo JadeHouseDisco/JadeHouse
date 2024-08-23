@@ -11,6 +11,7 @@ interface PlaylistItem {
     title: string;
     artist: string;
   }[];
+  link: string;
 }
 
 interface PlaylistShowcaseProps {
@@ -75,7 +76,7 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
         <div className="relative mb-4" ref={dropdownRef}>
           <button
             type="button"
-            className="inline-flex justify-center w-48 px-4 py-2 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors duration-300 ease-in-out"
+            className="inline-flex justify-center w-72 px-4 py-2 font-bold rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors duration-300 ease-in-out"
             id="menu-button"
             aria-expanded="true"
             aria-haspopup="true"
@@ -84,7 +85,7 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
             {selectedItem ? selectedItem.label : 'Select a Playlist'}
           </button>
           <div
-            className={`z-10 absolute top-full mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
+            className={`z-10 absolute top-full mt-2 w-72 rounded-md font-bold shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
               isOpen ? '' : 'hidden'
             }`}
             role="menu"
@@ -126,7 +127,7 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
             <div className="absolute inset-0 bg-gray-900/50"></div>
             <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20 z-4">
               <div className="text-center text-white max-w-2md">
-                <ImageCarousel songs={selectedItem.songs}/>
+                <ImageCarousel songs={selectedItem.songs} link={selectedItem.link}/>
               </div>
             </div>
           </div>

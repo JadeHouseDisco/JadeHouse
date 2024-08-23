@@ -31,7 +31,7 @@ const SongGrid: React.FC<SongGridProps> = ({ songGridProps }) => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mb-4">
+    <div className="max-w-xl mx-20 mb-4">
       <h2 className="text-center text-4xl font-bold mb-8">Favorite Songs</h2>
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
         <div className="flex items-start">

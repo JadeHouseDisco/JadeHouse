@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Link from 'next/link';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,9 +19,10 @@ interface ImageCarouselProps {
     title: string;
     artist: string;
   }[];
+  link : string;
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs }) => {
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
   const swiperRef = useRef<any>(null);
 
   useEffect(() => {
@@ -49,13 +51,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs }) => {
         slideShadows: true,
       }}
       rewind={true}
-      mousewheel={true}
+      mousewheel={false}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,
       }}
       modules={[EffectCoverflow, Pagination, Mousewheel, Autoplay]}
-      className="mySwiper"
+      className="mySwiper h-[550px]"
       onSwiper={(swiper) => {
         swiperRef.current = swiper;
       }}
@@ -67,6 +69,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs }) => {
           <p className="text-xs md:text-base">{song.artist}</p>
         </SwiperSlide>
       ))}
+      <Link 
+        className="inline-flex items-center font-bold h-10 px-6 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out" 
+        href={link}
+        target="_blank"
+      >
+        Go to Playlist
+      </Link>
     </Swiper>
   );
 }
