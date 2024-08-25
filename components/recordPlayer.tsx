@@ -133,6 +133,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                     alt="Album Cover"
                     fill 
                     style={{ borderRadius: '50%', objectFit: 'cover', maskImage: 'radial-gradient(circle at 50% 50%, transparent 20%, black 21%)' }} 
+                    priority
                   />
                   <div className="absolute inset-0 rounded-full border-[16px] border-white"></div>
                   <div className="absolute inset-0 rounded-full border-[10px] border-black"></div>
@@ -140,7 +141,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                 </div>
               </div>
             }
-            {isPlaying && <Image src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/tonearm_on.png?raw=true" alt="tonearm_on" fill className="object-cover" />}
+            {isPlaying && <Image src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/tonearm_on.png?raw=true" alt="tonearm_on" fill className="object-cover" priority/>}
           </div>
           {(isHovering && (!isDraggingAndHovering && !isPlaying)) && 
             <>
@@ -185,6 +186,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                       width="544"
                       height="544"
                       className="object-cover rounded-lg pointer-events-none mb-4 md:mb-6 lg:mb-8 mx-auto"
+                      priority
                     />
                     <div className="flex flex-col md:flex-row items-center justify-between mb-2 md:mb-4">
                       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-0">
