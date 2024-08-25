@@ -33,7 +33,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
 
     return (
         <>
-        <div className="text-center mt-8 mb-4">
+        <div className="text-center mt-8">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 {audibleMemoriesProps.titleText}
             </h2>
@@ -94,7 +94,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                 alt="alt"
                                 width="544"
                                 height="544"
-                                className="object-cover h-64 w-64 xl:h-96 xl:w-96 mb-2"
+                                className="object-cover h-64 w-64 xl:h-96 xl:w-96 mx-auto mb-8"
                                 />
                                 <div className="flex flex-col md:flex-row items-center justify-between">
                                     <h1 className="text-lg md:text-xl lg:text-2xl font-bold">
@@ -108,8 +108,8 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                         <YoutubeMusicIcon_black className="h-6 md:h-8 w-6 md:w-8" />
                                     </a>
                                 </div>
-                                <p className="text-xs md:text-base mb-2">{song.songArtist}</p>
-                                <p style={{ lineHeight: '1.4' }} className="text-xs md:text-base mb-4 md:mb-6 tracking-tight">{song.description}</p>
+                                <p className="text-xs font-bold md:text-base mb-2">{song.songArtist}</p>
+                                <p style={{ lineHeight: '1.4' }} className="text-xs md:text-base font-semibold mb-4 md:mb-6 tracking-tight ">{song.description}</p>
                             </div>
                         </div>
                     </div>,
@@ -133,7 +133,8 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                             src={photo.src}
                                             alt={`photo-${index}`}
                                             fill
-                                            className="object-cover rounded"
+                                            className="object-cover rounded-md"
+                                            priority
                                         />
                                     </div>
                                 ))}

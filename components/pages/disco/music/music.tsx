@@ -1119,31 +1119,157 @@ export default function Music() {
     descriptionText: "Precious memories stored in the best music",
     songs:  [
       {
-        songSrc: "/music/blonde.jpg",
-        songLink:"",
-        songTitle: "Pink + White",
-        songArtist: "Frank Ocean",
-        description: "Memory 1 description",
-        memoryName: "Memory 1",
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory1/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=E6NLFY7STIg&si=w24kwNAAfkU59bJB",
+        songTitle: "Hold On (feat. Mapei)",
+        songArtist: "OLSSON",
+        description: "Trip to Netherlands to participate in THIMUN was an exciting adventure, feeling the other side of the world and expanding my horizon. The thrill and anticipation of visiting a new place is absorbed in this song.",
+        memoryName: "The Hague international Model United Nation (THIMUN)",
         photos: [
-          { src: "/test.png", width: 1920, height: 1080 },
-          { src: "/test2.png", width: 1920, height: 1080 },
-          { src: "/profile_photo_main.jpg", width: 2179, height: 2179 },
-          { src: "/main_background.jpeg", width: 1536, height: 1536 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory1/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory1/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory1/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory1/4.jpg?raw=true", width: 1536, height: 1536 },
         ]
       },
       {
-        songSrc: "/music/blonde.jpg",
-        songLink:"",
-        songTitle: "Pink + White",
-        songArtist: "Frank Ocean",
-        description: "Memory 2 description",
-        memoryName: "Memory 2",
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory2/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=HmKgFJGn46Q&si=9nrhbjlvLtZwrJUT",
+        songTitle: "Can I Love ? , Meego) (feat. youra)",
+        songArtist: "Cosmic Boy",
+        description: "Coming to Singapore all alone, not knowing anyone or anything. The excitement, worries, and lonliness were all accompanied by this song.",
+        memoryName: "First time in Singapore",
         photos: [
-          { src: "/test.png", width: 1920, height: 1080 },
-          { src: "/test2.png", width: 1920, height: 1080 },
-          { src: "/profile_photo_main.jpg", width: 2179, height: 2179 },
-          { src: "/main_background.jpeg", width: 1536, height: 1536 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory2/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory2/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory2/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory2/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory3/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=M4RPilz6WlY&si=AEAZZkAYXaUEh5a7",
+        songTitle: "For Elise",
+        songArtist: "Saint Motel",
+        description: "Starting a new chapter in NTU, everywhere I went felt new and interesting. My new journey in NTU began with this song.",
+        memoryName: "New chapter in NTU",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory3/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory3/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory3/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory3/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory4/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=tfV3t2YtqSk&si=FzYJ_0m_0AE76a4h",
+        songTitle: "Preach",
+        songArtist: "Saint Motel",
+        description: "Studying is important, but how can I just sit around and study all the time? I explored around Singapore with this song.",
+        memoryName: "Exploring Singapore",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory4/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory4/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory4/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory4/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory5/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=jKmib7okBdY&si=lr93PC7-sKgEs9ts",
+        songTitle: "EVERYTHING (feat. CHANGMO, Coogie, ASH ISLAND & BIBI)",
+        songArtist: "Way Ched",
+        description: "Settling into my new life, things that were once new and difficult turned to daily life. I kept on with my life with this song.",
+        memoryName: "Settling in",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory5/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory5/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory5/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory5/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory6/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=f3taMXkqI5g&si=lyvs7P_0gpyAoBvj",
+        songTitle: "Crazy AF",
+        songArtist: "In Real Life",
+        description: "You can't miss out the most important responsibility of student. My studies were accompanied by this song.",
+        memoryName: "Studying",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory6/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory6/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory6/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory6/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory7/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=FB2GuBS9Ya0&si=eHLdD_eiqLqstwWO",
+        songTitle: "End of the World (feat. GSoul)",
+        songArtist: "EPIK HIGH",
+        description: "Part-time job as a Hyundai translator position was my first working experience. This unique and different experience was with this song.",
+        memoryName: "Hyundai part-time translator",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory7/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory7/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory7/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory7/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory8/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=hp1UqZJKvFg&si=gDspv-ZbGMCBLJwb",
+        songTitle: "sydney, hongkong (feat. THAMA )",
+        songArtist: "Kid Milli",
+        description: "I thought discharge from national service would be the happiest thing in my life. As it approached, however, I felt ambivalent between excited and afraid. This bittersweet memory stays with this song.",
+        memoryName: "Discharge",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory8/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory8/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory8/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory8/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory9/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=2vPDIBrTb-M&si=9QpZ6A1Bd_nnh2ap",
+        songTitle: "BORED",
+        songArtist: "INJI",
+        description: "Returning to school after 18 months, I dived straight to internship. The hectic process of readjusting and catching up mixed well with this bouncy song.",
+        memoryName: "Internship",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory9/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory9/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory9/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory9/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory10/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=lgjudfWgB24&si=IYqL58CTOQERT8DW",
+        songTitle: "0310",
+        songArtist: "Yerin Baek",
+        description: "You don't know if you are lonley and tired unless you get out of that status. The comfort and happiness from my parents visitng Singapore, along with sadness that they can stay for only so long, is molten in the bright sad melodty of this song.",
+        memoryName: "Family in Singapore",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory10/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory10/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory10/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory10/4.jpg?raw=true", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory11/music.jpg?raw=true",
+        songLink:"https://music.youtube.com/watch?v=Cq6OejPKA8k&si=m0WpsBEWAzBW-Wmq",
+        songTitle: "Away (feat. Taylor & YANU)",
+        songArtist: "LILBOI",
+        description: "Trying something new is always exciting, yet worrying. The anticipation and fear of starting a new journey in SNU was met with this song.",
+        memoryName: "Seoul Natioanl University",
+        photos: [
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory11/1.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory11/2.jpg?raw=true", width: 1920, height: 1080 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory11/3.jpg?raw=true", width: 2179, height: 2179 },
+          { src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/memory11/4.jpg?raw=true", width: 1536, height: 1536 },
         ]
       },
     ],
