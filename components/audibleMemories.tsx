@@ -95,6 +95,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                 width="544"
                                 height="544"
                                 className="object-cover h-64 w-64 xl:h-96 xl:w-96 mx-auto mb-8"
+                                priority
                                 />
                                 <div className="flex flex-col md:flex-row items-center justify-between">
                                     <h1 className="text-lg md:text-xl lg:text-2xl font-bold">
