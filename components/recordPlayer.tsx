@@ -62,6 +62,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
   
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     songDraggedRef.current = e.currentTarget.id
+    setIsLoading(true)
   };
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
@@ -88,12 +89,10 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
 
   const handleMouseEnter = () => {
     setIsHovering(true);
-    setIsLoading(true)
   }
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    setIsLoading(true)
   }
 
   const removeRecord = () => {
