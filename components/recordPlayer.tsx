@@ -68,6 +68,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
     e.preventDefault();
     setSongPlaying(songDraggedRef.current);
     setIsDraggingAndHovering(true);
+    setIsLoading(true)
   };
 
   const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
