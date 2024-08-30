@@ -23,11 +23,12 @@ interface RecordPlayerProps {
 const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
   const [leftHeight, setLeftHeight] = useState<number | null>(null);
   const [songPlaying, setSongPlaying] = useState<string | null>(null);
-  const [recordPlaying, setRecordPlaying] = useState<Song>();
+  const [recordPlaying, setRecordPlaying] = useState<Song>(recordPlayerProps.songs[0]);
   const [isDraggingAndHovering, setIsDraggingAndHovering] = useState<boolean>(false);
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const songDraggedRef = useRef<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const updateLeftHeight = () => {
@@ -46,6 +47,10 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
       window.removeEventListener('resize', updateLeftHeight);
     };
   }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, [songPlaying]);
 
   useEffect(() => {
     for (const song of recordPlayerProps.songs) {
@@ -68,6 +73,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
   const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDraggingAndHovering(false);
+    setIsLoading(true)
   };
 
   const handleDragDrop = (e: React.DragEvent<HTMLDivElement>) => {
@@ -88,6 +94,11 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
     setIsHovering(false);
   }
 
+  const removeRecord = () => {
+    setIsLoading(true)
+    setIsPlaying(false)
+  }
+
   return (
     <>
       <div className="text-center my-8 pointer-events-none">
@@ -100,7 +111,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
       </div>
       <div className="flex mb-8">
         <div
-          className="w-3/5 h-3/5 bg-black relative left-content" 
+          className="w-3/5 h-3/5 bg-black relative left-content z-10" 
           onDragOver={handleDragOver} 
           onDragLeave={handleDragLeave}
           onDrop={handleDragDrop}
@@ -126,22 +137,29 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
               />
             }
             {((isDraggingAndHovering || isPlaying) && recordPlaying) && 
-              <div className="absolute inset-0 flex items-center justify-center -translate-x-[4.5%] translate-y-[2%]">
+              <div className="absolute inset-0 flex items-center justify-center -translate-x-[4.5%] translate-y-[2%] pointer-events-none">
                 <div className={`relative w-[88%] h-[88%] ${isPlaying ? "animate-spinRecord" : "opacity-50"}`}>
-                  <Image 
+                  <Image
                     src={recordPlaying.src}
                     alt="Album Cover"
-                    fill 
-                    style={{ borderRadius: '50%', objectFit: 'cover', maskImage: 'radial-gradient(circle at 50% 50%, transparent 20%, black 21%)' }} 
+                    fill
+                    style={{ borderRadius: '50%', objectFit: 'cover', maskImage: 'radial-gradient(circle at 50% 50%, transparent 20%, black 21%)' }}
                     priority
+                    onLoad={() => setIsLoading(false)}
+                    onLoadingComplete={() => setIsLoading(false)}
+                    className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
                   />
-                  <div className="absolute inset-0 rounded-full border-[16px] border-white"></div>
-                  <div className="absolute inset-0 rounded-full border-[10px] border-black"></div>
-                  <div className="absolute w-[30%] h-[30%] bg-black rounded-full" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+                  {!isLoading && (
+                      <>
+                        <div className="absolute inset-0 rounded-full border-[16px] border-white"></div>
+                        <div className="absolute inset-0 rounded-full border-[10px] border-black"></div>
+                        <div className="absolute w-[30%] h-[30%] bg-black rounded-full" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+                      </>
+                    )}
                 </div>
               </div>
             }
-            {isPlaying && <Image src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/tonearm_on.png?raw=true" alt="tonearm_on" fill className="object-cover" priority/>}
+            {isPlaying && <Image src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/recordPlayer/tonearm_on.png?raw=true" alt="tonearm_on" fill className="object-cover pointer-events-none" priority/>}
           </div>
           {(isHovering && (!isDraggingAndHovering && !isPlaying)) && 
             <>
@@ -205,7 +223,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                     <p style={{ lineHeight: '1.4' }} className="text-base md:text-lg mb-4 md:mb-6 tracking-tight">{recordPlaying.description}</p>
                     <button
                       className="inline-flex items-center justify-center h-8 md:h-10 px-3 md:px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out mx-auto"
-                      onClick={() => setIsPlaying(false)}
+                      onClick={() => removeRecord()}
                     >
                       Remove Record
                     </button>

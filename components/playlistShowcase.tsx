@@ -27,17 +27,37 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
   const [selectedItem, setSelectedItem] = useState<PlaylistItem | null>(playlistShowcaseProps.playlists[0]);
   const [isVisible, setIsVisible] = useState(true);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleSelect = (event: React.MouseEvent<HTMLAnchorElement>, item: PlaylistItem) => {
     event.preventDefault(); // Prevent default behavior of the anchor tag
     setIsVisible(false);
-    setTimeout(() => {
-      setSelectedItem(item);
-      setIsVisible(true);
-    }, 300); // Delay to sync with the transition duration
+
+    // Preload the background image
+    const bgImage = new Image();
+    bgImage.src = item.src;
+
+    // Preload the images of the songs
+    const songImages = item.songs.map(song => {
+      const img = new Image();
+      img.src = song.src;
+      return img;
+    });
+
+    // Wait until all images are loaded
+    const allImagesLoaded = Promise.all([
+      new Promise<void>((resolve) => { bgImage.onload = () => resolve(); }),
+      ...songImages.map(img => new Promise<void>((resolve) => { img.onload = () => resolve(); }))
+    ]);
+
+    allImagesLoaded.then(() => {
+      setTimeout(() => {
+        setSelectedItem(item);
+        setIsVisible(true);
+      }, 300); // Delay to sync with the transition duration
+    });
+
     setIsOpen(false);
   };
 
@@ -54,13 +74,6 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
-  useEffect(() => {
-    if (selectedItem) {
-      setIsTransitioning(true);
-      setTimeout(() => setIsTransitioning(false), 300); // Match the transition duration
-    }
-  }, [selectedItem]);
 
   return (
     <>
