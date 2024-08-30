@@ -1,0 +1,9 @@
+{
+    "title": "UFHF - Underactuated Finger Mechanism with Haptic Feedback",
+    "date": "2022-05-13",
+    "content": "Combining a Haptic Feedback and Sensing Glove (HFG) with an Underactuated Finger Mechanism (UFM), this concept aims to replicate the complex motion of human fingers in a robotic system, providing bi-directional control and haptic feedback to enhance user experience and precision in robotic applications.",
+    "imageHref": "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/1.png?raw=true",
+    "featured": "y",
+    "active": "n",
+    "category": "Research"
+  }

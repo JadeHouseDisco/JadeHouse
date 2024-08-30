@@ -83,16 +83,16 @@ export default async function Lab() {
       },
     }
     
-    async function getAllBlogPosts(): Promise<BlogPost[]> {
+    async function getAllExpereinces(): Promise<BlogPost[]> {
       const experiencesPosts = await getBlogPosts('app/lab/experiences');
     
       const allBlogPosts = [...experiencesPosts];
       return allBlogPosts;
     }
     
-    const blogPosts = await getAllBlogPosts();
+    const expereinces = await getAllExpereinces();
 
-    const featuredPosts = blogPosts
+    const featuredExperiences = expereinces
     .filter(post => post.featured === 'y')
     .map(post => ({
       image: {
@@ -108,50 +108,39 @@ export default async function Lab() {
 
     const experiences = {
       projectTitle: "Featured Experiences",
-      projects: featuredPosts,
+      projects: featuredExperiences,
       viewAllLink: "/lab/experiences",
       buttonText:"View all Experiences"
     }
 
+    async function getAllIdeas(): Promise<BlogPost[]> {
+      const ideasPosts = await getBlogPosts('app/lab/ideas');
+    
+      const allBlogPosts = [...ideasPosts];
+      return allBlogPosts;
+    }
+    
+    const ideas = await getAllIdeas();
+
+    const featuredIdeas = ideas
+    .filter(post => post.featured === 'y')
+    .map(post => ({
+      image: {
+        src: post.imageHref,
+        alt: post.title,
+        width: 400,
+        height: 300,
+      },
+      title: post.title,
+      description: post.content,
+      viewLink: post.href,
+    }));
+
     const literatureReview = {
-      projectTitle: "Featured Literature Reviews",
-      projects: [
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 1',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 1',
-          description: 'A web application that helps users manage their tasks and projects.',
-          viewLink: '/lab',
-        },
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 2',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 2',
-          description: 'A mobile app that allows users to track their fitness goals and progress. more description for testing purpose to see if longer text is properly hnadles iwth.',
-          viewLink: '/lab',
-        },
-        {
-          image: {
-            src: '/test.png',
-            alt: 'Project 3',
-            width: 400,
-            height: 300,
-          },
-          title: 'Project 3',
-          description: 'A design system that helps teams create consistent and high-quality user interfaces.',
-          viewLink: '/lab',
-        },
-      ],
-      viewAllLink: "/lab/litrev",
-      buttonText:"View all Literature Reviews"
+      projectTitle: "Featured Ideas",
+      projects: featuredIdeas,
+      viewAllLink: "/lab/ideas",
+      buttonText:"View all Ideas"
     }
 
     const miniAboutProps = {
@@ -181,11 +170,11 @@ export default async function Lab() {
           icon: <GithubIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
           icon: <GoogleScholarIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://orcid.org/0009-0004-2586-0493',
           icon: <ORCIDIcon className="h-6 w-6" />,
         },
       ],
@@ -229,11 +218,11 @@ export default async function Lab() {
           icon: <YoutubeIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
           icon: <GoogleScholarIcon className="h-6 w-6" />,
         },
         {
-          href: '#',
+          href: 'https://orcid.org/0009-0004-2586-0493',
           icon: <ORCIDIcon className="h-6 w-6" />,
         },
       ],

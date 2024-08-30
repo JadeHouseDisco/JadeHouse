@@ -390,12 +390,14 @@ export default async function Disco() {
         <Header headerProps={headerProps}/>
         <HeroSection heroSectionProps={heroSectionProps}/>
         <ProjectGrid projectGridProps={projectGridProps}/>
-        <div className="grid grid-cols-2 items-start mx-20">
-          <SongGrid songGridProps={songGridProps}/>
-          <PlaylistIntro PlaylistIntroProps={playlistIntroProps}/>
+        <div className="container px-4 md:px-6 mx-auto mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-8">
+            <SongGrid songGridProps={songGridProps}/>
+            <PlaylistIntro PlaylistIntroProps={playlistIntroProps}/>
+          </div>
         </div>
         <div className="mx-auto my-4">
-          <DropdownButton href={"/disco/music"} options={[]} buttonText={"Explore all Music"} />
+            <DropdownButton href={"/disco/music"} options={[]} buttonText={"Explore all Music"} />
         </div>
         <MiniAbout miniAboutProps={miniAboutProps}/>
         <Footer footerProps={footerProps}/>

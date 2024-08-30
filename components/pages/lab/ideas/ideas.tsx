@@ -66,11 +66,11 @@ const footerProps = {
       icon: <YoutubeIcon className="h-6 w-6" />,
     },
     {
-      href: '#',
+      href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
       icon: <GoogleScholarIcon className="h-6 w-6" />,
     },
     {
-      href: '#',
+      href: 'https://orcid.org/0009-0004-2586-0493',
       icon: <ORCIDIcon className="h-6 w-6" />,
     },
   ],
@@ -79,7 +79,7 @@ const footerProps = {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <BlogTilesSection blogPosts={blogPosts} categories={blogPostsCategories}/>
+      <BlogTilesSection blogPosts={blogPosts} categories={blogPostsCategories} noActive={true}/>
       <Footer footerProps={footerProps}/>
     </div>
   )

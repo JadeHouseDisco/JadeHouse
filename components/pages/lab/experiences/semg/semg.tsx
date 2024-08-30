@@ -65,11 +65,11 @@ const Semg = () => {
             icon: <YoutubeIcon className="h-6 w-6" />,
           },
           {
-            href: '#',
+            href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
             icon: <GoogleScholarIcon className="h-6 w-6" />,
           },
           {
-            href: '#',
+            href: 'https://orcid.org/0009-0004-2586-0493',
             icon: <ORCIDIcon className="h-6 w-6" />,
           },
         ],

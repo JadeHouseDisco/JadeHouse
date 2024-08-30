@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, SyntheticEvent } from 'react';
+import React, { useState, SyntheticEvent, useEffect, useRef } from 'react';
 
 interface BlogTilesSectionProps {
     categories: string[],
@@ -15,27 +15,32 @@ interface BlogTilesSectionProps {
         active: string,
         category: string,
     }[];
-  }
+    noActive?: Boolean;
+}
 
-const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categories }) => {
+const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categories, noActive }) => {
     const [sortMethod, setSortMethod] = useState('featured');
     const [searchQuery, setSearchQuery] = useState('');
     const [hoveringTile, setHoveringTile] = useState<number | null>(null);
+    const [overflowingTitles, setOverflowingTitles] = useState<boolean[]>([]);
+
+    // Correctly typing the useRef hook to hold an array of HTMLHeadingElement | null
+    const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
 
     const sortBlogPosts = (method: string) => {
         const sortedBlogPosts = [...blogPosts].sort((a, b) => {
             const dateSort = new Date(b.date).getTime() - new Date(a.date).getTime();
-    
+
             switch (method) {
                 case 'featured':
                     const featuredSort = (b.featured === 'y' ? 1 : 0) - (a.featured === 'y' ? 1 : 0);
                     if (featuredSort !== 0) return featuredSort;
-    
+
                     return dateSort;
                 case 'active':
                     const activeSort = (b.active === 'y' ? 1 : 0) - (a.active === 'y' ? 1 : 0);
                     if (activeSort !== 0) return activeSort;
-    
+
                     return dateSort;
                 case 'newest':
                     return dateSort;
@@ -45,13 +50,13 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                     if (categories.includes(method)) {
                         const categorySort = (b.category === method ? 1 : 0) - (a.category === method ? 1 : 0);
                         if (categorySort !== 0) return categorySort;
-    
+
                         return dateSort;
                     }
                     return 0;
             }
         });
-    
+
         return sortedBlogPosts;
     };
 
@@ -61,14 +66,14 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
 
     const filterBlogPosts: FilterBlogPostsFunction = (blogPosts, query) => {
         if (!query) {
-        return blogPosts;
+            return blogPosts;
         }
 
         const lowercaseQuery = query.toLowerCase();
         return blogPosts.filter(
-        (blogPost) =>
-            blogPost.title.toLowerCase().includes(lowercaseQuery) ||
-            blogPost.content.toLowerCase().includes(lowercaseQuery)
+            (blogPost) =>
+                blogPost.title.toLowerCase().includes(lowercaseQuery) ||
+                blogPost.content.toLowerCase().includes(lowercaseQuery)
         );
     };
 
@@ -93,6 +98,35 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
         setHoveringTile(null);
     }
 
+    const checkOverflowingTitles = () => {
+        const newOverflowingTitles = titleRefs.current.map((titleRef) => {
+            if (titleRef) {
+                return titleRef.scrollWidth > titleRef.clientWidth;
+            }
+            return false;
+        });
+        if (JSON.stringify(newOverflowingTitles) !== JSON.stringify(overflowingTitles) && !hoveringTile && hoveringTile !== 0) {
+            setOverflowingTitles(newOverflowingTitles);
+        }
+    };
+    
+    useEffect(() => {
+        // Check overflowing titles on initial load
+        checkOverflowingTitles();
+
+        // Check overflowing titles on window resize
+        const handleResize = () => {
+            checkOverflowingTitles();
+            console.log("check");
+        };
+        
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [filteredBlogPosts]);
+
     return (
         <div className="mx-8 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 py-8">
             <div className="bg-gray-800 rounded-lg p-6">
@@ -100,71 +134,73 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                 <div className="space-y-4">
                     <div className="flex items-center gap-2">
                         <input
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
-                        id="sort-featured"
-                        name="sort"
-                        type="radio"
-                        checked={sortMethod === 'featured'}
-                        onChange={() => setSortMethod('featured')}
+                            className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                            id="sort-featured"
+                            name="sort"
+                            type="radio"
+                            checked={sortMethod === 'featured'}
+                            onChange={() => setSortMethod('featured')}
                         />
                         <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
-                        Featured
+                            Featured
                         </label>
                     </div>
+                    {!noActive && 
                     <div className="flex items-center gap-2">
                         <input
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
-                        id="sort-active"
-                        name="sort"
-                        type="radio"
-                        checked={sortMethod === 'active'}
-                        onChange={() => setSortMethod('active')}
+                            className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                            id="sort-active"
+                            name="sort"
+                            type="radio"
+                            checked={sortMethod === 'active'}
+                            onChange={() => setSortMethod('active')}
                         />
                         <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
-                        Active
+                            Active
                         </label>
                     </div>
+                    }
                     <div className="flex items-center gap-2">
                         <input
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
-                        id="sort-newest"
-                        name="sort"
-                        type="radio"
-                        checked={sortMethod === 'newest'}
-                        onChange={() => setSortMethod('newest')}
+                            className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                            id="sort-newest"
+                            name="sort"
+                            type="radio"
+                            checked={sortMethod === 'newest'}
+                            onChange={() => setSortMethod('newest')}
                         />
                         <label className="text-sm font-medium text-gray-200" htmlFor="sort-newest">
-                        Newest
+                            Newest
                         </label>
                     </div>
                     <div className="flex items-center gap-2">
                         <input
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
-                        id="sort-oldest"
-                        name="sort"
-                        type="radio"
-                        checked={sortMethod === 'oldest'}
-                        onChange={() => setSortMethod('oldest')}
+                            className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                            id="sort-oldest"
+                            name="sort"
+                            type="radio"
+                            checked={sortMethod === 'oldest'}
+                            onChange={() => setSortMethod('oldest')}
                         />
                         <label className="text-sm font-medium text-gray-200" htmlFor="sort-price-asc">
-                        Oldest
+                            Oldest
                         </label>
                     </div>
                 </div>
                 <h3 className="text-lg font-semibold mt-4 mb-4">Categories</h3>
                 <div className="space-y-4">
                     {categories.map((category, index) => (
-                        <div className="flex items-center gap-2">
+                        <div key={index} className="flex items-center gap-2">
                             <input
-                            className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
-                            id="sort-category"
-                            name="sort"
-                            type="radio"
-                            checked={sortMethod === category}
-                            onChange={() => setSortMethod(category)}
+                                className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
+                                id="sort-category"
+                                name="sort"
+                                type="radio"
+                                checked={sortMethod === category}
+                                onChange={() => setSortMethod(category)}
                             />
                             <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
-                            {category}
+                                {category}
                             </label>
                         </div>
                     ))}
@@ -173,12 +209,12 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                     <h3 className="text-lg font-semibold mb-4">Search</h3>
                     <div className="flex items-center gap-2">
                         <input
-                        className="h-6 w-full text-black rounded px-1"
-                        id="search"
-                        name="search"
-                        type="text"
-                        value={searchQuery}
-                        onChange={handleSearchChange}
+                            className="h-6 w-full text-black rounded px-1"
+                            id="search"
+                            name="search"
+                            type="text"
+                            value={searchQuery}
+                            onChange={handleSearchChange}
                         />
                     </div>
                 </div>
@@ -205,14 +241,19 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                         />
                         <div className="p-4 bg-gray-700">
                             <div className="whitespace-nowrap flex">
-                                <h3
-                                className={`text-lg font-semibold ${hoveringTile === index && blogPost.title.length > 25 ? "animate-marquee inline-block" : "truncate"}`}
+                            <h3
+                            ref={(el) => {
+                                titleRefs.current[index] = el;
+                            }}
+                            className={`text-lg font-semibold ${hoveringTile === index && overflowingTitles[index] ? "animate-marquee inline-block" : "truncate"}`}
+                            >
+                            {blogPost.title}
+                            </h3>
+                                {hoveringTile === index && overflowingTitles[index] && (
+                                <h3 
+                                className="absolute text-lg font-semibold animate-marquee2 inline-block"
                                 >
-                                    {blogPost.title}
-                                </h3>
-                                {hoveringTile === index && blogPost.title.length > 25 && (
-                                <h3 className="absolute text-lg font-semibold animate-marquee2 inline-block">
-                                    {blogPost.title}
+                                {blogPost.title}
                                 </h3>
                                 )}
                             </div>
@@ -227,7 +268,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                 ))}
             </div>
         </div>
-    )
+    );
 }
 
 export default BlogTilesSection;

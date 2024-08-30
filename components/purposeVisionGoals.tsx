@@ -116,28 +116,31 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                 />
                 <div className="absolute inset-0 bg-gray-900/40"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-                    {headText}
-                    </h2>
-                    <p className="mt-4 max-w-3xl text-lg md:text-xl">
-                    {bodyText}
-                    </p>
+                    <div className=" h-64 overflow-hidden">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+                            {headText}
+                        </h2>
+                        <p className="mt-4 max-w-3xl text-lg md:text-xl">
+                            {bodyText}
+                        </p>
+                    </div>
+                    <div className="relative flex flex-col items-center justify-center px-4 md:px-6 mt-10">
+                        <div className="flex justify-center space-x-40">
+                            {purposeVisionGoalsProps.buttons.map((button, index) => (
+                                <div
+                                    className="inline-flex font-bold text-lg items-center justify-center h-10 px-6 rounded-md bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
+                                    onMouseEnter={button.buttonText === "Purpose" ? handleMouseEnterPurpose : button.buttonText === "Vision" ? handleMouseEnterVision : handleMouseEnterGoals}
+                                    onMouseLeave={handleMouseLeave}
+                                    key={index}
+                                >
+                                    {button.buttonText}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </section>
-            <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 mt-10">
-                <div className="flex justify-center space-x-40">
-                    {purposeVisionGoalsProps.buttons.map((button, index) => (
-                        <div
-                            className="inline-flex font-bold text-lg items-center justify-center h-10 px-6 rounded-md bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                            onMouseEnter={button.buttonText === "Purpose" ? handleMouseEnterPurpose : button.buttonText === "Vision" ? handleMouseEnterVision : handleMouseEnterGoals}
-                            onMouseLeave={handleMouseLeave}
-                            key={index}
-                        >
-                            {button.buttonText}
-                        </div>
-                    ))}
-                </div>
-            </div>
+            
         </div>
     )
 }

@@ -78,7 +78,7 @@ const footerProps = {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <BlogTilesSection blogPosts={blogPosts} categories={blogPostCategories}/>
+      <BlogTilesSection blogPosts={blogPosts} categories={blogPostCategories} noActive={true}/>
       <Footer footerProps={footerProps}/>
     </div>
   )

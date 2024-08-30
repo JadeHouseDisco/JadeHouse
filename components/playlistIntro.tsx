@@ -18,8 +18,7 @@ interface PlaylistIntroProps {
 
 const PlaylistIntro: React.FC<PlaylistIntroProps> =({ PlaylistIntroProps }) => {
   return (
-    <section className="grid justify-items-center">
-      <div className="container max-w-2xl px-4 md:px-6">
+      <div className="container max-w-2xl px-4 md:px-6 mx-auto">
         <div className="max-w-5xl space-y-6">
           <div className="space-y-2 text-center">
             <h2 className="text-3xl mb-8 font-bold tracking-tight sm:text-4xl">
@@ -56,7 +55,6 @@ const PlaylistIntro: React.FC<PlaylistIntroProps> =({ PlaylistIntroProps }) => {
           </Accordion>
         </div>
       </div>
-    </section>
   );
 }
 

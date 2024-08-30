@@ -31,17 +31,17 @@ const SongGrid: React.FC<SongGridProps> = ({ songGridProps }) => {
   };
 
   return (
-    <div className="max-w-xl mx-20 mb-4">
+    <div className="container max-w-2xl px-4 md:px-6 mx-auto">
       <h2 className="text-center text-4xl font-bold mb-8">Favorite Songs</h2>
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
         <div className="flex items-start">
-          <Image 
+        <Image 
             src={songGridProps[currentSong].image} 
             alt={songGridProps[currentSong].title} 
-            className="w-64 h-64 object-cover mr-8"
-            width= "544"
-            height= "544" 
-          />
+            className="w-32 h-32 md:w-32 md:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 mr-8"
+            width="544"
+            height="544" 
+        />
           <div>
             <h2 className="text-2xl font-bold mb-2">{songGridProps[currentSong].title}</h2>
             <p className="text-gray-400 mb-2">{songGridProps[currentSong].artist}</p>

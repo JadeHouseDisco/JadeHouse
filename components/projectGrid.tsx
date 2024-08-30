@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image'
 
@@ -52,6 +52,9 @@ const CardFooter: React.FC<React.PropsWithChildren> = ({ children }) => (
 
 const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
   const [hoveringTile, setHoveringTile] = useState<number | null>(null);
+  const [overflowingTitles, setOverflowingTitles] = useState<boolean[]>([]);
+
+  const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
       setHoveringTile(index);
@@ -60,6 +63,35 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
       setHoveringTile(null);
   }
+
+  const checkOverflowingTitles = () => {
+      const newOverflowingTitles = titleRefs.current.map((titleRef) => {
+          if (titleRef) {
+              return titleRef.scrollWidth > titleRef.clientWidth;
+          }
+          return false;
+      });
+      if (JSON.stringify(newOverflowingTitles) !== JSON.stringify(overflowingTitles) && !hoveringTile && hoveringTile !== 0) {
+          setOverflowingTitles(newOverflowingTitles);
+      }
+  };
+
+  useEffect(() => {
+      // Check overflowing titles on initial load
+      checkOverflowingTitles();
+
+      // Check overflowing titles on window resize
+      const handleResize = () => {
+          checkOverflowingTitles();
+          console.log("check");
+      };
+      
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+          window.removeEventListener('resize', handleResize);
+      };
+  });
   
   return (
     <section className="py-16">
@@ -90,10 +122,14 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
                   <div className="h-22">
                     <CardTitle>
                       <div className="whitespace-nowrap flex relative">
-                        <p className = {`${hoveringTile === index && project.title.length > 25 ? "animate-marquee inline-block" : "truncate"}`}>
+                        <p 
+                        ref={(el) => {
+                          titleRefs.current[index] = el;
+                        }}
+                        className = {`${hoveringTile === index && overflowingTitles[index] ? "animate-marquee inline-block" : "truncate"}`}>
                           {project.title}
                         </p>
-                        {hoveringTile === index && project.title.length > 25 && (
+                        {hoveringTile === index && overflowingTitles[index] && (
                           <p className="absolute animate-marquee2 inline-block">
                               {project.title}
                           </p>
