@@ -145,7 +145,6 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                     fill
                     style={{ borderRadius: '50%', objectFit: 'cover', maskImage: 'radial-gradient(circle at 50% 50%, transparent 20%, black 21%)' }}
                     priority
-                    onLoad={() => setIsLoading(false)}
                     onLoadingComplete={() => setIsLoading(false)}
                     className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
                   />
