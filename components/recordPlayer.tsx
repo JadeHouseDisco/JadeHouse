@@ -145,8 +145,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                     alt="Album Cover"
                     fill
                     style={{ borderRadius: '50%', objectFit: 'cover', maskImage: 'radial-gradient(circle at 50% 50%, transparent 20%, black 21%)' }}
-                    priority
-                    onLoadingComplete={() => setIsLoading(false)}
+                    onLoadingComplete={() => setTimeout(() => setIsLoading(false), 50)}
                     className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
                   />
                   {!isLoading && (
