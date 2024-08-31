@@ -144,6 +144,8 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                     src={recordPlaying.src}
                     alt="Album Cover"
                     fill
+                    placeholder="blur"
+                    blurDataURL="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/blur.jpg?raw=true"
                     style={{ borderRadius: '50%', objectFit: 'cover', maskImage: 'radial-gradient(circle at 50% 50%, transparent 20%, black 21%)' }}
                     onLoadingComplete={() => setTimeout(() => setIsLoading(false), 50)}
                     className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
