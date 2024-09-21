@@ -110,7 +110,7 @@ const Fyp = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
                 <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-                      Assistive Robot Arm Extender (ARAE) Calibration Procedure
+                      Novel Calibration Procedure of Assistive Robot Arm Extender (ARAE) for Personalized Assistance
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
                       Final Year Project
