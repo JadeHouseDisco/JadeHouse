@@ -30,7 +30,7 @@ export default async function Litrev() {
   }
 
 const blogPosts = await getBlogPosts('app/lab/litrev');
-const blogPostsCategories = ["Heart", "Robot"]
+const blogPostsCategories = ["Heart", "Robot", 'sEMG']
 
 const footerProps = {
   logo: {
@@ -79,7 +79,7 @@ const footerProps = {
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
       <Header headerProps={headerProps}/>
-      <BlogTilesSection blogPosts={blogPosts} categories={blogPostsCategories}/>
+      <BlogTilesSection blogPosts={blogPosts} categories={blogPostsCategories} noFeatured={true} noActive={true}/>
       <Footer footerProps={footerProps}/>
     </div>
   )

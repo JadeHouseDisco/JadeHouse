@@ -15,10 +15,11 @@ interface BlogTilesSectionProps {
         active: string,
         category: string,
     }[];
+    noFeatured? : Boolean;
     noActive?: Boolean;
 }
 
-const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categories, noActive }) => {
+const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categories, noActive, noFeatured }) => {
     const [sortMethod, setSortMethod] = useState('featured');
     const [searchQuery, setSearchQuery] = useState('');
     const [hoveringTile, setHoveringTile] = useState<number | null>(null);
@@ -26,6 +27,16 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
 
     // Correctly typing the useRef hook to hold an array of HTMLHeadingElement | null
     const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
+
+    useEffect(() => {
+        if (!noFeatured) {
+            setSortMethod('featured');
+        } else if (!noActive) {
+            setSortMethod('active');
+        } else {
+            setSortMethod('newest');
+        }
+    }, [noFeatured, noActive]);
 
     const sortBlogPosts = (method: string) => {
         const sortedBlogPosts = [...blogPosts].sort((a, b) => {
@@ -132,6 +143,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
             <div className="bg-gray-800 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-4">Sort By</h3>
                 <div className="space-y-4">
+                    {!noFeatured && 
                     <div className="flex items-center gap-2">
                         <input
                             className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
@@ -145,6 +157,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                             Featured
                         </label>
                     </div>
+                    }
                     {!noActive && 
                     <div className="flex items-center gap-2">
                         <input
@@ -219,53 +232,55 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {filteredBlogPosts.map((blogPost, index) => (
-                    <a 
-                        className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""} ${(categories.includes(sortMethod) && blogPost.category === sortMethod) ? " border-2 border-[#00a896]" : ""}`}
-                        href={blogPost.href}
-                        key={index}
-                        onMouseEnter={(e) => handleMouseEnter(e, index)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <img
-                            alt="Blog Post Image"
-                            className="w-full h-48 object-cover"
-                            height={300}
-                            src={blogPost.imageHref}
-                            style={{
-                            aspectRatio: "400/300",
-                            objectFit: "cover",
-                            }}
-                            width={400}
-                        />
-                        <div className="p-4 bg-gray-700">
-                            <div className="whitespace-nowrap flex">
-                            <h3
-                            ref={(el) => {
-                                titleRefs.current[index] = el;
-                            }}
-                            className={`text-lg font-semibold ${hoveringTile === index && overflowingTitles[index] ? "animate-marquee inline-block" : "truncate"}`}
-                            >
-                            {blogPost.title}
-                            </h3>
-                                {hoveringTile === index && overflowingTitles[index] && (
-                                <h3 
-                                className="absolute text-lg font-semibold animate-marquee2 inline-block"
+            <div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {filteredBlogPosts.map((blogPost, index) => (
+                        <a 
+                            className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""} ${(categories.includes(sortMethod) && blogPost.category === sortMethod) ? " border-2 border-[#00a896]" : ""}`}
+                            href={blogPost.href}
+                            key={index}
+                            onMouseEnter={(e) => handleMouseEnter(e, index)}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <img
+                                alt="Blog Post Image"
+                                className="w-full h-48 object-cover"
+                                height={300}
+                                src={blogPost.imageHref}
+                                style={{
+                                aspectRatio: "400/300",
+                                objectFit: "cover",
+                                }}
+                                width={400}
+                            />
+                            <div className="p-4 bg-gray-700">
+                                <div className="whitespace-nowrap flex">
+                                <h3
+                                ref={(el) => {
+                                    titleRefs.current[index] = el;
+                                }}
+                                className={`text-lg font-semibold ${hoveringTile === index && overflowingTitles[index] ? "animate-marquee inline-block" : "truncate"}`}
                                 >
                                 {blogPost.title}
                                 </h3>
-                                )}
+                                    {hoveringTile === index && overflowingTitles[index] && (
+                                    <h3 
+                                    className="absolute text-lg font-semibold animate-marquee2 inline-block"
+                                    >
+                                    {blogPost.title}
+                                    </h3>
+                                    )}
+                                </div>
+                                <p className=" text-xs mb-2">
+                                    {blogPost.date}
+                                </p>
+                                <p className="text-gray-400 line-clamp-3">
+                                    {blogPost.content}
+                                </p>
                             </div>
-                            <p className=" text-xs mb-2">
-                                {blogPost.date}
-                            </p>
-                            <p className="text-gray-400 line-clamp-3">
-                                {blogPost.content}
-                            </p>
-                        </div>
-                    </a>
-                ))}
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     );

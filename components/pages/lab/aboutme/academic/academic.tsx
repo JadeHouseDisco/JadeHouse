@@ -73,11 +73,11 @@ export default function Academic() {
     title: "CV/Transcript",
     downloads: [
       {
-        buttonText: "Download CV",
+        buttonText: "CV",
         href: "https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/Hyunwoo_Lee_CV.docx"
       },
       {
-        buttonText: "Download Transcript",
+        buttonText: "Transcript",
         href: "https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/Hyunwoo_Lee_Transcript.pdf"
       }
     ]
