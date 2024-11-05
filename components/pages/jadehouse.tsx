@@ -1,26 +1,11 @@
 import React from 'react';
-import Header from "@/components/header";
+import MainHeader from '../mainHeader';
 import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
-import Footer from "@/components/footer"
+import MainFooter from '../mainFooter';
 import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 
 const JadeHouse = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true',
-      width: 406,
-      height: 526,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' }
-    ],
-    dropdownOptions: [
-      { text: 'Lab', href: '/lab' },
-      { text: 'Disco', href: '/disco' },
-    ],
-  }
-
   const heroSectionProps = {
     originalBackgroundImage: {
       src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/main_background.jpeg?raw=true",
@@ -98,41 +83,12 @@ const JadeHouse = () => {
     button: {text:"", href:""}
   }
 
-  const footerProps = {
-    logo: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true',
-      alt: 'Website Logo',
-      width: 64,
-      height: 64,
-    },
-    title:"JadeHouse",
-    description:"House of memory for my professional and personal life",
-    navLinks: [
-      { text: 'Lab', href: '/lab' },
-      { text: 'Disco', href: '/disco' },
-    ],
-    socialLinks: [
-      {
-        href: "mailto:HYUNWOO001@e.ntu.edu.sg",
-        icon: <MailIcon className="h-6 w-6" />,
-      },
-      {
-        href: "https://twitter.com/JadeHouseDisco",
-        icon: <TwitterIcon className="h-6 w-6" />,
-      },
-      {
-        href: "https://linkedin.com/in/hyunwoolee0329",
-        icon: <LinkedinIcon className="h-6 w-6" />,
-      }
-    ],
-  }
-
   return (
     <div key="1" className="flex flex-col min-h-[100dvh]">
-      <Header headerProps={headerProps}/>
+      <MainHeader/>
       <HeroSection heroSectionProps={heroSectionProps}/>
       <MiniAbout miniAboutProps={miniAboutProps}/>
-      <Footer footerProps={footerProps}/>
+      <MainFooter/>
     </div>
   );
 };

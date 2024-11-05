@@ -3,28 +3,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-interface FooterProps {
-  footerProps: {
-    logo: {
-      src: string;
-      alt: string;
-      width: number;
-      height: number;
-    };
-    title: string;
-    description: string;
-    navLinks: {
-      text: string;
-      href: string;
-    }[];
-    socialLinks: {
-      href: string;
-      icon: React.ReactNode;
-    }[];
-  }
-}
+import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
 
-const Footer: React.FC<FooterProps> = ({footerProps}) => {
+const DiscoFooter: React.FC = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [buttonText, setButtonText] = useState("Send");
@@ -54,45 +35,85 @@ const Footer: React.FC<FooterProps> = ({footerProps}) => {
     alert("Succesfully sent message")
     setButtonText("Send");
   };
-  
+
   return (
     <footer className="bg-gray-900 text-white py-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <Image
-              src={footerProps.logo.src}
-              alt={footerProps.logo.alt}
-              width={footerProps.logo.width}
-              height={footerProps.logo.height}
-              className="mb-4"
-              priority={true}
-            />
-            <h2 className="text-2xl font-bold mb-2">{footerProps.title}</h2>
-            <p className="text-gray-400">{footerProps.description}</p>
+            <Link href='/lab'>
+              <Image
+                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_disco_b1js7e.png"
+                alt="disco logo"
+                width="64"
+                height="64"
+                className="mb-4"
+                priority={true}
+              />
+            </Link>
+            <Link href='/lab'>
+              <h2 className="text-2xl font-bold mb-2">JadeHouse Disco</h2>
+            </Link> 
+            <p className="text-gray-400">Archive of my personal life</p>
           </div>
           <div>
             <h3 className="text-lg font-bold mb-4">Navigation</h3>
             <ul className="space-y-2">
-              {footerProps.navLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white">
-                    {link.text}
+                <li>
+                  <Link href='/disco' className="text-gray-400 hover:text-white">
+                    Home
                   </Link>
                 </li>
-              ))}
+                <li>
+                  <Link href='/disco/aboutme' className="text-gray-400 hover:text-white">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/disco/memories' className="text-gray-400 hover:text-white">
+                    Memories
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/disco/thoughts' className="text-gray-400 hover:text-white">
+                    Thoughts
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/disco/music' className="text-gray-400 hover:text-white">
+                    Music
+                  </Link>
+                </li>
             </ul>
             <div className="flex items-center space-x-4 mt-4">
-              {footerProps.socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  className="text-gray-400 hover:text-white"
-                  href={link.href}
-                  target="_blank"
-                >
-                  {link.icon}
-                </a>
-              ))}
+              <a
+                className="text-gray-400 hover:text-white"
+                href='mailto:HYUNWOO001@e.ntu.edu.sg'
+                target="_blank"
+              >
+                <MailIcon className="h-6 w-6" />
+              </a>
+              <a
+                className="text-gray-400 hover:text-white"
+                href='https://twitter.com/JadeHouseDisco'
+                target="_blank"
+              >
+                <TwitterIcon className="h-6 w-6" />
+              </a>
+              <a
+                className="text-gray-400 hover:text-white"
+                href='https://www.instagram.com/jadehousedisco/'
+                target="_blank"
+              >
+                <InstagramIcon className="h-6 w-6" />
+              </a>
+              <a
+                className="text-gray-400 hover:text-white"
+                href='https://www.youtube.com/@JadeHouseCinema'
+                target="_blank"
+              >
+                <YoutubeIcon className="h-6 w-6" />
+              </a>
             </div>
           </div>
           <div className="md:col-span-2">
@@ -133,4 +154,4 @@ const Footer: React.FC<FooterProps> = ({footerProps}) => {
   );
 };
 
-export default Footer;
+export default DiscoFooter;

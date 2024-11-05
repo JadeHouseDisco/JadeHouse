@@ -1,40 +1,11 @@
 import React from 'react';
-import Header from "@/components/header";
+import DiscoHeader from '@/components/disccoHeader';
 import FamilyIntro from "@/components/familyIntro"
 import BackgroundTimeline from "@/components/backgroundTimeline"
 import AboutMeIntro from '@/components/aboutMeIntro';
-import Footer from "@/components/footer"
-import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
+import DiscoFooter from '@/components/discoFooter';
 
 const Aboutme = () => {
-    const headerProps ={
-      imageProps: {
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-        width: 418,
-        height: 538,
-      },
-      titles: [
-        { text: 'JadeHouse', href: '/' },
-        { text: 'Disco', href: '/disco' }
-      ],
-      dropdownOptions: [
-        { text: 'Home', href: '/disco' },
-        { text: 'About', 
-          href: '/disco/aboutme', 
-          subOptions: [
-            { text: 'Interests', href: '/disco/aboutme/interest' },
-            { text: 'Favorite Quotes', href: '/disco/aboutme/quotes' },
-          ] 
-        },
-        { text: 'Memories', href: '/disco/memories' },
-        {
-          href:"/disco/thoughts",
-          text: 'Thoughts',
-        },
-        { text: 'Music', href: '/disco/music' },
-      ],
-    }
-
     const aboutMeIntroProps = {
         headerText: "Nice to Meet you!",
         pText: "I am Hyunwoo, a curious and energetic soul constantly in search of new adventures. Guided by my heart and driven by opportunity, I explore unique experiences that others might never encounter. Music is my constant companion, enriching my journey and helping me memorialize the unforgettable memories I create along the way.",
@@ -427,51 +398,15 @@ const Aboutme = () => {
               detailedDescription: `Special dreams need special efforts. Right after wrapping up one internship, I jumped into another one at SNU. Research turned out to be entirely different from classroom learning, but it felt like my true calling. I got a taste of biomechatronic research and knew I needed more. And while I can't exactly steal people's hearts, I did manage to "steal" a few swine hearts. (Don't worry, it was all for science!).`
             },
         ],
-    }
-    
-    const footerProps = {
-      logo: {
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-        alt: 'Website Logo',
-        width: 64,
-        height: 64,
-      },
-      title:"JadeHouse Disco",
-      description:"Archive of my personal life",
-      navLinks: [
-        { text: 'Home', href: '/disco' },
-        { text: 'About', href: '/disco/aboutme' },
-        { text: 'Memories', href: '/disco/memories' },
-        { text: 'Thoughts', href: '/disco/thoughts' },
-        { text: 'Music', href: '/disco/music' },
-      ],
-      socialLinks: [
-        {
-          href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-          icon: <MailIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://twitter.com/JadeHouseDisco',
-          icon: <TwitterIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://www.instagram.com/jadehousedisco/',
-          icon: <InstagramIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://www.youtube.com/@JadeHouseCinema',
-          icon: <YoutubeIcon className="h-6 w-6" />,
-        },
-      ],
-    }
+      }
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header headerProps={headerProps}/>
+            <DiscoHeader/>
             <AboutMeIntro aboutMeIntroProps={aboutMeIntroProps}/>
             <FamilyIntro familyIntroProps={familyIntroProps}/>
             <BackgroundTimeline backgroundTimelineProps={backgroundTimelineProps}/>
-            <Footer footerProps={footerProps}/>
+            <DiscoFooter/>
         </div>
     )
 }
