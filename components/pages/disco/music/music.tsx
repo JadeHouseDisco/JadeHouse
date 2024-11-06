@@ -15,7 +15,7 @@ export default function Music() {
         artist: "Frank Ocean",
         album: "Blonde",
         link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=Hdqkv4Xt3zXE8mB1",
-        description: "If flowers bloom with sound, it would sound like this. Anything Anywhere you go and anything you do feels special with this song.",
+        description: "If flowers bloom with sound, it would sound like this. Anywhere you go and anything you do feels special with this song.",
         src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/1.jpg?raw=true"
       },
       {
