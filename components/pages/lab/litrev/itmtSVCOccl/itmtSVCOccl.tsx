@@ -32,7 +32,7 @@ const ItmtSVCOccl = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/itmtSVCOccl/1.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708610/1_nenycp.png"
                     height="858"
                     width="858"
                 />

@@ -33,7 +33,7 @@ const Ureca = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708592/main_lyxx99.jpg"
                     height="858"
                     width="858"
                 />
@@ -107,7 +107,7 @@ const Ureca = () => {
                       <Image
                         alt="cad"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/cad.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708591/cad_hqx4xz.jpg"
                         height="800"
                         width="1600"
                       />
@@ -116,7 +116,7 @@ const Ureca = () => {
                       <Image
                         alt="mesh"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/mesh.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708593/mesh_jczpox.jpg"
                         height="800"
                         width="1600"
                       />
@@ -125,7 +125,7 @@ const Ureca = () => {
                       <Image
                         alt="optimization"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/main.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708592/main_lyxx99.jpg"
                         height="800"
                         width="1600"
                       />
@@ -163,7 +163,7 @@ const Ureca = () => {
                       <Image
                         alt="result1"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result1.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708593/result1_unk2fc.png"
                         height="800"
                         width="1600"
                       />
@@ -172,7 +172,7 @@ const Ureca = () => {
                       <Image
                         alt="result2"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result2.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708593/result2_hdbmj4.png"
                         height="800"
                         width="1600"
                       />
@@ -181,7 +181,7 @@ const Ureca = () => {
                       <Image
                         alt="result3"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Investigation_of_Novel_Lattice_Designs_for_3D_Printing/result3.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708594/result3_axdcpv.png"
                         height="800"
                         width="1600"
                       />
@@ -287,14 +287,14 @@ const Ureca = () => {
                   <div className="mt-4">
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/MAE21044_Paper.pdf"
+                      href="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708592/MAE21044_Paper_qvjkgn.pdf"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
-                      Paper
+                      Report
                     </a>
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/MAE21044_Poster.pdf"
+                      href="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708592/MAE21044_Poster_wet1et.pdf"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Poster

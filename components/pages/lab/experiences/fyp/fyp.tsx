@@ -33,7 +33,7 @@ const Fyp = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/fyp/1.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708582/1_r24grq.jpg"
                     height="858"
                     width="858"
                 />
@@ -98,7 +98,7 @@ const Fyp = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/fyp/2.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708582/2_lcknrt.png"
                         height="800"
                         width="1600"
                       />
@@ -107,7 +107,7 @@ const Fyp = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/fyp/3.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708582/3_fgycvd.png"
                         height="800"
                         width="1600"
                       />
@@ -116,7 +116,7 @@ const Fyp = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/fyp/4.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708583/4_ty8nap.png"
                         height="800"
                         width="1600"
                       />

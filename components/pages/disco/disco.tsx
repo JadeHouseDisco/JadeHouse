@@ -13,7 +13,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 export default async function Disco() {
   const heroSectionProps = {
     originalBackgroundImage: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/disco_main_background.jpg?raw=true',
+      src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708692/disco_main_background_ugpjj3.jpg',
       alt: 'Hero Image',
       width: 1920,
       height: 1080,
@@ -24,7 +24,7 @@ export default async function Disco() {
       cards: [
         {
           image: {
-            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_bfqaxt.png",
             alt: "jadehouse logo",
             width: 120,
             height: 120,
@@ -34,7 +34,7 @@ export default async function Disco() {
           buttonText: "Return to Jadehouse",
           buttonHref: "/",
           newBackgroundImage: {
-            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/main_background.jpeg?raw=true",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708693/main_background_w5apqk.jpg",
             alt: "lab background image",
             width: 1536,
             height: 1536,
@@ -42,7 +42,7 @@ export default async function Disco() {
         },
         {
           image: {
-            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708697/jadehouse_lab_onig4i.png",
             alt: "jadehouse disco logo",
             width: 120,
             height: 120,
@@ -52,7 +52,7 @@ export default async function Disco() {
           buttonText: "Enter the Lab",
           buttonHref: "/lab",
           newBackgroundImage: {
-            src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/lab_main_background.jpg?raw=true",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708692/lab_main_background_qzwemo.jpg",
             alt: "lab background image",
             width: 1536,
             height: 1536,
@@ -94,7 +94,7 @@ export default async function Disco() {
 
     const songGridProps = [
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/1.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708698/1_rccmun.jpg',
         title: 'Pink + White',
         artist: 'Frank Ocean',
         album: 'Blonde',
@@ -102,7 +102,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=9cHbvRUALrc&si=vh4bUS2Tk1u1aWri"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/2.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708701/2_to6ncb.jpg',
         title: 'Crave You (Feat. Giselle)',
         artist: 'Flight Facilities',
         album: 'Down To Earth',
@@ -110,7 +110,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=xjj_OVvVQFc&si=2hO8K-yNxSYm5Xh8"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/3.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708705/3_ruih4o.jpg',
         title: 'In Our Prime',
         artist: 'The Black Keys',
         album: 'Turn Blue',
@@ -118,7 +118,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=aHwGucd6z5w&si=cVFJMFkSF2MghjR4"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/4.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708705/4_wgdihs.jpg',
         title: 'White Lies',
         artist: 'Max Frost',
         album: 'White Lies',
@@ -126,7 +126,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=WK8s7KTMbbw&si=73Xq6daGjY6QJxh4"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/5.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708706/5_nlfe89.jpg',
         title: 'Lone Digger',
         artist: 'Caravan Palace',
         album: '<I°_°I>',
@@ -134,7 +134,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=36A-ZjOpui8&si=tVl0LYhN0_UI_hpO"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/6.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708706/6_kfuggc.jpg',
         title: 'Cry Baby',
         artist: 'The Neighbourhood',
         album: 'Wiped Out!',
@@ -142,7 +142,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=xjj_OVvVQFc&si=2hO8K-yNxSYm5Xh8"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/7.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708706/7_cc5skm.jpg',
         title: 'Kazino',
         artist: 'BIBI',
         album: 'Kazino',
@@ -150,7 +150,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=xjj_OVvVQFc&si=2hO8K-yNxSYm5Xh8"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/8.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708707/8_t5cguq.jpg',
         title: 'High Noon',
         artist: 'THORNAPPLE',
         album: 'Capital Disease',
@@ -158,7 +158,7 @@ export default async function Disco() {
         link: "https://music.youtube.com/watch?v=dRegKRl-V_c&si=NlbI_64OoA4ffaSU"
       },
       {
-        image: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/9.jpg?raw=true',
+        image: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708707/9_x5nlef.jpg',
         title: 'Let Me Out',
         artist: 'The Blue Stones',
         album: 'Pretty Monster',
@@ -293,7 +293,7 @@ export default async function Disco() {
 
     const miniAboutProps = {
       profileImage: {  
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_disco.jpg?raw=true',
+        src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708697/profile_photo_disco_obafxr.jpg',
         alt: 'Profile Photo',
         width: 256,
         height: 256,

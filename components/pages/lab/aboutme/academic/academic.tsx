@@ -46,11 +46,11 @@ export default function Academic() {
     downloads: [
       {
         buttonText: "CV",
-        href: "https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/Hyunwoo_Lee_CV.docx"
+        href: "https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708674/Hyunwoo_Lee_CV_y4a1h3.docx"
       },
       {
         buttonText: "Transcript",
-        href: "https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/Hyunwoo_Lee_Transcript.pdf"
+        href: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708674/Hyunwoo_Lee_Transcript_i9yqoj.pdf"
       }
     ]
   }

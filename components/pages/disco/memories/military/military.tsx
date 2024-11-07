@@ -32,7 +32,7 @@ const Military = () => {
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/1.jpg?raw=true"
+                  src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708646/1_cdrkre.jpg"
                   height="858"
                   width="858"
               />
@@ -111,7 +111,7 @@ const Military = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/2.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708647/2_ogkyfl.jpg"
                       height="800"
                       width="1600"
                     />
@@ -120,7 +120,7 @@ const Military = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/3.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708647/3_pu6z3w.jpg"
                       height="800"
                       width="1600"
                     />
@@ -129,7 +129,7 @@ const Military = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/4.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708647/4_icauiw.jpg"
                       height="800"
                       width="1600"
                     />
@@ -159,7 +159,7 @@ const Military = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/5.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708648/5_hag6a3.jpg"
                       height="800"
                       width="1600"
                     />
@@ -168,7 +168,7 @@ const Military = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/6.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708648/6_yukdkm.jpg"
                       height="800"
                       width="1600"
                     />
@@ -177,7 +177,7 @@ const Military = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/7.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708648/7_bhe5zf.jpg"
                       height="800"
                       width="1600"
                     />
@@ -213,7 +213,7 @@ const Military = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/8.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708648/8_mh5fw0.webp"
                       height="800"
                       width="1600"
                     />
@@ -222,7 +222,7 @@ const Military = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/9.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708649/9_ulr7am.jpg"
                       height="800"
                       width="1600"
                     />
@@ -231,7 +231,7 @@ const Military = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Military/10.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708647/10_zn0of5.jpg"
                       height="800"
                       width="1600"
                     />

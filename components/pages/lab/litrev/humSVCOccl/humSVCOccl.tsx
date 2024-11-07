@@ -32,7 +32,7 @@ const HumSVCOccl = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/humSVCOccl/1.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708591/1_px5vvn.jpg"
                     height="858"
                     width="858"
                 />

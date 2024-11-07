@@ -32,7 +32,7 @@ const LwrLimbsEMG = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/lwrLimbsEMG/1.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708646/1_qdnizm.png"
                     height="858"
                     width="858"
                 />

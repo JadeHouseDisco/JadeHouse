@@ -32,7 +32,7 @@ const Delta = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/map_ixj1mr.png"
                     height="858"
                     width="858"
                 />
@@ -100,7 +100,7 @@ const Delta = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/mapping.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/mapping_mzmrrr.jpg"
                         height="800"
                         width="1600"
                       />
@@ -109,7 +109,7 @@ const Delta = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map_edit.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/map_edit_ngbts2.png"
                         height="800"
                         width="1600"
                       />
@@ -118,7 +118,7 @@ const Delta = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/edited_map.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708649/edited_map_vxiowj.png"
                         height="800"
                         width="1600"
                       />
@@ -165,7 +165,7 @@ const Delta = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/safety.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/safety_desmtg.jpg"
                          height="800"
                         width="1600"
                       />
@@ -174,7 +174,7 @@ const Delta = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/backpack.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708649/backpack_dfqpzq.png"
                         height="800"
                         width="1600"
                       />
@@ -183,7 +183,7 @@ const Delta = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/map_ixj1mr.png"
                         height="800"
                         width="1600"
                       />

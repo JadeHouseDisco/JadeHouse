@@ -32,7 +32,7 @@ const UnivExsk = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/univExsk/1.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708664/1_qufwwp.png"
                     height="858"
                     width="858"
                 />
@@ -96,7 +96,7 @@ const UnivExsk = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/univExsk/1.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708664/1_qufwwp.png"
                         height="800"
                         width="1600"
                       />
@@ -134,7 +134,7 @@ const UnivExsk = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/univExsk/2.webp?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708664/2_zl7oeq.webp"
                         height="800"
                         width="1600"
                       />

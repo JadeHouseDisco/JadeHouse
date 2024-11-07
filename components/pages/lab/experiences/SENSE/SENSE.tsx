@@ -87,7 +87,7 @@ const SENSE = () => {
                     <Image
                       alt="lcd"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SENSE/1.png?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708651/1_lfgc07.png"
                       height="800"
                       width="1600"
                     />
@@ -158,7 +158,7 @@ const SENSE = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SENSE/2.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708651/2_kaqfdf.jpg"
                         height="800"
                         width="1600"
                       />
@@ -167,7 +167,7 @@ const SENSE = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SENSE/3.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708651/3_wjabib.jpg"
                         height="800"
                         width="1600"
                       />

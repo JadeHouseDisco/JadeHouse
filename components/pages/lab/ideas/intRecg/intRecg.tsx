@@ -32,7 +32,7 @@ const IntRecg = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/intRecg/1.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708591/1_k7l4ty.png"
                     height="858"
                     width="858"
                 />
@@ -96,7 +96,7 @@ const IntRecg = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/intRecg/1.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708591/1_k7l4ty.png"
                         height="800"
                         width="1600"
                       />

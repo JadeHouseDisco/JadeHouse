@@ -32,7 +32,7 @@ const VRR = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/VRR/1.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708665/1_yukcxy.png"
                     height="858"
                     width="858"
                 />
@@ -96,7 +96,7 @@ const VRR = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/VRR/1.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708665/1_yukcxy.png"
                         height="800"
                         width="1600"
                       />
@@ -114,7 +114,7 @@ const VRR = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/VRR/2.webp?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708665/2_lnfoy7.webp"
                         height="800"
                         width="1600"
                       />
@@ -157,7 +157,7 @@ const VRR = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/VRR/3.webp?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708665/3_a33pbt.webp"
                         height="800"
                         width="1600"
                       />

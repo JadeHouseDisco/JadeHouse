@@ -32,7 +32,7 @@ const UFHF = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/1.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708662/1_nruc57.png"
                     height="858"
                     width="858"
                 />
@@ -89,7 +89,7 @@ const UFHF = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/2.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708662/2_os7m8j.png"
                         height="800"
                         width="1600"
                       />
@@ -108,7 +108,7 @@ const UFHF = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/1.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708662/1_nruc57.png"
                         height="800"
                         width="1600"
                       />
@@ -123,7 +123,7 @@ const UFHF = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/3.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730989936/3_opgsgi.png"
                         height="800"
                         width="1600"
                       />
@@ -148,7 +148,7 @@ const UFHF = () => {
                     <Image
                       alt="wheel"
                       className="mt-4 rounded-3xl object-cover max-w-[40%] h-auto"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/4.png?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708663/4_gyarhv.png"
                       height="800"
                       width="1600"
                     />
@@ -166,7 +166,7 @@ const UFHF = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/5.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708663/5_h30m8g.png"
                         height="800"
                         width="1600"
                       />
@@ -185,7 +185,7 @@ const UFHF = () => {
                       <Image
                         alt="wheel"
                         className="mt-4 rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/UFHF/6.webp?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708664/6_mwmjuf.webp"
                         height="800"
                         width="1600"
                       />

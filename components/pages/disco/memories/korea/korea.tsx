@@ -32,7 +32,7 @@ const Korea = () => {
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/1.jpg?raw=true"
+                  src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708644/1_bhmthl.jpg"
                   height="858"
                   width="858"
               />
@@ -88,7 +88,7 @@ const Korea = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/2.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708644/2_twvfwy.jpg"
                       height="800"
                       width="1600"
                     />
@@ -97,7 +97,7 @@ const Korea = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/3.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708644/3_nvilrv.jpg"
                       height="800"
                       width="1600"
                     />
@@ -106,7 +106,7 @@ const Korea = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/4.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708645/4_ljvn92.jpg"
                       height="800"
                       width="1600"
                     />
@@ -152,7 +152,7 @@ const Korea = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/5.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708645/5_gqml20.jpg"
                       height="800"
                       width="1600"
                     />
@@ -161,7 +161,7 @@ const Korea = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/6.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708645/6_bowxgm.jpg"
                       height="800"
                       width="1600"
                     />
@@ -170,7 +170,7 @@ const Korea = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/7.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708646/7_dyilfa.jpg"
                       height="800"
                       width="1600"
                     />

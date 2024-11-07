@@ -10,7 +10,7 @@ import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORC
 export default async function Lab() {
     const heroSectionProps = {
       originalBackgroundImage: {
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/lab_main_background.jpg?raw=true',
+        src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708692/lab_main_background_qzwemo.jpg',
         alt: 'Hero Image',
         width: 1920,
         height: 1080,
@@ -21,7 +21,7 @@ export default async function Lab() {
         cards: [
           {
             image: {
-              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse.png?raw=true",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_bfqaxt.png",
               alt: "jadehouse logo",
               width: 120,
               height: 120,
@@ -31,7 +31,7 @@ export default async function Lab() {
             buttonText: "Return to Jadehouse",
             buttonHref: "/",
             newBackgroundImage: {
-              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/main_background.jpeg?raw=true",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708693/main_background_w5apqk.jpg",
               alt: "lab background image",
               width: 1536,
               height: 1536,
@@ -39,7 +39,7 @@ export default async function Lab() {
           },
           {
             image: {
-              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_disco_b1js7e.png",
               alt: "jadehouse disco logo",
               width: 120,
               height: 120,
@@ -49,7 +49,7 @@ export default async function Lab() {
             buttonText: "Enter the Disco",
             buttonHref: "/disco",
             newBackgroundImage: {
-              src: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/heroSection/disco_main_background.jpg?raw=true",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708692/disco_main_background_ugpjj3.jpg",
               alt: "disco background image",
               width: 1536,
               height: 1536,
@@ -121,7 +121,7 @@ export default async function Lab() {
 
     const miniAboutProps = {
       profileImage: {
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/miniAbout/profile_photo_lab.jpg?raw=true',
+        src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708697/profile_photo_lab_pzclwi.jpg',
         alt: 'Profile Photo',
         width: 256,
         height: 256,

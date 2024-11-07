@@ -33,7 +33,7 @@ const Dyson = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heels.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708584/heels_xk78i5.jpg"
                     height="858"
                     width="858"
                 />
@@ -101,7 +101,7 @@ const Dyson = () => {
                       <Image
                         alt="sketch"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/sketch.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708586/sketch_ptxdl4.jpg"
                         height="800"
                         width="1600"
                       />
@@ -110,7 +110,7 @@ const Dyson = () => {
                       <Image
                         alt="make1"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/make1.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708585/make1_iyusny.jpg"
                         height="800"
                         width="1600"
                       />
@@ -119,7 +119,7 @@ const Dyson = () => {
                       <Image
                         alt="disassembled"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/disassembled.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708583/disassembled_ibcyt0.jpg"
                         height="800"
                         width="1600"
                       />
@@ -184,7 +184,7 @@ const Dyson = () => {
                       <Image
                         alt="heel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heel.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708584/heel_pqu27z.jpg"
                         height="800"
                         width="1600"
                       />
@@ -246,7 +246,7 @@ const Dyson = () => {
                       <Image
                         alt="air"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/air_heels.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708583/air_heels_wlmfqm.png"
                         height="800"
                         width="1600"
                       />
@@ -255,7 +255,7 @@ const Dyson = () => {
                       <Image
                         alt="screw"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/screw_heels.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708586/screw_heels_p4gljq.png"
                         height="800"
                         width="1600"
                       />
@@ -264,7 +264,7 @@ const Dyson = () => {
                       <Image
                         alt="step"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/step_heels.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708586/step_heels_gsitst.png"
                         height="800"
                         width="1600"
                       />

@@ -32,7 +32,7 @@ const Cambodia = () => {
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/3.jpg?raw=true"
+                  src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708573/1_a3f6oe.jpg"
                   height="858"
                   width="858"
               />
@@ -98,7 +98,7 @@ const Cambodia = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/2.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708574/2_qlpfkq.jpg"
                       height="800"
                       width="1600"
                     />
@@ -107,7 +107,7 @@ const Cambodia = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/5.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708575/3_ta1vxx.jpg"
                       height="800"
                       width="1600"
                     />
@@ -116,7 +116,7 @@ const Cambodia = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/6.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708575/4_bqiwjz.jpg"
                       height="800"
                       width="1600"
                     />
@@ -146,7 +146,7 @@ const Cambodia = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/1.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708573/1_a3f6oe.jpg"
                       height="800"
                       width="1600"
                     />
@@ -155,7 +155,7 @@ const Cambodia = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/7.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/7_uiebbu.jpg"
                       height="800"
                       width="1600"
                     />
@@ -164,7 +164,7 @@ const Cambodia = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Cambodia/4.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708575/4_bqiwjz.jpg"
                       height="800"
                       width="1600"
                     />

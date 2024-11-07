@@ -33,7 +33,7 @@ const Martdeliv = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/left.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/left_p0vmbm.jpg"
                     height="858"
                     width="858"
                 />
@@ -101,7 +101,7 @@ const Martdeliv = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/wheel.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708578/wheel_jlqb03.jpg"
                         height="800"
                         width="1600"
                       />
@@ -110,7 +110,7 @@ const Martdeliv = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/steer.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708577/steer_xkmklv.jpg"
                         height="800"
                         width="1600"
                       />
@@ -119,7 +119,7 @@ const Martdeliv = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/lcd.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/lcd_i2tltp.jpg"
                         height="800"
                         width="1600"
                       />
@@ -166,7 +166,7 @@ const Martdeliv = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/left.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/left_p0vmbm.jpg"
                         height="800"
                         width="1600"
                       />
@@ -175,7 +175,7 @@ const Martdeliv = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/right.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708577/right_rwjdpo.jpg"
                         height="800"
                         width="1600"
                       />
@@ -184,7 +184,7 @@ const Martdeliv = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/ui.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708577/ui_bjcqfl.jpg"
                         height="800"
                         width="1600"
                       />
