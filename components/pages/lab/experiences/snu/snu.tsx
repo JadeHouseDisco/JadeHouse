@@ -472,7 +472,7 @@ const Snu = () => {
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="_blank"
-                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/blogposts/SNU/Rigid%20SVC%20Calculations.xlsx"
+                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708661/Rigid_SVC_Calculations_wvjs5i.xlsx"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Rigid SVC Calculations
