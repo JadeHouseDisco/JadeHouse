@@ -128,7 +128,26 @@ const Quotes = () => {
             author: "Me",
             description: "This quote reminds me on how to foster healthy relationships.",
           },
-          
+          {
+            text: "Do we want to tell our children that going to the moon was the best we could do, and then we stopped?",
+            author: "Elon Musk",
+            description: "This quote tells me why technological development must move on.",
+          },
+          {
+            text: "The tackles are coming my way because I have the ball.",
+            author: "",
+            description: "This quote give me power to push forward against all odds.",
+          },
+          {
+            text: "The one thing that was certain in my journey was that I would not give up.",
+            author: "Me",
+            description: "This quote is something I want to say when I finally make it.",
+          },
+          {
+            text: "If you can't see what's ahead, you have to keep going until you do.",
+            author: "",
+            description: "This quote give me courage to move through the darkness.",
+          },
         ]
     }
 
