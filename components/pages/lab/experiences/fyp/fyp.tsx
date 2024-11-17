@@ -77,7 +77,13 @@ const Fyp = () => {
                   <h1 id="introduction" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
                       Introduction
                   </h1>
-                  
+
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    Mobility impairment of the upper limbs is a widespread issue affecting various populations, particularly those with neurological conditions such as stroke, cerebral palsy (CP), and multiple sclerosis (MS). These impairments can significantly impact daily activities and overall quality of life.
+                  </p>
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    While many research initiatives aim to develop solutions for rehabilitation and assistance, current approaches like exoskeletons and end-effector assistive devices have limitations. They are often cumbersome, difficult to use at home, can exert unintended forces at the attachment points, and lack personalized support.
+                  </p>
                   <div className="mt-4 flex gap-6">
                     {/* Left column with two horizontal images */}
                     <div className="flex-1 flex flex-col gap-6">
@@ -125,13 +131,6 @@ const Fyp = () => {
                       </div>
                     </div>
                   </div>
-
-                  <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    Mobility impairment of the upper limbs is a widespread issue affecting various populations, particularly those with neurological conditions such as stroke, cerebral palsy (CP), and multiple sclerosis (MS). These impairments can significantly impact daily activities and overall quality of life.
-                  </p>
-                  <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    While many research initiatives aim to develop solutions for rehabilitation and assistance, current approaches like exoskeletons and end-effector assistive devices have limitations. They are often cumbersome, difficult to use at home, can exert unintended forces at the attachment points, and lack personalized support.
-                  </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     The Assistive Robotic Arm Extender (ARAE) is designed to address these challenges by providing arm support in three-dimensional (3D) space for functional task training. It offers high transparency in movement and adaptive support based on estimated human postures.
                   </p>
