@@ -46,7 +46,7 @@ export default function Academic() {
     downloads: [
       {
         buttonText: "CV",
-        href: "https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708674/Hyunwoo_Lee_CV_y4a1h3.docx"
+        href: "https://res.cloudinary.com/dss5ymotz/image/upload/v1733748414/Hyunwoo_Lee_CV_tzibrf.pdf"
       },
       {
         buttonText: "Transcript",
