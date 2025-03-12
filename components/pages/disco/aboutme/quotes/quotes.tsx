@@ -1,42 +1,9 @@
 import React from 'react';
-import Header from "@/components/header";
+import DiscoHeader from '@/components/disccoHeader';
 import QuotesIntro from '@/components/quotesIntro';
-import Footer from "@/components/footer"
-import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
+import DiscoFooter from '@/components/discoFooter';
 
 const Quotes = () => {
-    const headerProps ={
-        imageProps: {
-          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-          width: 418,
-          height: 538,
-        },
-        titles: [
-          { text: 'JadeHouse', href: '/' },
-          { text: 'Disco', href: '/disco' }
-        ],
-        dropdownOptions: [
-          { text: 'Home', href: '/disco' },
-          { text: 'About', 
-            href: '/disco/aboutme', 
-            subOptions: [
-              { text: 'Interests', href: '/disco/aboutme/interest' },
-              { text: 'Favorite Quotes', href: '/disco/aboutme/quotes' },
-            ] 
-          },
-          { text: 'Memories', href: '/disco/memories' },
-          {
-            href:"/disco/thoughts",
-            text: 'Thoughts',
-            subOptions: [
-              { text: 'Perspective', href: '/disco/thoughts/perspective' },
-              { text: 'Inspiration', href: '/disco/thoughts/inspiration' },
-            ],
-          },
-          { text: 'Music', href: '/disco/music' },
-        ],
-      }
-
     const quotesIntroProps = {
         titleText: "Favorite Quotes",
         descriptionText: "These quotes have inspired and motivated me throughout my life.",
@@ -161,51 +128,34 @@ const Quotes = () => {
             author: "Me",
             description: "This quote reminds me on how to foster healthy relationships.",
           },
-          
+          {
+            text: "Do we want to tell our children that going to the moon was the best we could do, and then we stopped?",
+            author: "Elon Musk",
+            description: "This quote tells me why technological development must move on.",
+          },
+          {
+            text: "The tackles are coming my way because I have the ball.",
+            author: "",
+            description: "This quote give me power to push forward against all odds.",
+          },
+          {
+            text: "The one thing that was certain in my journey was that I would not give up.",
+            author: "Me",
+            description: "This quote is something I want to say when I finally make it.",
+          },
+          {
+            text: "If you can't see what's ahead, you have to keep going until you do.",
+            author: "",
+            description: "This quote give me courage to move through the darkness.",
+          },
         ]
-    }
-
-    const footerProps = {
-        logo: {
-          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-          alt: 'Website Logo',
-        width: 64,
-        height: 64,
-        },
-        title:"JadeHouse Disco",
-        description:"Archive of my personal life",
-        navLinks: [
-        { text: 'Home', href: '/disco' },
-        { text: 'About', href: '/disco/aboutme' },
-        { text: 'Memories', href: '/disco/memories' },
-        { text: 'Thoughts', href: '/disco/thoughts' },
-        { text: 'Music', href: '/disco/music' },
-        ],
-        socialLinks: [
-        {
-            href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-            icon: <MailIcon className="h-6 w-6" />,
-        },
-        {
-            href: 'https://twitter.com/JadeHouseDisco',
-            icon: <TwitterIcon className="h-6 w-6" />,
-        },
-        {
-            href: 'https://www.instagram.com/jadehousedisco/',
-            icon: <InstagramIcon className="h-6 w-6" />,
-        },
-        {
-            href: 'https://www.youtube.com/@JadeHouseCinema',
-            icon: <YoutubeIcon className="h-6 w-6" />,
-        },
-        ],
     }
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header headerProps={headerProps}/>
+            <DiscoHeader/>
             <QuotesIntro quotesIntroProps={quotesIntroProps}/>
-            <Footer footerProps={footerProps}/>
+            <DiscoFooter/>
         </div>
     )
 }

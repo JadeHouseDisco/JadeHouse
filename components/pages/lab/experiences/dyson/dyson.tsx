@@ -1,80 +1,12 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Header from "@/components/header";
+import LabHeader from "@/components/labHeader"
 import Image from 'next/image';
-import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, DownloadIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import { DownloadIcon } from "@/components/icons"
+import LabFooter from '@/components/labFooter';
 
 const Dyson = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Lab', href: '/lab' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/lab' },
-      { text: 'About', 
-        href: '/lab/aboutme', 
-      },
-      {
-        href:"/lab/experiences",
-        text: 'Experiences',
-      },
-      { text: 'Ideas', href: '/lab/ideas' },
-      { text: 'Literature Reviews', href: '/lab/litrev' },
-    ],
-  }
-
-    const footerProps = {
-        logo: {
-          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-          alt: 'Website Logo',
-          width: 64,
-          height: 64,
-        },
-        title:"JadeHouse Lab",
-        description:"Portfolio of my professional life",
-        navLinks: [
-          { text: 'Home', href: '/lab' },
-          { text: 'About', href: '/lab/aboutme' },
-          { text: 'Experiences', href: '/lab/experiences' },
-          { text: 'Ideas', href: '/lab/ideas' },
-          { text: 'Literature Reviews', href: '/lab/litrev' },
-        ],
-        socialLinks: [
-          {
-            href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-            icon: <MailIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://github.com/JadeHouseDisco',
-            icon: <GithubIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://linkedin.com/in/hyunwoolee0329',
-            icon: <LinkedinIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://www.youtube.com/@JadeHouseCinema',
-            icon: <YoutubeIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
-            icon: <GoogleScholarIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://orcid.org/0009-0004-2586-0493',
-            icon: <ORCIDIcon className="h-6 w-6" />,
-          },
-        ],
-      }
-
     interface Heading {
       id: string;
       text: string;
@@ -94,14 +26,14 @@ const Dyson = () => {
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header headerProps={headerProps}/>
+            <LabHeader/>
 
             {/*blogPostIntro Section*/}
             <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heels.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708584/heels_xk78i5.jpg"
                     height="858"
                     width="858"
                 />
@@ -169,7 +101,7 @@ const Dyson = () => {
                       <Image
                         alt="sketch"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/sketch.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708586/sketch_ptxdl4.jpg"
                         height="800"
                         width="1600"
                       />
@@ -178,7 +110,7 @@ const Dyson = () => {
                       <Image
                         alt="make1"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/make1.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708585/make1_iyusny.jpg"
                         height="800"
                         width="1600"
                       />
@@ -187,7 +119,7 @@ const Dyson = () => {
                       <Image
                         alt="disassembled"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/disassembled.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708583/disassembled_ibcyt0.jpg"
                         height="800"
                         width="1600"
                       />
@@ -252,7 +184,7 @@ const Dyson = () => {
                       <Image
                         alt="heel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/heel.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708584/heel_pqu27z.jpg"
                         height="800"
                         width="1600"
                       />
@@ -314,7 +246,7 @@ const Dyson = () => {
                       <Image
                         alt="air"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/air_heels.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708583/air_heels_wlmfqm.png"
                         height="800"
                         width="1600"
                       />
@@ -323,7 +255,7 @@ const Dyson = () => {
                       <Image
                         alt="screw"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/screw_heels.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708586/screw_heels_p4gljq.png"
                         height="800"
                         width="1600"
                       />
@@ -332,7 +264,7 @@ const Dyson = () => {
                       <Image
                         alt="step"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Heal_Heels/step_heels.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708586/step_heels_gsitst.png"
                         height="800"
                         width="1600"
                       />
@@ -419,7 +351,7 @@ const Dyson = () => {
                   </div>
               </div>
             </div>
-            <Footer footerProps={footerProps}/>
+            <LabFooter/>
         </div>
       )
   }

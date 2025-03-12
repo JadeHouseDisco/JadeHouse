@@ -1,42 +1,15 @@
-import Header from "@/components/header";
+import LabHeader from "@/components/labHeader"
 import AboutMeIntro from "@/components/aboutMeIntro"
 import PurposeVisionGoals from "@/components/purposeVisionGoals"
 import SkillsShowcase from "@/components/skillsShowcase"
 import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCIDIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon, MatlabIcon, CNNIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import LabFooter from '@/components/labFooter';
 
 const LabAboutMe = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Lab', href: '/lab' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/lab' },
-      { text: 'About', 
-        href: '/lab/aboutme', 
-        subOptions: [
-          { text: 'Academic Records', href: '/lab/aboutme/academic' },
-        ], 
-      },
-      {
-        href:"/lab/experiences",
-        text: 'Experiences',
-      },
-      { text: 'Ideas', href: '/lab/ideas' },
-      { text: 'Literature Reviews', href: '/lab/litrev' },
-    ],
-  }
-  
   const aboutMeIntroProps = {
     headerText: "Hi, I'm Hyunwoo",
     pText: "Focused and determined mechanical engineering student with a passion for biomechatronics and biomedical engineering. Committed to leveraging my technical expertise to develop technologies that enhance lives of anyone anywhere and ultiamtely lead the robotic evolution of mankind.",
-    imgSrc: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/aboutMeIntro/lab_profile_image.png?raw=true",
+    imgSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730707797/lab_profile_image_qijfst.png",
     buttons: [
       {
         text: "Academic Records",
@@ -47,26 +20,26 @@ const LabAboutMe = () => {
 
   const purposeVisionGoalsProps = {
     default: {
-        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/default.webp?raw=true",
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/default_saqrzq.webp",
         headText: "Fuel for my Ambitions",
         bodyText: "Discover the driving forces behind my pursuit to make significant contributions and change the world. My purpose, vision, and goals reflect my commitment to enhance lives of anyone anywhere and lead the robotic evolution of mankind. Dive in to learn more about my aspirations and the impact I strive to make.",
     },
     buttons: [
       {
         buttonText: "Purpose",
-        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/purpose.webp?raw=true",
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/purpose_trzy61.webp",
         headText: "Redefining Evolution",
         bodyText: "I want technology to ensure everyone's right to life is respected, regardless of socioeconomic status. I envision transforming the perception of old age and disability from a handicap into an opportunity for an upgrade. Ultimately, I aim to push beyond the biological limits of humans and achieve a new era of robotic evolution."
       },
       {
         buttonText: "Vision",
-        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/vision.webp?raw=true",
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/vision_hvu6if.webp",
         headText: "Empowering Lives",
         bodyText: "I wish to develop accessible and affordable technology that assist anyone anywhere. I strive for technology that outperforms its biological counterparts while seamlessely integrating with humans. I'm driven to normalize the replacement of biological parts with advanced prostheses, enhancing human capabilities and quality of life."
       },
       {
         buttonText: "Goals",
-        imageHref: "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/purposeVisionGoals/goals.webp?raw=true",
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/goals_qbhaf3.webp",
         headText: "Revolutionizing Technology",
         bodyText: "I aim to pioneer advancements in neurotechnology and prosthetics to revolutionize human-machine interaction. I strive to develop bi-directional brain-machine interfaces, both invasive and non-invasive, and engineer precise prostheses that outperform biological counterparts. Furthermore, I aspire to expand expertise into exoskeletons and implantable devices, augmenting human potential and fostering human-machine symbiosis."
       },
@@ -132,57 +105,13 @@ const LabAboutMe = () => {
     ]
   }
 
-    const footerProps = {
-      logo: {
-        src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-        alt: 'Website Logo',
-        width: 64,
-        height: 64,
-      },
-      title:"JadeHouse Lab",
-      description:"Portfolio of my professional life",
-      navLinks: [
-        { text: 'Home', href: '/lab' },
-        { text: 'About', href: '/lab/aboutme' },
-        { text: 'Experiences', href: '/lab/experiences' },
-        { text: 'Ideas', href: '/lab/ideas' },
-        { text: 'Literature Reviews', href: '/lab/litrev' },
-      ],
-      socialLinks: [
-        {
-          href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-          icon: <MailIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://github.com/JadeHouseDisco',
-          icon: <GithubIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://linkedin.com/in/hyunwoolee0329',
-          icon: <LinkedinIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://www.youtube.com/@JadeHouseCinema',
-          icon: <YoutubeIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
-          icon: <GoogleScholarIcon className="h-6 w-6" />,
-        },
-        {
-          href: 'https://orcid.org/0009-0004-2586-0493',
-          icon: <ORCIDIcon className="h-6 w-6" />,
-        },
-      ],
-    }
-
     return (
       <div key="1" className="flex flex-col min-h-[100dvh]">
-        <Header headerProps={headerProps}/>
+        <LabHeader/>
         <AboutMeIntro aboutMeIntroProps={aboutMeIntroProps}/>
         <PurposeVisionGoals purposeVisionGoalsProps={purposeVisionGoalsProps}/>
         <SkillsShowcase skillsShowcaseProps={skillsShowcaseProps}/>
-        <Footer footerProps={footerProps}/>
+        <LabFooter/>
       </div>
     )
 }

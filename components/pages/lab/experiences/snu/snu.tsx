@@ -1,80 +1,12 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Header from "@/components/header";
+import LabHeader from "@/components/labHeader"
 import Image from 'next/image';
-import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, DownloadIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import { DownloadIcon } from "@/components/icons"
+import LabFooter from '@/components/labFooter';
 
 const Snu = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Lab', href: '/lab' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/lab' },
-      { text: 'About', 
-        href: '/lab/aboutme', 
-      },
-      {
-        href:"/lab/experiences",
-        text: 'Experiences',
-      },
-      { text: 'Ideas', href: '/lab/ideas' },
-      { text: 'Literature Reviews', href: '/lab/litrev' },
-    ],
-  }
-
-    const footerProps = {
-        logo: {
-          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-          alt: 'Website Logo',
-          width: 64,
-          height: 64,
-        },
-        title:"JadeHouse Lab",
-        description:"Portfolio of my professional life",
-        navLinks: [
-          { text: 'Home', href: '/lab' },
-          { text: 'About', href: '/lab/aboutme' },
-          { text: 'Experiences', href: '/lab/experiences' },
-          { text: 'Ideas', href: '/lab/ideas' },
-          { text: 'Literature Reviews', href: '/lab/litrev' },
-        ],
-        socialLinks: [
-          {
-            href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-            icon: <MailIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://github.com/JadeHouseDisco',
-            icon: <GithubIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://linkedin.com/in/hyunwoolee0329',
-            icon: <LinkedinIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://www.youtube.com/@JadeHouseCinema',
-            icon: <YoutubeIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
-            icon: <GoogleScholarIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://orcid.org/0009-0004-2586-0493',
-            icon: <ORCIDIcon className="h-6 w-6" />,
-          },
-        ],
-      }
-
     interface Heading {
       id: string;
       text: string;
@@ -94,14 +26,14 @@ const Snu = () => {
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header headerProps={headerProps}/>
+            <LabHeader/>
 
             {/*blogPostIntro Section*/}
             <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/1.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708655/1_zhcfa6.jpg"
                     height="858"
                     width="858"
                 />
@@ -162,7 +94,7 @@ const Snu = () => {
                         <Image 
                           alt="wheel" 
                           className="rounded-3xl w-full h-auto object-cover" 
-                          src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/2.jpg?raw=true" 
+                          src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708658/2_pjrsp6.jpg" 
                           height="400" 
                           width="800" 
                         />
@@ -174,7 +106,7 @@ const Snu = () => {
                         <Image 
                           alt="steer" 
                           className="rounded-3xl w-full h-auto object-cover" 
-                          src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/4.jpg?raw=true" 
+                          src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708659/4_khspji.jpg" 
                           height="400" 
                           width="800" 
                         />
@@ -191,7 +123,7 @@ const Snu = () => {
                           <Image 
                             alt="lcd" 
                             className="absolute top-0 left-0 w-full h-auto object-cover"
-                            src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/3.jpg?raw=true" 
+                            src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708659/3_hg155f.jpg" 
                             layout="fill"
                             objectFit="cover"
                           />
@@ -221,7 +153,7 @@ const Snu = () => {
                         <Image 
                           alt="wheel" 
                           className="rounded-3xl w-full h-auto object-cover" 
-                          src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/5.jpg?raw=true" 
+                          src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708659/5_zfxlrk.jpg" 
                           height="400" 
                           width="800" 
                         />
@@ -233,7 +165,7 @@ const Snu = () => {
                         <Image 
                           alt="steer" 
                           className="rounded-3xl w-full h-auto object-cover" 
-                          src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/6.jpg?raw=true" 
+                          src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708659/6_w3ddbx.jpg" 
                           height="400" 
                           width="800" 
                         />
@@ -250,7 +182,7 @@ const Snu = () => {
                           <Image 
                             alt="lcd" 
                             className="absolute top-0 left-0 w-full h-auto object-cover"
-                            src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/7.jpg?raw=true" 
+                            src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708660/7_sbgmy9.jpg" 
                             layout="fill"
                             objectFit="cover"
                           />
@@ -269,7 +201,7 @@ const Snu = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/8.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708660/8_dfdtkg.jpg"
                         height="800"
                         width="1600"
                       />
@@ -278,7 +210,7 @@ const Snu = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/9.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708660/9_y5guco.jpg"
                         height="800"
                         width="1600"
                       />
@@ -287,7 +219,7 @@ const Snu = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/10.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708655/10_ibob9i.jpg"
                         height="800"
                         width="1600"
                       />
@@ -305,7 +237,7 @@ const Snu = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/11.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708656/11_qbuarj.png"
                         height="800"
                         width="1600"
                       />
@@ -314,7 +246,7 @@ const Snu = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/12.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708656/12_dv6ckd.jpg"
                         height="800"
                         width="1600"
                       />
@@ -323,7 +255,7 @@ const Snu = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/13.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708656/13_cms8v5.jpg"
                         height="800"
                         width="1600"
                       />
@@ -379,7 +311,7 @@ const Snu = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/14.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708657/14_oziysg.jpg"
                         height="800"
                         width="1600"
                       />
@@ -388,7 +320,7 @@ const Snu = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/15.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708657/15_xaqzrf.jpg"
                         height="800"
                         width="1600"
                       />
@@ -397,7 +329,7 @@ const Snu = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/16.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708657/16_pqpzbz.jpg"
                         height="800"
                         width="1600"
                       />
@@ -415,7 +347,7 @@ const Snu = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/17.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708657/17_cfxizt.jpg"
                         height="800"
                         width="1600"
                       />
@@ -424,7 +356,7 @@ const Snu = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/18.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708658/18_jiiubv.png"
                         height="800"
                         width="1600"
                       />
@@ -433,7 +365,7 @@ const Snu = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SNU/19.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708658/19_fttmih.png"
                         height="800"
                         width="1600"
                       />
@@ -540,7 +472,7 @@ const Snu = () => {
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="_blank"
-                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/blogposts/SNU/Rigid%20SVC%20Calculations.xlsx"
+                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708661/Rigid_SVC_Calculations_wvjs5i.xlsx"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Rigid SVC Calculations
@@ -548,7 +480,7 @@ const Snu = () => {
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="blank"
-                      href="https://github.com/JadeHouseDisco/JadeHouse_Files/raw/main/files/blogposts/SNU/Code.zip"
+                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708660/Code_r2wvfd.zip"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Code
@@ -557,7 +489,7 @@ const Snu = () => {
 
               </div>
             </div>
-            <Footer footerProps={footerProps}/>
+            <LabFooter/>
         </div>
       )
   }

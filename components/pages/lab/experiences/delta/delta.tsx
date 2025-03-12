@@ -1,80 +1,11 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Header from "@/components/header";
+import LabHeader from "@/components/labHeader"
 import Image from 'next/image';
-import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, DownloadIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import LabFooter from '@/components/labFooter';
 
 const Delta = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Lab', href: '/lab' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/lab' },
-      { text: 'About', 
-        href: '/lab/aboutme', 
-      },
-      {
-        href:"/lab/experiences",
-        text: 'Experiences',
-      },
-      { text: 'Ideas', href: '/lab/ideas' },
-      { text: 'Literature Reviews', href: '/lab/litrev' },
-    ],
-  }
-
-    const footerProps = {
-        logo: {
-          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-          alt: 'Website Logo',
-          width: 64,
-          height: 64,
-        },
-        title:"JadeHouse Lab",
-        description:"Portfolio of my professional life",
-        navLinks: [
-          { text: 'Home', href: '/lab' },
-          { text: 'About', href: '/lab/aboutme' },
-          { text: 'Experiences', href: '/lab/experiences' },
-          { text: 'Ideas', href: '/lab/ideas' },
-          { text: 'Literature Reviews', href: '/lab/litrev' },
-        ],
-        socialLinks: [
-          {
-            href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-            icon: <MailIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://github.com/JadeHouseDisco',
-            icon: <GithubIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://linkedin.com/in/hyunwoolee0329',
-            icon: <LinkedinIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://www.youtube.com/@JadeHouseCinema',
-            icon: <YoutubeIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
-            icon: <GoogleScholarIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://orcid.org/0009-0004-2586-0493',
-            icon: <ORCIDIcon className="h-6 w-6" />,
-          },
-        ],
-      }
-
     interface Heading {
       id: string;
       text: string;
@@ -94,14 +25,14 @@ const Delta = () => {
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header headerProps={headerProps}/>
+            <LabHeader/>
 
             {/*blogPostIntro Section*/}
             <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map.png?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/map_ixj1mr.png"
                     height="858"
                     width="858"
                 />
@@ -169,7 +100,7 @@ const Delta = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/mapping.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/mapping_mzmrrr.jpg"
                         height="800"
                         width="1600"
                       />
@@ -178,7 +109,7 @@ const Delta = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map_edit.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/map_edit_ngbts2.png"
                         height="800"
                         width="1600"
                       />
@@ -187,7 +118,7 @@ const Delta = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/edited_map.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708649/edited_map_vxiowj.png"
                         height="800"
                         width="1600"
                       />
@@ -234,7 +165,7 @@ const Delta = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/safety.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/safety_desmtg.jpg"
                          height="800"
                         width="1600"
                       />
@@ -243,7 +174,7 @@ const Delta = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/backpack.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708649/backpack_dfqpzq.png"
                         height="800"
                         width="1600"
                       />
@@ -252,7 +183,7 @@ const Delta = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Mobile_Robotics_Intern/map.png?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708650/map_ixj1mr.png"
                         height="800"
                         width="1600"
                       />
@@ -367,7 +298,7 @@ const Delta = () => {
 
               </div>
             </div>
-            <Footer footerProps={footerProps}/>
+            <LabFooter/>
         </div>
       )
   }

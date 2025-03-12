@@ -1,8 +1,8 @@
 {
     "title": "SENSE - Surface Electromyography Nerve Symptom Evaluator",
-    "date": "2024-08-31",
+    "date": "2024-11-05",
     "content": "SENSE project aims to develop a medical device that uses sEMG sensors and machine learning to diagnose disc conditions, a journey filled with challenges, learning, and unwavering commitment.",
-    "imageHref": "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SENSE/1.png?raw=true",
+    "imageHref": "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708651/1_lfgc07.png",
     "featured": "y",
     "active": "y",
     "category": "Project"

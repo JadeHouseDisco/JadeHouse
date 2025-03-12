@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -19,7 +20,7 @@ interface ImageCarouselProps {
     title: string;
     artist: string;
   }[];
-  link : string;
+  link: string;
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
@@ -30,6 +31,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
       swiperRef.current.slideTo(0, 0); // Reset to the first slide with no transition duration
     }
   }, [songs]);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      // Ensure the Swiper instance is fully initialized before accessing its methods
+      swiperRef.current.update();
+    }
+  }, []);
 
   const handleSlideClick = (index: number) => {
     if (swiperRef.current) {
@@ -64,7 +72,13 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
     >
       {songs.map((song, index) => (
         <SwiperSlide key={index} onClick={() => handleSlideClick(index)}>
-          <img src={song.src} alt={song.title} />
+          <Image
+            src={song.src}
+            alt={song.title}
+            width={300}
+            height={300}
+            className="object-cover"
+          />
           <p className="text-lg md:text-xl font-bold mt-1">{song.title}</p>
           <p className="text-xs md:text-base">{song.artist}</p>
         </SwiperSlide>
@@ -80,4 +94,4 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
   );
 }
 
-export default ImageCarousel;
+export default ImageCarousel; 

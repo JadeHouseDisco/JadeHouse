@@ -1,72 +1,11 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Header from "@/components/header";
+import DiscoHeader from '@/components/disccoHeader';
 import Image from 'next/image';
-import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import DiscoFooter from '@/components/discoFooter';
 
 const Korea = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Disco', href: '/disco' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/disco' },
-      { text: 'About', 
-        href: '/disco/aboutme', 
-      },
-      { text: 'Memories', href: '/disco/memories' },
-      {
-        href:"/disco/thoughts",
-        text: 'Thoughts',
-      },
-      { text: 'Music', href: '/disco/music' },
-    ],
-  }
-
-  const footerProps = {
-    logo: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-      alt: 'Website Logo',
-      width: 64,
-      height: 64,
-    },
-    title:"JadeHouse Disco",
-    description:"Archive of my personal life",
-    navLinks: [
-      { text: 'Home', href: '/disco' },
-      { text: 'About', href: '/disco/aboutme' },
-      { text: 'Memories', href: '/disco/memories' },
-      { text: 'Thoughts', href: '/disco/thoughts' },
-      { text: 'Music', href: '/disco/music' },
-    ],
-    socialLinks: [
-      {
-        href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-        icon: <MailIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://twitter.com/JadeHouseDisco',
-        icon: <TwitterIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://www.instagram.com/jadehousedisco/',
-        icon: <InstagramIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://www.youtube.com/@JadeHouseCinema',
-        icon: <YoutubeIcon className="h-6 w-6" />,
-      },
-    ],
-  }
-
   interface Heading {
     id: string;
     text: string;
@@ -86,14 +25,14 @@ const Korea = () => {
 
   return (
       <div key="1" className="flex flex-col min-h-[100dvh]">
-          <Header headerProps={headerProps}/>
+          <DiscoHeader/>
 
           {/*blogPostIntro Section*/}
           <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/1.jpg?raw=true"
+                  src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708644/1_bhmthl.jpg"
                   height="858"
                   width="858"
               />
@@ -149,7 +88,7 @@ const Korea = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/2.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708644/2_twvfwy.jpg"
                       height="800"
                       width="1600"
                     />
@@ -158,7 +97,7 @@ const Korea = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/3.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708644/3_nvilrv.jpg"
                       height="800"
                       width="1600"
                     />
@@ -167,7 +106,7 @@ const Korea = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/4.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708645/4_ljvn92.jpg"
                       height="800"
                       width="1600"
                     />
@@ -213,7 +152,7 @@ const Korea = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/5.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708645/5_gqml20.jpg"
                       height="800"
                       width="1600"
                     />
@@ -222,7 +161,7 @@ const Korea = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/6.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708645/6_bowxgm.jpg"
                       height="800"
                       width="1600"
                     />
@@ -231,7 +170,7 @@ const Korea = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Korea/7.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708646/7_dyilfa.jpg"
                       height="800"
                       width="1600"
                     />
@@ -264,7 +203,7 @@ const Korea = () => {
                 </p>
             </div>
           </div>
-          <Footer footerProps={footerProps}/>
+          <DiscoFooter/>
       </div>
     )
   }

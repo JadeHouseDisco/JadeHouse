@@ -1,72 +1,11 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Header from "@/components/header";
+import DiscoHeader from '@/components/disccoHeader';
 import Image from 'next/image';
-import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import DiscoFooter from '@/components/discoFooter';
 
 const SingaporePre = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Disco', href: '/disco' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/disco' },
-      { text: 'About', 
-        href: '/disco/aboutme', 
-      },
-      { text: 'Memories', href: '/disco/memories' },
-      {
-        href:"/disco/thoughts",
-        text: 'Thoughts',
-      },
-      { text: 'Music', href: '/disco/music' },
-    ],
-  }
-
-  const footerProps = {
-    logo: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_disco.png?raw=true',
-      alt: 'Website Logo',
-      width: 64,
-      height: 64,
-    },
-    title:"JadeHouse Disco",
-    description:"Archive of my personal life",
-    navLinks: [
-      { text: 'Home', href: '/disco' },
-      { text: 'About', href: '/disco/aboutme' },
-      { text: 'Memories', href: '/disco/memories' },
-      { text: 'Thoughts', href: '/disco/thoughts' },
-      { text: 'Music', href: '/disco/music' },
-    ],
-    socialLinks: [
-      {
-        href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-        icon: <MailIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://twitter.com/JadeHouseDisco',
-        icon: <TwitterIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://www.instagram.com/jadehousedisco/',
-        icon: <InstagramIcon className="h-6 w-6" />,
-      },
-      {
-        href: 'https://www.youtube.com/@JadeHouseCinema',
-        icon: <YoutubeIcon className="h-6 w-6" />,
-      },
-    ],
-  }
-
   interface Heading {
     id: string;
     text: string;
@@ -86,14 +25,14 @@ const SingaporePre = () => {
 
   return (
       <div key="1" className="flex flex-col min-h-[100dvh]">
-          <Header headerProps={headerProps}/>
+          <DiscoHeader/>
 
           {/*blogPostIntro Section*/}
           <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
               <Image
                   alt="Background Image"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/1.jpg?raw=true"
+                  src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708652/1_e1lkpo.jpg"
                   height="858"
                   width="858"
               />
@@ -162,7 +101,7 @@ const SingaporePre = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/2.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708653/2_ahqp70.jpg"
                       height="800"
                       width="1600"
                     />
@@ -171,7 +110,7 @@ const SingaporePre = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/3.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708653/3_vfzcwc.jpg"
                       height="800"
                       width="1600"
                     />
@@ -180,7 +119,7 @@ const SingaporePre = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/4.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708653/4_f0gkn8.jpg"
                       height="800"
                       width="1600"
                     />
@@ -213,7 +152,7 @@ const SingaporePre = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/5.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708654/5_pri1r1.jpg"
                       height="800"
                       width="1600"
                     />
@@ -225,7 +164,7 @@ const SingaporePre = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/6.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708654/6_ac28sf.jpg"
                       height="800"
                       width="1600"
                     />
@@ -249,7 +188,7 @@ const SingaporePre = () => {
                     <Image
                       alt="air"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/8.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708655/8_bksqz0.jpg"
                       height="800"
                       width="1600"
                     />
@@ -258,7 +197,7 @@ const SingaporePre = () => {
                     <Image
                       alt="screw"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/9.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708655/9_u9pgdy.jpg"
                       height="800"
                       width="1600"
                     />
@@ -267,7 +206,7 @@ const SingaporePre = () => {
                     <Image
                       alt="step"
                       className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Singapore_Prelude/10.jpg?raw=true"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708653/10_h5kevk.jpg"
                       height="800"
                       width="1600"
                     />
@@ -290,7 +229,7 @@ const SingaporePre = () => {
                 </p>
             </div>
           </div>
-          <Footer footerProps={footerProps}/>
+          <DiscoFooter/>
       </div>
     )
   }

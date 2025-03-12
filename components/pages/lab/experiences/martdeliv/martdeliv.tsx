@@ -1,80 +1,12 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import Header from "@/components/header";
+import LabHeader from "@/components/labHeader"
 import Image from 'next/image';
-import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon, GoogleScholarIcon, ORCIDIcon, DownloadIcon } from "@/components/icons"
-import Footer from "@/components/footer"
+import { DownloadIcon } from "@/components/icons"
+import LabFooter from '@/components/labFooter';
 
 const Martdeliv = () => {
-  const headerProps ={
-    imageProps: {
-      src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-      width: 418,
-      height: 538,
-    },
-    titles: [
-      { text: 'JadeHouse', href: '/' },
-      { text: 'Lab', href: '/lab' }
-    ],
-    dropdownOptions: [
-      { text: 'Home', href: '/lab' },
-      { text: 'About', 
-        href: '/lab/aboutme', 
-      },
-      {
-        href:"/lab/experiences",
-        text: 'Experiences',
-      },
-      { text: 'Ideas', href: '/lab/ideas' },
-      { text: 'Literature Reviews', href: '/lab/litrev' },
-    ],
-  }
-
-    const footerProps = {
-        logo: {
-          src: 'https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/logo/jadehouse_lab.png?raw=true',
-          alt: 'Website Logo',
-          width: 64,
-          height: 64,
-        },
-        title:"JadeHouse Lab",
-        description:"Portfolio of my professional life",
-        navLinks: [
-          { text: 'Home', href: '/lab' },
-          { text: 'About', href: '/lab/aboutme' },
-          { text: 'Experiences', href: '/lab/experiences' },
-          { text: 'Ideas', href: '/lab/ideas' },
-          { text: 'Literature Reviews', href: '/lab/litrev' },
-        ],
-        socialLinks: [
-          {
-            href: 'mailto:HYUNWOO001@e.ntu.edu.sg',
-            icon: <MailIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://github.com/JadeHouseDisco',
-            icon: <GithubIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://linkedin.com/in/hyunwoolee0329',
-            icon: <LinkedinIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://www.youtube.com/@JadeHouseCinema',
-            icon: <YoutubeIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://scholar.google.com/citations?hl=en&user=G5N12aYAAAAJ',
-            icon: <GoogleScholarIcon className="h-6 w-6" />,
-          },
-          {
-            href: 'https://orcid.org/0009-0004-2586-0493',
-            icon: <ORCIDIcon className="h-6 w-6" />,
-          },
-        ],
-      }
-
     interface Heading {
       id: string;
       text: string;
@@ -94,14 +26,14 @@ const Martdeliv = () => {
 
     return (
         <div key="1" className="flex flex-col min-h-[100dvh]">
-            <Header headerProps={headerProps}/>
+            <LabHeader/>
 
             {/*blogPostIntro Section*/}
             <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/left.jpg?raw=true"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/left_p0vmbm.jpg"
                     height="858"
                     width="858"
                 />
@@ -169,7 +101,7 @@ const Martdeliv = () => {
                       <Image
                         alt="wheel"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/wheel.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708578/wheel_jlqb03.jpg"
                         height="800"
                         width="1600"
                       />
@@ -178,7 +110,7 @@ const Martdeliv = () => {
                       <Image
                         alt="steer"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/steer.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708577/steer_xkmklv.jpg"
                         height="800"
                         width="1600"
                       />
@@ -187,7 +119,7 @@ const Martdeliv = () => {
                       <Image
                         alt="lcd"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/lcd.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/lcd_i2tltp.jpg"
                         height="800"
                         width="1600"
                       />
@@ -234,7 +166,7 @@ const Martdeliv = () => {
                       <Image
                         alt="left"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/left.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708576/left_p0vmbm.jpg"
                         height="800"
                         width="1600"
                       />
@@ -243,7 +175,7 @@ const Martdeliv = () => {
                       <Image
                         alt="right"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/right.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708577/right_rwjdpo.jpg"
                         height="800"
                         width="1600"
                       />
@@ -252,7 +184,7 @@ const Martdeliv = () => {
                       <Image
                         alt="ui"
                         className="rounded-3xl inset-0 w-full h-full object-cover"
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/Contactless_Mart_Delivery/ui.jpg?raw=true"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708577/ui_bjcqfl.jpg"
                         height="800"
                         width="1600"
                       />
@@ -378,7 +310,7 @@ const Martdeliv = () => {
 
               </div>
             </div>
-            <Footer footerProps={footerProps}/>
+            <LabFooter/>
         </div>
       )
   }

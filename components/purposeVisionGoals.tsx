@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 interface PurposeVisionGoalsProps {
@@ -13,20 +13,40 @@ interface PurposeVisionGoalsProps {
         buttons: {
             buttonText: string;
             imageHref: string;
-            headText:string;
+            headText: string;
             bodyText: string;
         }[];
     };
-  }
+}
 
 const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGoalsProps }) => {
-    
-    const [backgroundImage, setBackgroundImage] = useState(purposeVisionGoalsProps.default.imageHref)
-    const [headText, setHeadText] = useState(purposeVisionGoalsProps.default.headText)
-    const [bodyText, setBodyText] = useState(purposeVisionGoalsProps.default.bodyText)
+    const [backgroundImage, setBackgroundImage] = useState(purposeVisionGoalsProps.default.imageHref);
+    const [headText, setHeadText] = useState(purposeVisionGoalsProps.default.headText);
+    const [bodyText, setBodyText] = useState(purposeVisionGoalsProps.default.bodyText);
     const [delayActive, setDelayActive] = useState(false);
     const [loaded, setLoaded] = useState(false);
     const [key, setKey] = useState(0);
+    const loadedImages = useRef(new Set<string>()); // Store loaded images to avoid reloading
+
+    const preloadImage = (src: string) => {
+        // Only load if it hasn't been loaded before
+        if (!loadedImages.current.has(src)) {
+            const img = document.createElement('img'); // Create an image element
+            img.src = src;
+            img.onload = () => {
+                loadedImages.current.add(src);
+            };
+        }
+    };
+
+    useEffect(() => {
+        // Preload all images on mount
+        const allImages = [
+            purposeVisionGoalsProps.default.imageHref,
+            ...purposeVisionGoalsProps.buttons.map((button) => button.imageHref),
+        ];
+        allImages.forEach(preloadImage);
+    }, [purposeVisionGoalsProps]);
 
     useEffect(() => {
         // Force a re-mount of the Image component when the source changes
@@ -34,65 +54,34 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
         setKey((prevKey) => prevKey + 1);
     }, [backgroundImage]);
 
-    const handleMouseEnterPurpose = () => {
+    const handleMouseEnter = (buttonText: string) => {
         if (!delayActive) {
             setDelayActive(true);
             setTimeout(() => {
-                for (const button of purposeVisionGoalsProps.buttons) {
-                    if (button.buttonText === "Purpose") {
-                        setBackgroundImage(button.imageHref);
-                        setHeadText(button.headText)
-                        setBodyText(button.bodyText)
-                    }
+                const button = purposeVisionGoalsProps.buttons.find(b => b.buttonText === buttonText);
+                if (button) {
+                    // Preload the image if not already loaded
+                    preloadImage(button.imageHref);
+                    setBackgroundImage(button.imageHref);
+                    setHeadText(button.headText);
+                    setBodyText(button.bodyText);
                 }
-              setDelayActive(false);
+                setDelayActive(false);
             }, 200); // 200 milliseconds = 0.2 second
         }
-    }
-
-    const handleMouseEnterVision = () => {
-        if (!delayActive) {
-            setDelayActive(true);
-            setTimeout(() => {
-                for (const button of purposeVisionGoalsProps.buttons) {
-                    if (button.buttonText === "Vision") {
-                        setBackgroundImage(button.imageHref);
-                        setHeadText(button.headText)
-                        setBodyText(button.bodyText)
-                    }
-                }
-              setDelayActive(false);
-            }, 200); // 200 milliseconds = 0.2 second
-        }
-    }
-
-    const handleMouseEnterGoals = () => {
-        if (!delayActive) {
-            setDelayActive(true);
-            setTimeout(() => {
-                for (const button of purposeVisionGoalsProps.buttons) {
-                    if (button.buttonText === "Goals") {
-                        setBackgroundImage(button.imageHref);
-                        setHeadText(button.headText)
-                        setBodyText(button.bodyText)
-                    }
-                }
-              setDelayActive(false);
-            }, 200); // 200 milliseconds = 0.2 second
-        }
-    }
+    };
 
     const handleMouseLeave = () => {
         if (!delayActive) {
             setDelayActive(true);
             setTimeout(() => {
                 setBackgroundImage(purposeVisionGoalsProps.default.imageHref);
-                setHeadText(purposeVisionGoalsProps.default.headText)
-                setBodyText(purposeVisionGoalsProps.default.bodyText)
-              setDelayActive(false);
+                setHeadText(purposeVisionGoalsProps.default.headText);
+                setBodyText(purposeVisionGoalsProps.default.bodyText);
+                setDelayActive(false);
             }, 200); // 200 milliseconds = 0.2 second
         }
-    }
+    };
 
     return (
         <div key="1" className="flex flex-col">
@@ -107,8 +96,8 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                     height="800"
                     src={backgroundImage}
                     style={{
-                    aspectRatio: "1600/800",
-                    objectFit: "cover",
+                        aspectRatio: "1600/800",
+                        objectFit: "cover",
                     }}
                     width="1600"
                     onLoad={() => setLoaded(true)}
@@ -129,7 +118,7 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                             {purposeVisionGoalsProps.buttons.map((button, index) => (
                                 <div
                                     className="inline-flex font-bold text-lg items-center justify-center h-10 px-6 rounded-md bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                                    onMouseEnter={button.buttonText === "Purpose" ? handleMouseEnterPurpose : button.buttonText === "Vision" ? handleMouseEnterVision : handleMouseEnterGoals}
+                                    onMouseEnter={() => handleMouseEnter(button.buttonText)}
                                     onMouseLeave={handleMouseLeave}
                                     key={index}
                                 >
@@ -140,9 +129,8 @@ const PurposeVisionGoals: React.FC<PurposeVisionGoalsProps> = ({ purposeVisionGo
                     </div>
                 </div>
             </section>
-            
         </div>
-    )
-}
+    );
+};
 
 export default PurposeVisionGoals;

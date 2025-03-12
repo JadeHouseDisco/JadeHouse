@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -12,11 +12,25 @@ interface SongGridProps {
     album: string;
     description: string;
     link: string;
-  }[]
+  }[];
 }
 
 const SongGrid: React.FC<SongGridProps> = ({ songGridProps }) => {
   const [currentSong, setCurrentSong] = useState(0);
+  const loadedImages = useRef(new Set<string>()); // Keep track of loaded images
+
+  const preloadImage = (src: string) => {
+    if (!loadedImages.current.has(src)) {
+      const img = document.createElement('img'); // Create an image element
+      img.src = src;
+      img.onload = () => loadedImages.current.add(src);
+    }
+  };
+
+  useEffect(() => {
+    // Preload all song images on mount
+    songGridProps.forEach(song => preloadImage(song.image));
+  }, [songGridProps]);
 
   const handlePrevious = () => {
     setCurrentSong((currentSong - 1 + songGridProps.length) % songGridProps.length);
@@ -35,13 +49,13 @@ const SongGrid: React.FC<SongGridProps> = ({ songGridProps }) => {
       <h2 className="text-center text-4xl font-bold mb-8">Favorite Songs</h2>
       <div className="bg-gray-800 text-white p-8 rounded-lg shadow-lg">
         <div className="flex items-start">
-        <Image 
+          <Image 
             src={songGridProps[currentSong].image} 
             alt={songGridProps[currentSong].title} 
             className="w-32 h-32 md:w-32 md:h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 mr-8"
             width="544"
             height="544" 
-        />
+          />
           <div>
             <h2 className="text-2xl font-bold mb-2">{songGridProps[currentSong].title}</h2>
             <p className="text-gray-400 mb-2">{songGridProps[currentSong].artist}</p>

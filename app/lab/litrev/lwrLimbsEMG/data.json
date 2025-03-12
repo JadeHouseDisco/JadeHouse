@@ -2,7 +2,7 @@
     "title": "lwrLimbsEMG - Lower Limb Analysis Based on Surface Electromyography (sEMG) Using Different Time-frequency Representation Techniques",
     "date": "2024-04-17",
     "content": "This paper shows that scalogram - based sEMG signal mapping, combined with a CNN model, outperforms other techniques in detecting knee abnormalities, with potential clinical applications.",
-    "imageHref": "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/lwrLimbsEMG/1.png?raw=true",
+    "imageHref": "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708646/1_qdnizm.png",
     "featured": "n",
     "active": "n",
     "category": "sEMG"
