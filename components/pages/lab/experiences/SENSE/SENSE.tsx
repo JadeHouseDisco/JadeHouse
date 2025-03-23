@@ -71,7 +71,7 @@ const SENSE = () => {
 
               <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
-                      5 November 2024
+                      23 March 2025
                   </p>
 
                   <h1 id="introduction" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
@@ -83,17 +83,19 @@ const SENSE = () => {
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     Modern lifestyles often lead to prolonged poor posture, which can result in disc conditions like bulging or herniated discs. These issues can compress spinal nerves, causing pain and discomfort.
                   </p>
-                  <div className="relative">
-                    <Image
-                      alt="lcd"
-                      className="rounded-3xl inset-0 w-full h-full object-cover"
-                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708651/1_lfgc07.png"
-                      height="800"
-                      width="1600"
-                    />
-                  </div>
-                  <div className="text-center text-gray-400 text-sm">
-                    SENSE logo
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-x-6 gap-y-2">
+                    <div className="relative">
+                      <Image
+                        alt="lcd"
+                        className="rounded-3xl inset-0 w-full h-full object-cover"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708651/1_lfgc07.png"
+                        height="800"
+                        width="1600"
+                      />
+                    </div>
+                    <div className="text-center text-gray-400 mt-2 text-sm">
+                      SENSE logo
+                    </div>
                   </div>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     SENSE is a medical device we’re developing to detect abnormal muscle activity using surface electromyography (sEMG) sensors. It identifies disc conditions by:
@@ -115,8 +117,39 @@ const SENSE = () => {
                         Diagnosing and prognosticating disc herniation through binary classification
                       </li>
                   </ol>
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-x-6 gap-y-2">
+                    <div className="relative">
+                      <Image
+                        alt="wheel"
+                        className="rounded-3xl inset-0 w-full h-full object-cover"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1742716579/cnn_fejpp5.png"
+                        height="800"
+                        width="1600"
+                      />
+                    </div>
+                    <div className="text-center text-gray-400 text-sm">
+                      Basic CNN architecture
+                    </div>
+                  </div>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     The CNN model is trained on data from patients and healthy subjects. Although SENSE is still in development, this blog post will document our progress, insights, challenges, and any other exciting updates.
+                  </p>
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-x-6 gap-y-2">
+                    <div className="relative">
+                      <Image
+                        alt="wheel"
+                        className="rounded-3xl inset-0 w-full h-full object-cover"
+                        src="https://res.cloudinary.com/dss5ymotz/image/upload/v1742716716/imu_fbkghn.png"
+                        height="800"
+                        width="1600"
+                      />
+                    </div>
+                    <div className="text-center text-gray-400 text-sm">
+                      Stacking sEMG signal based on gait cycle segmentation
+                    </div>
+                  </div>
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    We are also looking into integrating inertial motion unit (IMU) into the signal processing flow. One way is to integrate the IMU signal directly by transforming it into 2D image like representation, just like how sEMG data is processed. On the other hand, we are also exploring potential to utilize IMU to segment the data based on one gait cycle, which can be fed into the network.
                   </p>
 
                   <h1 id="journey" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
@@ -128,19 +161,10 @@ const SENSE = () => {
                   </p>
                   <ul className="list-decimal my-1 pl-8">
                       <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Dr. Heng Kok Hui, John Gerard</strong>: Senior Lecturer, School of Mechanical & Aerospace Engineering
-                      </li>
-                      <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Dr. Chou Siaw Meng</strong>: Associate Professor, School of Mechanical & Aerospace Engineering
-                      </li>
-                      <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Dr. Zheng (David) Fan</strong>: Associate Professor, School of Mechanical and Aerospace Engineering
+                        <strong>Dr. Yeo Si Yong</strong>: Assistant Professor, Lee Kong Chian School of Medicine
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
                         <strong>Dr. Jiang Lei</strong>: Consultant Spine Surgeon, Singapore General Hospital
-                      </li>
-                      <li className="max-w-3xl text-base md:text-lg">
-                        <strong>Dr. Joshua Decruz</strong>: Consultant Spine Surgeon, Khoo Teck Puat Hospital
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
                         <strong>Dr. Jack Lo Yu Tung</strong>: Neurosurgery Resident, National Neuroscience Institute (NNI) Singapore
@@ -150,6 +174,9 @@ const SENSE = () => {
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
                         <strong>Dr. Chen Jing</strong>: Rehabilitation Medicine Consultant, Singapore General Hospital
+                      </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        <strong>Dr. Tan Ia Choo Celia</strong>: Clinical Assistant Professor, SingHealth Duke-NUS Surgery Academic Clinical Programme
                       </li>
                   </ul>
                   
@@ -234,12 +261,21 @@ const SENSE = () => {
                       <li className="max-w-3xl text-base md:text-lg">
                         Awarded multidisciplinary team fund of up to S$ $10,000 for the project
                       </li>
+                      <li className="max-w-3xl text-base md:text-lg">
+                        Awarded academic clinical program pitch-for-funds of $100,000 for the project
+                      </li>
                   </ul>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     You may find all our code and results <a className = "text-blue-500 text-under underline" target="_blank" href="https://github.com/JadeHouseDisco/SENSE">here</a>. For more details on our progress, refer to our <a className = "text-blue-500 text-under underline" target="_blank" href="https://docs.google.com/spreadsheets/d/1W0Z6j0c1Yzrwr__9PT0DGzZu3szxcANzaVkKT0paPg0/edit?usp=sharing">meeting and progress records</a>.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    Recently, we were invited to take part in writing a review article on current trends of neuroprosthetics. Dr. Leon, who invited us to participate, suggested that since our project scope lies in the application of sEMG sensors, we might explore sEMG used in neuroprosthesis control. Temporary title of the paper is Advances in EMG-Driven Neuroprosthetics: A Review of Current Trends, Challenges, and Future Directions. Yeonjae and I will be participating as a contributing author for the publication, which will be submitted at the end of December 2024.
+                    Recently, we have submitted an IRB application to SGH, which will start its review process by the end of March 2025. We also succesfully received the ACP pitch-for-funds, which will fund S$100,000 for our project. We have started planning on allocation of budget for things like equipment purchases, recruitment of research assistants, and facility lending.
+                  </p>
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    Furthermore, we were introduced to professor Celia, who is part of the academic clinical programme. She had Cometa sEMG and and Xsens IMU, which she agreed to lend our team for experimentation purposes. We will be using this equipment to plan and execute mock tests to validate the integration of IMU to improving classification accuracies. 
+                  </p>
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    In an extension to our study, we were invited to take part in writing a review article on current trends of neuroprosthetics. Dr. Leon, who invited us to participate, suggested that since our project scope lies in the application of sEMG sensors, we might explore sEMG used in neuroprosthesis control. Title of the paper is Advances in Myoelectric Neuroprosthetics: A Narrative Review of Current Trends, Challenges, and Future Directions. Yeonjae and I are the first author of the paper, and the paper is current under review. It is expected to be published by the end of April 2025.
                   </p>
 
                   <h1 id="skills" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
@@ -250,13 +286,13 @@ const SENSE = () => {
                   </p>
                   <ul className="list-disc my-1 pl-8">
                       <li className="max-w-3xl text-base md:text-lg">
-                        Submitting ethics approval for data collection on disc patients
+                        Review IRB application for approval
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Conducting dynamic environment proof of concept
+                        Designing and executing mock data collection with sEMG and IMU sensors
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Designing the sEMG sensor and data acquisition PCB circuit
+                        Improving the model by using different architectures (RNN, transformers) and attempting to integrate IMU data into the signal processing flow
                       </li>
                   </ul>
 
@@ -268,7 +304,7 @@ const SENSE = () => {
                         Collect data on disc patients and healthy subjects
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
-                        Develop affordable sEMG sensor hardware and a mobile app for disc condition diagnosis
+                        Develop affordable suit like sEMG and IMU sensor hardware that connect with a mobile app for disc condition diagnosis
                       </li>
                       <li className="max-w-3xl text-base md:text-lg">
                         Pursue patent or other IP protection
@@ -369,6 +405,9 @@ const SENSE = () => {
                   <h1 id="files" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">
                     Files
                   </h1>
+                  <p className="mt-4 max-w-3xl text-base md:text-lg">
+                    You may find all our code in <a className = "text-blue-500 text-under underline" target="_blank" href="https://github.com/JadeHouseDisco/SENSE">github</a>.
+                  </p>
                   <div className="mt-4">
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
