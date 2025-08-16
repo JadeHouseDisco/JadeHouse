@@ -29,20 +29,6 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const songDraggedRef = useRef<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const loadedImages = useRef(new Set<string>()); // Track loaded images
-
-  const preloadImage = (src: string) => {
-    if (!loadedImages.current.has(src)) {
-      const img = document.createElement('img'); // Create an image element
-      img.src = src;
-      img.onload = () => loadedImages.current.add(src);
-    }
-  };
-
-  useEffect(() => {
-    // Preload all song images on mount
-    recordPlayerProps.songs.forEach(song => preloadImage(song.src));
-  }, [recordPlayerProps.songs]);
 
   useEffect(() => {
     const updateLeftHeight = () => {
@@ -151,6 +137,7 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                     fill
                     placeholder="blur"
                     blurDataURL="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/blur.png?raw=true"
+                    loading="lazy"
                     style={{
                       borderRadius: '50%',
                       objectFit: 'cover',
@@ -210,6 +197,9 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                   width="544"
                   height="544"
                   className="object-cover rounded-lg pointer-events-none"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/blur.png?raw=true"
                 />
               </div>
             ))}
@@ -224,7 +214,9 @@ const RecordPlayer: React.FC<RecordPlayerProps> = ({ recordPlayerProps }) => {
                       width="544"
                       height="544"
                       className="object-cover rounded-lg pointer-events-none mb-4 md:mb-6 lg:mb-8 mx-auto"
-                      priority
+                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/music/blur.png?raw=true"
                     />
                     <div className="flex flex-col md:flex-row items-center justify-between mb-2 md:mb-4">
                       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-0">
