@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import HTMLFlipBook from "react-pageflip";
 import Image from 'next/image';
 import { YoutubeMusicIcon_black } from "@/components/icons";
@@ -29,34 +29,6 @@ type AudibleMemoriesProps = {
 
 const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps }) => {
     const pageFlipRef = useRef<HTMLDivElement>(null);
-    const loadedImages = useRef(new Set<string>()); // Track loaded images
-
-    const preloadImage = (src: string) => {
-        if (!loadedImages.current.has(src)) {
-            const img = document.createElement('img'); // Create an image element
-            img.src = src;
-            img.onload = () => loadedImages.current.add(src);
-        }
-    };
-
-    useEffect(() => {
-        // Preload static images (front, back, left, and right pages)
-        const staticImages = [
-            "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/front.jpg?raw=true",
-            "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/back.jpg?raw=true",
-            "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/left.jpg?raw=true",
-            "https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/right.jpg?raw=true"
-        ];
-        
-        // Preload song images and photo thumbnails
-        const allImages = [
-            ...staticImages,
-            ...audibleMemoriesProps.songs.map(song => song.songSrc),
-            ...audibleMemoriesProps.songs.flatMap(song => song.photos.map(photo => photo.src))
-        ];
-
-        allImages.forEach(preloadImage);
-    }, [audibleMemoriesProps.songs]);
 
     return (
         <>
@@ -95,23 +67,26 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                 disableFlipByClick={false}
                 ref={pageFlipRef}
             >
-                <div> 
-                    <Image 
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/front.jpg?raw=true" 
-                        alt="front" 
-                        fill 
+                <div>
+                    <Image
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/front.jpg?raw=true"
+                        alt="front"
+                        fill
                         className="object-cover border-white"
-                        priority={true}
+                        priority
+                        sizes="(max-width: 600px) 100vw, 600px"
                     />
                 </div>
                 {audibleMemoriesProps.songs.map((song, index) => (
                     [
                     <div key={`${index}-left`} className="relative">
-                        <Image 
+                        <Image
                             src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/left.jpg?raw=true"
-                            alt="left" 
-                            fill 
-                            className="object-cover" 
+                            alt="left"
+                            fill
+                            className="object-cover"
+                            loading="lazy"
+                            sizes="(max-width: 600px) 100vw, 600px"
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent from-90% to-black/60 to-100%"></div>
                         <div className="absolute inset-0 flex flex-col items-center justify-center h-full px-4 py-8 md:px-8 md:py-12 lg:px-12 lg:py-16 z-10">
@@ -119,10 +94,10 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                 <Image
                                     src={song.songSrc}
                                     alt={song.songTitle}
-                                    width="544"
-                                    height="544"
+                                    width={544}
+                                    height={544}
                                     className="object-cover h-64 w-64 xl:h-96 xl:w-96 mx-auto mb-8"
-                                    priority
+                                    loading="lazy"
                                 />
                                 <div className="flex flex-col md:flex-row items-center justify-between">
                                     <h1 className="text-lg md:text-xl lg:text-2xl font-bold">
@@ -144,11 +119,13 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                         </div>
                     </div>,
                     <div key={`${index}-right`} className="relative">
-                        <Image 
+                        <Image
                             src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/right.jpg?raw=true"
-                            alt="right" 
-                            fill 
-                            className="object-cover" 
+                            alt="right"
+                            fill
+                            className="object-cover"
+                            loading="lazy"
+                            sizes="(max-width: 600px) 100vw, 600px"
                         />
                         <div className="absolute inset-0 bg-gradient-to-l from-transparent from-90% to-black/60 to-100%"></div>
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
@@ -158,12 +135,13 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                             <div className="grid grid-cols-2 grid-rows-2 gap-2">
                                 {song.photos.map((photo, index) => (
                                     <div key={index} className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 xl:w-64 xl:h-64">
-                                        <Image 
+                                        <Image
                                             src={photo.src}
                                             alt={`photo-${index}`}
                                             fill
                                             className="object-cover rounded-md"
-                                            priority
+                                            loading="lazy"
+                                            sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 192px, 256px"
                                         />
                                     </div>
                                 ))}
@@ -172,12 +150,14 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                     </div>
                     ]
                 ))}
-                <div> 
-                    <Image 
-                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/back.jpg?raw=true" 
-                        alt="back" 
-                        fill 
-                        className="object-cover" 
+                <div>
+                    <Image
+                        src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/audibleMemories/back.jpg?raw=true"
+                        alt="back"
+                        fill
+                        className="object-cover"
+                        loading="lazy"
+                        sizes="(max-width: 600px) 100vw, 600px"
                     />
                 </div>
             </HTMLFlipBook>
