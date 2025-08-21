@@ -38,24 +38,19 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
   const [loaded, setLoaded] = useState(false);
-  const [key, setKey] = useState(0);
-  const [backgroundImage, setBackgroundImage] = useState(heroSectionProps.originalBackgroundImage);
+  const [hoverImage, setHoverImage] = useState<BackgroundImage | null>(null);
+  const [hoverLoaded, setHoverLoaded] = useState(false);
   const loadedImages = useRef(new Set<string>()); // Store loaded images to avoid reloading
 
   const preloadImage = (image: BackgroundImage) => {
-    // Only load if it hasn't been loaded before
     if (!loadedImages.current.has(image.src)) {
-        const img = document.createElement('img'); // Create an image element
-        img.src = image.src;
-        img.onload = () => {
-            loadedImages.current.add(image.src);
-            // Set as background if still hovered over
-            if (image.src === backgroundImage.src) {
-                setBackgroundImage(image);
-            }
-        };
+      const img = document.createElement('img');
+      img.src = image.src;
+      img.onload = () => {
+        loadedImages.current.add(image.src);
+      };
     }
-};
+  };
 
   useEffect(() => {
     // Preload all images on mount
@@ -63,29 +58,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
     allImages.forEach(preloadImage);
   }, [heroSectionProps]);
 
-  useEffect(() => {
-    // Force a re-mount of the Image component when the source changes
-    setLoaded(false);
-    setKey((prevKey) => prevKey + 1);
-  }, [backgroundImage.src]);
 
   return (
     <section className="relative h-[600px] overflow-hidden">
       <div className="relative w-full h-full">
         {/* Fading black overlay */}
         <div className={`absolute inset-0 bg-black transition-opacity duration-1000 ${loaded ? 'opacity-0' : 'opacity-100 z-3'}`}></div>
-        {/* New image */}
+        {/* Base image */}
         <Image
-          key={key} // Ensure re-mounting of the Image component
-          alt={backgroundImage.alt}
-          className={`absolute w-full h-full object-cover ${loaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000 z-2`}
-          height={backgroundImage.height}
-          src={backgroundImage.src}
+          alt={heroSectionProps.originalBackgroundImage.alt}
+          className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${hoverImage && hoverLoaded ? 'opacity-0' : loaded ? 'opacity-100' : 'opacity-0'} z-1`}
+          height={heroSectionProps.originalBackgroundImage.height}
+          src={heroSectionProps.originalBackgroundImage.src}
           style={{ aspectRatio: '1/1', objectFit: 'cover' }}
-          width={backgroundImage.width}
+          width={heroSectionProps.originalBackgroundImage.width}
           onLoad={() => setLoaded(true)}
           priority={true}
         />
+        {hoverImage && (
+          <Image
+            alt={hoverImage.alt}
+            className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${hoverLoaded ? 'opacity-100' : 'opacity-0'} z-2`}
+            height={hoverImage.height}
+            src={hoverImage.src}
+            style={{ aspectRatio: '1/1', objectFit: 'cover' }}
+            width={hoverImage.width}
+            onLoad={() => setHoverLoaded(true)}
+            priority={true}
+          />
+        )}
         <div className="absolute inset-0 bg-gray-900/50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-85% to-black to-100%"></div>
         {/* Content */}
@@ -125,10 +126,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
                         href={card.buttonHref}
                         onMouseEnter={() => {
                           preloadImage(card.newBackgroundImage);
-                          setBackgroundImage(card.newBackgroundImage);
+                          setHoverLoaded(false);
+                          setHoverImage(card.newBackgroundImage);
                         }}
                         onMouseLeave={() => {
-                          setBackgroundImage(heroSectionProps.originalBackgroundImage);
+                          setHoverLoaded(false);
+                          setTimeout(() => setHoverImage(null), 1000);
                         }}
                       >
                         {card.buttonText}
