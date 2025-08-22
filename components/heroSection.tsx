@@ -70,10 +70,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
   }, [backgroundImage.src]);
 
   return (
-    <section className="relative h-[600px] overflow-hidden">
+    <section className="relative h-screen overflow-hidden">
       <div className="relative w-full h-full">
         {/* Fading black overlay */}
-        <div className={`absolute inset-0 bg-black transition-opacity duration-1000 ${loaded ? 'opacity-0' : 'opacity-100 z-3'}`}></div>
+        <div className={`absolute inset-0 bg-black transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0 z-3'}`}></div>
+        <div className={`absolute inset-0 bg-black transition-opacity duration-700 ${loaded ? 'opacity-0' : 'opacity-100 z-3'}`}></div>
         {/* New image */}
         <Image
           key={key} // Ensure re-mounting of the Image component
