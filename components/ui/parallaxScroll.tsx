@@ -41,8 +41,12 @@ const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ layers, className }) =>
               layerRefs.current[idx] = el;
             }
           }}
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          style={{ willChange: "transform" }}
+          className="absolute left-0 w-full pointer-events-none"
+          style={{
+            willChange: "transform",
+            top: `${-idx * 6}px`, // Move each layer up
+            height: `calc(100% - ${-idx * 6}px)`, // Keep bottom aligned
+          }}
         >
           <Image
             src={layer.src}

@@ -1,11 +1,29 @@
 import React from 'react';
 import MainHeader from '../mainHeader';
+import ParallaxScroll from "@/components/ui/parallaxScroll";
 import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
 import MainFooter from '../mainFooter';
 import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 
 const JadeHouse = () => {
+  const layers = [
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/13_dkmqpv.png', speed: 0.7 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886474/12_mrq45q.png', speed: 0.65 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/11_qkrsop.png', speed: 0.6 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755890278/10_ju8gyw.png', speed: 0.55 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/9_f2wpru.png', speed: 0.5 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/8_s4r2ix.png', speed: 0.45 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/7_odqxnr.png', speed: 0.4 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/6_ybp4ht.png', speed: 0.35 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/5_mhorvc.png', speed: 0.3 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886474/4_p7bpqp.png', speed: 0.25 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/3_hoxfbi.png', speed: 0.2 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/2_g5d8nt.png', speed: 0.15 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755887979/1_iqw5ou.png', speed: 0.1 }
+  ];
+
+
   const heroSectionProps = {
     originalBackgroundImage: {
       src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708693/main_background_w5apqk.jpg",
@@ -84,11 +102,13 @@ const JadeHouse = () => {
   }
 
   return (
-    <div key="1" className="flex flex-col min-h-[100dvh]">
-      <MainHeader/>
-      <HeroSection heroSectionProps={heroSectionProps}/>
-      <MiniAbout miniAboutProps={miniAboutProps}/>
-      <MainFooter/>
+    <div key="1" className="relative flex flex-col min-h-[100dvh]">
+      <MainHeader />
+      <ParallaxScroll layers={layers} className="absolute inset-0 -z-10" />
+      <div className="bg-black h-72"></div>
+      <HeroSection heroSectionProps={heroSectionProps} />
+      <MiniAbout miniAboutProps={miniAboutProps} />
+      <MainFooter />
     </div>
   );
 };

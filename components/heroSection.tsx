@@ -88,6 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
           priority={true}
         />
         <div className="absolute inset-0 bg-gray-900/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-15%"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-85% to-black to-100%"></div>
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20 z-4">
