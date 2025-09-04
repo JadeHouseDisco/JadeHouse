@@ -24,7 +24,7 @@ export default async function Disco() {
       cards: [
         {
           image: {
-            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_bfqaxt.png",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756997080/jadehouse_cg1705.png",
             alt: "jadehouse logo",
             width: 120,
             height: 120,
@@ -42,7 +42,7 @@ export default async function Disco() {
         },
         {
           image: {
-            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708697/jadehouse_lab_onig4i.png",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756997961/lab_fijdn1.png",
             alt: "jadehouse disco logo",
             width: 120,
             height: 120,

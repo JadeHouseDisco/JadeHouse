@@ -37,7 +37,7 @@ const JadeHouse = () => {
       cards: [
         {
           image: {
-            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708697/jadehouse_lab_onig4i.png",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756997961/lab_fijdn1.png",
             alt: "jadehouse lab logo",
             width: 120,
             height: 120,
@@ -55,7 +55,7 @@ const JadeHouse = () => {
         },
         {
           image: {
-            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_disco_b1js7e.png",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756999380/20250904_2130_Minimalistic_Disco_Symbols_remix_01k4aj3cwkfyytt91kkfprate2_qjc6zy.png",
             alt: "jadehouse disco logo",
             width: 120,
             height: 120,

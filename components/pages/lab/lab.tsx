@@ -21,7 +21,7 @@ export default async function Lab() {
         cards: [
           {
             image: {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_bfqaxt.png",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756997080/jadehouse_cg1705.png",
               alt: "jadehouse logo",
               width: 120,
               height: 120,
@@ -39,7 +39,7 @@ export default async function Lab() {
           },
           {
             image: {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708696/jadehouse_disco_b1js7e.png",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756999380/20250904_2130_Minimalistic_Disco_Symbols_remix_01k4aj3cwkfyytt91kkfprate2_qjc6zy.png",
               alt: "jadehouse disco logo",
               width: 120,
               height: 120,
