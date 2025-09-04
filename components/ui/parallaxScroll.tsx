@@ -57,6 +57,7 @@ const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ layers, className }) =>
           />
         </div>
       ))}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent from-[85%] to-black to-100%"></div>
     </div>
   );
 };

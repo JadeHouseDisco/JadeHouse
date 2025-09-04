@@ -8,19 +8,19 @@ import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 
 const JadeHouse = () => {
   const layers = [
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/13_dkmqpv.png', speed: 0.7 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886474/12_mrq45q.png', speed: 0.65 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/11_qkrsop.png', speed: 0.6 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755890278/10_ju8gyw.png', speed: 0.55 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/9_f2wpru.png', speed: 0.5 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/8_s4r2ix.png', speed: 0.45 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/7_odqxnr.png', speed: 0.4 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/6_ybp4ht.png', speed: 0.35 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/5_mhorvc.png', speed: 0.3 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886474/4_p7bpqp.png', speed: 0.25 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886473/3_hoxfbi.png', speed: 0.2 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755886475/2_g5d8nt.png', speed: 0.15 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755887979/1_iqw5ou.png', speed: 0.1 }
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973409/13_nqxfed.png', speed: 0.7 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/12_bnf9m0.png', speed: 0.65 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/11_kjxtok.png', speed: 0.6 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973610/10_hoohd7.png', speed: 0.55 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/9_mvxdf0.png', speed: 0.5 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/8_bqdjpa.png', speed: 0.45 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/7_xenqxa.png', speed: 0.4 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973406/6_onrvnp.png', speed: 0.35 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/5_jabsyx.png', speed: 0.3 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/4_dohezt.png', speed: 0.25 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/3_qjtvoc.png', speed: 0.2 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/2_iremab.png', speed: 0.15 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/1_izhise.png', speed: 0.1 }
   ];
 
 
