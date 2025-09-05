@@ -8,7 +8,7 @@ import { Menu } from "lucide-react"
 const DiscoHeader: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="relative flex items-center justify-between px-6 py-4 bg-gray-900 text-white sticky top-0 z-40">
+    <header className="flex items-center justify-between px-6 py-4 bg-gray-900 text-white sticky top-0 z-40">
       <div className="flex items-center">
         <Link href='/disco'>
           <Image

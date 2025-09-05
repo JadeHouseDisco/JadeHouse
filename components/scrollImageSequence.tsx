@@ -195,7 +195,7 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   return (
     <div ref={containerRef} className={className}>
       <div
-        className="sticky w-full relative"
+        className="sticky w-full"
         style={{
           top: headerOffset,
           height: `calc(100vh - ${headerOffset}px)`,
