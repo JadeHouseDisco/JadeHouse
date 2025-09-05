@@ -14,6 +14,7 @@ const PhotoAlbumGrid: React.FC<PhotoAlbumGridProps> = ({ photoAlbumGridProps }) 
     ({ imageProps: { alt, style, ...rest } }: RenderPhotoProps) => (
       <img
         alt={alt}
+        loading="lazy"
         style={{
           ...style,
           borderRadius: "10px",

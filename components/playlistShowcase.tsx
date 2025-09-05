@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import ImageCarousel from './ui/imageCarousel/imageCarousel';
 
 interface PlaylistItem {
@@ -128,14 +129,14 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
               isVisible ? 'scale-100' : 'scale-95'
             }`}
           >
-            <img
+            <Image
               alt="Background"
               className="h-full w-full object-cover object-center"
-              height="800"
+              height={800}
               src={selectedItem.src}
               style={{ aspectRatio: '1600/800', objectFit: 'cover' }}
-              width="1600"
-              loading="eager"
+              width={1600}
+              priority
             />
             <div className="absolute inset-0 bg-gray-900/50"></div>
             <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20 z-4">

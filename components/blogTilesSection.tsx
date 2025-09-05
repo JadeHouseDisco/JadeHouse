@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, SyntheticEvent, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface BlogTilesSectionProps {
     categories: string[],
@@ -242,7 +243,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                             onMouseEnter={(e) => handleMouseEnter(e, index)}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <img
+                            <Image
                                 alt="Blog Post Image"
                                 className="w-full h-48 object-cover"
                                 height={300}
@@ -252,6 +253,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                                 objectFit: "cover",
                                 }}
                                 width={400}
+                                loading="lazy"
                             />
                             <div className="p-4 bg-gray-700">
                                 <div className="whitespace-nowrap flex">
