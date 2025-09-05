@@ -65,7 +65,6 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
     const update = () => setHeaderOffset(el.getBoundingClientRect().height);
     update();
 
-    // Track dynamic changes (mobile menu open, responsive)
     const ro = new ResizeObserver(update);
     ro.observe(el);
 
