@@ -95,7 +95,13 @@ const JadeHouse = () => {
               overlayColor: "rgb(31 41 55 / 0.80)",    // optional
               overlayOpacity: 0.8,                     // optional
               bgImage: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757005550/6_2_tapkgf.png", fadeMs: 300 }, // optional
-              // autoClearMs: 2500,                    // optional auto clear
+              content: {
+                image: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756997961/lab_fijdn1.png", alt: "Lab", width: 150, height: 150 },   // optional
+                title: "JadeHouse Lab",
+                description: "Explore my professional life, including experiences, ideas, and reviews",
+                buttonText: "Enter the Lab",
+                buttonHref: "/lab",
+              },
             },
           },
           {
@@ -107,6 +113,13 @@ const JadeHouse = () => {
               overlayColor: "rgb(31 41 55 / 0.80)",
               overlayOpacity: 0.8,
               bgImage: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757005549/6_1_chp6r2.png", fadeMs: 300 },
+              content: {
+                image: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756999380/20250904_2130_Minimalistic_Disco_Symbols_remix_01k4aj3cwkfyytt91kkfprate2_qjc6zy.png", alt: "Lab", width: 150, height: 150 },   // optional
+                title: "JadeHouse Disco",
+                description: "Explore my personal life, including memories, thoughts, and music",
+                buttonText: "Enter the Disco",
+                buttonHref: "/disco",
+              },
             },
           },
         ]}
