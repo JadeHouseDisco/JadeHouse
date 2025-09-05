@@ -32,7 +32,7 @@ const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ layers, className }) =>
   }, [layers]);
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden ${className || ""}`}>
+    <div className={`relative w-full h-[100vh]  ${className || ""}`}>
       {layers.map((layer, idx) => (
         <div
           key={idx}
@@ -52,7 +52,7 @@ const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ layers, className }) =>
             src={layer.src}
             alt={layer.alt || `parallax-layer-${idx}`}
             fill
-            className="object-cover"
+            className="object-cover object-top" // or object-[50%_0%]
             priority={idx === 0}
           />
         </div>

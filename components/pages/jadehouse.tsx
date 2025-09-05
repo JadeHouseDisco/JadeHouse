@@ -1,6 +1,7 @@
 import React from 'react';
 import MainHeader from '../mainHeader';
 import ParallaxScroll from "@/components/ui/parallaxScroll";
+import ScrollImageSequence from '@/components/scrollImageSequence';
 import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
 import MainFooter from '../mainFooter';
@@ -23,6 +24,14 @@ const JadeHouse = () => {
     { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/1_izhise.png', speed: 0.1 }
   ];
 
+    const frames = [
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000751/1_owgpse.png", alt: "Frame 1" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000750/2_ktn2ik.png", alt: "Frame 2" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000781/3_kocizw.png", alt: "Frame 3" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000751/4_akq2xu.png", alt: "Frame 4" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757007919/5_yifw6j.png", alt: "Frame 5" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757005550/6_eqdjrq.png", alt: "Frame 6" },
+    ];
 
   const heroSectionProps = {
     originalBackgroundImage: {
@@ -106,7 +115,12 @@ const JadeHouse = () => {
       <MainHeader />
       <ParallaxScroll layers={layers} className="absolute inset-0 -z-10" />
       <div className="bg-black h-72"></div>
-      <HeroSection heroSectionProps={heroSectionProps} />
+      <ScrollImageSequence
+        images={frames}
+        className="relative w-full"
+        offsetElementId="main-header"
+        verticalAnchorPercent={30}
+      />
       <MiniAbout miniAboutProps={miniAboutProps} />
       <MainFooter />
     </div>

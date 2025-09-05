@@ -8,7 +8,10 @@ import { Menu } from "lucide-react"
 const MainHeader: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="relative flex items-center justify-between px-6 py-4 bg-gray-900 text-white sticky top-0 z-40">
+    <header
+      id="main-header"
+      className="flex items-center justify-between px-6 py-4 bg-gray-900 text-white sticky top-0 z-40"
+    >
       <div className="flex items-center">
         <Link href='/'>
           <Image
