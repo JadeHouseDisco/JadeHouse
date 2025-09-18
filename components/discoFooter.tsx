@@ -1,10 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Script from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: any) => string;
+      reset: (widgetId: string) => void;
+    };
+  }
+}
 
 const DiscoFooter: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -15,10 +24,42 @@ const DiscoFooter: React.FC = () => {
   const [cfToken, setCfToken] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
 
+  // Explicit Turnstile render
+  const widgetRef = useRef<HTMLDivElement | null>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  const onTurnstileLoad = () => {
+    if (!widgetRef.current || !window.turnstile) return;
+    if (widgetIdRef.current) return; // already rendered
+    widgetIdRef.current = window.turnstile.render(widgetRef.current, {
+      sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+      theme: "dark",
+      callback: (token: string) => setCfToken(token),
+      "error-callback": () => setCfToken(""),
+      "expired-callback": () => setCfToken(""),
+      "timeout-callback": () => setCfToken(""),
+    });
+  };
+
+  const resetTurnstile = () => {
+    try {
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.reset(widgetIdRef.current);
+      }
+    } catch {
+      /* no-op */
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setButtonText("Sending...");
 
+    if (!cfToken) {
+      alert("Please complete the verification.");
+      return;
+    }
+
+    setButtonText("Sending...");
     const res = await fetch("/api/sendEmail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -26,7 +67,7 @@ const DiscoFooter: React.FC = () => {
         email,
         message,
         cf_token: cfToken,
-        website, // honeypot
+        website,
       }),
     });
 
@@ -34,18 +75,24 @@ const DiscoFooter: React.FC = () => {
     if (!res.ok) {
       alert(data.error || "Failed to send message");
       setButtonText("Send");
+      resetTurnstile(); // refresh token on failure
       return;
     }
+
     alert("Successfully sent message");
     setButtonText("Send");
     setMessage("");
-    // keep email so the user can send another message easily
+    resetTurnstile(); // refresh token for next message
   };
 
   return (
     <footer className="bg-gray-900 text-white py-6">
-      {/* Turnstile loader (public site key via NEXT_PUBLIC_TURNSTILE_SITE_KEY) */}
-      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+      {/* Load Turnstile and render when ready */}
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="afterInteractive"
+        onReady={onTurnstileLoad}
+      />
 
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -166,16 +213,12 @@ const DiscoFooter: React.FC = () => {
                 autoComplete="off"
               />
 
-              {/* Turnstile widget */}
-              <div
-                className="cf-turnstile mb-4"
-                data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-                data-callback={(token: string) => setCfToken(token)}
-              />
+              {/* Turnstile explicit container */}
+              <div ref={widgetRef} className="mb-4" />
 
               <button
                 type="submit"
-                disabled={buttonText !== "Send"}
+                disabled={buttonText !== "Send" || !cfToken}
                 className="inline-flex items-center justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {buttonText}
