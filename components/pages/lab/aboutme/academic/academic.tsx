@@ -12,6 +12,11 @@ export default function Academic() {
         sectionTitle: 'Education History',
         items: [
           {
+            title: 'Master of Science ETH in Robotics, Systems and Control',
+            subtitle: ['ETH Zürich', '2025 - 2027'],
+            icon: 'graduation',
+          },
+          {
             title: 'Bachelor of Science in Mechanical Engineering',
             subtitle: ['Nanyang Technological University', '2020 - 2025'],
             icon: 'graduation',
@@ -27,13 +32,28 @@ export default function Academic() {
         sectionTitle: 'Achievements and Awards',
         items: [
           {
+            title: "Global Undergraduate Awards Asia Regional Winner in Engineering",
+            subtitle: ['The Global Undergraduate Awards'],
+            icon: 'trophy',
+          },
+          {
+            title: "AY 24/25 Dean's List",
+            subtitle: ['Nanyang Technological University'],
+            icon: 'trophy',
+          },
+          {
+            title: "Multidisciplinary Team (MDT) Fund",
+            subtitle: ['Nanyang Technological University'],
+            icon: 'trophy',
+          },
+          {
             title: "AY 21/22 Dean's List",
-            subtitle: ['Nanyang Technological University', 'CGPA: 4.84'],
+            subtitle: ['Nanyang Technological University'],
             icon: 'trophy',
           },
           {
             title: "Accelerated Bachelor's Program",
-            subtitle: ['Nanyang Technological University', '3.5 Years Candidature'],
+            subtitle: ['Nanyang Technological University'],
             icon: 'trophy',
           },
         ],
@@ -46,18 +66,90 @@ export default function Academic() {
     downloads: [
       {
         buttonText: "CV",
-        href: "https://res.cloudinary.com/dss5ymotz/image/upload/v1733748414/Hyunwoo_Lee_CV_tzibrf.pdf"
+        href: "https://api.cloudinary.com/v1_1/dss5ymotz/image/download?api_key=297963957635983&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiNDdkODc0OGE5MzVhOWUxODIwNDFhNDJmYjg1NWRjNjMiLCJ1c2VyX2V4dGVybmFsX2lkIjoiMGMyYTY1N2JkOWU2YmQ4NDhlMjRiN2NiMGFlNTc3IiwidXNlcl9jdXN0b21faWQiOiJhbGV4bGVlMjQ1OUBnbWFpbC5jb20iLCJjb21wb25lbnQiOiJjb25zb2xlIn0%3D&public_id=Hyunwoo_Lee_CV_ne9i9i&signature=c61e3d7db1ac523f393e9b136998edea5524ef95&source=ml&target_filename=Hyunwoo_Lee_CV_ne9i9i&timestamp=1758198293&type=upload"
       },
       {
         buttonText: "Transcript",
-        href: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708674/Hyunwoo_Lee_Transcript_i9yqoj.pdf"
+        href: "https://api.cloudinary.com/v1_1/dss5ymotz/image/download?api_key=297963957635983&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiNDdkODc0OGE5MzVhOWUxODIwNDFhNDJmYjg1NWRjNjMiLCJ1c2VyX2V4dGVybmFsX2lkIjoiMGMyYTY1N2JkOWU2YmQ4NDhlMjRiN2NiMGFlNTc3IiwidXNlcl9jdXN0b21faWQiOiJhbGV4bGVlMjQ1OUBnbWFpbC5jb20iLCJjb21wb25lbnQiOiJjb25zb2xlIn0%3D&public_id=Hyunwoo_Lee_Transcript_p31rbt&signature=e1ec7586df1758e849f6ca0806c6495e024ff804&source=ml&target_filename=Hyunwoo_Lee_Transcript_p31rbt&timestamp=1758198527&type=upload"
       }
     ]
   }
 
-  const courseTableProps = {
-    headerText: "Courses Taken",
+  const courseTableMasterProps = {
+    headerText: "Masters Courses",
     tables: [
+      {
+        tableTitle: "Year 1 Semester 1",
+        thead: {
+          col1: "Courses",
+          col2: "Grade",
+        },
+        tbody: [
+          {
+            col1: "Planning and Decision Making for Autonomous Robots",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Dynamic Programming and Optimal Control",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Microrobotics",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Real-World Robotics - A Hands-On Project Class",
+            col2: "Ongoing",
+          },
+          {
+            col1: "ETH Zurich Distinguished Seminar in Robotics, Systems and Controls",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Robot Dynamics",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Probabilistic Artificial Intelligence",
+            col2: "Ongoing",
+          },
+        ]
+      },
+    ] 
+  }
+
+  const courseTableBachelorProps = {
+    headerText: "Bachelors Courses",
+    tables: [
+      {
+        tableTitle: "Year 4 Semester 2",
+        thead: {
+          col1: "Courses",
+          col2: "Grade",
+        },
+        tbody: [
+          {
+            col1: "ENGINEERING EXPERIMENTS",
+            col2: "A-",
+          },
+          {
+            col1: "MECHATRONICS ENGINEERING DESIGN",
+            col2: "A+",
+          },
+          {
+            col1: "FINAL YEAR PROJECT",
+            col2: "A",
+          },
+          {
+            col1: "MACHINE INTELLIGENCE",
+            col2: "A+",
+          },
+          {
+            col1: "REALTIME SOFTWARE FOR MECHATRONICS SYSTEMS",
+            col2: "A+", 
+          },
+        ]
+      },
       {
         tableTitle: "Year 4 Semester 1",
         thead: {
@@ -67,23 +159,23 @@ export default function Academic() {
         tbody: [
           {
             col1: "ENGINEERING COMMUNICATION",
-            col2: "ONGOING",
+            col2: "A",
           },
           {
             col1: "MATHEMATICAL METHODS IN ENGINEERING",
-            col2: "ONGOING",
+            col2: "A+",
           },
           {
             col1: "THERMODYNAMICS & HEAT TRANSFER",
-            col2: "ONGOING",
+            col2: "A+",
           },
           {
             col1: "MEASUREMENT & SENSING SYSTEMS",
-            col2: "ONGOING",
+            col2: "A",
           },
           {
             col1: "ROBOTICS",
-            col2: "ONGOING", 
+            col2: "A", 
           },
         ]
       },
@@ -304,7 +396,8 @@ export default function Academic() {
       <LabHeader/>
       <AcademicInfoSection academicInfoSectionProps={academicInfoSectionProps}/>
       <DownloadSection downloadSectionProps={downloadSectionProps}/>
-      <CourseTable courseTableProps={courseTableProps}/>
+      <CourseTable courseTableProps={courseTableMasterProps}/>
+      <CourseTable courseTableProps={courseTableBachelorProps}/>
       <LabFooter/>
     </div>
   )

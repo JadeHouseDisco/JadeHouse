@@ -12,7 +12,7 @@ const LabHeader: React.FC = () => {
       <div className="flex items-center">
         <Link href="/lab">
           <Image
-            src="https://res.cloudinary.com/dss5ymotz/image/upload/v1756997961/lab_fijdn1.png"
+            src="https://res.cloudinary.com/dss5ymotz/image/upload/v1758199144/lab_ookoc5.png"
             width="418"
             height="538"
             className="h-10 w-9 mr-2"

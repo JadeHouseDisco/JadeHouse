@@ -43,7 +43,7 @@ const DiscoFooter: React.FC = () => {
           <div>
             <Link href='/lab'>
               <Image
-                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1756997071/20250904_2130_Minimalistic_Disco_Symbols_remix_01k4aj3cwkfyytt91kkfprate2_qjc6zy.pnghttps://res.cloudinary.com/dss5ymotz/image/upload/v1756999380/20250904_2130_Minimalistic_Disco_Symbols_remix_01k4aj3cwkfyytt91kkfprate2_qjc6zy.png"
+                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1758199145/disco_r4homm.png"
                 alt="disco logo"
                 width="64"
                 height="64"

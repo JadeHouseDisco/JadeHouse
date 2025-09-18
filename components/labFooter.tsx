@@ -43,7 +43,7 @@ const LabFooter: React.FC = () => {
           <div>
             <Link href='/lab'>
               <Image
-                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1756997961/lab_fijdn1.png"
+                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1758199144/lab_ookoc5.png"
                 alt="lab logo"
                 width="64"
                 height="64"

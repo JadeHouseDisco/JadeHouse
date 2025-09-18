@@ -15,7 +15,7 @@ const MainHeader: React.FC = () => {
       <div className="flex items-center">
         <Link href='/'>
           <Image
-            src='https://res.cloudinary.com/dss5ymotz/image/upload/v1756997080/jadehouse_cg1705.png'
+            src='https://res.cloudinary.com/dss5ymotz/image/upload/v1758199145/jadehouse_zzn0yl.png'
             width="406"
             height="526"
             className="h-10 w-9 mr-2"

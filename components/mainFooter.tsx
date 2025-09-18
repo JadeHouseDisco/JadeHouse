@@ -43,7 +43,7 @@ const MainFooter: React.FC = () => {
           <div>
             <Link href='/lab'>
               <Image
-                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1756997080/jadehouse_cg1705.png"
+                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1758199145/jadehouse_zzn0yl.png"
                 alt="JadeHouse logo"
                 width="64"
                 height="64"

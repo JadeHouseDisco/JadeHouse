@@ -31,7 +31,7 @@ const AcademicInfoSection: React.FC<AcademicInfoSectionProps> = ({ academicInfoS
                         <GraduationCapIcon className="h-6 w-6 text-gray-500" />
                       )}
                       {item.icon === 'trophy' && (
-                        <TrophyIcon className="h-6 w-6 text-gray-500" />
+                        <TrophyIcon className="h-6 w-6 text-gray-500 mt-1" />
                       )}
                     </div>
                     <div className="ml-3">

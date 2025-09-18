@@ -2,35 +2,34 @@ import React from 'react';
 import MainHeader from '../mainHeader';
 import ParallaxScroll from "@/components/ui/parallaxScroll";
 import ScrollImageSequence from '@/components/scrollImageSequence';
-import HeroSection from "@/components/heroSection";
 import MiniAbout from "@/components/miniAbout";
 import MainFooter from '../mainFooter';
 import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
 
 const JadeHouse = () => {
   const layers = [
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973409/13_nqxfed.png', speed: 0.7 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/12_bnf9m0.png', speed: 0.65 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/11_kjxtok.png', speed: 0.6 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973610/10_hoohd7.png', speed: 0.55 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/9_mvxdf0.png', speed: 0.5 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/8_bqdjpa.png', speed: 0.45 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/7_xenqxa.png', speed: 0.4 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973406/6_onrvnp.png', speed: 0.35 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/5_jabsyx.png', speed: 0.3 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/4_dohezt.png', speed: 0.25 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973407/3_qjtvoc.png', speed: 0.2 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/2_iremab.png', speed: 0.15 },
-    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1755973408/1_izhise.png', speed: 0.1 }
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198790/13_nqxfed_bjr6d4.png', speed: 0.7 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198790/12_bnf9m0_glo539.png', speed: 0.65 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198791/11_kjxtok_bymp5c.png', speed: 0.6 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198789/10_hoohd7_r12zzj.png', speed: 0.55 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198789/9_mvxdf0_pdodsw.png', speed: 0.5 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198788/8_bqdjpa_siqd1x.png', speed: 0.45 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198789/7_xenqxa_nqyhkq.png', speed: 0.4 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198755/6_onrvnp_roierf.png', speed: 0.35 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198788/5_jabsyx_yhk7tm.png', speed: 0.3 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198727/4_dohezt_id5vdx.png', speed: 0.25 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198726/3_qjtvoc_z7v390.png', speed: 0.2 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198788/2_iremab_gblugz.png', speed: 0.15 },
+    { src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1758198727/1_izhise_balrez.png', speed: 0.1 }
   ];
 
     const frames = [
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000751/1_owgpse.png", alt: "Frame 1" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000750/2_ktn2ik.png", alt: "Frame 2" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000781/3_kocizw.png", alt: "Frame 3" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757000751/4_akq2xu.png", alt: "Frame 4" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757007919/5_yifw6j.png", alt: "Frame 5" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757005550/6_eqdjrq.png", alt: "Frame 6" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198962/1_asgknn.png", alt: "Frame 1" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198962/2_hikupb.png", alt: "Frame 2" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198964/3_bsoxwh.png", alt: "Frame 3" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198963/4_kitc6r.png", alt: "Frame 4" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198964/5_ubutmq.png", alt: "Frame 5" },
+      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198965/6_lhqaer.png", alt: "Frame 6" },
     ];
 
   const miniAboutProps = {
@@ -94,9 +93,9 @@ const JadeHouse = () => {
               overlaySide: "right",                    // clicking left region overlays the right half
               overlayColor: "rgb(31 41 55 / 0.80)",    // optional
               overlayOpacity: 0.8,                     // optional
-              bgImage: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757005550/6_2_tapkgf.png", fadeMs: 300 }, // optional
+              bgImage: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198964/6_2_mghdcp.png", fadeMs: 300 }, // optional
               content: {
-                image: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756997961/lab_fijdn1.png", alt: "Lab", width: 150, height: 150 },   // optional
+                image: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758199144/lab_ookoc5.png", alt: "Lab", width: 150, height: 150 },   // optional
                 title: "JadeHouse Lab",
                 description: "Explore my professional life, including experiences, ideas, and reviews",
                 buttonText: "Enter the Lab",
@@ -112,9 +111,9 @@ const JadeHouse = () => {
               overlaySide: "left",                     // clicking right region overlays the left half
               overlayColor: "rgb(31 41 55 / 0.80)",
               overlayOpacity: 0.8,
-              bgImage: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1757005549/6_1_chp6r2.png", fadeMs: 300 },
+              bgImage: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198963/6_1_wnjpc6.png", fadeMs: 300 },
               content: {
-                image: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1756999380/20250904_2130_Minimalistic_Disco_Symbols_remix_01k4aj3cwkfyytt91kkfprate2_qjc6zy.png", alt: "Lab", width: 150, height: 150 },   // optional
+                image: { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758199145/disco_r4homm.png", alt: "Lab", width: 150, height: 150 },   // optional
                 title: "JadeHouse Disco",
                 description: "Explore my personal life, including memories, thoughts, and music",
                 buttonText: "Enter the Disco",
