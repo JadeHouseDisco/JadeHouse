@@ -406,37 +406,37 @@ export default function Music() {
             artist: "Angus & Gulia Stone",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708739/14_akofbh.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/15_lo3oty.jpg",
               title: "Rolled Together",
               artist: "The Antlers",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/15_lo3oty.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/16_vnrthu.jpg",
               title: "Blind (feat. Rachel Lim)",
               artist: "JIDA",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/16_vnrthu.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/17_ipdubw.jpg",
               title: "Over the Moon",
               artist: "The Marias",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/17_ipdubw.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/18_aikttk.jpg",
               title: "bath",
               artist: "offonoff",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708740/18_aikttk.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708741/19_qlksrk.jpg",
               title: "Fly Me to the Moon",
               artist: "The Macarons Project",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708741/19_qlksrk.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708741/20_sfcm12.jpg",
               title: "Home is Far Away (feat. OH HYUK)",
               artist: "EPIK HIGH",
           },
           {
-              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708741/20_sfcm12.jpg",
+              src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708742/21_myqwfd.jpg",
               title: "Closely Far Away",
               artist: "Car, the Garden",
           },
@@ -1099,7 +1099,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=E6NLFY7STIg&si=w24kwNAAfkU59bJB",
         songTitle: "Hold On (feat. Mapei)",
         songArtist: "OLSSON",
-        description: "Trip to Netherlands to participate in THIMUN was an exciting adventure, feeling the other side of the world and expanding my horizon. The thrill and anticipation of visiting a new place is absorbed in this song.",
+        description: "Trip to Netherlands exciting, feeling the other side of the world and expanding my horizon.",
         memoryName: "The Hague international Model United Nation (THIMUN)",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708708/1_fxpcu8.jpg", width: 1920, height: 1080 },
@@ -1113,8 +1113,8 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=HmKgFJGn46Q&si=9nrhbjlvLtZwrJUT",
         songTitle: "Can I Love ? , Meego) (feat. youra)",
         songArtist: "Cosmic Boy",
-        description: "Coming to Singapore all alone, not knowing anyone or anything. The excitement, worries, and lonliness were all accompanied by this song.",
-        memoryName: "First time in Singapore",
+        description: "Coming to Singapore all alone, not knowing anyone or anything. The excitement, worries, and lonliness.",
+        memoryName: "Hi Singapore",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708712/1_z4tcel.jpg", width: 1920, height: 1080 },
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708712/2_rtyodl.jpg", width: 1920, height: 1080 },
@@ -1127,8 +1127,8 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=M4RPilz6WlY&si=AEAZZkAYXaUEh5a7",
         songTitle: "For Elise",
         songArtist: "Saint Motel",
-        description: "Starting a new chapter in NTU, everywhere I went felt new and interesting. My new journey in NTU began with this song.",
-        memoryName: "New chapter in NTU",
+        description: "New chapter in NTU, everywhere I went felt new and interesting. My new journey in NTU is just beggining.",
+        memoryName: "NTU",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708713/1_mnksnl.jpg", width: 1920, height: 1080 },
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708714/2_u2lsdo.jpg", width: 1920, height: 1080 },
@@ -1155,7 +1155,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=jKmib7okBdY&si=lr93PC7-sKgEs9ts",
         songTitle: "EVERYTHING (feat. CHANGMO, Coogie, ASH ISLAND & BIBI)",
         songArtist: "Way Ched",
-        description: "Settling into my new life, things that were once new and difficult turned to daily life. I kept on with my life with this song.",
+        description: "Settling into my new life, things that were once new and difficult turned to daily life.",
         memoryName: "Settling in",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708716/1_vmchqg.jpg", width: 1920, height: 1080 },
@@ -1169,7 +1169,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=f3taMXkqI5g&si=lyvs7P_0gpyAoBvj",
         songTitle: "Crazy AF",
         songArtist: "In Real Life",
-        description: "You can't miss out the most important responsibility of student. My studies were accompanied by this song.",
+        description: "You can't miss out the most important responsibility of student. Time to put in the effort.",
         memoryName: "Studying",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708718/1_nwcjkg.jpg", width: 1920, height: 1080 },
@@ -1183,7 +1183,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=FB2GuBS9Ya0&si=eHLdD_eiqLqstwWO",
         songTitle: "End of the World (feat. GSoul)",
         songArtist: "EPIK HIGH",
-        description: "Part-time job as a Hyundai translator position was my first working experience. This unique and different experience was with this song.",
+        description: "Part-time job as a Hyundai translator as my first job experience. Running around, confused and restless.",
         memoryName: "Hyundai part-time translator",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708719/1_oqh6ec.jpg", width: 1920, height: 1080 },
@@ -1197,7 +1197,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=hp1UqZJKvFg&si=gDspv-ZbGMCBLJwb",
         songTitle: "sydney, hongkong (feat. THAMA )",
         songArtist: "Kid Milli",
-        description: "I thought discharge from national service would be the happiest thing in my life. As it approached, however, I felt ambivalent between excited and afraid. This bittersweet memory stays with this song.",
+        description: "Bittersweet emotions of leaving the place you once were for a long time.",
         memoryName: "Discharge",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708720/1_uvultu.jpg", width: 1920, height: 1080 },
@@ -1211,7 +1211,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=2vPDIBrTb-M&si=9QpZ6A1Bd_nnh2ap",
         songTitle: "BORED",
         songArtist: "INJI",
-        description: "Returning to school after 18 months, I dived straight to internship. The hectic process of readjusting and catching up mixed well with this bouncy song.",
+        description: "Readjusting and getting started with my new internship.",
         memoryName: "Internship",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708722/1_i4e4vy.jpg", width: 1920, height: 1080 },
@@ -1225,7 +1225,7 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=lgjudfWgB24&si=IYqL58CTOQERT8DW",
         songTitle: "0310",
         songArtist: "Yerin Baek",
-        description: "You don't know if you are lonley and tired unless you get out of that status. The comfort and happiness from my parents visitng Singapore, along with sadness that they can stay for only so long, is molten in the bright sad melodty of this song.",
+        description: "Loneliness is only sensible once you are no longer lonely",
         memoryName: "Family in Singapore",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708709/1_quae8p.jpg", width: 1920, height: 1080 },
@@ -1239,13 +1239,181 @@ export default function Music() {
         songLink:"https://music.youtube.com/watch?v=Cq6OejPKA8k&si=m0WpsBEWAzBW-Wmq",
         songTitle: "Away (feat. Taylor & YANU)",
         songArtist: "LILBOI",
-        description: "Trying something new is always exciting, yet worrying. The anticipation and fear of starting a new journey in SNU was met with this song.",
+        description: "The excitement and uncertainity of new opportunities.",
         memoryName: "Seoul Natioanl University",
         photos: [
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708710/1_kg33gc.jpg", width: 1920, height: 1080 },
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708711/2_guujcf.jpg", width: 1920, height: 1080 },
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708711/3_q9a9nz.jpg", width: 2179, height: 2179 },
           { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708711/4_mc5cib.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758444608/unnamed_g4wgcc.jpg",
+        songLink:"https://music.youtube.com/watch?v=SbQur2-ti5U&si=NNYkyXrPM72YYj60",
+        songTitle: "The Little Prince (Prod. Godic)",
+        songArtist: "HAON, PULLIK",
+        description: "Immeresed in the new environment, walking back home alone at night, eager to find out what new event awaits tommorw.",
+        memoryName: "Walk back home",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758444568/20240724_205455_fp8fa5.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758444568/20240715_194628_vyg4uz.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758444569/20240726_202624_jcpjbv.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758444568/20240618_192126_nruyef.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758446566/unnamed_sze7z5.jpg",
+        songLink:"https://music.youtube.com/watch?v=JApegyYlvyY&si=V5FBZBk8JHCuOZ8o",
+        songTitle: "death bed (coffee for your head)",
+        songArtist: "Powfu & beabadoobee",
+        description: "We will look back at this moment when we listen to this song.",
+        memoryName: "Friends",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758446569/20240906_004654_maroyf.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758446567/20240902_234204_mdmy6t.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758446567/20240817_114838_www4mg.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758446566/1724773481659_tzhwy0.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447090/unnamed_1_pneqi6.jpg",
+        songLink:"https://music.youtube.com/watch?v=XS3KMbe9AEI&si=leR0mM2Xacj0907Z",
+        songTitle: "People like us",
+        songArtist: "Lee go do",
+        description: "Pushing beyond my comfort zone, facing the wind of life head on.",
+        memoryName: "Beyond the comfort",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447109/20240920_224716_xc1tlp.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447107/20240911_231646_yhnxy5.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447107/20240923_220647_xdgdge.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447106/20240906_151827_nf1ski.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447344/unnamed_2_asow3f.jpg",
+        songLink:"https://music.youtube.com/watch?v=KvlYjLkAC3M&si=KW5S1Lyy2sqwxU1W",
+        songTitle: "Back With Another One feat Nieve,Tunji & Noah King",
+        songArtist: "acro jazz laboratories",
+        description: "Grinding through the challenges, back with another one.",
+        memoryName: "Grind",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447355/20241008_104201_fadvu7.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447351/20241106_221306_ne0rge.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447350/20241130_171212_u5aheg.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447349/1730470328405_u9jr7d.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447508/unnamed_3_kzegoh.jpg",
+        songLink:"https://music.youtube.com/watch?v=ZuY-5DEYrMU&si=Am-d1uCvwO6pqK6k",
+        songTitle: "Waves",
+        songArtist: "Royal Blood",
+        description: "Am I going in the right way? Will everything work out in the end?",
+        memoryName: "Worries",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447514/20250225_192841_gtbbzk.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447512/20250213_172414_olzsfx.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447511/20250215_185829_jrgmnv.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447510/20250212_190155_r9k87z.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447856/unnamed_4_ss6dnt.jpg",
+        songLink:"https://music.youtube.com/watch?v=xUAIuBljV_A&si=dzoDy5KYEut6-C41",
+        songTitle: "shut the f**k up, that's mine",
+        songArtist: "Tabber",
+        description: "It's a waste to give up on hope because you are afraid of failure.",
+        memoryName: "Hope",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447859/20241021_190831_ketd5s.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447861/20241121_210752_wrz7fi.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447862/20241125_171541_yeyyl0.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758447858/20250210_210814_v0bdem.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448101/unnamed_5_dh7acs.jpg",
+        songLink:"https://music.youtube.com/watch?v=7j6C9METNm0&si=CrOyioov9yuA2cvK",
+        songTitle: "Cigarettes out the Window",
+        songArtist: "TV Girl",
+        description: "What do I do now? What can I do?",
+        memoryName: "Fall",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448193/20250302_221413_qaag8h.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448105/20250227_170905_tnyw4w.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448103/20250228_145443_por3uo.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448191/20250309_223157_ef2djc.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448279/unnamed_6_hiuzmk.jpg",
+        songLink:"https://music.youtube.com/watch?v=v9zMsXmYbzw&si=fb1Y-gYK16c5H7Y6",
+        songTitle: "hold me tight",
+        songArtist: "dosii",
+        description: "I am lost and tired. Where is my life going?",
+        memoryName: "Lost",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448449/20250227_190202-min_s2obhq.jpg", width: 4320, height: 7680 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448283/20250320_194443_pi8bw7.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448281/20250311_154830_qzqig5.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448315/20250322_150111_vm7f6t.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448542/unnamed_7_dgm3ro.jpg",
+        songLink:"https://music.youtube.com/watch?v=3hCwjqMGzbs&si=V50Qn4UGuYNI6-X5",
+        songTitle: "Ooh Ah",
+        songArtist: "XXX",
+        description: "Life still continues, and I must go on.",
+        memoryName: "Dragging on",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448569/20250403_204633_yp57ay.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448552/20250405_192810_pzfcqt.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448558/20250403_204938_hcvkc8.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448545/20250508_033100_i3fspq.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448681/unnamed_8_emi6yi.jpg",
+        songLink:"https://music.youtube.com/watch?v=_RtMBrBF00o&si=KBka68dmy8E0r6RB",
+        songTitle: "Lifted",
+        songArtist: "Allie X",
+        description: "Wrapping up and moving on",
+        memoryName: "Bye Singapore",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448728/20250509_104247_arq7y9.jpg", width: 4320, height: 7680 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448774/20250509_103603_ardjru.jpg", width: 4320, height: 7680 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448684/20250502_163753_s3ts7o.jpg", width: 4320, height: 7680 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448775/20250502_162848_tlvdf1.jpg", width: 4320, height: 7680 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448836/unnamed_9_wfaeta.jpg",
+        songLink:"https://music.youtube.com/watch?v=nhys3nF4ZDU&si=fTqqlXyAD_0ek-PI",
+        songTitle: "Reflections",
+        songArtist: "The Neighbourhood",
+        description: "Moving on to the next chapter. I can't see my face in the reflection.",
+        memoryName: "New chapter",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448850/20250912_205505_ctznm1.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448829/IMG_20250912_195802_450_raxaa5.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448833/IMG_20250911_212132_361_rx1s90.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758448838/20250912_162119_z3dy0g.jpg", width: 1536, height: 1536 },
+        ]
+      },
+      {
+        songSrc: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758449290/unnamed_10_m4ey32.jpg",
+        songLink:"https://music.youtube.com/watch?v=TUMoiX5-SDw&si=xKU7bDaXwjh4yfVH",
+        songTitle: "God Needs The Devil",
+        songArtist: "Jonah Kagen",
+        description: "Everything is so different. I need to catch my breath, but life waits for no one.",
+        memoryName: "Alien",
+        photos: [
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758449293/20250917_200136_1_yknyg2.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758449300/20250917_195023_orvyku.jpg", width: 1920, height: 1080 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758449337/20250917_195332_amtu89.jpg", width: 2179, height: 2179 },
+          { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758449342/20250917_195530_vnoftj.jpg", width: 1536, height: 1536 },
         ]
       },
     ],

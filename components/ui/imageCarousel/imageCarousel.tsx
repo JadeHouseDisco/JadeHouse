@@ -46,51 +46,56 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
   };
 
   return (
-    <Swiper
-      effect={'coverflow'}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={'auto'}
-      coverflowEffect={{
-        rotate: 30,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      }}
-      rewind={true}
-      mousewheel={false}
-      autoplay={{
-        delay: 1500,
-        disableOnInteraction: false,
-      }}
-      modules={[EffectCoverflow, Pagination, Mousewheel, Autoplay]}
-      className="mySwiper h-[550px]"
-      onSwiper={(swiper) => {
-        swiperRef.current = swiper;
-      }}
-    >
-      {songs.map((song, index) => (
-        <SwiperSlide key={index} onClick={() => handleSlideClick(index)}>
-          <Image
-            src={song.src}
-            alt={song.title}
-            width={300}
-            height={300}
-            className="object-cover"
-          />
-          <p className="text-lg md:text-xl font-bold mt-1">{song.title}</p>
-          <p className="text-xs md:text-base">{song.artist}</p>
-        </SwiperSlide>
-      ))}
-      <Link 
-        className="inline-flex items-center font-bold h-10 px-6 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out" 
-        href={link}
-        target="_blank"
+    <div className="flex flex-col items-center">
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 30,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        rewind={true}
+        mousewheel={false}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectCoverflow, Pagination, Mousewheel, Autoplay]}
+        className="mySwiper h-[550px]"
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
       >
-        Go to Playlist
-      </Link>
-    </Swiper>
+        {songs.map((song, index) => (
+          <SwiperSlide key={index} onClick={() => handleSlideClick(index)}>
+            <Image
+              src={song.src}
+              alt={song.title}
+              width={300}
+              height={300}
+              className="object-cover"
+            />
+            <p className="text-lg md:text-xl font-bold mt-1">{song.title}</p>
+            <p className="text-xs md:text-base">{song.artist}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="row-start-3 inline-flex items-center px-6 py-3 font-bold rounded-md bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:outline-none focus:ring-2 focus:ring-[#00a896] transition-colors"
+>
+  Go to Playlist
+</a>
+
+
+    </div>
   );
 }
 

@@ -1,17 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import NextImage from "next/image"; // ← rename to avoid colliding with DOM Image
+import NextImage from "next/image";
 import ImageCarousel from "./ui/imageCarousel/imageCarousel";
 
 interface PlaylistItem {
   label: string;
   value: string;
-  src: string;
-  songs: {
-    src: string;
-    title: string;
-    artist: string;
-  }[];
+  src: string; // background image
+  songs: { src: string; title: string; artist: string }[];
   link: string;
 }
 
@@ -25,58 +21,43 @@ interface PlaylistShowcaseProps {
 
 const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcaseProps }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<PlaylistItem | null>(playlistShowcaseProps.playlists[0]);
+  const [selectedItem, setSelectedItem] = useState<PlaylistItem | null>(
+    playlistShowcaseProps.playlists[0] ?? null
+  );
   const [isVisible, setIsVisible] = useState(true);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleDropdown = () => setIsOpen((o) => !o);
+  const toggleDropdown = () => setIsOpen(o => !o);
 
   const handleSelect = (event: React.MouseEvent<HTMLAnchorElement>, item: PlaylistItem) => {
     event.preventDefault();
     setIsVisible(false);
 
-    // Use the DOM Image constructor explicitly
-    const bgImage = new globalThis.Image();
-    bgImage.src = item.src;
-
-    const songImages = item.songs.map((song) => {
-      const img = new globalThis.Image();
-      img.src = song.src;
-      return img;
+    // Preload images to avoid flicker
+    const bg = new globalThis.Image();
+    bg.src = item.src;
+    const songImgs = item.songs.map(s => {
+      const im = new globalThis.Image();
+      im.src = s.src;
+      return im;
     });
 
-    const allImagesLoaded = Promise.all([
-      new Promise<void>((resolve) => {
-        bgImage.onload = () => resolve();
-        bgImage.onerror = () => resolve(); // don’t block on errors
-      }),
-      ...songImages.map(
-        (img) =>
-          new Promise<void>((resolve) => {
-            img.onload = () => resolve();
-            img.onerror = () => resolve();
-          })
-      ),
-    ]);
-
-    allImagesLoaded.then(() => {
-      setTimeout(() => {
-        setSelectedItem(item);
-        setIsVisible(true);
-      }, 300);
+    Promise.all([
+      new Promise<void>(r => { bg.onload = () => r(); bg.onerror = () => r(); }),
+      ...songImgs.map(im => new Promise<void>(r => { im.onload = () => r(); im.onerror = () => r(); })),
+    ]).then(() => {
+      setTimeout(() => { setSelectedItem(item); setIsVisible(true); }, 300);
     });
 
     setIsOpen(false);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
+    const onClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) setIsOpen(false);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
   return (
@@ -91,10 +72,11 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
       </div>
 
       <div className="flex flex-col justify-center items-center mb-4">
+        {/* Dropdown */}
         <div className="relative mb-4" ref={dropdownRef}>
           <button
             type="button"
-            className="inline-flex justify-center w-72 px-4 py-2 font-bold rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors duration-300 ease-in-out"
+            className="inline-flex justify-center w-72 px-4 py-2 font-bold rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors"
             id="menu-button"
             aria-expanded={isOpen}
             aria-haspopup="true"
@@ -104,9 +86,7 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
           </button>
 
           <div
-            className={`z-10 absolute top-full mt-2 w-72 rounded-md font-bold shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none ${
-              isOpen ? "" : "hidden"
-            }`}
+            className={`z-20 absolute top-full mt-2 w-72 rounded-md font-bold shadow-lg bg-white ring-1 ring-black/10 focus:outline-none ${isOpen ? "" : "hidden"}`}
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="menu-button"
@@ -116,19 +96,17 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
               {playlistShowcaseProps.playlists.map((item, index) => (
                 <a
                   href="#"
-                  className={`block px-4 py-3 text-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out ${
-                    index === 0
-                      ? playlistShowcaseProps.playlists.length === 1
-                        ? "rounded-md y-1"
-                        : "rounded-t-md t-1"
-                      : index === playlistShowcaseProps.playlists.length - 1
-                      ? "rounded-b-md b-1"
-                      : ""
-                  }`}
+                  key={item.value}
                   role="menuitem"
                   tabIndex={-1}
-                  key={item.value}
-                  onClick={(event) => handleSelect(event, item)}
+                  onClick={(e) => handleSelect(e, item)}
+                  className={`block px-4 py-3 text-sm text-center focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors ${
+                    index === 0
+                      ? (playlistShowcaseProps.playlists.length === 1 ? "rounded-md" : "rounded-t-md")
+                      : index === playlistShowcaseProps.playlists.length - 1
+                      ? "rounded-b-md"
+                      : ""
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -137,24 +115,24 @@ const PlaylistShowcase: React.FC<PlaylistShowcaseProps> = ({ playlistShowcasePro
           </div>
         </div>
 
+        {/* Banner with overlayed carousel + midpoint button */}
         {selectedItem && (
-          <div className={`relative mt-8 transition-all duration-300 ${isVisible ? "scale-100" : "scale-95"}`}>
-            <NextImage
-              alt="Background"
-              className="h-full w-full object-cover object-center"
-              height={800}
-              src={selectedItem.src}
-              style={{ aspectRatio: "1600/800", objectFit: "cover" }}
-              width={1600}
-              priority
-            />
-            <div className="absolute inset-0 bg-gray-900/50" />
-            <div className="absolute inset-0 flex flex-col justify-center h-full space-y-20 z-4">
-              <div className="text-center text-white max-w-2md">
-                <ImageCarousel songs={selectedItem.songs} link={selectedItem.link} />
+          <section
+            className={`relative w-full transition-transform duration-300 ${isVisible ? "scale-100" : "scale-95"}`}
+          >
+            {/* Aspect ratio controls banner height */}
+            <div className="relative w-full aspect-[2/1] md:aspect-[16/7] lg:aspect-[16/6]">
+              <NextImage alt="Background" src={selectedItem.src} fill priority className="object-cover" />
+              <div className="absolute inset-0 bg-black/50 z-0" />
+
+              {/* Grid: [carousel][spacer 1fr][button][spacer 1fr] */}
+              <div className="absolute inset-0 z-10 grid grid-rows-[auto_1fr_auto_1fr] justify-items-center px-4">
+                <div className="w-full max-w-6xl">
+                  <ImageCarousel songs={selectedItem.songs} link={selectedItem.link} />
+                </div>
               </div>
             </div>
-          </div>
+          </section>
         )}
       </div>
     </>
