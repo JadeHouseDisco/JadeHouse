@@ -17,29 +17,18 @@ interface SequenceImage {
 
 type Shape = "rect" | "polygon" | "circle";
 
-/** Percent-based hotspot (relative to sticky viewport) */
 interface ClickArea {
   name: string;
   shape: Shape;
-  /**
-   * Percent coords (0..100):
-   * - rect:   [left%, top%, width%, height%]
-   * - circle: [cx%, cy%, r%]
-   * - polygon:[x1%, y1%, x2%, y2%, ..., xn%, yn%]
-   */
   coords: number[];
   debug?: boolean;
 }
 
-/** Intrinsic-pixel hotspot (image native coordinate system) */
 interface ClickAreaPx {
   name: string;
   shape: Shape;
-  /** Pixel coords in the source image space (e.g., HTML <area> coords) */
   coords: number[];
   debug?: boolean;
-
-  /** Region effect configuration when this hotspot is clicked */
   effect?: RegionEffect;
 }
 
@@ -48,67 +37,60 @@ interface IntrinsicSize {
   height: number;
 }
 
-/** Overlay + optional foreground background and content card */
 interface RegionEffect {
   overlaySide: "left" | "right";
-  overlayColor?: string;      // default: "rgb(31 41 55 / 0.80)"
-  overlayOpacity?: number;    // default: 0.8 (ignored if overlayColor includes alpha)
+  overlayColor?: string;
+  overlayOpacity?: number;
   bgImage?: {
     src: string;
     alt?: string;
-    fadeMs?: number;          // default: EFFECT_FADE_MS
+    fadeMs?: number;
   };
-  autoClearMs?: number;       // optional auto-clear
-  /** Content card rendered centered inside the overlay half */
+  autoClearMs?: number;
   content?: {
     image?: { src: string; alt?: string; width?: number; height?: number };
     title: string;
     description: string;
     buttonText: string;
     buttonHref: string;
-    /** Optional hover preview image to preload */
     newBackgroundImage?: string;
   };
 }
 
-type PreloadStrategy = "mount" | "near-last" | "both" | "none";
-
-interface ScrollImageSequenceProps {
-  images: SequenceImage[];
+interface HeroScrollOverlayProps {
+  image: SequenceImage;
+  title: string;
+  description: string;
   className?: string;
+  introFadeScreens?: number;
   endBufferScreens?: number;
   offsetTop?: number;
   offsetElementId?: string;
   verticalAnchorPercent?: number;
-  introFadeScreens?: number;
 
-  lastImageAreas?: ClickArea[];      // legacy percent hotspots
-  lastImageAreasPx?: ClickAreaPx[];  // preferred pixel hotspots
+  lastImageAreas?: ClickArea[];
+  lastImageAreasPx?: ClickAreaPx[];
   intrinsicSize?: IntrinsicSize;
 
   defaultEffect?: RegionEffect | null;
-
-  preloadStrategy?: PreloadStrategy; // default "both"
-  nearLastThreshold?: number;        // default 2 frames from end
 }
 
-const FRAME_FADE_MS = 400;
 const EFFECT_FADE_MS = 300;
 
-const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
-  images,
+const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
+  image,
+  title,
+  description,
   className,
-  endBufferScreens = 2.0,
+  introFadeScreens = 1.0,
+  endBufferScreens = 1.0,
   offsetTop,
   offsetElementId = "main-header",
   verticalAnchorPercent = 30,
-  introFadeScreens = 1,
   lastImageAreas = [],
   lastImageAreasPx = [],
   intrinsicSize,
   defaultEffect = null,
-  preloadStrategy = "both",
-  nearLastThreshold = 2,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -116,22 +98,11 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   const [headerOffset, setHeaderOffset] = useState<number>(offsetTop ?? 0);
   const visibleHRef = useRef<number>(0);
 
-  // Frame crossfade
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const currentIndexRef = useRef(0);
-  const [pendingIndex, setPendingIndex] = useState<number | null>(null);
-  const pendingIndexRef = useRef<number | null>(null);
-  const [displayed, setDisplayed] = useState<number[]>([0]);
-  const [opacities, setOpacities] = useState<Record<number, number>>({ 0: 1 });
-  const [loaded, setLoaded] = useState<Record<number, boolean>>({ 0: true });
-  const loadedRef = useRef<Record<number, boolean>>({ 0: true });
-  const fadeTimeoutRef = useRef<number | null>(null);
+  // Scroll Progress
+  const [scrollProgress, setScrollProgress] = useState(0);
   const tickingRef = useRef(false);
 
-  // Intro black
-  const [introBlackOpacity, setIntroBlackOpacity] = useState(1);
-
-  // Hotspots computed (pixels -> percents)
+  // Hotspots computed
   const [computedLastAreas, setComputedLastAreas] = useState<ClickArea[]>([]);
 
   // Effect state
@@ -139,14 +110,30 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   const [activeEffectName, setActiveEffectName] = useState<string | null>(null);
   const [effectOpacity, setEffectOpacity] = useState(0);
   const autoClearTimerRef = useRef<number | null>(null);
+  const [isDismissed, setIsDismissed] = useState(false);
 
-  // Preload cache
-  const preloadedSrcsRef = useRef<Set<string>>(new Set());
-  const allEffectSrcsRef = useRef<string[]>([]);
+  // Preload lists
+  const bgPreloadSrcs = React.useMemo(() => {
+    const srcs = new Set<string>();
+    for (const a of lastImageAreasPx) {
+      if (a.effect?.bgImage?.src) srcs.add(a.effect.bgImage.src);
+      if (a.effect?.content?.newBackgroundImage) srcs.add(a.effect.content.newBackgroundImage);
+    }
+    return Array.from(srcs);
+  }, [lastImageAreasPx]);
 
-  useEffect(() => { currentIndexRef.current = currentIndex; }, [currentIndex]);
-  useEffect(() => { pendingIndexRef.current = pendingIndex; }, [pendingIndex]);
-  useEffect(() => { loadedRef.current = loaded; }, [loaded]);
+  const iconPreloadList = React.useMemo(() => {
+    const list: {src: string, width?: number, height?: number}[] = [];
+    const seen = new Set<string>();
+    for (const a of lastImageAreasPx) {
+      const img = a.effect?.content?.image;
+      if (img?.src && !seen.has(img.src)) {
+        seen.add(img.src);
+        list.push(img);
+      }
+    }
+    return list;
+  }, [lastImageAreasPx]);
 
   // Measure header unless provided
   useLayoutEffect(() => {
@@ -182,11 +169,11 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
     const visibleH = Math.max(0, vh - headerOffset);
     visibleHRef.current = visibleH;
 
-    const totalSections = Math.max(1, images.length + Math.max(0, endBufferScreens));
+    const totalSections = Math.max(1, 1 + Math.max(0, introFadeScreens) + Math.max(0, endBufferScreens));
     const totalPx = visibleH * totalSections;
     const c = containerRef.current;
     if (c) c.style.height = `${totalPx}px`;
-  }, [headerOffset, images.length, endBufferScreens]);
+  }, [headerOffset, introFadeScreens, endBufferScreens]);
 
   useEffect(() => { recomputeHeights(); }, [recomputeHeights]);
 
@@ -200,32 +187,6 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
     };
   }, [recomputeHeights]);
 
-  // Preload next frame
-  useEffect(() => {
-    const next = Math.min(currentIndex + 1, images.length - 1);
-    if (!loadedRef.current[next]) {
-      const img = new window.Image();
-      img.src = images[next].src;
-      img.decoding = "async";
-      img.onload = () => setLoaded((m) => ({ ...m, [next]: true }));
-    }
-  }, [currentIndex, images]);
-
-  const startCrossfade = useCallback((toIndex: number) => {
-    setDisplayed([currentIndexRef.current, toIndex]);
-    setOpacities({ [currentIndexRef.current]: 1, [toIndex]: 0 });
-    requestAnimationFrame(() => {
-      setOpacities({ [currentIndexRef.current]: 0, [toIndex]: 1 });
-    });
-    if (fadeTimeoutRef.current) window.clearTimeout(fadeTimeoutRef.current);
-    fadeTimeoutRef.current = window.setTimeout(() => {
-      setCurrentIndex(toIndex);
-      setDisplayed([toIndex]);
-      setOpacities({ [toIndex]: 1 });
-      setPendingIndex(null);
-    }, FRAME_FADE_MS);
-  }, []);
-
   const handleScroll = useCallback(() => {
     if (tickingRef.current) return;
     tickingRef.current = true;
@@ -237,55 +198,22 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
       const sectionH = visibleHRef.current || (window.innerHeight - headerOffset);
       if (sectionH <= 0) return;
 
-      const totalSections = Math.max(1, images.length + Math.max(0, endBufferScreens));
-      const totalHeight = sectionH * totalSections;
-
       const scrollTop = window.scrollY - c.offsetTop;
-
-      // intro fade
-      const fadeRange = Math.max(1, sectionH * introFadeScreens);
-      const introProgress = Math.min(Math.max(scrollTop / fadeRange, 0), 1);
-      setIntroBlackOpacity(1 - introProgress);
-
-      // frame targeting
-      const progress = Math.min(Math.max(scrollTop / totalHeight, 0), 1);
-      const targetSection = Math.floor(progress * totalSections);
-      const targetIndex = Math.min(images.length - 1, Math.max(0, targetSection));
-
-      const curr = currentIndexRef.current;
-      const pend = pendingIndexRef.current;
-      if (targetIndex === curr || targetIndex === pend) return;
-
-      setPendingIndex(targetIndex);
-      setDisplayed([curr, targetIndex]);
-      setOpacities((o) => ({ ...o, [curr]: 1, [targetIndex]: 0 }));
-      if (loadedRef.current[targetIndex]) startCrossfade(targetIndex);
+      const fadeScroll = sectionH * introFadeScreens;
+      
+      const progress = fadeScroll > 0 ? Math.min(Math.max(scrollTop / fadeScroll, 0), 1) : 1;
+      setScrollProgress(progress);
     });
-  }, [images.length, endBufferScreens, headerOffset, introFadeScreens, startCrossfade]);
+  }, [headerOffset, introFadeScreens]);
 
   useEffect(() => {
     const onScroll = () => handleScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    handleScroll(); // init
     return () => window.removeEventListener("scroll", onScroll);
   }, [handleScroll]);
 
-  useEffect(() => {
-    return () => {
-      if (fadeTimeoutRef.current) window.clearTimeout(fadeTimeoutRef.current);
-      if (autoClearTimerRef.current) window.clearTimeout(autoClearTimerRef.current);
-    };
-  }, []);
-
-  const handleLoaded = useCallback(
-    (idx: number) => {
-      setLoaded((m) => ({ ...m, [idx]: true }));
-      if (idx === pendingIndexRef.current) startCrossfade(idx);
-    },
-    [startCrossfade]
-  );
-
   const objectPosition = `50% ${verticalAnchorPercent}%`;
-  const isLastActive = currentIndex === images.length - 1 && pendingIndex === null;
 
   // Helpers
   const rectStyleFrom = (coords: number[]) => {
@@ -386,67 +314,14 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
     effectLookup.current = map;
   }, [lastImageAreasPx]);
 
-  // Collect effect bg srcs
-  useEffect(() => {
-    const srcs: string[] = [];
-    for (const a of lastImageAreasPx) {
-      const bg = a.effect?.bgImage?.src;
-      if (bg) srcs.push(bg);
-      const hover = a.effect?.content?.newBackgroundImage;
-      if (hover) srcs.push(hover);
-      const icon = a.effect?.content?.image?.src;
-      if (icon) srcs.push(icon);
-    }
-    allEffectSrcsRef.current = Array.from(new Set(srcs));
-  }, [lastImageAreasPx]);
 
-  // Preload helper
-  const preloadImage = useCallback((src?: string) => {
-    if (!src || preloadedSrcsRef.current.has(src)) return;
-    // rel=preload
-    const link = document.createElement("link");
-    link.rel = "preload";
-    link.as = "image";
-    link.href = src;
-    link.onload = () => preloadedSrcsRef.current.add(src);
-    link.onerror = () => {
-      const img = new window.Image();
-      img.decoding = "async";
-      img.src = src;
-      img.onload = () => preloadedSrcsRef.current.add(src);
-    };
-    document.head.appendChild(link);
-    // fallback Image()
-    const img = new window.Image();
-    img.decoding = "async";
-    img.src = src;
-    img.onload = () => preloadedSrcsRef.current.add(src);
-  }, []);
-
-  // Preload strategy: mount
-  useEffect(() => {
-    if (preloadStrategy === "mount" || preloadStrategy === "both") {
-      for (const src of allEffectSrcsRef.current) preloadImage(src);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [preloadStrategy]);
-
-  // Preload strategy: near last
-  useEffect(() => {
-    if (preloadStrategy === "near-last" || preloadStrategy === "both") {
-      const nearStart = Math.max(0, images.length - Math.max(1, nearLastThreshold));
-      if (currentIndex >= nearStart) {
-        for (const src of allEffectSrcsRef.current) preloadImage(src);
-      }
-    }
-  }, [currentIndex, images.length, nearLastThreshold, preloadStrategy, preloadImage]);
 
   // Click toggle
   const handleHotspotClick = (name: string) => {
+    setIsDismissed(true);
     const effect = effectLookup.current[name];
     if (!effect) return;
 
-    // toggle off
     if (activeEffectName === name) {
       if (autoClearTimerRef.current) {
         window.clearTimeout(autoClearTimerRef.current);
@@ -460,7 +335,6 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
       return;
     }
 
-    // activate new
     setActiveEffect(effect);
     setActiveEffectName(name);
     setEffectOpacity(0);
@@ -481,9 +355,10 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
     }
   };
 
-  // Leave last frame: fade out + clear
+  const isInteractive = isDismissed || scrollProgress >= 1; // Content text is gone -> enable actions
+
   useEffect(() => {
-    if (!isLastActive && activeEffect) {
+    if (activeEffect && !isInteractive) {
       setEffectOpacity(0);
       const t = window.setTimeout(() => {
         setActiveEffect(null);
@@ -491,10 +366,9 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
       }, EFFECT_FADE_MS);
       return () => window.clearTimeout(t);
     }
-    if (isLastActive && activeEffect) setEffectOpacity(1);
-  }, [isLastActive, activeEffect]);
+    if (activeEffect && isInteractive) setEffectOpacity(1);
+  }, [isInteractive, activeEffect]);
 
-  // Visual params
   const overlayColor = activeEffect?.overlayColor ?? "rgb(31 41 55 / 0.80)";
   const overlayAlpha = activeEffect?.overlayOpacity ?? (overlayColor.includes("/") ? 1 : 0.8);
 
@@ -502,27 +376,49 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   const fgBgAlt = activeEffect?.bgImage?.alt ?? "";
   const fgFadeMs = activeEffect?.bgImage?.fadeMs ?? EFFECT_FADE_MS;
 
+  const textOverlayOpacity = isDismissed ? 0 : 1 - scrollProgress;
+
   return (
     <div ref={containerRef} className={className}>
       <div
         className="sticky w-full"
         style={{ top: headerOffset, height: `calc(100vh - ${headerOffset}px)` }}
       >
-        {/* Base frames */}
-        {displayed.map((idx) => (
+        <Image
+          src={image.src}
+          alt={image.alt || ""}
+          fill
+          className="absolute inset-0 object-cover"
+          style={{ objectPosition }}
+          priority
+        />
+
+        {/* PRELOAD HIDDEN IMAGES */}
+        {bgPreloadSrcs.map((src) => (
           <Image
-            key={idx}
-            src={images[idx].src}
-            alt={images[idx].alt || ""}
+            key={`preload-bg-${src}`}
+            src={src}
+            alt=""
             fill
-            className="absolute inset-0 object-cover transition-opacity duration-400 will-change-[opacity]"
-            style={{ opacity: opacities[idx] ?? 0, objectPosition }}
-            priority={idx === 0}
-            onLoadingComplete={() => handleLoaded(idx)}
+            sizes="100vw"
+            className="opacity-0 pointer-events-none"
+            priority
+            style={{ zIndex: -1 }}
+          />
+        ))}
+        {iconPreloadList.map((item) => (
+          <Image
+            key={`preload-icon-${item.src}`}
+            src={item.src}
+            alt=""
+            width={item.width ?? 160}
+            height={item.height ?? 160}
+            className="opacity-0 pointer-events-none absolute"
+            priority
+            style={{ zIndex: -1 }}
           />
         ))}
 
-        {/* Foreground bg swap */}
         {fgBgSrc && (
           <Image
             src={fgBgSrc}
@@ -541,13 +437,25 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
           />
         )}
 
-        {/* Intro black */}
-        <div
-          className="pointer-events-none absolute inset-0 bg-black z-10"
-          style={{ opacity: introBlackOpacity }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-15% z-[10] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-85% to-black to-100% z-[10] pointer-events-none"></div>
 
-        {/* --- Half-width TINT ONLY (non-interactive) --- */}
+        {/* Text Overlay Layer overlay */}
+        <div 
+          className={`absolute inset-0 z-10 bg-black/40 flex items-center justify-center ${
+            isDismissed ? 'transition-opacity duration-500 ease-in-out' : ''
+          } ${
+            !isDismissed && scrollProgress < 1 ? 'pointer-events-auto cursor-pointer' : 'pointer-events-none'
+          }`}
+          style={{ opacity: textOverlayOpacity }}
+          onClick={() => setIsDismissed(true)}
+        >
+          <div className="text-center text-white max-w-2md">
+            <h1 className="text-6xl font-bold mb-4">{title}</h1>
+            <p className="text-xl">{description}</p>
+          </div>
+        </div>
+
         {activeEffect && (
           <div
             className="absolute top-0 h-full z-20"
@@ -557,19 +465,18 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
               backgroundColor: overlayColor,
               opacity: effectOpacity * overlayAlpha,
               transition: `opacity ${EFFECT_FADE_MS}ms ease`,
-              pointerEvents: "none", // never intercepts clicks
+              pointerEvents: "none",
             }}
           />
         )}
 
-        {/* --- Half-width CONTENT (interactive, above everything) --- */}
         {activeEffect?.content && (
           <div
             className="absolute top-0 h-full z-40 flex items-center justify-center text-center p-8"
             style={{
               left: activeEffect.overlaySide === "left" ? 0 : "50%",
               width: "50%",
-              pointerEvents: "auto",             // receive clicks
+              pointerEvents: "auto",
               opacity: effectOpacity,
               transition: `opacity ${EFFECT_FADE_MS}ms ease`,
             }}
@@ -589,15 +496,10 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
               <h2 className="text-3xl font-bold mb-2">{activeEffect.content.title}</h2>
               <p className="mb-2">{activeEffect.content.description}</p>
 
-              {/* Next.js Link is fine once it's on top and hotspots are disabled */}
               <Link
                 className="inline-flex items-center justify-center h-10 px-6 font-bold rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-[#00a896] transition-colors duration-300 ease-in-out"
                 href={activeEffect.content.buttonHref}
-                onMouseEnter={() => {
-                  if (activeEffect.content?.newBackgroundImage) {
-                    preloadImage(activeEffect.content.newBackgroundImage);
-                  }
-                }}
+                onMouseEnter={() => {}}
               >
                 {activeEffect.content.buttonText}
               </Link>
@@ -605,9 +507,7 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
           </div>
         )}
 
-
-        {/* Hotspots (only on last frame). While an effect is active, only that region remains clickable. */}
-        {isLastActive && hotspots.length > 0 && (
+        {hotspots.length > 0 && (
           <div className="absolute inset-0 z-30">
             {hotspots.map((area, i) => {
               const isRect = area.shape === "rect";
@@ -645,18 +545,8 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
                   className="block w-full h-full cursor-pointer focus:outline-none focus-visible:outline-none"
                   style={{ ...commonStyle, ...debugStyle }}
                   onClick={() => handleHotspotClick(area.name)}
-                  onMouseEnter={() => {
-                    const s = effectLookup.current[area.name]?.bgImage?.src;
-                    if (s) preloadImage(s);
-                    const h = effectLookup.current[area.name]?.content?.newBackgroundImage;
-                    if (h) preloadImage(h);
-                  }}
-                  onTouchStart={() => {
-                    const s = effectLookup.current[area.name]?.bgImage?.src;
-                    if (s) preloadImage(s);
-                    const h = effectLookup.current[area.name]?.content?.newBackgroundImage;
-                    if (h) preloadImage(h);
-                  }}
+                  onMouseEnter={() => {}}
+                  onTouchStart={() => {}}
                 />
               );
             })}
@@ -667,4 +557,4 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   );
 };
 
-export default ScrollImageSequence;
+export default HeroScrollOverlay;

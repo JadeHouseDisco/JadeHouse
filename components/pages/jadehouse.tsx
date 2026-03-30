@@ -1,7 +1,7 @@
 import React from 'react';
 import MainHeader from '../mainHeader';
 import ParallaxScroll from "@/components/ui/parallaxScroll";
-import ScrollImageSequence from '@/components/scrollImageSequence';
+import HeroScrollOverlay from '@/components/heroScrollOverlay';
 import MiniAbout from "@/components/miniAbout";
 import MainFooter from '../mainFooter';
 import { LinkedinIcon, MailIcon, TwitterIcon } from "@/components/icons"
@@ -24,11 +24,6 @@ const JadeHouse = () => {
   ];
 
     const frames = [
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198962/1_asgknn.png", alt: "Frame 1" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198962/2_hikupb.png", alt: "Frame 2" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198964/3_bsoxwh.png", alt: "Frame 3" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198963/4_kitc6r.png", alt: "Frame 4" },
-      { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198964/5_ubutmq.png", alt: "Frame 5" },
       { src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1758198965/6_lhqaer.png", alt: "Frame 6" },
     ];
 
@@ -80,9 +75,11 @@ const JadeHouse = () => {
     <div key="1" className="relative flex flex-col min-h-[100dvh]">
       <MainHeader />
       <ParallaxScroll layers={layers} className="absolute inset-0 -z-10" />
-      <div className="bg-black h-72"></div>
-      <ScrollImageSequence
-        images={frames}
+      <div className="bg-black h-[25vh]"></div>
+      <HeroScrollOverlay
+        image={frames[0]}
+        title="Welcome to JadeHouse"
+        description="A house of memory for my professional and personal life"
         intrinsicSize={{ width: 1536, height: 1024 }} // native size used for your <area> coords
         lastImageAreasPx={[
           {

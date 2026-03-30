@@ -13,7 +13,7 @@ import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/
 export default async function Disco() {
   const heroSectionProps = {
     originalBackgroundImage: {
-      src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1730708692/disco_main_background_ugpjj3.jpg',
+      src: 'https://res.cloudinary.com/dss5ymotz/image/upload/v1774796764/new_disco_background_txk99k.png',
       alt: 'Hero Image',
       width: 1920,
       height: 1080,
@@ -34,8 +34,8 @@ export default async function Disco() {
           buttonText: "Return to Jadehouse",
           buttonHref: "/",
           newBackgroundImage: {
-            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708693/main_background_w5apqk.jpg",
-            alt: "lab background image",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1774796764/new_disco_background_txk99k.png",
+            alt: "jadehouse background image",
             width: 1536,
             height: 1536,
           }
@@ -52,7 +52,7 @@ export default async function Disco() {
           buttonText: "Enter the Lab",
           buttonHref: "/lab",
           newBackgroundImage: {
-            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708692/lab_main_background_qzwemo.jpg",
+            src: "https://res.cloudinary.com/dss5ymotz/image/upload/v1774796763/new_lab_background_yx5vdw.png",
             alt: "lab background image",
             width: 1536,
             height: 1536,
