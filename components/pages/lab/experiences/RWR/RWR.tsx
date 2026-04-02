@@ -33,7 +33,7 @@ const RWR = () => {
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1775090648/1767091993017_cxjwwo.jpg"
+                    src="https://res.cloudinary.com/dss5ymotz/image/upload/v1775096114/1767091993017_cxjwwo_z7mdmk.jpg"
                     height="858"
                     width="858"
                 />
@@ -91,7 +91,7 @@ const RWR = () => {
                     <Image
                       alt="lcd"
                       className="rounded-3xl inset-0 mt-4 my-2 w-full h-full object-cover"
-                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1775090649/1767091985628_tedumy.jpg"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1775096115/1767091985628_tedumy_z890gd.jpg"
                       height="800"
                       width="1600"
                     />
@@ -116,7 +116,7 @@ const RWR = () => {
                     <Image
                       alt="lcd"
                       className="rounded-3xl inset-0 mt-4 my-2 w-full h-full object-cover"
-                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1775090649/Picture1_utxqat.png"
+                      src="https://res.cloudinary.com/dss5ymotz/image/upload/v1775096114/Picture1_utxqat_kmcqke.png"
                       height="800"
                       width="1600"
                     />
