@@ -66,11 +66,15 @@ export default function Academic() {
     downloads: [
       {
         buttonText: "CV",
-        href: "https://api.cloudinary.com/v1_1/dss5ymotz/image/download?api_key=297963957635983&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiNDdkODc0OGE5MzVhOWUxODIwNDFhNDJmYjg1NWRjNjMiLCJ1c2VyX2V4dGVybmFsX2lkIjoiMGMyYTY1N2JkOWU2YmQ4NDhlMjRiN2NiMGFlNTc3IiwidXNlcl9jdXN0b21faWQiOiJhbGV4bGVlMjQ1OUBnbWFpbC5jb20iLCJjb21wb25lbnQiOiJjb25zb2xlIn0%3D&public_id=Hyunwoo_Lee_CV_ne9i9i&signature=c61e3d7db1ac523f393e9b136998edea5524ef95&source=ml&target_filename=Hyunwoo_Lee_CV_ne9i9i&timestamp=1758198293&type=upload"
+        href: "https://drive.google.com/file/d/1Y8okC832lAhbV50F0f4GZyDxj9GF7LvM/view?usp=drive_link"
       },
       {
-        buttonText: "Transcript",
-        href: "https://api.cloudinary.com/v1_1/dss5ymotz/image/download?api_key=297963957635983&attachment=true&audit_context=eyJhY3Rvcl90eXBlIjoidXNlciIsImFjdG9yX2lkIjoiNDdkODc0OGE5MzVhOWUxODIwNDFhNDJmYjg1NWRjNjMiLCJ1c2VyX2V4dGVybmFsX2lkIjoiMGMyYTY1N2JkOWU2YmQ4NDhlMjRiN2NiMGFlNTc3IiwidXNlcl9jdXN0b21faWQiOiJhbGV4bGVlMjQ1OUBnbWFpbC5jb20iLCJjb21wb25lbnQiOiJjb25zb2xlIn0%3D&public_id=Hyunwoo_Lee_Transcript_p31rbt&signature=e1ec7586df1758e849f6ca0806c6495e024ff804&source=ml&target_filename=Hyunwoo_Lee_Transcript_p31rbt&timestamp=1758198527&type=upload"
+        buttonText: "Bachelor's Transcript",
+        href: "https://drive.google.com/file/d/1KjKh_zdttQvHcDmah3-CRNnOPHqWg-6c/view?usp=drive_link"
+      },
+      {
+        buttonText: "Master's Transcript",
+        href: "https://drive.google.com/file/d/1gSUz7Gqhi44IXrMpMvkwLsWCxXf36IXQ/view?usp=drive_link"
       }
     ]
   }
@@ -79,6 +83,31 @@ export default function Academic() {
     headerText: "Masters Courses",
     tables: [
       {
+        tableTitle: "Year 1 Semester 2",
+        thead: {
+          col1: "Courses",
+          col2: "Grade",
+        },
+        tbody: [
+          {
+            col1: "Computational Control",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Mobile Health and Activity Monitoring",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Intellectual Property: An Introduction",
+            col2: "Ongoing",
+          },
+          {
+            col1: "Regulating Life Sciences",
+            col2: "Ongoing",
+          },
+        ]
+      },
+      {
         tableTitle: "Year 1 Semester 1",
         thead: {
           col1: "Courses",
@@ -86,32 +115,32 @@ export default function Academic() {
         },
         tbody: [
           {
-            col1: "Planning and Decision Making for Autonomous Robots",
-            col2: "Ongoing",
-          },
-          {
             col1: "Dynamic Programming and Optimal Control",
-            col2: "Ongoing",
+            col2: "5",
           },
           {
-            col1: "Microrobotics",
-            col2: "Ongoing",
-          },
-          {
-            col1: "Real-World Robotics - A Hands-On Project Class",
-            col2: "Ongoing",
-          },
-          {
-            col1: "ETH Zurich Distinguished Seminar in Robotics, Systems and Controls",
-            col2: "Ongoing",
-          },
-          {
-            col1: "Robot Dynamics",
-            col2: "Ongoing",
+            col1: "Physical Human Robot Interaction (pHRI)",
+            col2: "5.5",
           },
           {
             col1: "Probabilistic Artificial Intelligence",
-            col2: "Ongoing",
+            col2: "5.25",
+          },
+          {
+            col1: "Real-World Robotics - A Hands-On Project Class",
+            col2: "5.75",
+          },
+          {
+            col1: "Robot Dynamics",
+            col2: "6",
+          },
+          {
+            col1: "ETH Zurich Distinguished Seminar in Robotics, Systems and Controls",
+            col2: "Pass",
+          },
+          {
+            col1: "ETH Zurich Distinguished Seminar in Robotics, Systems and Controls",
+            col2: "4.75",
           },
         ]
       },
