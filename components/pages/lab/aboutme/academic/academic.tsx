@@ -105,6 +105,10 @@ export default function Academic() {
             col1: "Regulating Life Sciences",
             col2: "Ongoing",
           },
+          {
+            col1: "Semester Project",
+            col2: "Ongoing",
+          },
         ]
       },
       {

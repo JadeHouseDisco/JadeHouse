@@ -110,7 +110,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ heroSectionProps }) => {
                           src={card.image.src}
                           height={card.image.height}
                           width={card.image.width}
-                          className="h-full object-cover"
+                          className="object-cover rounded-md"
                           alt={card.image.alt}
                           priority={true}
                         />

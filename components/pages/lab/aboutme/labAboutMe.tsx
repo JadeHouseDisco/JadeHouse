@@ -20,28 +20,28 @@ const LabAboutMe = () => {
 
   const purposeVisionGoalsProps = {
     default: {
-        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/default_saqrzq.webp",
-        headText: "Fuel for my Ambitions",
-        bodyText: "Discover the driving forces behind my pursuit to make significant contributions and change the world. My purpose, vision, and goals reflect my commitment to enhance lives of anyone anywhere and lead the robotic evolution of mankind. Dive in to learn more about my aspirations and the impact I strive to make.",
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1775183828/main_ysvaix.png",
+        headText: "Far and blurry destination",
+        bodyText: "I like to have a general direction in my life rather than a clear target. I try my best everyday hoping I am moving in the desired direction.",
     },
     buttons: [
       {
         buttonText: "Purpose",
-        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/purpose_trzy61.webp",
-        headText: "Redefining Evolution",
-        bodyText: "I want technology to ensure everyone's right to life is respected, regardless of socioeconomic status. I envision transforming the perception of old age and disability from a handicap into an opportunity for an upgrade. Ultimately, I aim to push beyond the biological limits of humans and achieve a new era of robotic evolution."
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1775184156/purpose_hjzzja.png",
+        headText: "Technology that helps lives",
+        bodyText: "I am driven by the desire to create technology that can make a tangible difference in people's lives. I want my technology to bring smile to people."
       },
       {
         buttonText: "Vision",
-        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/vision_hvu6if.webp",
-        headText: "Empowering Lives",
-        bodyText: "I wish to develop accessible and affordable technology that assist anyone anywhere. I strive for technology that outperforms its biological counterparts while seamlessely integrating with humans. I'm driven to normalize the replacement of biological parts with advanced prostheses, enhancing human capabilities and quality of life."
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1775183826/vision_yc1bc3.png",
+        headText: "Robotic evolution of mankind",
+        bodyText: "I envision the next phase of human evolution, where robots help push humans beyond their biological limits. Future of humanity will be shaped by our own hands."
       },
       {
         buttonText: "Goals",
-        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1730708770/goals_qbhaf3.webp",
-        headText: "Revolutionizing Technology",
-        bodyText: "I aim to pioneer advancements in neurotechnology and prosthetics to revolutionize human-machine interaction. I strive to develop bi-directional brain-machine interfaces, both invasive and non-invasive, and engineer precise prostheses that outperform biological counterparts. Furthermore, I aspire to expand expertise into exoskeletons and implantable devices, augmenting human potential and fostering human-machine symbiosis."
+        imageHref: "https://res.cloudinary.com/dss5ymotz/image/upload/v1775183828/goals_smtx30.png",
+        headText: "Pioneer of technology",
+        bodyText: "Part of the process is not enough. I want to be the one who leads the process. I want to be the one who creates the future."
       },
   ]
   }
