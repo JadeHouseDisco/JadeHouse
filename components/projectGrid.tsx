@@ -36,10 +36,6 @@ const CardHeader: React.FC<React.PropsWithChildren> = ({ children }) => (
   <div>{children}</div>
 );
 
-const CardContent: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <div className="p-4">{children}</div>
-);
-
 const CardTitle: React.FC<React.PropsWithChildren> = ({ children }) => (
   <h3 className="text-xl font-bold mb-2 text-gray-200">
     {children}
@@ -54,58 +50,49 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
   const [hoveringTile, setHoveringTile] = useState<number | null>(null);
   const [overflowingTitles, setOverflowingTitles] = useState<boolean[]>([]);
 
-  const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
+  const titleRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+  const handleMouseEnter = (index: number) => {
       setHoveringTile(index);
   }
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleMouseLeave = () => {
       setHoveringTile(null);
   }
 
-  const checkOverflowingTitles = () => {
-      const newOverflowingTitles = titleRefs.current.map((titleRef) => {
-          if (titleRef) {
-              return titleRef.scrollWidth > titleRef.clientWidth;
-          }
-          return false;
-      });
-      if (JSON.stringify(newOverflowingTitles) !== JSON.stringify(overflowingTitles) && !hoveringTile && hoveringTile !== 0) {
-          setOverflowingTitles(newOverflowingTitles);
-      }
-  };
-
   useEffect(() => {
-      // Check overflowing titles on initial load
-      checkOverflowingTitles();
-
-      // Check overflowing titles on window resize
-      const handleResize = () => {
-          checkOverflowingTitles();
-          console.log("check");
+      const checkOverflowingTitles = () => {
+          const next = titleRefs.current.map((title) =>
+            title ? title.scrollWidth > title.clientWidth : false,
+          );
+          setOverflowingTitles((current) =>
+            current.length === next.length && current.every((value, index) => value === next[index])
+              ? current
+              : next,
+          );
       };
-      
-      window.addEventListener('resize', handleResize);
+
+      checkOverflowingTitles();
+      window.addEventListener('resize', checkOverflowingTitles, { passive: true });
 
       return () => {
-          window.removeEventListener('resize', handleResize);
+          window.removeEventListener('resize', checkOverflowingTitles);
       };
-  });
+  }, [projectGridProps.projects]);
   
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 ml-6 text-gray-200 text-center">
+      <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-center text-[clamp(2rem,6vw,2.5rem)] font-bold text-gray-200">
           {projectGridProps.projectTitle}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectGridProps.projects.map((project, index) => (
-            <a 
-              className="transition duration-300 hover:scale-105 hover:cursor-pointer"
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+          {projectGridProps.projects.slice(0, 3).map((project, index) => (
+            <Link
+              className="min-w-0 transition duration-300 hover:-translate-y-1 hover:cursor-pointer"
               href={project.viewLink}
-              key={index}
-              onMouseEnter={(e) => handleMouseEnter(e, index)}
+              key={project.viewLink}
+              onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >  
               <Card>
@@ -116,12 +103,13 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
                   height={project.image.height}
                   src={project.image.src}
                   width={project.image.width}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 </CardHeader>
                 <CardFooter>
                   <div className="h-22">
                     <CardTitle>
-                      <div className="whitespace-nowrap flex relative">
+                      <div className="relative flex min-w-0 overflow-hidden whitespace-nowrap">
                         <p 
                         ref={(el) => {
                           titleRefs.current[index] = el;
@@ -142,7 +130,7 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ projectGridProps }) => {
                   </div>
                 </CardFooter>
               </Card>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="mt-8 flex justify-center">

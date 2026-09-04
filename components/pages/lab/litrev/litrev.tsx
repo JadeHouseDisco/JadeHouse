@@ -1,6 +1,6 @@
 import LabHeader from "@/components/labHeader"
 import BlogTilesSection from "@/components/blogTilesSection";
-import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
+import { getBlogPosts } from '@/components/utils/getBlogPosts';
 import LabFooter from '@/components/labFooter';
 
 export default async function Litrev() {

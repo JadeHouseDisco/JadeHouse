@@ -1,7 +1,8 @@
 "use client"
 
-import React, { useState, SyntheticEvent, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface BlogTilesSectionProps {
     categories: string[],
@@ -16,28 +17,20 @@ interface BlogTilesSectionProps {
         active: string,
         category: string,
     }[];
-    noFeatured? : Boolean;
-    noActive?: Boolean;
+    noFeatured?: boolean;
+    noActive?: boolean;
 }
 
 const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categories, noActive, noFeatured }) => {
-    const [sortMethod, setSortMethod] = useState('featured');
+    const [sortMethod, setSortMethod] = useState(() =>
+        !noFeatured ? 'featured' : !noActive ? 'active' : 'newest',
+    );
     const [searchQuery, setSearchQuery] = useState('');
     const [hoveringTile, setHoveringTile] = useState<number | null>(null);
     const [overflowingTitles, setOverflowingTitles] = useState<boolean[]>([]);
 
     // Correctly typing the useRef hook to hold an array of HTMLHeadingElement | null
     const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
-
-    useEffect(() => {
-        if (!noFeatured) {
-            setSortMethod('featured');
-        } else if (!noActive) {
-            setSortMethod('active');
-        } else {
-            setSortMethod('newest');
-        }
-    }, [noFeatured, noActive]);
 
     const sortBlogPosts = (method: string) => {
         const sortedBlogPosts = [...blogPosts].sort((a, b) => {
@@ -89,58 +82,42 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
         );
     };
 
-    const sortedBlogPosts = sortBlogPosts(sortMethod);
-    const filteredBlogPosts = filterBlogPosts(sortedBlogPosts, searchQuery);
+    const filteredBlogPosts = filterBlogPosts(sortBlogPosts(sortMethod), searchQuery);
 
-    interface ChangeEvent<T = Element> extends SyntheticEvent<T> {
-        target: EventTarget & T;
-    }
-    interface InputChangeEvent extends ChangeEvent<HTMLInputElement> {}
-    type HandleSearchChangeFunction = (event: InputChangeEvent) => void;
-
-    const handleSearchChange: HandleSearchChangeFunction = (event) => {
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(event.target.value);
     };
 
-    const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+    const handleMouseEnter = (index: number) => {
         setHoveringTile(index);
     }
 
-    const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const handleMouseLeave = () => {
         setHoveringTile(null);
     }
-
-    const checkOverflowingTitles = () => {
-        const newOverflowingTitles = titleRefs.current.map((titleRef) => {
-            if (titleRef) {
-                return titleRef.scrollWidth > titleRef.clientWidth;
-            }
-            return false;
-        });
-        if (JSON.stringify(newOverflowingTitles) !== JSON.stringify(overflowingTitles) && !hoveringTile && hoveringTile !== 0) {
-            setOverflowingTitles(newOverflowingTitles);
-        }
-    };
     
     useEffect(() => {
-        // Check overflowing titles on initial load
-        checkOverflowingTitles();
-
-        // Check overflowing titles on window resize
-        const handleResize = () => {
-            checkOverflowingTitles();
-            console.log("check");
+        const checkOverflowingTitles = () => {
+            const next = titleRefs.current.map((title) =>
+                title ? title.scrollWidth > title.clientWidth : false,
+            );
+            setOverflowingTitles((current) =>
+                current.length === next.length && current.every((value, index) => value === next[index])
+                    ? current
+                    : next,
+            );
         };
-        
-        window.addEventListener('resize', handleResize);
+
+        checkOverflowingTitles();
+        window.addEventListener('resize', checkOverflowingTitles, { passive: true });
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', checkOverflowingTitles);
         };
-    }, [filteredBlogPosts]);
+    }, [blogPosts, categories, searchQuery, sortMethod]);
 
     return (
-        <div className="mx-8 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-8 py-8">
+        <div className="mx-auto grid w-full max-w-[1920px] grid-cols-1 gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-8 lg:px-8">
             <div className="bg-gray-800 rounded-lg p-6">
                 <h3 className="text-lg font-semibold mb-4">Sort By</h3>
                 <div className="space-y-4">
@@ -169,7 +146,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                             checked={sortMethod === 'active'}
                             onChange={() => setSortMethod('active')}
                         />
-                        <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
+                        <label className="text-sm font-medium text-gray-200" htmlFor="sort-active">
                             Active
                         </label>
                     </div>
@@ -196,7 +173,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                             checked={sortMethod === 'oldest'}
                             onChange={() => setSortMethod('oldest')}
                         />
-                        <label className="text-sm font-medium text-gray-200" htmlFor="sort-price-asc">
+                        <label className="text-sm font-medium text-gray-200" htmlFor="sort-oldest">
                             Oldest
                         </label>
                     </div>
@@ -207,13 +184,13 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                         <div key={index} className="flex items-center gap-2">
                             <input
                                 className="h-4 w-4 text-primary-600 focus:ring-primary-600 ring-offset-gray-800"
-                                id="sort-category"
+                                id={`sort-category-${index}`}
                                 name="sort"
                                 type="radio"
                                 checked={sortMethod === category}
                                 onChange={() => setSortMethod(category)}
                             />
-                            <label className="text-sm font-medium text-gray-200" htmlFor="sort-featured">
+                            <label className="text-sm font-medium text-gray-200" htmlFor={`sort-category-${index}`}>
                                 {category}
                             </label>
                         </div>
@@ -233,18 +210,18 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                     </div>
                 </div>
             </div>
-            <div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="min-w-0">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
                     {filteredBlogPosts.map((blogPost, index) => (
-                        <a 
-                            className={`rounded-lg overflow-hidden shadow-md transition duration-300 hover:scale-105 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""} ${(categories.includes(sortMethod) && blogPost.category === sortMethod) ? " border-2 border-[#00a896]" : ""}`}
+                        <Link
+                            className={`min-w-0 rounded-lg overflow-hidden shadow-md transition duration-300 hover:-translate-y-1 hover:cursor-pointer bg-gray-700 ${(sortMethod === "featured" && blogPost.featured === "y") ? " border-2 border-[#00a896]" : ""} ${(sortMethod === "active" && blogPost.active === "y") ? " border-2 border-[#00a896]" : ""} ${(categories.includes(sortMethod) && blogPost.category === sortMethod) ? " border-2 border-[#00a896]" : ""}`}
                             href={blogPost.href}
-                            key={index}
-                            onMouseEnter={(e) => handleMouseEnter(e, index)}
+                            key={blogPost.slug}
+                            onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={handleMouseLeave}
                         >
                             <Image
-                                alt="Blog Post Image"
+                                alt={blogPost.title}
                                 className="w-full h-48 object-cover"
                                 height={300}
                                 src={blogPost.imageHref}
@@ -253,10 +230,11 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                                 objectFit: "cover",
                                 }}
                                 width={400}
-                                loading="lazy"
+                                loading={index < 4 ? "eager" : "lazy"}
+                                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, (max-width: 1536px) 33vw, 25vw"
                             />
                             <div className="p-4 bg-gray-700">
-                                <div className="whitespace-nowrap flex">
+                                <div className="relative flex min-w-0 overflow-hidden whitespace-nowrap">
                                 <h3
                                 ref={(el) => {
                                     titleRefs.current[index] = el;
@@ -280,7 +258,7 @@ const BlogTilesSection: React.FC<BlogTilesSectionProps> = ({ blogPosts, categori
                                     {blogPost.content}
                                 </p>
                             </div>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>

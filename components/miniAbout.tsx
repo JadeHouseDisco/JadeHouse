@@ -27,11 +27,11 @@ const MiniAbout: React.FC<MiniAboutProps> = ({ miniAboutProps }) => {
   return (
     <React.Fragment>
       <section className="py-16">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <div className="flex items-center justify-center">
             <Image
               alt={miniAboutProps.profileImage.alt}
-              className="rounded-full w-64 h-64 object-cover"
+              className="h-48 w-48 rounded-full object-cover sm:h-64 sm:w-64"
               height={miniAboutProps.profileImage.height}
               src={miniAboutProps.profileImage.src}
               style={{ aspectRatio: '256/256', objectFit: 'cover' }}

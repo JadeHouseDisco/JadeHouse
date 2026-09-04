@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Link from 'next/link';
 import Image from 'next/image';
+import type { Swiper as SwiperInstance } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,7 +24,7 @@ interface ImageCarouselProps {
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef<SwiperInstance | null>(null);
 
   useEffect(() => {
     if (swiperRef.current) {
@@ -46,7 +46,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex min-w-0 max-w-full flex-col items-center overflow-hidden">
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -66,7 +66,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
           disableOnInteraction: false,
         }}
         modules={[EffectCoverflow, Pagination, Mousewheel, Autoplay]}
-        className="mySwiper h-[550px]"
+        className="mySwiper h-[clamp(22rem,62vw,34rem)]"
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -99,4 +99,4 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ songs, link }) => {
   );
 }
 
-export default ImageCarousel; 
+export default ImageCarousel;

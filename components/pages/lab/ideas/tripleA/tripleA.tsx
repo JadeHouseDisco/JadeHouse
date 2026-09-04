@@ -28,10 +28,12 @@ const TripleA = () => {
             <LabHeader/>
 
             {/*blogPostIntro Section*/}
-            <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+            <section className="relative min-h-[clamp(28rem,72svh,52rem)] w-full overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
+                    priority
+                    sizes="100vw"
                     src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708662/1_otocsb.png"
                     height="858"
                     width="858"
@@ -39,8 +41,8 @@ const TripleA = () => {
                 <div className="absolute inset-0 bg-gray-900/30"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-20%" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
-                <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white md:px-6">
+                    <h2 className="max-w-6xl text-balance text-[clamp(2rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight">
                       TripleA
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
@@ -50,9 +52,9 @@ const TripleA = () => {
             </section>
 
             {/*blogPostContents*/}
-            <div className="relative flex">
+            <div className="relative flex min-w-0">
 
-              <nav className="hidden md:block sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+              <nav className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 flex-none overflow-y-auto bg-black py-8 pl-8 pr-4 xl:block">
                 <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
@@ -68,7 +70,7 @@ const TripleA = () => {
                 </ul>
               </nav>
 
-              <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
+              <div className="blog-content prose prose-lg mx-auto mb-12 flex-1">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
                       4 March 2023
                   </p>
@@ -86,7 +88,7 @@ const TripleA = () => {
                       Introduction
                   </h1>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    Many commercially available prostheses and exoskeletons function more like tools that users attach to provide support for their actions. However, if we can accurately <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/intrecog">recognize user intentions</a>, we can develop prostheses that not only assist but also augment user actions and abilities. This advancement would not only help individuals with disabilities restore their capabilities but also enable all users to transcend human limitations.
+                    Many commercially available prostheses and exoskeletons function more like tools that users attach to provide support for their actions. However, if we can accurately <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/intRecg">recognize user intentions</a>, we can develop prostheses that not only assist but also augment user actions and abilities. This advancement would not only help individuals with disabilities restore their capabilities but also enable all users to transcend human limitations.
                   </p>
 
                   <h1 id="journey" className="text-xl md:text-2xl font-semibold mt-4 max-w-3xl">

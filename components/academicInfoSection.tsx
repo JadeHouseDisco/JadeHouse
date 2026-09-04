@@ -2,13 +2,13 @@ import {GraduationCapIcon, TrophyIcon} from "@/components/icons"
 
 interface AcademicInfoSectionProps {
   academicInfoSectionProps: {
-    title: String;
+    title: string;
     sections: {
-        sectionTitle: String;
+        sectionTitle: string;
         items: {
-            title: String;
-            subtitle: String[];
-            icon: String;
+            title: string;
+            subtitle: string[];
+            icon: string;
         }[]
     }[]
   }
@@ -16,7 +16,7 @@ interface AcademicInfoSectionProps {
 
 const AcademicInfoSection: React.FC<AcademicInfoSectionProps> = ({ academicInfoSectionProps }) => {
   return (
-    <section className="px-8 pt-8 pb-4 mb-12">
+    <section className="mx-auto mb-12 w-full max-w-[1600px] px-4 pb-4 pt-8 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{academicInfoSectionProps.title}</h2>
       <div className="mt-6 space-y-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
         {academicInfoSectionProps.sections.map((section, index) => (
@@ -36,8 +36,8 @@ const AcademicInfoSection: React.FC<AcademicInfoSectionProps> = ({ academicInfoS
                     </div>
                     <div className="ml-3">
                       <p className="text-base font-medium text-gray-100">{item.title}</p>
-                      {item.subtitle.map((text, index) => (
-                        <p className="text-sm">
+                      {item.subtitle.map((text) => (
+                        <p className="text-sm" key={text}>
                           {text}
                         </p>
                       ))}

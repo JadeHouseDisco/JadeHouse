@@ -5,8 +5,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jadehouse.casa"),
   title: "JadeHouse",
   description: "Professional/Personal record of Hyunwoo Lee",
+  openGraph: {
+    title: "JadeHouse",
+    description: "Professional and personal record of Hyunwoo Lee",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {

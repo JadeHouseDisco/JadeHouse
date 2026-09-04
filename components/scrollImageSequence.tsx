@@ -94,6 +94,8 @@ interface ScrollImageSequenceProps {
 
 const FRAME_FADE_MS = 400;
 const EFFECT_FADE_MS = 300;
+const EMPTY_CLICK_AREAS: ClickArea[] = [];
+const EMPTY_CLICK_AREAS_PX: ClickAreaPx[] = [];
 
 const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   images,
@@ -103,8 +105,8 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   offsetElementId = "main-header",
   verticalAnchorPercent = 30,
   introFadeScreens = 1,
-  lastImageAreas = [],
-  lastImageAreasPx = [],
+  lastImageAreas = EMPTY_CLICK_AREAS,
+  lastImageAreasPx = EMPTY_CLICK_AREAS_PX,
   intrinsicSize,
   defaultEffect = null,
   preloadStrategy = "both",
@@ -341,6 +343,7 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
   }
 
   // Compute hotspots
+  // The mapping helper intentionally closes over verticalAnchorPercent.
   const recomputeAreas = useCallback(() => {
     const c = containerRef.current;
     if (!c) { setComputedLastAreas([]); return; }
@@ -360,7 +363,7 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
     }));
 
     setComputedLastAreas(mapped);
-  }, [headerOffset, intrinsicSize, lastImageAreasPx, verticalAnchorPercent]);
+  }, [headerOffset, intrinsicSize, lastImageAreasPx, verticalAnchorPercent]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => { recomputeHeights(); recomputeAreas(); }, [recomputeHeights, recomputeAreas]);
 
@@ -518,7 +521,8 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
             className="absolute inset-0 object-cover transition-opacity duration-400 will-change-[opacity]"
             style={{ opacity: opacities[idx] ?? 0, objectPosition }}
             priority={idx === 0}
-            onLoadingComplete={() => handleLoaded(idx)}
+            sizes="100vw"
+            onLoad={() => handleLoaded(idx)}
           />
         ))}
 
@@ -537,7 +541,6 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
               objectPosition,
               zIndex: 9,
             }}
-            priority
           />
         )}
 
@@ -583,7 +586,7 @@ const ScrollImageSequence: React.FC<ScrollImageSequenceProps> = ({
                   height={activeEffect.content.image.height ?? 160}
                   className="object-contain"
                   fetchPriority="high"
-                  priority
+                  sizes={`${activeEffect.content.image.width ?? 160}px`}
                 />
               )}
               <h2 className="text-3xl font-bold mb-2">{activeEffect.content.title}</h2>

@@ -29,10 +29,12 @@ const Snu = () => {
             <LabHeader/>
 
             {/*blogPostIntro Section*/}
-            <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+            <section className="relative min-h-[clamp(28rem,72svh,52rem)] w-full overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
+                    priority
+                    sizes="100vw"
                     src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708655/1_zhcfa6.jpg"
                     height="858"
                     width="858"
@@ -40,8 +42,8 @@ const Snu = () => {
                 <div className="absolute inset-0 bg-gray-900/30"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-20%" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
-                <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white md:px-6">
+                    <h2 className="max-w-6xl text-balance text-[clamp(2rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight">
                       SVC Occlusion Device
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
@@ -51,9 +53,9 @@ const Snu = () => {
             </section>
 
             {/*blogPostContents*/}
-            <div className="relative flex">
+            <div className="relative flex min-w-0">
 
-              <nav className="hidden md:block sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+              <nav className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 flex-none overflow-y-auto bg-black py-8 pl-8 pr-4 xl:block">
                 <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
@@ -69,7 +71,7 @@ const Snu = () => {
                 </ul>
               </nav>
 
-              <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
+              <div className="blog-content prose prose-lg mx-auto mb-12 flex-1">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
                       10 August 2024
                   </p>
@@ -87,7 +89,7 @@ const Snu = () => {
                       Introduction
                   </h1>
 
-                  <div className="mt-4 flex gap-6">
+                  <div className="mt-4 flex flex-col gap-6 sm:flex-row">
                     {/* Left column with two horizontal images */}
                     <div className="flex-1 flex flex-col gap-6">
                       <div className="relative">
@@ -124,8 +126,8 @@ const Snu = () => {
                             alt="lcd" 
                             className="absolute top-0 left-0 w-full h-auto object-cover"
                             src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708659/3_hg155f.jpg" 
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
                         <div className="mt-2 text-center text-gray-400 text-sm">
@@ -146,7 +148,7 @@ const Snu = () => {
                     Responsibilities
                   </h1>
 
-                  <div className="mt-4 flex gap-6">
+                  <div className="mt-4 flex flex-col gap-6 sm:flex-row">
                     {/* Left column with two horizontal images */}
                     <div className="flex-1 flex flex-col gap-6">
                       <div className="relative">
@@ -183,8 +185,8 @@ const Snu = () => {
                             alt="lcd" 
                             className="absolute top-0 left-0 w-full h-auto object-cover"
                             src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708660/7_sbgmy9.jpg" 
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
                           />
                         </div>
                         <div className="mt-2 text-center text-gray-400 text-sm">
@@ -295,6 +297,7 @@ const Snu = () => {
                         height="315"
                         src={`https://www.youtube.com/embed/uxgWfqKYvGQ?si=vfIrjrvE6c0WE2eJ`}
                         title="YouTube video player"
+                        loading="lazy"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -464,7 +467,7 @@ const Snu = () => {
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="_blank"
-                      href="https://docs.google.com/presentation/d/1-04htW12KGFsTFUof3XZNAr0_P794jCX/edit?usp=drive_link&ouid=108511981520130649220&rtpof=true&sd=true"
+                      href="https://docs.google.com/presentation/d/1-04htW12KGFsTFUof3XZNAr0_P794jCX/edit?usp=drive_link&ouid=108511981520130649220&rtpof=true&sd=true" rel="noreferrer"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Final Presentation
@@ -472,15 +475,15 @@ const Snu = () => {
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="_blank"
-                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708661/Rigid_SVC_Calculations_wvjs5i.xlsx"
+                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708661/Rigid_SVC_Calculations_wvjs5i.xlsx" rel="noreferrer"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Rigid SVC Calculations
                     </a>
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
-                      target="blank"
-                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708660/Code_r2wvfd.zip"
+                      target="_blank"
+                      href="https://res.cloudinary.com/dss5ymotz/raw/upload/v1730708660/Code_r2wvfd.zip" rel="noreferrer"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Code

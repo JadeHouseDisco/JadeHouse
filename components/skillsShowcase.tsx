@@ -1,5 +1,3 @@
-import { DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon } from "@/components/icons"
-
 interface skillsShowcaseProps {
     skillsShowcaseProps: {
         headingText: string;
@@ -22,8 +20,8 @@ const SkillsShowcase: React.FC<skillsShowcaseProps> = ({ skillsShowcaseProps }) 
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {skillsShowcaseProps.icons.map((icon, index) => (
-            <div className="flex flex-col items-center gap-2">
+            {skillsShowcaseProps.icons.map((icon) => (
+            <div className="flex flex-col items-center gap-2" key={icon.text}>
                 {icon.icon}
                 <span className="text-sm font-medium text-center">{icon.text}</span>
               </div>

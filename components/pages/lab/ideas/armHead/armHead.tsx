@@ -28,10 +28,12 @@ const ArmHead = () => {
             <LabHeader/>
 
             {/*blogPostIntro Section*/}
-            <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+            <section className="relative min-h-[clamp(28rem,72svh,52rem)] w-full overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
+                    priority
+                    sizes="100vw"
                     src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708572/1_z5lndx.png"
                     height="858"
                     width="858"
@@ -39,8 +41,8 @@ const ArmHead = () => {
                 <div className="absolute inset-0 bg-gray-900/30"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-20%" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
-                <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white md:px-6">
+                    <h2 className="max-w-6xl text-balance text-[clamp(2rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight">
                       ArmHead
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
@@ -50,9 +52,9 @@ const ArmHead = () => {
             </section>
 
             {/*blogPostContents*/}
-            <div className="relative flex">
+            <div className="relative flex min-w-0">
 
-              <nav className="hidden md:block sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+              <nav className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 flex-none overflow-y-auto bg-black py-8 pl-8 pr-4 xl:block">
                 <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (  
@@ -68,7 +70,7 @@ const ArmHead = () => {
                 </ul>
               </nav>
 
-              <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
+              <div className="blog-content prose prose-lg mx-auto mb-12 flex-1">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
                       25 March 2024
                   </p>
@@ -112,7 +114,7 @@ const ArmHead = () => {
                     Challenges and Considerations
                   </h1>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    One of the main challenges with this idea is controlling the different arm heads. Each head would have a unique design, requiring a distinct actuation strategy. Conventional motor signals from our brain, which are designed to control biological limbs, might be insufficient for managing these new structures. Instead, <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/intrecog">decoding user intentions</a> would be more effective, allowing the arm heads to execute preprogrammed routines based on user needs. Additional sensors, such as <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/visCtr">vision systems</a>, could further assist in controlling these heads.
+                    One of the main challenges with this idea is controlling the different arm heads. Each head would have a unique design, requiring a distinct actuation strategy. Conventional motor signals from our brain, which are designed to control biological limbs, might be insufficient for managing these new structures. Instead, <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/intRecg">decoding user intentions</a> would be more effective, allowing the arm heads to execute preprogrammed routines based on user needs. Additional sensors, such as <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/visCtr">vision systems</a>, could further assist in controlling these heads.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     Providing sensory feedback to the brain is another significant challenge. For finger-like mechanisms, it may be possible to replicate the sensory feedback of biological fingers. However, other arm heads would need to deliver sensory feedback tailored to their specific purposes, which could complicate the process of establishing nerve connections.

@@ -16,23 +16,45 @@ interface ParallaxScrollProps {
 
 const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ layers, className }) => {
   const layerRefs = useRef<HTMLDivElement[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let animationFrame: number | null = null;
+    let isVisible = true;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const updateLayers = () => {
+      animationFrame = null;
+      if (!isVisible || reduceMotion) return;
       const scrollY = window.scrollY;
       layerRefs.current.forEach((el, index) => {
         if (!el) return;
         const speed = layers[index].speed;
-        el.style.transform = `translateY(${scrollY * speed}px)`;
+        el.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (animationFrame === null) animationFrame = window.requestAnimationFrame(updateLayers);
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible) handleScroll();
+    });
+    if (containerRef.current) observer.observe(containerRef.current);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+    };
   }, [layers]);
 
   return (
-    <div className={`relative w-full h-[100vh]  ${className || ""}`}>
+    <div ref={containerRef} className={`relative min-h-[32rem] h-[100svh] w-full ${className || ""}`}>
       {layers.map((layer, idx) => (
         <div
           key={idx}
@@ -53,7 +75,8 @@ const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ layers, className }) =>
             alt={layer.alt || `parallax-layer-${idx}`}
             fill
             className="object-cover object-top" // or object-[50%_0%]
-            priority={idx === 0}
+            priority={idx === 0 || idx === layers.length - 1}
+            sizes="100vw"
           />
         </div>
       ))}

@@ -17,12 +17,12 @@ interface courseTableProps {
 
 const CourseTable: React.FC<courseTableProps> = ({ courseTableProps }) => {
     return (
-        <section className="px-8 py-4 mb-12">
+        <section className="mx-auto mb-12 w-full max-w-[1600px] px-4 py-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
                 {courseTableProps.headerText}
             </h2>
-            {courseTableProps.tables.map((table, index) => (
-                <div className="overflow-x-auto mb-4">
+            {courseTableProps.tables.map((table) => (
+                <div className="overflow-x-auto mb-4" key={table.tableTitle}>
                     <table className="w-full table-auto">
                         <thead>
                         <tr className="">
@@ -34,7 +34,7 @@ const CourseTable: React.FC<courseTableProps> = ({ courseTableProps }) => {
                         </tr>
                         </thead>
                     </table>
-                    <table className="w-full table-fixed">
+                    <table className="w-full min-w-[36rem] table-fixed">
                         <thead>
                         <tr className="bg-gray-800">
                             <th className="px-4 py-2 text-left w-[90%]">{table.thead.col1}</th>
@@ -42,8 +42,8 @@ const CourseTable: React.FC<courseTableProps> = ({ courseTableProps }) => {
                         </tr>
                         </thead>
                         <tbody>
-                            {table.tbody.map((tbody, index) => (
-                                <tr className="border-b border-gray-700">
+                            {table.tbody.map((tbody) => (
+                                <tr className="border-b border-gray-700" key={`${tbody.col1}-${tbody.col2}`}>
                                     <td className="px-4 py-2">{tbody.col1}</td>
                                     <td className="px-4 py-2">{tbody.col2}</td>
                                 </tr>

@@ -76,6 +76,8 @@ interface HeroScrollOverlayProps {
 }
 
 const EFFECT_FADE_MS = 300;
+const EMPTY_CLICK_AREAS: ClickArea[] = [];
+const EMPTY_CLICK_AREAS_PX: ClickAreaPx[] = [];
 
 const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
   image,
@@ -87,8 +89,8 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
   offsetTop,
   offsetElementId = "main-header",
   verticalAnchorPercent = 30,
-  lastImageAreas = [],
-  lastImageAreasPx = [],
+  lastImageAreas = EMPTY_CLICK_AREAS,
+  lastImageAreasPx = EMPTY_CLICK_AREAS_PX,
   intrinsicSize,
   defaultEffect = null,
 }) => {
@@ -111,29 +113,6 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
   const [effectOpacity, setEffectOpacity] = useState(0);
   const autoClearTimerRef = useRef<number | null>(null);
   const [isDismissed, setIsDismissed] = useState(false);
-
-  // Preload lists
-  const bgPreloadSrcs = React.useMemo(() => {
-    const srcs = new Set<string>();
-    for (const a of lastImageAreasPx) {
-      if (a.effect?.bgImage?.src) srcs.add(a.effect.bgImage.src);
-      if (a.effect?.content?.newBackgroundImage) srcs.add(a.effect.content.newBackgroundImage);
-    }
-    return Array.from(srcs);
-  }, [lastImageAreasPx]);
-
-  const iconPreloadList = React.useMemo(() => {
-    const list: {src: string, width?: number, height?: number}[] = [];
-    const seen = new Set<string>();
-    for (const a of lastImageAreasPx) {
-      const img = a.effect?.content?.image;
-      if (img?.src && !seen.has(img.src)) {
-        seen.add(img.src);
-        list.push(img);
-      }
-    }
-    return list;
-  }, [lastImageAreasPx]);
 
   // Measure header unless provided
   useLayoutEffect(() => {
@@ -269,6 +248,7 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
   }
 
   // Compute hotspots
+  // The mapping helper intentionally closes over verticalAnchorPercent.
   const recomputeAreas = useCallback(() => {
     const c = containerRef.current;
     if (!c) { setComputedLastAreas([]); return; }
@@ -288,7 +268,7 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
     }));
 
     setComputedLastAreas(mapped);
-  }, [headerOffset, intrinsicSize, lastImageAreasPx, verticalAnchorPercent]);
+  }, [headerOffset, intrinsicSize, lastImageAreasPx, verticalAnchorPercent]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => { recomputeHeights(); recomputeAreas(); }, [recomputeHeights, recomputeAreas]);
 
@@ -382,8 +362,9 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
     <div ref={containerRef} className={className}>
       <div
         className="sticky w-full"
-        style={{ top: headerOffset, height: `calc(100vh - ${headerOffset}px)` }}
+        style={{ top: headerOffset, height: `calc(100dvh - ${headerOffset}px)` }}
       >
+        <div className="relative h-full w-full">
         <Image
           src={image.src}
           alt={image.alt || ""}
@@ -391,33 +372,8 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
           className="absolute inset-0 object-cover"
           style={{ objectPosition }}
           priority
+          sizes="100vw"
         />
-
-        {/* PRELOAD HIDDEN IMAGES */}
-        {bgPreloadSrcs.map((src) => (
-          <Image
-            key={`preload-bg-${src}`}
-            src={src}
-            alt=""
-            fill
-            sizes="100vw"
-            className="opacity-0 pointer-events-none"
-            priority
-            style={{ zIndex: -1 }}
-          />
-        ))}
-        {iconPreloadList.map((item) => (
-          <Image
-            key={`preload-icon-${item.src}`}
-            src={item.src}
-            alt=""
-            width={item.width ?? 160}
-            height={item.height ?? 160}
-            className="opacity-0 pointer-events-none absolute"
-            priority
-            style={{ zIndex: -1 }}
-          />
-        ))}
 
         {fgBgSrc && (
           <Image
@@ -450,18 +406,17 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
           style={{ opacity: textOverlayOpacity }}
           onClick={() => setIsDismissed(true)}
         >
-          <div className="text-center text-white max-w-2md">
-            <h1 className="text-6xl font-bold mb-4">{title}</h1>
-            <p className="text-xl">{description}</p>
+          <div className="mx-auto max-w-4xl px-4 text-center text-white sm:px-6">
+            <h1 className="mb-4 text-balance text-[clamp(2.25rem,7vw,4.5rem)] font-bold leading-[1.05]">{title}</h1>
+            <p className="text-base leading-relaxed sm:text-xl">{description}</p>
           </div>
         </div>
 
         {activeEffect && (
           <div
-            className="absolute top-0 h-full z-20"
+            className="interactive-overlay-panel absolute top-0 z-20 h-full"
+            data-side={activeEffect.overlaySide}
             style={{
-              left: activeEffect.overlaySide === "left" ? 0 : "50%",
-              width: "50%",
               backgroundColor: overlayColor,
               opacity: effectOpacity * overlayAlpha,
               transition: `opacity ${EFFECT_FADE_MS}ms ease`,
@@ -472,16 +427,15 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
 
         {activeEffect?.content && (
           <div
-            className="absolute top-0 h-full z-40 flex items-center justify-center text-center p-8"
+            className="interactive-overlay-panel absolute top-0 z-40 flex h-full items-center justify-center overflow-y-auto p-4 text-center sm:p-8"
+            data-side={activeEffect.overlaySide}
             style={{
-              left: activeEffect.overlaySide === "left" ? 0 : "50%",
-              width: "50%",
               pointerEvents: "auto",
               opacity: effectOpacity,
               transition: `opacity ${EFFECT_FADE_MS}ms ease`,
             }}
           >
-            <div className="max-w-xl w-full flex flex-col items-center space-y-6">
+            <div className="flex w-full max-w-xl flex-col items-center space-y-4 sm:space-y-6">
               {activeEffect.content.image && (
                 <Image
                   src={activeEffect.content.image.src}
@@ -490,10 +444,10 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
                   height={activeEffect.content.image.height ?? 160}
                   className="object-contain"
                   fetchPriority="high"
-                  priority
+                  sizes={`${activeEffect.content.image.width ?? 160}px`}
                 />
               )}
-              <h2 className="text-3xl font-bold mb-2">{activeEffect.content.title}</h2>
+              <h2 className="mb-2 text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight">{activeEffect.content.title}</h2>
               <p className="mb-2">{activeEffect.content.description}</p>
 
               <Link
@@ -552,6 +506,7 @@ const HeroScrollOverlay: React.FC<HeroScrollOverlayProps> = ({
             })}
           </div>
         )}
+        </div>
       </div>
     </div>
   );

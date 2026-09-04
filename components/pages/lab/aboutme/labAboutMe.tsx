@@ -2,7 +2,7 @@ import LabHeader from "@/components/labHeader"
 import AboutMeIntro from "@/components/aboutMeIntro"
 import PurposeVisionGoals from "@/components/purposeVisionGoals"
 import SkillsShowcase from "@/components/skillsShowcase"
-import { GithubIcon, LinkedinIcon, MailIcon, YoutubeIcon,GoogleScholarIcon, ORCIDIcon, DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon, MatlabIcon, CNNIcon } from "@/components/icons"
+import { DockerIcon, ROSIcon, HTMLIcon, CssIcon, JavascriptIcon, CubeIcon, MeshIcon, ReactIcon, CppIcon, PythonIcon, GitIcon, MatlabIcon, CNNIcon } from "@/components/icons"
 import LabFooter from '@/components/labFooter';
 
 const LabAboutMe = () => {

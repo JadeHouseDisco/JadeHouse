@@ -1,6 +1,6 @@
 import DiscoHeader from '@/components/disccoHeader';
 import BlogTilesSection from "@/components/blogTilesSection";
-import { getBlogPosts, BlogPost } from '@/components/utils/getBlogPosts';
+import { getBlogPosts } from '@/components/utils/getBlogPosts';
 import DiscoFooter from '@/components/discoFooter';
 
 export default async function Memories() {

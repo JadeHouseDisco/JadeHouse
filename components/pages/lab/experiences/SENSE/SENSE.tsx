@@ -29,10 +29,12 @@ const SENSE = () => {
             <LabHeader/>
 
             {/*blogPostIntro Section*/}
-            <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+            <section className="relative min-h-[clamp(28rem,72svh,52rem)] w-full overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
+                    priority
+                    sizes="100vw"
                     src="https://github.com/JadeHouseDisco/JadeHouse_Files/blob/main/blogPosts/SENSE/1.png?raw=true"
                     height="858"
                     width="858"
@@ -40,8 +42,8 @@ const SENSE = () => {
                 <div className="absolute inset-0 bg-gray-900/30"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-20%" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
-                <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white md:px-6">
+                    <h2 className="max-w-6xl text-balance text-[clamp(2rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight">
                       SENSE - Surface Electromyography Nerve Symptom Evaluator
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
@@ -51,9 +53,9 @@ const SENSE = () => {
             </section>
 
             {/*blogPostContents*/}
-            <div className="relative flex">
+            <div className="relative flex min-w-0">
 
-              <nav className="hidden md:block sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+              <nav className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 flex-none overflow-y-auto bg-black py-8 pl-8 pr-4 xl:block">
                 <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
@@ -69,7 +71,7 @@ const SENSE = () => {
                 </ul>
               </nav>
 
-              <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
+              <div className="blog-content prose prose-lg mx-auto mb-12 flex-1">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
                       23 March 2025
                   </p>
@@ -266,7 +268,7 @@ const SENSE = () => {
                       </li>
                   </ul>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    You may find all our code and results <a className = "text-blue-500 text-under underline" target="_blank" href="https://github.com/JadeHouseDisco/SENSE">here</a>. For more details on our progress, refer to our <a className = "text-blue-500 text-under underline" target="_blank" href="https://docs.google.com/spreadsheets/d/1W0Z6j0c1Yzrwr__9PT0DGzZu3szxcANzaVkKT0paPg0/edit?usp=sharing">meeting and progress records</a>.
+                    You may find all our code and results <a className = "text-blue-500 text-under underline" target="_blank" href="https://github.com/JadeHouseDisco/SENSE" rel="noreferrer">here</a>. For more details on our progress, refer to our <a className = "text-blue-500 text-under underline" target="_blank" href="https://docs.google.com/spreadsheets/d/1W0Z6j0c1Yzrwr__9PT0DGzZu3szxcANzaVkKT0paPg0/edit?usp=sharing" rel="noreferrer">meeting and progress records</a>.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     Recently, we have submitted an IRB application to SGH, which will start its review process by the end of March 2025. We also succesfully received the ACP pitch-for-funds, which will fund S$100,000 for our project. We have started planning on allocation of budget for things like equipment purchases, recruitment of research assistants, and facility lending.
@@ -406,13 +408,13 @@ const SENSE = () => {
                     Files
                   </h1>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    You may find all our code in <a className = "text-blue-500 text-under underline" target="_blank" href="https://github.com/JadeHouseDisco/SENSE">github</a>.
+                    You may find all our code in <a className = "text-blue-500 text-under underline" target="_blank" href="https://github.com/JadeHouseDisco/SENSE" rel="noreferrer">github</a>.
                   </p>
                   <div className="mt-4">
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="_blank"
-                      href="https://docs.google.com/presentation/d/1Z63IjDM4M0P2Gc33L8kO1gY9p6rPZrQK/edit?usp=drive_link&ouid=108511981520130649220&rtpof=true&sd=true"
+                      href="https://docs.google.com/presentation/d/1Z63IjDM4M0P2Gc33L8kO1gY9p6rPZrQK/edit?usp=drive_link&ouid=108511981520130649220&rtpof=true&sd=true" rel="noreferrer"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Pitch
@@ -420,7 +422,7 @@ const SENSE = () => {
                     <a
                       className="inline-flex items-center mr-4 justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 bg-gray-50 text-gray-900 hover:bg-[#00a896] focus:ring-gray-300 transition-colors duration-300 ease-in-out"
                       target="_blank"
-                      href="https://docs.google.com/presentation/d/1-M_aEqae6taW0pu0tMkNCV55I2HGhVp5/edit?usp=drive_link&ouid=108511981520130649220&rtpof=true&sd=true"
+                      href="https://docs.google.com/presentation/d/1-M_aEqae6taW0pu0tMkNCV55I2HGhVp5/edit?usp=drive_link&ouid=108511981520130649220&rtpof=true&sd=true" rel="noreferrer"
                     >
                       <DownloadIcon className="mr-2 h-5 w-5" />
                       Technical Pitch

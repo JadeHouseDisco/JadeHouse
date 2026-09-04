@@ -32,7 +32,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
 
     return (
         <>
-        <div className="text-center mt-8">
+        <div className="mx-auto mt-8 max-w-4xl px-4 text-center sm:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 {audibleMemoriesProps.titleText}
             </h2>
@@ -40,12 +40,12 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                 {audibleMemoriesProps.descriptionText}
             </p>
         </div>
-        <div className="flex flex-col items-center justify-center min-h-screen px-20 mb-8">
+        <div className="flex min-h-[70svh] w-full flex-col items-center justify-center overflow-hidden px-2 py-8 sm:px-6 lg:px-12">
             <HTMLFlipBook 
                 width={600}
                 height={600}
                 size="stretch"
-                minWidth={315}
+                minWidth={280}
                 minHeight={420}
                 maxWidth={1000}
                 maxHeight={1350}
@@ -96,7 +96,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                     alt={song.songTitle}
                                     width={544}
                                     height={544}
-                                    className="object-cover h-64 w-64 xl:h-96 xl:w-96 mx-auto mb-8"
+                                    className="mx-auto mb-4 h-[clamp(7rem,28vw,24rem)] w-[clamp(7rem,28vw,24rem)] object-cover sm:mb-8"
                                     loading="lazy"
                                 />
                                 <div className="flex flex-col md:flex-row items-center justify-between">
@@ -104,9 +104,9 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                                         {song.songTitle}
                                     </h1>
                                     <a
-                                        className="ml-auto"
+                                        className="md:ml-auto"
                                         href={song.songLink}
-                                        target="\\\_blank"
+                                        target="_blank" rel="noreferrer"
                                     >
                                         <YoutubeMusicIcon_black className="h-6 md:h-8 w-6 md:w-8" />
                                     </a>
@@ -134,7 +134,7 @@ const AudibleMemories: React.FC<AudibleMemoriesProps> = ({ audibleMemoriesProps 
                             </div>
                             <div className="grid grid-cols-2 grid-rows-2 gap-2">
                                 {song.photos.map((photo, index) => (
-                                    <div key={index} className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 xl:w-64 xl:h-64">
+                                    <div key={index} className="relative h-[clamp(4.5rem,18vw,16rem)] w-[clamp(4.5rem,18vw,16rem)]">
                                         <Image
                                             src={photo.src}
                                             alt={`photo-${index}`}

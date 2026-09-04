@@ -28,10 +28,12 @@ const IntRecg = () => {
             <LabHeader/>
 
             {/*blogPostIntro Section*/}
-            <section className="relative w-full h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+            <section className="relative min-h-[clamp(28rem,72svh,52rem)] w-full overflow-hidden">
                 <Image
                     alt="Background Image"
                     className="absolute inset-0 w-full h-full object-cover"
+                    priority
+                    sizes="100vw"
                     src="https://res.cloudinary.com/dss5ymotz/image/upload/v1730708591/1_k7l4ty.png"
                     height="858"
                     width="858"
@@ -39,8 +41,8 @@ const IntRecg = () => {
                 <div className="absolute inset-0 bg-gray-900/30"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black from-0% to-transparent to-20%" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-80% to-black to-100%" />
-                <div className="relative flex flex-col items-center justify-center h-full px-4 md:px-6 text-center text-white">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center text-white md:px-6">
+                    <h2 className="max-w-6xl text-balance text-[clamp(2rem,6vw,4.5rem)] font-bold leading-[1.08] tracking-tight">
                       IntRecg
                     </h2>
                     <p className="mt-4 max-w-3xl text-lg md:text-xl">
@@ -50,9 +52,9 @@ const IntRecg = () => {
             </section>
 
             {/*blogPostContents*/}
-            <div className="relative flex">
+            <div className="relative flex min-w-0">
 
-              <nav className="hidden md:block sticky top-0 flex-none w-56 h-screen py-8 pl-8 bg-black overflow-y-auto">
+              <nav className="sticky top-16 hidden h-[calc(100dvh-4rem)] w-64 flex-none overflow-y-auto bg-black py-8 pl-8 pr-4 xl:block">
                 <h2 className="text-3xl font-bold mb-4">Contents</h2>
                 <ul>
                   {headings.map(heading => (
@@ -68,7 +70,7 @@ const IntRecg = () => {
                 </ul>
               </nav>
 
-              <div className="prose prose-lg mx-auto max-w-3xl mb-12 blog-content">
+              <div className="blog-content prose prose-lg mx-auto mb-12 flex-1">
                   <p className="text-base md:text-lg font-semibold mt-4 max-w-3xl">
                       19 January 2023
                   </p>
@@ -128,7 +130,7 @@ const IntRecg = () => {
                     The ideal scenario is a complete decoding of motor signals, allowing users to control their prosthesis as if it were part of their organic body. However, this is a complex goal, and it's unclear how long it will take to achieve. In the meantime, decoding intentions could provide users with sufficient control to enhance their quality of life.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
-                    If user intentions can be accurately decoded, this method could also be applied to control <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/VRM">humanoid robots that replicate user intentions</a>. It could even predict user movements and provide <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/tripleA">assistance or augmentation</a>. Further advancements could lead to control of prostheses with <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/expnArm">increased degrees of freedom</a> or <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/armHead">interchangeable components</a>.
+                    If user intentions can be accurately decoded, this method could also be applied to control <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/VRR">humanoid robots that replicate user intentions</a>. It could even predict user movements and provide <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/tripleA">assistance or augmentation</a>. Further advancements could lead to control of prostheses with <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/expnArm">increased degrees of freedom</a> or <a className = "text-blue-500 text-under underline" target="_blank" href="/lab/ideas/armHead">interchangeable components</a>.
                   </p>
                   <p className="mt-4 max-w-3xl text-base md:text-lg">
                     I hope that when this idea becomes a reality, it will enable more people to live beyond their disabilities.

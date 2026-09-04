@@ -15,17 +15,18 @@ interface AboutMeIntroProps {
 
 const AboutMeIntro: React.FC<AboutMeIntroProps> = ({ aboutMeIntroProps }) => {
   return (
-    <section key="1" className="relative w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent from-35% to-black to-55%" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-60% to-black to-95%" />
-        <div className="absolute w-full max-w-md space-y-4 text-left md:space-y-6 right-[7vw] flex flex-col justify-center h-full">
-          <h1 className="text-5xl font-bold tracking-tighter">
+    <div className="bg-black">
+      <section key="1" className="relative min-h-[clamp(32rem,72svh,50rem)] w-full overflow-hidden">
+        <div className="absolute inset-0 z-10 bg-black/55 md:bg-transparent md:bg-gradient-to-r md:from-transparent md:from-20% md:to-black md:to-65%" />
+        <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(to_bottom,#000_0%,transparent_18%,transparent_72%,#000_100%)]" />
+        <div className="relative z-20 ml-auto flex min-h-[clamp(32rem,72svh,50rem)] w-full max-w-2xl flex-col justify-center space-y-4 px-4 py-16 text-left sm:px-8 md:w-1/2 md:space-y-6 md:px-10 xl:mr-[7vw]">
+          <h1 className="text-balance text-[clamp(2.25rem,6vw,3.75rem)] font-bold leading-tight tracking-tighter">
             {aboutMeIntroProps.headerText}
           </h1>
-          <p className="text-lg tracking-tight leading-[3.5vh]">
+          <p className="text-base leading-relaxed tracking-tight sm:text-lg">
             {aboutMeIntroProps.pText}
           </p>
-          <div className="flex gap-x-4"> {/* Add a flex container around the buttons */}
+          <div className="flex flex-wrap gap-3">
             {aboutMeIntroProps.buttons && aboutMeIntroProps.buttons.map((button, index) => (
               <Link
                 key={index} // Adding a unique key for each element in the list
@@ -42,17 +43,14 @@ const AboutMeIntro: React.FC<AboutMeIntroProps> = ({ aboutMeIntroProps }) => {
         <Image
           alt="Background"
           src={aboutMeIntroProps.imgSrc}
-          width={1600}
-          height={800}
-          className="h-full w-full object-cover object-center"
-          style={{
-            aspectRatio: "1600/800",
-            objectFit: "cover",
-          }}
-          layout="responsive"
+          fill
+          className="z-0 object-cover object-center"
+          sizes="100vw"
+          priority
         />
-        
-    </section>
+      </section>
+      <div aria-hidden="true" className="h-16 bg-black sm:h-24" />
+    </div>
   )
 }
 

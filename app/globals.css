@@ -6,9 +6,12 @@
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+  color-scheme: dark;
 }
 
 body {
+  min-width: 0;
+  overflow-x: clip;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -50,4 +53,91 @@ body {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+.blog-content {
+  min-width: 0;
+  width: 100%;
+  max-width: 72rem;
+  padding: 2rem 1rem;
+}
+
+.blog-content img,
+.blog-content video,
+.blog-content iframe {
+  max-width: 100%;
+}
+
+.blog-content pre,
+.blog-content table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.blog-content :where(h1, h2, h3, p, li) {
+  overflow-wrap: anywhere;
+}
+
+.blog-content :where(h1, h2, h3, p, ul, ol, li, blockquote) {
+  width: 100%;
+  max-width: none;
+}
+
+.blog-content :where(p, li) {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.page-flip-book {
+  max-width: 100%;
+}
+
+.interactive-overlay-panel {
+  left: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .interactive-overlay-panel {
+    width: 50%;
+  }
+
+  .interactive-overlay-panel[data-side="right"] {
+    left: 50%;
+  }
+}
+
+@media (min-width: 640px) {
+  .blog-content {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-content {
+    max-width: 80rem;
+    padding-inline: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

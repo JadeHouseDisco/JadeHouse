@@ -53,24 +53,6 @@ const JadeHouse = () => {
     button: {text:"", href:""}
   }
 
-  const parseCoords = (s: string) =>
-    s.split(",").map(v => Number(v.trim()));
-
-  const pixelsToPercentPolygon = (coordsPx: number[], baseWidth: number, baseHeight: number) =>
-    coordsPx.map((v, i) => {
-      const isX = i % 2 === 0;
-      return (v / (isX ? baseWidth : baseHeight)) * 100;
-    });
-
-  const poly1Px = parseCoords("936,710,933,614,930,512,932,387,930,244,932,189,948,168,981,165,1024,166,1091,170,1182,173,1203,175,1208,194,1210,226,1215,280,1210,362,1212,417,1207,500,1200,588,1203,660,1199,721,1184,739,1151,747,1106,752,1062,756,1022,747,989,747,960,733");
-  const poly2Px = parseCoords("299,233,299,196,313,182,350,180,419,182,491,188,554,190,592,198,599,231,597,272,599,348,597,444,597,515,597,599,594,668,594,727,589,745,534,750,472,745,421,744,381,740,340,737,309,730,302,699,300,627");
-
-  const BASE_W = 1536;
-  const BASE_H = 1024;
-
-  const poly1Pct = pixelsToPercentPolygon(poly1Px, BASE_W, BASE_H);
-  const poly2Pct = pixelsToPercentPolygon(poly2Px, BASE_W, BASE_H);
-
   return (
     <div key="1" className="relative flex flex-col min-h-[100dvh]">
       <MainHeader />

@@ -12,9 +12,12 @@ const PhotoAlbumGrid: React.FC<PhotoAlbumGridProps> = ({ photoAlbumGridProps }) 
   
   const renderPhoto = (
     ({ imageProps: { alt, style, ...rest } }: RenderPhotoProps) => (
+      // The photo-album library owns responsive image sizing and requires a native image renderer.
+      // eslint-disable-next-line @next/next/no-img-element
       <img
         alt={alt}
         loading="lazy"
+        decoding="async"
         style={{
           ...style,
           borderRadius: "10px",

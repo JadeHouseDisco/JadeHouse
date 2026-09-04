@@ -1,238 +1,43 @@
-"use client";
+import { InstagramIcon, MailIcon, TwitterIcon, YoutubeIcon } from "@/components/icons";
+import SiteFooter from "@/components/siteFooter";
 
-import React, { useRef, useState } from "react";
-import Script from "next/script";
-import Image from "next/image";
-import Link from "next/link";
-import { MailIcon, YoutubeIcon, TwitterIcon, InstagramIcon } from "@/components/icons";
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (el: HTMLElement, opts: any) => string;
-      reset: (widgetId: string) => void;
-    };
-  }
-}
-
-const DiscoFooter: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [buttonText, setButtonText] = useState("Send");
-
-  // Turnstile + honeypot
-  const [cfToken, setCfToken] = useState("");
-  const [website, setWebsite] = useState(""); // honeypot
-
-  // Explicit Turnstile render
-  const widgetRef = useRef<HTMLDivElement | null>(null);
-  const widgetIdRef = useRef<string | null>(null);
-
-  const onTurnstileLoad = () => {
-    if (!widgetRef.current || !window.turnstile) return;
-    if (widgetIdRef.current) return; // already rendered
-    widgetIdRef.current = window.turnstile.render(widgetRef.current, {
-      sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
-      theme: "dark",
-      callback: (token: string) => setCfToken(token),
-      "error-callback": () => setCfToken(""),
-      "expired-callback": () => setCfToken(""),
-      "timeout-callback": () => setCfToken(""),
-    });
-  };
-
-  const resetTurnstile = () => {
-    try {
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.reset(widgetIdRef.current);
-      }
-    } catch {
-      /* no-op */
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!cfToken) {
-      alert("Please complete the verification.");
-      return;
-    }
-
-    setButtonText("Sending...");
-    const res = await fetch("/api/sendEmail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email,
-        message,
-        cf_token: cfToken,
-        website,
-      }),
-    });
-
-    const data = await res.json();
-    if (!res.ok) {
-      alert(data.error || "Failed to send message");
-      setButtonText("Send");
-      resetTurnstile(); // refresh token on failure
-      return;
-    }
-
-    alert("Successfully sent message");
-    setButtonText("Send");
-    setMessage("");
-    resetTurnstile(); // refresh token for next message
-  };
-
+export default function DiscoFooter() {
   return (
-    <footer className="bg-gray-900 text-white py-6">
-      {/* Load Turnstile and render when ready */}
-      <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        strategy="afterInteractive"
-        onReady={onTurnstileLoad}
-      />
-
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <Link href="/disco">
-              <Image
-                src="https://res.cloudinary.com/dss5ymotz/image/upload/v1758199145/disco_r4homm.png"
-                alt="disco logo"
-                width={64}
-                height={64}
-                className="mb-4"
-                priority
-              />
-            </Link>
-            <Link href="/disco">
-              <h2 className="text-2xl font-bold mb-2">JadeHouse Disco</h2>
-            </Link>
-            <p className="text-gray-400">Archive of my personal life</p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/disco" className="text-gray-400 hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/disco/aboutme" className="text-gray-400 hover:text-white">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/disco/memories" className="text-gray-400 hover:text-white">
-                  Memories
-                </Link>
-              </li>
-              <li>
-                <Link href="/disco/thoughts" className="text-gray-400 hover:text-white">
-                  Thoughts
-                </Link>
-              </li>
-              <li>
-                <Link href="/disco/music" className="text-gray-400 hover:text-white">
-                  Music
-                </Link>
-              </li>
-            </ul>
-
-            <div className="flex items-center space-x-4 mt-4">
-              <a
-                className="text-gray-400 hover:text-white"
-                href="mailto:HYUNWOO001@e.ntu.edu.sg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MailIcon className="h-6 w-6" />
-              </a>
-              <a
-                className="text-gray-400 hover:text-white"
-                href="https://twitter.com/JadeHouseDisco"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TwitterIcon className="h-6 w-6" />
-              </a>
-              <a
-                className="text-gray-400 hover:text-white"
-                href="https://www.instagram.com/jadehousedisco/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InstagramIcon className="h-6 w-6" />
-              </a>
-              <a
-                className="text-gray-400 hover:text-white"
-                href="https://www.youtube.com/@JadeHouseCinema"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <YoutubeIcon className="h-6 w-6" />
-              </a>
-            </div>
-          </div>
-
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-bold mb-4">Contact Me</h3>
-
-            <form onSubmit={handleSubmit}>
-              <input
-                type="email"
-                className="w-full bg-gray-800 text-white py-2 px-4 rounded-md mb-4"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-
-              <textarea
-                className="w-full bg-gray-800 text-white py-2 px-4 rounded-md mb-4"
-                rows={4}
-                placeholder="Enter your message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                maxLength={2000}
-                required
-              />
-
-              {/* Honeypot (hidden) */}
-              <input
-                type="text"
-                name="website"
-                value={website}
-                onChange={(e) => setWebsite(e.target.value)}
-                className="hidden"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-
-              {/* Turnstile explicit container */}
-              <div ref={widgetRef} className="mb-4" />
-
-              <button
-                type="submit"
-                disabled={buttonText !== "Send" || !cfToken}
-                className="inline-flex items-center justify-center h-10 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {buttonText}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-        © 2024 Jadeouse. All rights reserved.
-      </div>
-    </footer>
+    <SiteFooter
+      homeHref="/disco"
+      logoSrc="https://res.cloudinary.com/dss5ymotz/image/upload/v1758199145/disco_r4homm.png"
+      logoAlt="JadeHouse Disco logo"
+      title="JadeHouse Disco"
+      description="Archive of my personal life"
+      navigation={[
+        { href: "/disco", label: "Home" },
+        { href: "/disco/aboutme", label: "About" },
+        { href: "/disco/memories", label: "Memories" },
+        { href: "/disco/thoughts", label: "Thoughts" },
+        { href: "/disco/music", label: "Music" },
+      ]}
+      socialLinks={[
+        {
+          href: "mailto:HYUNWOO001@e.ntu.edu.sg",
+          label: "Email Hyunwoo Lee",
+          icon: <MailIcon className="h-6 w-6" />,
+        },
+        {
+          href: "https://twitter.com/JadeHouseDisco",
+          label: "JadeHouse on X",
+          icon: <TwitterIcon className="h-6 w-6" />,
+        },
+        {
+          href: "https://www.instagram.com/jadehousedisco/",
+          label: "JadeHouse on Instagram",
+          icon: <InstagramIcon className="h-6 w-6" />,
+        },
+        {
+          href: "https://www.youtube.com/@JadeHouseCinema",
+          label: "JadeHouse Cinema on YouTube",
+          icon: <YoutubeIcon className="h-6 w-6" />,
+        },
+      ]}
+    />
   );
-};
-
-export default DiscoFooter;
+}

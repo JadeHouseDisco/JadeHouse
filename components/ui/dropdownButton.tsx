@@ -1,6 +1,4 @@
-"use client"
-
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Link from "next/link"
 
 interface DropdownButtonProps {
@@ -13,39 +11,26 @@ interface DropdownButtonProps {
 }
 
 const DropdownButton: React.FC<DropdownButtonProps> = ({ href, options, buttonText }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleMouseEnter = () => {
-    setIsOpen(true);
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {setIsOpen(false)}, 100); 
-  };
+  if (!options?.length) {
+    return (
+      <Link
+        href={href}
+        className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-gray-900 transition-colors duration-300 ease-in-out hover:bg-[#00a896] focus:outline-none focus:ring-2 focus:ring-gray-950"
+      >
+        {buttonText}
+      </Link>
+    );
+  }
 
   return (
-    <div className="relative inline-block" ref={dropdownRef}>
-      <Link href={href}>
-        <button
-          type="button"
-          className="inline-flex items-center justify-center h-10 px-6 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-950 bg-gray-50 text-gray-900 hover:bg-[#00a896] transition-colors duration-300 ease-in-out"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {buttonText}
-        </button>
+    <div className="group relative inline-block">
+      <Link
+        href={href}
+        className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-gray-900 transition-colors duration-300 ease-in-out hover:bg-[#00a896] focus:outline-none focus:ring-2 focus:ring-gray-950"
+      >
+        {buttonText}
       </Link>
-      {(isOpen && options)&& (
-        <div
-          className="absolute grid right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+      <div className="invisible absolute right-0 z-10 mt-2 grid w-56 origin-top-right rounded-md bg-white opacity-0 shadow-lg ring-1 ring-black ring-opacity-5 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
           <div className="rounded-md" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {options.map((option, index) => (
               <Link
@@ -58,8 +43,7 @@ const DropdownButton: React.FC<DropdownButtonProps> = ({ href, options, buttonTe
               </Link>
             ))}
           </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 };
